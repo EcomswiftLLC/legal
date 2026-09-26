@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Noor: Read/Listen Quran Offline</title>
+<meta name="description" content="Privacy Policy for the Noor: Read/Listen Quran Offline Android app by Ecom Swift LLC.">
+<style>
+  :root{
+    --bg:#ffffff; --ink:#1d2b24; --muted:#5b6b63; --line:#e5ece7;
+    --brand:#0f5c46; --gold:#c99a2e; --soft:#f6faf7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--brand);font-weight:700;margin-bottom:10px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  .meta{color:var(--muted);font-size:14px;margin:0}
+  h2{font-size:18px;margin:34px 0 10px;color:var(--brand)}
+  p,li{color:#28362f}
+  a{color:var(--brand)}
+  .lead{font-size:17px;color:#28362f}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600}
+  code{background:var(--soft);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:13px}
+  .callout{background:var(--soft);border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:10px;padding:14px 16px;margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Ecom Swift LLC</div>
+    <h1>Privacy Policy — Noor: Read/Listen Quran Offline</h1>
+    <p class="meta">Last updated: 26 September 2026</p>
+  </header>
+
+  <p class="lead">Noor is designed to need almost nothing from you. Everything you create in the app stays on your device, and there is no account to sign up for.</p>
+
+  <h2>What never leaves your device</h2>
+  <ul>
+    <li>Notes, bookmarks, favorites, reading history, reading progress, daily goals, and app settings are stored only in a local database on your device. None of it is ever sent to any server.</li>
+    <li>Device location (used only for prayer times and Qibla direction) is used entirely on-device to run the calculations. It is never transmitted anywhere.</li>
+    <li>The Quran text itself is bundled inside the app, so reading it requires no network access at all.</li>
+  </ul>
+
+  <h2>The optional content service</h2>
+  <p>If you connect the app to its optional backend (for additional translations, tafsir, or audio), the only network calls made are read-only requests for a health check, a content-availability flag, translation/tafsir/reciter lists, and specific chapter lookups. These requests carry no personal data — no user identifier, no notes, no bookmarks, no location. The service keeps no record of your app usage beyond standard hosting request logs.</p>
+
+  <h2>No accounts required</h2>
+  <p>The app never requires creating an account. Every feature — reading, search, bookmarks, notes, progress, backup — works fully anonymously. Ads and the optional "Remove Ads" purchase don't require an account either (purchases are tied to your Google Play account, not an app account).</p>
+
+  <h2>Ads (Google AdMob)</h2>
+  <p>The app is free and ad-supported, with a one-time "Remove Ads" purchase to go ad-free. This is the one place data does leave the app, so it is spelled out plainly:</p>
+  <ul>
+    <li>Google's Mobile Ads SDK is included and collects data for ad serving and measurement (device identifiers, coarse usage signals) per <a href="https://support.google.com/admob/answer/6128543" rel="nofollow noopener" target="_blank">Google's own AdMob disclosures</a>. This is Google's data collection, governed by Google's privacy policy, not something the app adds on top.</li>
+    <li>Before requesting any ad, the app runs Google's User Messaging Platform (UMP) consent flow, so users in regions that require it (EEA, UK, and applicable US states) are asked for ad-personalization consent. Only non-personalized ads are requested if they decline.</li>
+    <li>Ads never appear on the Quran reader itself or on the Duas verse cards — only on browsing and list screens.</li>
+    <li>No app-specific data (notes, bookmarks, reading history, location) is ever passed to the ad SDK.</li>
+    <li>The "Remove Ads" purchase is handled by Google Play Billing; the app never sees payment details, and purchase status is verified against Google Play's own records on every app start.</li>
+  </ul>
+
+  <h2>No other tracking</h2>
+  <p>No analytics SDK, no crash-reporting SDK, no Firebase, no Google Analytics — no tracking beyond what the ads system above uses for ad delivery itself.</p>
+
+  <h2>Permissions and why</h2>
+  <table>
+    <tr><th>Permission</th><th>Why it is used</th></tr>
+    <tr><td><code>INTERNET</code></td><td>To reach the optional content service for extra translations/tafsir/audio, and to download audio files you choose to download. Never required for reading the Quran.</td></tr>
+    <tr><td><code>ACCESS_COARSE_LOCATION</code> / <code>ACCESS_FINE_LOCATION</code></td><td>Only used if you tap "Use device location" for prayer times/Qibla. Entirely optional — manual latitude/longitude entry works without granting this.</td></tr>
+    <tr><td><code>POST_NOTIFICATIONS</code></td><td>Only requested if you turn on the daily reading reminder.</td></tr>
+    <tr><td><code>com.google.android.gms.permission.AD_ID</code></td><td>Added by the Google Mobile Ads SDK for ad measurement; not requested by any of the app's own code.</td></tr>
+    <tr><td><code>FOREGROUND_SERVICE</code> / <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></td><td>Lets audio keep playing in the background and show lock-screen controls while you listen.</td></tr>
+  </table>
+
+  <h2>Children</h2>
+  <p>The app is suitable for a general audience and does not knowingly collect personal information from children. Ad content is capped to a General maturity rating.</p>
+
+  <h2>Your data, your control</h2>
+  <ul>
+    <li><strong>Backup / restore:</strong> Settings → Data lets you export everything you have created to a file you control, and re-import it (for example onto a new device). This file never touches any server — it is written directly to storage you choose through the Android system file picker.</li>
+    <li><strong>Deletion:</strong> uninstalling the app removes all locally stored data. There is no server-side copy to separately delete, because none is ever created.</li>
+  </ul>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the "Last updated" date above will change and the current version will always be available at this address.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy or your privacy? Email <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>.</p>
+
+  <footer>
+    Noor: Read/Listen Quran Offline is published by Ecom Swift LLC. &copy; 2026 Ecom Swift LLC. All rights reserved.
+  </footer>
+</div>
+</body>
+</html>
