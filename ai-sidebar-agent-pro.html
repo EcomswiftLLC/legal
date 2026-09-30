@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+:root{--card:#fff;--border:#e6e7f2;--ink:#1a1f2e;--muted:#6b7288;--primary:#4f46e5;--primary-ink:#4338ca;--primary-soft:#eef0fe;--green:#17b890;--green-ink:#0e9e78;--amber:#4f46e5}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--ink);padding:18px 16px 22px;display:flex;align-items:flex-start;justify-content:center}
+.card{max-width:600px;width:100%;text-align:center}
+.logo{margin-bottom:6px;line-height:0}
+.logo svg{width:54px;height:54px;display:inline-block;vertical-align:middle;filter:drop-shadow(0 3px 8px rgba(79,70,229,.28))}
+.eyebrow{color:var(--primary-ink);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+h1{font-size:29px;line-height:1.14;font-weight:800;margin-bottom:8px}
+.sub{font-size:14.5px;color:var(--muted);line-height:1.5;margin:0 auto 16px;max-width:520px}
+.feats{display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left;margin:0 auto 16px;max-width:490px}
+.feat{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:10px 13px;font-size:13.5px;display:flex;gap:9px;align-items:center;box-shadow:0 1px 3px rgba(26,31,46,.04)}
+.feat .dot{color:var(--green);font-weight:800}
+.plans{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 22px;min-width:158px;cursor:pointer;text-align:center;box-shadow:0 2px 8px rgba(26,31,46,.05);transition:transform .12s,border-color .12s,box-shadow .12s;font-family:inherit;color:var(--ink)}
+.plan:hover{transform:translateY(-3px);border-color:var(--primary);box-shadow:0 12px 26px rgba(79,70,229,.22)}
+.plan .pn{font-size:14px;font-weight:700;color:var(--primary-ink)}
+.plan .pp{font-size:26px;font-weight:800;margin:3px 0;line-height:1}
+.plan .ps{font-size:11px;color:var(--muted)}
+.plan .badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--muted);border-radius:6px;padding:3px 8px;margin-top:8px}
+.plan .badge.save{background:var(--green)}
+.plan .badge.pop{background:var(--primary)}
+.plan .badge.val{background:var(--amber)}
+.plan.best{border-color:var(--primary);background:var(--primary-soft);box-shadow:0 12px 30px rgba(79,70,229,.18);transform:translateY(-5px)}
+.plan.best:hover{border-color:var(--primary-ink);transform:translateY(-8px)}
+.plan.best .badge.pop{background:var(--primary);color:#fff}
+.trust{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:4px auto 6px;max-width:520px}
+.tb{display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:999px;padding:7px 13px;font-size:12px;color:#48506b;font-weight:600;box-shadow:0 1px 2px rgba(26,31,46,.03)}
+.secured{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.5;display:flex;align-items:center;gap:7px;justify-content:center}
+.secured .lock{color:var(--green-ink)}
+.pay{margin-top:7px;font-size:12.5px;color:var(--muted)}
+.pay b{color:var(--ink);font-weight:600}
+.faq{max-width:520px;margin:16px auto 0;text-align:left}
+.faq-master{background:none;border:none;padding:0;margin:0}
+.faq-master>summary{list-style:none;cursor:pointer;font-size:16px;font-weight:800;color:var(--ink);padding:13px 18px;background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 3px rgba(26,31,46,.04);display:flex;align-items:center;justify-content:center;gap:9px}
+.faq-master>summary::-webkit-details-marker{display:none}
+.faq-master>summary::after{content:"+";color:var(--primary);font-size:20px;font-weight:700;line-height:1}
+.faq-master[open]>summary::after{content:"\2013"}
+.faq-list{margin-top:12px}
+.faq-list details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:0 16px;margin-bottom:10px;box-shadow:0 1px 3px rgba(26,31,46,.04)}
+.faq-list summary{list-style:none;cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);padding:14px 0;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";color:var(--primary);font-size:19px;font-weight:700;flex:0 0 auto;line-height:1}
+.faq-list details[open] summary::after{content:"\2013"}
+.faq .a{font-size:13.5px;color:var(--muted);line-height:1.6;padding:0 0 15px}
+.faq .a a{color:var(--primary-ink);text-decoration:none;font-weight:600}
+.support{max-width:520px;margin:14px auto 0;background:var(--primary-soft);border:1px solid #dfe2ff;border-radius:12px;padding:13px 16px;text-align:center;font-size:13px;line-height:1.7}
+.support b{color:var(--primary-ink)}
+.support a{color:var(--primary-ink);text-decoration:none;font-weight:700}
+.overlay{position:fixed;inset:0;background:rgba(255,255,255,.97);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:9999;text-align:center;padding:20px}
+.overlay.on{display:flex}
+.spinner{width:44px;height:44px;border:4px solid #dcdafb;border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.overlay h3{font-size:19px;margin-bottom:6px}
+.overlay p{font-size:13.5px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="logo"><svg viewBox="0 0 128 128" role="img" aria-label="AI Sidebar Agent"><defs><linearGradient id="aig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#4338ca"/></linearGradient></defs><rect x="1" y="1" width="126" height="126" rx="28" fill="url(#aig)"/><rect x="74" y="26" width="30" height="76" rx="8" fill="#fff" opacity=".92"/><g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M40 46a10 10 0 0 0 10 -10c0 2.6 4 2.6 4 0a10 10 0 0 0 10 10c2.6 0 2.6 4 0 4a10 10 0 0 0 -10 10c0 2.6 -4 2.6 -4 0a10 10 0 0 0 -10 -10c-2.6 0 -2.6 -4 0 -4"/></g><g fill="#c7d2fe"><circle cx="89" cy="44" r="3.4"/><circle cx="89" cy="58" r="3.4"/><circle cx="89" cy="72" r="3.4"/></g></svg></div>
+<div class="eyebrow">AI Sidebar Agent</div>
+<h1>Your AI copilot on every page.</h1>
+<p class="sub">You already use the free tools every day. Go Pro to unlock the Humanizer, SEO optimizer, Article writer, Fact check and Chat with any page or PDF, plus unlimited saved prompts and cross-device sync. The free tools stay free forever.</p>
+<div class="feats">
+<div class="feat"><span class="dot">✓</span> Humanizer — AI text reads naturally</div>
+<div class="feat"><span class="dot">✓</span> SEO optimizer — titles, meta, keywords</div>
+<div class="feat"><span class="dot">✓</span> Article writer — full drafts in seconds</div>
+<div class="feat"><span class="dot">✓</span> Fact check — verify claims fast</div>
+<div class="feat"><span class="dot">✓</span> Chat with any page or PDF</div>
+<div class="feat"><span class="dot">✓</span> Unlimited saved prompts + sync</div>
+</div>
+<div class="plans">
+<button class="plan" data-plan="yearly"><div class="pn">Yearly</div><div class="pp">$39</div><div class="ps">per year</div><div class="badge save">SAVE 35%</div></button>
+<button class="plan best" data-plan="monthly"><div class="pn">Monthly</div><div class="pp">$4.99</div><div class="ps">per month</div><div class="badge pop">POPULAR</div></button>
+<button class="plan" data-plan="lifetime"><div class="pn">Lifetime</div><div class="pp">$59</div><div class="ps">one-time</div><div class="badge val">BEST VALUE</div></button>
+</div>
+<div class="trust">
+<div class="tb">🔒 Secure SSL checkout</div>
+<div class="tb">↩️ Cancel anytime, no lock-in</div>
+<div class="tb">⚡ Instant activation</div>
+</div>
+<div class="secured"><span class="lock">🔒</span> Payments are processed securely by Wix. We never see or store your card details.</div>
+<div class="pay">Pay with <b>PayPal</b>, <b>credit &amp; debit cards</b>, <b>Google Pay</b> or <b>Apple Pay</b>.</div>
+<div class="faq">
+<details class="faq-master">
+<summary>Frequently asked questions</summary>
+<div class="faq-list">
+<details><summary>How do I unlock Pro after I pay?</summary><div class="a">Open the extension, click <b>Upgrade</b> then <b>Already purchased? Unlock</b>, and enter the email you paid with. Pro unlocks instantly — no account, no sign-in — even if you checked out as a guest.</div></details>
+<details><summary>Can I cancel anytime? How do I cancel?</summary><div class="a">Yes, cancel anytime with no lock-in and no cancellation fee. Open the extension, go to <b>Settings</b> and click <b>Cancel subscription</b> — one click, no sign-in. You keep Pro until the end of the period you already paid for. Prefer we do it? Email or call and we'll cancel it instantly.</div></details>
+<details><summary>What do the free tools include?</summary><div class="a">Chat, Summarize, Translate, Grammar, Rewrite, Explain, Email reply, Read aloud, Image grab, Page scan and Extract data — all free, forever, powered by the on-device model. Pro adds the advanced writing and research tools.</div></details>
+<details><summary>What payment methods can I use?</summary><div class="a">PayPal, credit &amp; debit cards, Google Pay and Apple Pay. You can check out as a guest with just your email, no account required.</div></details>
+<details><summary>Is my payment secure?</summary><div class="a">Yes. Payments are processed securely by Wix Payments over an encrypted (SSL) connection. We never see or store your card details.</div></details>
+<details><summary>Will I be charged again automatically?</summary><div class="a">Monthly and yearly plans renew automatically until you cancel. The Lifetime plan is a single one-time payment, it never recurs.</div></details>
+<details><summary>How fast is support if I need help?</summary><div class="a">Instant, 24/7. Email <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> or call <a href="tel:+16312511767">+1 631 251 1767</a> and a real person will help right away.</div></details>
+</div>
+</details>
+</div>
+<div class="support">🎧 <b>Instant 24/7 support</b><br><a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> &nbsp;·&nbsp; <a href="tel:+16312511767">+1 631 251 1767</a></div>
+</div>
+<div class="overlay" id="overlay"><div class="spinner"></div><h3>Redirecting to secure checkout...</h3><p>One moment, taking you to our secure Wix checkout.</p></div>
+<script>
+function ph(){parent.postMessage({type:'ab-h',height:Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.body.offsetHeight)+4},'*')}
+function pump(){ph();[40,160,400].forEach(function(t){setTimeout(ph,t)})}
+addEventListener('load',pump);addEventListener('resize',ph);
+if(window.ResizeObserver)new ResizeObserver(ph).observe(document.body);
+document.querySelectorAll('.faq details').forEach(function(d){d.addEventListener('toggle',pump)});
+document.querySelectorAll('.plan').forEach(function(b){b.addEventListener('click',function(){document.getElementById('overlay').classList.add('on');parent.postMessage({type:'ab-checkout',plan:b.getAttribute('data-plan')},'*')})});
+</script>
+</body>
+</html>
