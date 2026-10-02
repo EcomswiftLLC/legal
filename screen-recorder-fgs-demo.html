@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screen Recorder &amp; Screenshot - Foreground Service Demonstration</title>
+<meta name="description" content="Demonstration of the media projection, microphone and camera foreground service in the Screen Recorder &amp; Screenshot app by Ecom Swift LLC.">
+<style>
+  :root{--bg:#161012;--card:#1f1619;--ink:#f5eef0;--muted:#b9a9ae;--brand:#ff7a8c;--line:#33242a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  h1{font-size:22px;margin:0 0 6px}
+  p.sub{color:var(--muted);margin:0 0 24px}
+  video{width:100%;max-width:340px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:24px}
+  h2{font-size:15px;color:var(--brand);margin:0 0 8px;text-transform:uppercase;letter-spacing:.08em}
+  ol{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:28px}
+  a{color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Screen Recorder &amp; Screenshot: Foreground Service</h1>
+  <p class="sub">Ecom Swift LLC. Demonstration for the Google Play foreground service declaration.</p>
+
+  <div class="card">
+    <h2>Video 1: media projection and microphone</h2>
+    <video controls playsinline preload="metadata" src="screen-recorder-fgs-demo.mp4"></video>
+    <ol>
+      <li>The user opens the app and taps <strong>Start recording</strong>.</li>
+      <li>Android shows its own screen capture consent dialog and the user accepts it.</li>
+      <li>After the countdown, recording starts. A notification with <strong>Pause</strong>, <strong>Stop</strong> and <strong>Screenshot</strong> stays visible for the whole recording. This is the <code>FOREGROUND_SERVICE_MEDIA_PROJECTION</code> service. When the user chose a microphone option the notification reads "With Microphone" (<code>FOREGROUND_SERVICE_MICROPHONE</code>).</li>
+      <li>The user taps <strong>Stop</strong>. The video is saved on the device and plays back in the app gallery.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Video 2: optional facecam (camera)</h2>
+    <video controls playsinline preload="metadata" src="screen-recorder-fgs-demo-facecam.mp4"></video>
+    <ol>
+      <li>The optional Premium facecam shows the front camera in a small draggable bubble on screen while a recording that the user started is running (<code>FOREGROUND_SERVICE_CAMERA</code>).</li>
+      <li>The camera is only used while the user's recording is running. Nothing is uploaded; recordings stay on the device.</li>
+    </ol>
+  </div>
+
+  <footer>Contact: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> · <a href="screen-recorder-privacy.html">Privacy policy</a></footer>
+</div>
+</body>
+</html>
