@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — AI Sales Assistant for Wix</title>
+<meta name="description" content="Privacy Policy for the AI Sales Assistant app for Wix by Ecom Swift LLC.">
+<style>
+  :root{ --bg:#ffffff; --ink:#1f2430; --muted:#5b6275; --line:#e4e6f0; --brand:#4338ca; --soft:#f6f6fd; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:10px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  .meta{color:var(--muted);font-size:14px;margin:0}
+  h2{font-size:18px;margin:34px 0 10px;color:var(--brand)}
+  p,li{color:#2b3040}
+  a{color:var(--brand)}
+  .lead{font-size:17px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600}
+  .callout{background:var(--soft);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 16px;margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Ecom Swift LLC</div>
+    <h1>Privacy Policy — AI Sales Assistant for Wix</h1>
+    <p class="meta">Last updated: October 6, 2026</p>
+  </header>
+
+  <p class="lead">AI Sales Assistant is a Wix app, published by Ecom Swift LLC, that adds an AI chat assistant to a Wix site. It answers visitors' questions from the site's own content, collects contact details when a visitor chooses to share them, and shows the site owner what visitors ask. This policy explains what data the app handles and why.</p>
+
+  <div class="callout"><strong>Two roles.</strong> The site owner who installs the app (the "merchant") decides what the assistant is used for and is the controller of their visitors' data. Ecom Swift LLC acts as the merchant's processor and only handles that data to run the app.</div>
+
+  <h2>1. What the app processes</h2>
+  <table>
+    <tr><th>Whose data</th><th>What</th><th>Why</th></tr>
+    <tr><td>Site visitors</td><td>Chat messages they type; the page address they were on; name, e-mail and phone number <em>only if they enter them</em>; a random anonymous visitor ID kept in their browser.</td><td>To answer the question, continue the conversation, let the merchant follow up, and report real usage.</td></tr>
+    <tr><td>Merchant</td><td>Site name, address, language and currency (supplied by Wix); the business details, FAQs and settings they enter; text of their published pages and their Wix Stores catalog, which the app reads to build the assistant's knowledge.</td><td>To run and configure the assistant, and to apply fair-use limits.</td></tr>
+    <tr><td>Both</td><td>Aggregate usage events such as "conversation started" or "lead captured".</td><td>To show analytics and enforce monthly fair-use limits.</td></tr>
+  </table>
+  <p>The app does not read payment details, passwords or visitors' browsing across other sites, and it sets no advertising or tracking cookies.</p>
+
+  <h2>2. Where data is stored</h2>
+  <p>All conversation, lead, knowledge and settings data is stored in private data collections that belong to the app on the merchant's own Wix site (Wix Data). Each site's data is separated from every other site's. Ecom Swift LLC does not copy it into any other database.</p>
+
+  <h2>3. AI processing</h2>
+  <p>To write a reply, the visitor's message, the recent turns of that conversation and the most relevant passages of the merchant's own knowledge are sent to an AI model through an API. By default this is <strong>Wix AI</strong>, which runs on the merchant's own Wix account and AI credits, so no separate AI account or key is involved. The merchant may instead choose to connect their own API key from Google (Gemini), Groq, OpenRouter, Anthropic, OpenAI or another OpenAI-compatible service, in which case that provider receives the same text and handles it under its own terms and the merchant's own account with it. Before this happens the app replaces any e-mail address or phone number found in the visitor's text with a placeholder, because contact details are captured by the app itself and the model does not need them. Ecom Swift LLC does not use this data to train any model. A key supplied by the merchant is stored encrypted, is never shown again after it is saved (only its last four characters), and can be removed by the merchant at any time; deleting the app deletes it. When no AI source is available, replies come only from the merchant's FAQs and synced knowledge and nothing is sent to a model provider.</p>
+
+  <h2>4. Other service providers</h2>
+  <ul>
+    <li><strong>Wix</strong> hosts the app and stores its data, and provides the site's identity.</li>
+    <li><strong>Wix AI</strong> (by default) or <strong>the AI provider the merchant chose to connect</strong> (Google, Groq, OpenRouter, Anthropic, OpenAI or another compatible service) processes chat text as described above, only to write replies.</li>
+    <li><strong>Resend</strong> delivers e-mail notifications to the merchant (for example "new lead"), only when the merchant switches notifications on. Such e-mails contain the lead details the visitor shared.</li>
+  </ul>
+  <p>We do not sell personal data and we do not share it for advertising.</p>
+
+  <h2>5. Retention and deletion</h2>
+  <ul>
+    <li>Conversations and analytics events are kept for the period the merchant chooses in Settings (365 days by default, between 7 days and 3 years). The merchant can switch conversation storage off, in which case transcripts are removed after one day.</li>
+    <li>Leads are the merchant's business records and are kept until the merchant deletes them.</li>
+    <li>When the app is removed from a site, all of that site's data held by the app is deleted.</li>
+  </ul>
+
+  <h2>6. Security</h2>
+  <p>Data is encrypted in transit. Every request is tied to the verified Wix site it comes from, and administration is limited to the site owner and collaborators. Visitor sessions are signed per site, requests are rate limited, text from web pages and visitors is treated as untrusted when it reaches the AI model, and the assistant can only link to addresses the merchant configured. No secrets are stored in the app's code.</p>
+
+  <h2>7. Browser storage</h2>
+  <p>To let a visitor continue a chat after a page change, the chat widget keeps a random visitor ID and the conversation ID in the visitor's browser storage on that site. It contains no personal information and can be cleared at any time by clearing site data.</p>
+
+  <h2>8. Your rights</h2>
+  <p>Visitors can ask the site owner to access, correct or delete the data they shared in a chat. Merchants can export and delete leads in the app and can ask us to help with any request. We respond to requests relating to data we process within 30 days.</p>
+
+  <h2>9. Children</h2>
+  <p>The app is built for businesses and is not directed at children under 13.</p>
+
+  <h2>10. Changes</h2>
+  <p>If we change this policy in a material way we will update the date above and notify merchants in the app.</p>
+
+  <footer>
+    <p><strong>Contact.</strong> Ecom Swift LLC · <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> · WhatsApp +1 631 251 1767</p>
+  </footer>
+</div>
+</body>
+</html>
