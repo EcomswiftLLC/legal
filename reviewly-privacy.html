@@ -68,7 +68,7 @@
   <ul>
     <li>Reviews, uploaded media and the request log are kept until the merchant deletes them. Merchants can delete reviews one by one or in bulk from the app, including a reviewer's review when that reviewer asks.</li>
     <li>The opt-out list is kept so that opt-outs continue to be honoured, and it holds hashes only.</li>
-    <li>The app does not delete anything automatically when it is removed from a site. The collections the app created stay in the site's data, and uploaded files stay in its Media Manager, until the merchant deletes them. To have this done, or for help with any deletion request, write to <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>.</li>
+    <li>When the app is removed from a site, it tries to delete its pending review-request queue, its request log and its settings, and to remove the e-mail addresses stored on reviews. It deliberately keeps the reviews themselves (they belong to the merchant) and the opt-out list, which holds one-way hashes only, so that a buyer who unsubscribed is never e-mailed again if the app is installed again. Wix, not the app, controls what is still reachable after removal, so if anything remains, or for help with any deletion request, write to <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>. Uploaded files stay in the site's Media Manager until the merchant deletes them.</li>
   </ul>
 
   <h2>6. Security</h2>
