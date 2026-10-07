@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy policy - Reviewly help center</title>
+<meta name="description" content="What Reviewly stores, where it lives, who processes it and what happens when you uninstall.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+<div class="bar-in">
+<a class="brand" href="index.html">Reviewly<small>Help center</small></a>
+<nav aria-label="Main"><ul><li><a href="index.html">Help center</a></li><li><a href="install-and-use-guide.html">Install and use</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html" aria-current="page">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+</div>
+</header>
+<main id="main">
+
+<div class="prose">
+<p class="eyebrow">Privacy policy</p>
+<h1>Privacy policy for Reviewly</h1>
+<hr class="rule">
+<p class="meta">Last updated: October 7, 2026</p>
+<p class="lead">Reviewly keeps reviews, questions and settings in your own Shopify store. Our servers handle only what Shopify cannot do for an app: receive signed requests from your storefront, hold an encrypted access token and send review request e-mails.</p>
+
+<h2 id="who">Who we are</h2>
+<p>Reviewly: Photo &amp; UGC reviews is provided by Ecom Swift LLC (&ldquo;we&rdquo;). Contact: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>. This policy covers the Reviewly app, its storefront widgets and this help center.</p>
+<p>For the reviews and questions that shoppers send, the store owner decides what is collected and why, and we process that data on the store owner&rsquo;s behalf. For the store owner&rsquo;s own details (see below), we are responsible for them ourselves.</p>
+
+<h2 id="where">Where your data lives</h2>
+<dl class="map">
+<div><dt>Reviews, questions, replies</dt><dd>In your Shopify store, as app-owned metaobjects. Pending, hidden and spam entries are not readable by the storefront.</dd></div>
+<div><dt>Photos and videos</dt><dd>In your store&rsquo;s Shopify Files.</dd></div>
+<div><dt>Ratings and what the widgets print</dt><dd>In product and shop metafields in your store.</dd></div>
+<div><dt>Settings (moderation rules, e-mail wording, reward)</dt><dd>In a private shop metafield in your store.</dd></div>
+<div><dt>Your own e-mail provider key, if you add one</dt><dd>In a private shop metafield, encrypted before it is stored.</dd></div>
+<div><dt>Which orders were already asked for a review</dt><dd>In a private metafield on each order in your store.</dd></div>
+<div><dt>On our servers</dt><dd>Only the items in the next section.</dd></div>
+</dl>
+
+<h2 id="ours">What we keep on our servers</h2>
+<p>Our servers run on Cloudflare. For each store that installs Reviewly we keep:</p>
+<ul>
+<li>the store address, store name, the store&rsquo;s contact e-mail address, time zone, the permissions granted and install and uninstall dates;</li>
+<li>the access token Shopify gives the app, encrypted (AES-GCM) before it is stored;</li>
+<li>a one-way fingerprint (a salted hash) of each e-mail address that clicked unsubscribe in a review request. The address itself is not kept;</li>
+<li>short technical records: receipts of Shopify webhooks (kept 14 days), daily request counters (kept 60 days), and a log entry for install, uninstall and privacy requests. A receipt of a customer data request holds only ids and counts and is kept 30 days.</li>
+</ul>
+<p>We do not keep review text, reviewer names, photos, customer e-mail addresses or order contents on our servers. Server logs record reasons and topics, not request bodies, tokens or e-mail addresses.</p>
+
+<h2 id="shoppers">When a shopper writes a review</h2>
+<p>The review form sends the rating, the title and text, the name the shopper typed and any photos or videos to our server through Shopify&rsquo;s app proxy. Every request is signed by Shopify and checked. The server applies the store&rsquo;s moderation rules and writes the review into the store&rsquo;s own Shopify data. The photos and videos are uploaded straight to the store&rsquo;s Shopify Files.</p>
+<p>To mark a review as a verified buyer, the server checks the order named by the signed link in the review request e-mail, or the orders of the logged-in customer, through Shopify&rsquo;s API. A review stores a one-way fingerprint of the buyer and of the order line so it can detect a second review of the same purchase. The shopper&rsquo;s e-mail address is not stored.</p>
+<p>To limit abuse and duplicate votes, the server combines the shopper&rsquo;s IP address and browser type, or the logged-in customer id, into a one-way code that is used briefly in memory. It is not written to storage or logs. The widget remembers which reviews a visitor marked helpful in the browser&rsquo;s local storage on that device. The widget sets no cookies.</p>
+
+<h2 id="email">Review request e-mails</h2>
+<p>When a store turns on e-mail requests, a scheduled job reads the store&rsquo;s fulfilled orders through Shopify&rsquo;s API. For each order it uses the customer&rsquo;s e-mail address and first name and the product names and images, and sends one e-mail. This needs Shopify&rsquo;s protected customer data approval. We do not store those details; we only note on the order, in the store&rsquo;s own data, that a request was sent.</p>
+<p>The e-mail is sent through a shared sending service operated by Ecom Swift LLC using Brevo or Resend, or through the store&rsquo;s own Resend or Brevo account if the merchant added a key. The provider receives the recipient address, name and message to deliver it.</p>
+
+<h2 id="ai">Optional AI features</h2>
+<p>When a merchant presses Moderate with AI or Draft a reply, the text of the reviews involved (limited in number and length) is sent to Cloudflare Workers AI to produce a suggestion. The suggestion is shown to the merchant, who decides what to apply. Nothing is sent to AI automatically.</p>
+
+<h2 id="others">Who else handles data</h2>
+<ul>
+<li><strong>Shopify</strong> hosts your store and the data in it, and delivers requests to us.</li>
+<li><strong>Cloudflare</strong> hosts our servers, our small database and the AI service.</li>
+<li><strong>Brevo and Resend</strong> deliver review request e-mails when a store sends them.</li>
+</ul>
+<p>We do not sell personal data and we do not use it for advertising. The storefront widgets load nothing from other sites and contain no advertising or analytics trackers.</p>
+
+<h2 id="permissions">Why Reviewly asks for each permission</h2>
+<dl class="map">
+<div><dt>Orders and customers (read), fulfillments</dt><dd>To mark a review as a verified buyer and to find fulfilled orders for review request e-mails.</dd></div>
+<div><dt>Orders (write)</dt><dd>To record on an order that a review request was sent. It is the only change the app makes to an order.</dd></div>
+<div><dt>Products (read and write)</dt><dd>To read product names and links and to write each product&rsquo;s rating and the data the widgets print.</dd></div>
+<div><dt>Files (read and write)</dt><dd>To store and read review photos and videos.</dd></div>
+<div><dt>Discounts (write)</dt><dd>To create the single-use code of the optional photo review reward.</dd></div>
+<div><dt>Metaobjects and their definitions (read and write)</dt><dd>To store reviews and questions in your store and to create the structure they need.</dd></div>
+</dl>
+
+<h2 id="security">Security</h2>
+<p>Access tokens and merchant keys are encrypted before storage. Requests from your storefront, Shopify webhooks and the admin are verified before they are acted on. No system is perfectly secure, and we cannot promise it.</p>
+
+<h2 id="uninstall">Uninstalling, retention and deletion</h2>
+<ul>
+<li>When the app is uninstalled, our copy of the access token is removed at once and the store is marked uninstalled.</li>
+<li>About 48 hours after uninstall, Shopify sends a store erasure request. We then delete the store record, the unsubscribe fingerprints and the log entries we hold for it.</li>
+<li>Your reviews, questions, settings and files are in your own store, not on our servers. When an app is uninstalled, Shopify removes the app&rsquo;s data definitions and keeps the entries for a period Shopify does not publish. Export anything you want to keep before uninstalling, and do not rely on a reinstall to restore it.</li>
+<li>When Shopify sends a customer erasure request, that customer&rsquo;s reviews and questions are kept as part of the store&rsquo;s catalog, but the name is replaced with Anonymous, the link to the person is removed and their photos and videos are deleted. The product ratings are recalculated. The person&rsquo;s unsubscribe fingerprint is kept so they are not e-mailed again.</li>
+<li>When Shopify sends a customer data request, we record the ids and counts of that customer&rsquo;s reviews and questions for 30 days, and the store owner can export the entries from the Shopify admin.</li>
+</ul>
+
+<h2 id="rights">Shoppers and your rights</h2>
+<p>If you wrote a review or asked a question on a store and want a copy, a correction or deletion, contact that store first, because it holds the data. The store can send the request to us through Shopify, or you can write to <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> and tell us the store and the e-mail address you used; we will pass the request to the store or act on it as described above.</p>
+
+<h2 id="changes">Changes</h2>
+<p>If we change this policy in a way that matters, we will update the date above and describe the change in the <a href="changelog.html">changelog</a>.</p>
+
+<h2 id="contact">Contact</h2>
+<p>Ecom Swift LLC, <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>.</p>
+</div>
+
+</main>
+<footer class="site">
+<div class="in">
+<p>Reviewly: Photo &amp; UGC reviews is made by Ecom Swift LLC.<br>Support: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> &middot; WhatsApp <a href="https://wa.me/16312511767">+1 631 251 1767</a></p>
+<ul aria-label="Footer"><li><a href="install-and-use-guide.html">Install and use</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="changelog.html">Changelog</a></li></ul>
+</div>
+</footer>
+</body>
+</html>
