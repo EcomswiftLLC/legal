@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuition and Payment Plan | GIA Advocate University</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0f1f3d;--navy2:#162a52;--gold:#c9a24a;--gold2:#e2c178;--cream:#faf7f1;--ink:#1c2230;--muted:#5b6478;--line:#e6e0d2;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--cream);color:var(--ink);font-family:'Montserrat',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:64px 0 56px;text-align:center;position:relative;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(201,162,74,.22),transparent 45%),radial-gradient(circle at 10% 90%,rgba(201,162,74,.14),transparent 40%)}
+  .hero .wrap{position:relative}
+  .eyebrow{display:inline-block;letter-spacing:.22em;text-transform:uppercase;font-size:11px;font-weight:600;color:var(--gold2);border:1px solid rgba(226,193,120,.5);padding:8px 14px;border-radius:999px;margin-bottom:22px}
+  h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-.01em}
+  .hero p{max-width:640px;margin:18px auto 0;font-size:16px;line-height:1.7;color:rgba(255,255,255,.82)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:-34px auto 0;position:relative;z-index:2}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;box-shadow:0 18px 40px rgba(15,31,61,.08);text-align:center}
+  .card .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .card .amt{font-family:'Cormorant Garamond',Georgia,serif;font-size:50px;font-weight:700;color:var(--navy);margin:10px 0 6px;line-height:1}
+  .card .sub{font-size:14px;color:var(--muted);line-height:1.55}
+  .card.gold{background:var(--navy);border-color:var(--navy)}
+  .card.gold .lbl{color:var(--gold2)}.card.gold .amt{color:#fff}.card.gold .sub{color:rgba(255,255,255,.78)}
+  section{padding:56px 0}
+  h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(28px,3.4vw,38px);font-weight:600;color:var(--navy);text-align:center;margin-bottom:10px}
+  .lead{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 40px;line-height:1.7;font-size:15px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px;position:relative}
+  .step .n{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:16px}
+  .step h3{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:8px}
+  .step p{font-size:14px;line-height:1.65;color:var(--muted)}
+  .terms{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px 32px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  .terms h2{text-align:left;margin-bottom:16px}
+  .terms ul{list-style:none}
+  .terms li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.55}
+  .terms li:last-child{border-bottom:0}
+  .tick{flex:0 0 22px;height:22px;border-radius:50%;background:rgba(201,162,74,.18);color:var(--navy);font-size:13px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-top:2px}
+  .side{background:var(--cream);border-radius:14px;padding:26px}
+  .side h4{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:600}
+  .row{display:flex;justify-content:space-between;font-size:15px;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .row:last-of-type{border-bottom:0}.row b{color:var(--navy)}
+  .total{display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:2px solid var(--navy);font-weight:700;color:var(--navy);font-size:17px}
+  .cta{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;text-align:center;padding:60px 0;border-radius:24px;margin-bottom:56px}
+  .cta h2{color:#fff}
+  .cta p{color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 28px;line-height:1.7;font-size:15px}
+  .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 30px;border-radius:999px;font-weight:600;font-size:14px;letter-spacing:.04em;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.18)}
+  .btn.primary{background:var(--gold);color:var(--navy)}
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+  .note{text-align:center;color:var(--muted);font-size:13px;line-height:1.7;max-width:720px;margin:-26px auto 56px}
+  .note .flag{color:#a06a00;font-weight:600}
+  @media (max-width:860px){.cards,.steps{grid-template-columns:1fr}.terms{grid-template-columns:1fr;padding:28px 22px}.hero{padding:52px 0 60px}.card .amt{font-size:44px}section{padding:44px 0}}
+</style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Tuition &amp; Payment Plan</span>
+      <h1>Invest in Your Calling.<br>Clear Terms, No Surprises.</h1>
+      <p>GIA Advocate University keeps tuition simple. Reserve your seat with a deposit, complete your program, and receive your certification once tuition is paid in full.</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="cards">
+      <div class="card">
+        <div class="lbl">Program Tuition</div>
+        <div class="amt">$2,500</div>
+        <div class="sub">Total tuition for the full program, including instruction and course access.</div>
+      </div>
+      <div class="card gold">
+        <div class="lbl">Enrollment Deposit</div>
+        <div class="amt">$500</div>
+        <div class="sub">Due at enrollment to reserve your seat and unlock your new student course access.</div>
+      </div>
+      <div class="card">
+        <div class="lbl">Remaining Balance</div>
+        <div class="amt">$2,000</div>
+        <div class="sub">Paid in full before your certification is issued.</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>How Your Payment Plan Works</h2>
+      <p class="lead">Three simple steps from application to certification.</p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Apply and Enroll</h3><p>Submit your application. Once accepted, pay the $500 enrollment deposit to secure your place in the program.</p></div>
+        <div class="step"><div class="n">2</div><h3>Begin Your Studies</h3><p>Your deposit activates your new student course access. Start learning right away while you complete your remaining tuition.</p></div>
+        <div class="step"><div class="n">3</div><h3>Complete and Certify</h3><p>Finish your coursework and pay the remaining $2,000 balance. Your certification is issued once tuition is paid in full.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="terms">
+        <div>
+          <h2>Payment Terms</h2>
+          <ul>
+            <li><span class="tick">&#10003;</span><span>Total program tuition is <b>$2,500</b>.</span></li>
+            <li><span class="tick">&#10003;</span><span>A <b>$500 deposit</b> is required at enrollment to reserve your seat.</span></li>
+            <li><span class="tick">&#10003;</span><span>The remaining <b>$2,000 balance</b> may be paid at any point during your program.</span></li>
+            <li><span class="tick">&#10003;</span><span><b>Full payment is required before certification</b> is issued.</span></li>
+            <li><span class="tick">&#10003;</span><span>Questions about your account? Call <b>404-585-0984</b> or email <b>giaprocess@gmail.com</b>.</span></li>
+          </ul>
+        </div>
+        <aside class="side">
+          <h4>Tuition Summary</h4>
+          <div class="row"><span>Program tuition</span><b>$2,500</b></div>
+          <div class="row"><span>Enrollment deposit (due now)</span><b>$500</b></div>
+          <div class="row"><span>Balance before certification</span><b>$2,000</b></div>
+          <div class="total"><span>Total</span><span>$2,500</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cta">
+      <h2>Ready to Take the Next Step?</h2>
+      <p>Submit your application today, or sign in to your new student course if you have already enrolled.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://www.giaadvocateuniversity.com/copy-of-registration" target="_top">Apply for Programs</a>
+        <a class="btn ghost" href="https://picture-fidelity-app.lovable.app" target="_blank" rel="noopener">New Student Course Login</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
