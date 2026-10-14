@@ -12,7 +12,7 @@
 <li>WorkZen has no account, no analytics, no ads and no tracking.</li>
 <li>Your tasks, notes, time entries and settings stay in your own Chrome profile on your own device.</li>
 <li>WorkZen does not read the websites you visit or your browsing history.</li>
-<li>The only personal data that can leave your device is the email address you type to unlock Premium. It is sent to our license server to check your plan.</li>
+<li>The only personal data that can leave your device is the email address used to unlock Premium (typed by you, or the one you enter at our checkout). It is sent to our license server to check your plan.</li>
 </ul>
 <h2>What WorkZen stores, and where</h2>
 <p>WorkZen saves the following in <code>chrome.storage.local</code>, inside your Chrome profile on your computer:</p>
@@ -27,7 +27,7 @@
 <p>WorkZen does not sync this data. It is not encrypted by WorkZen beyond the protection your operating system and Chrome profile provide. Anyone with access to your unlocked computer and Chrome profile can read it.</p>
 <h2>Data that leaves your device</h2>
 <ol>
-<li><strong>Premium unlock and checks.</strong> If you buy Premium and unlock it, WorkZen sends the email you typed, plus the product name <code>workzen</code>, to <code>www.ecomswiftllc.com</code>. The server answers with your plan. WorkZen repeats this check about once a day in the background while a license is stored. If you cancel the monthly plan from inside WorkZen, it sends your email and order number to the same server. Free users send nothing. This email is used only to look up your plan and is handled under our privacy practices at ecomswiftllc.com.</li>
+<li><strong>Premium unlock and checks.</strong> If you buy Premium and unlock it, WorkZen sends the email you typed, plus the product name <code>workzen</code>, to <code>www.ecomswiftllc.com</code>. The server answers with your plan. WorkZen repeats this check about once a day in the background while a license is stored. If you cancel the monthly plan from inside WorkZen, it sends your email and order number to the same server. Free users send nothing. <strong>Automatic unlock:</strong> when you click Get Premium, WorkZen remembers that for up to two hours. During that time a small script that runs only on <code>www.ecomswiftllc.com</code> (our own website) watches the checkout email field and, if you are signed in, asks our server whether your session has a WorkZen plan. It keeps the email on your device and WorkZen then checks that email with our license server about once a minute for up to 30 minutes, until your payment shows up, so Premium unlocks without typing. The script does nothing at all when you have not just clicked Get Premium, never reads any other field or page, and never runs on any other site. You can always unlock by typing your purchase email instead. This email is used only to look up your plan and is handled under our privacy practices at ecomswiftllc.com.</li>
 <li><strong>Links you click.</strong> The Chrome Web Store review page, our pricing page, our website, mail and WhatsApp links open normally in your browser. Those sites run under their own policies. WorkZen sends them nothing from your data. Pricing and contact links carry a short campaign tag such as <code>utm_source=workzen</code>.</li>
 </ol>
 <p>WorkZen loads no remote code, fonts, scripts or images. Everything it runs is bundled in the extension.</p>
