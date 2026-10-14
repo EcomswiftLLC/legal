@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Cartiva: Abandoned Cart &amp; Checkout Recovery</title>
+<meta name="description" content="Privacy Policy for the Cartiva - Abandoned Cart &amp; Checkout Recovery app for Wix by Ecom Swift LLC.">
+<style>
+  :root{ --bg:#ffffff; --ink:#1f2430; --muted:#5b6275; --line:#e4e6f0; --brand:#4338ca; --soft:#f6f6fd; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:10px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  .meta{color:var(--muted);font-size:14px;margin:0}
+  h2{font-size:18px;margin:34px 0 10px;color:var(--brand)}
+  p,li{color:#2b3040}
+  a{color:var(--brand)}
+  .lead{font-size:17px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600}
+  .callout{background:var(--soft);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 16px;margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Ecom Swift LLC</div>
+    <h1>Privacy Policy - Cartiva: Abandoned Cart &amp; Checkout Recovery</h1>
+    <p class="meta">Last updated: October 14, 2026</p>
+  </header>
+
+  <p class="lead">Cartiva - Abandoned Cart &amp; Checkout Recovery is a Wix app, published by Ecom Swift LLC, that helps a Wix store owner win back shoppers who left a checkout unfinished. It watches abandoned checkouts in Wix eCommerce and sends the store's own reminder emails through Wix to customers who agreed to receive marketing email. This policy explains what data the app handles, where it lives and why.</p>
+
+  <div class="callout"><strong>Two roles.</strong> The site owner who installs the app (the "merchant") is the controller of their customers' data and decides who is emailed. Ecom Swift LLC provides the software and acts as a processor on the merchant's instructions. Wix hosts the app, stores its data on the merchant's own site and sends the emails. Ecom Swift LLC does not receive a copy of the merchant's customer data.</div>
+
+  <h2>1. Who we are</h2>
+  <p>The app is published by Ecom Swift LLC. You can reach us at <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a>.</p>
+
+  <h2>2. What the app processes</h2>
+  <table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>Abandoned checkout and cart data from Wix eCommerce: checkout and cart ids, cart contents (up to 12 lines per checkout: product name, quantity, price), totals, currency, the time of abandonment and Wix's own status. Each checkout is linked to a Wix contact id.</td><td>To detect abandoned checkouts, plan the reminders and build the email the customer receives.</td></tr>
+    <tr><td>A masked version of the customer's email address (for example <em>j***@g***.com</em>) and a one-way, salted hash of the lower-cased email address. The salt is unique to each site. The full email address, name, address and phone number are not stored by the app.</td><td>To let the merchant recognise a customer in the dashboard, and to match the do-not-contact list and search without keeping the address.</td></tr>
+    <tr><td>Marketing consent status, read from the customer's Wix Contact (subscribed, unsubscribed, not set, and whether the address bounced or complained).</td><td>To send only to customers who agreed to marketing email. Anything other than "subscribed", and any failed lookup, means no email.</td></tr>
+    <tr><td>Names, email addresses, phone numbers, addresses and recovery links, read live from Wix only while the merchant views a checkout or while an email is being created. They are not saved by the app.</td><td>To show the merchant who the checkout belongs to, to personalise and send the email, and to offer the merchant a manual "message on WhatsApp" link.</td></tr>
+    <tr><td>Optional storefront sign-ups: if the merchant turns on the sign-up form, a visitor can enter an email address and must tick an unticked consent box. The address is added to the merchant's Wix contacts only after that tick. The app keeps the outcome, a masked email, the hash, the contact id, the form source, the consent text version and the time.</td><td>To collect consent-based addresses before a checkout is abandoned.</td></tr>
+    <tr><td>Discount codes the app creates in the merchant's Wix store, when the merchant has switched this on: the code, its value and expiry, status and usage count, and the checkout it was made for.</td><td>To include an offer in a reminder and clean up expired codes.</td></tr>
+    <tr><td>Delivery status exactly as Wix reports it for each email (accepted, sent, failed, rejected and the failure reason such as no marketing consent or a bounced address).</td><td>To show the merchant what happened and to stop emailing addresses that cannot receive.</td></tr>
+    <tr><td>Recoveries: when a customer completes an order after a reminder, the order id, amount, discount, currency and which reminder is credited, with the contact id and email hash.</td><td>To report recovered orders to the merchant.</td></tr>
+    <tr><td>Do-not-contact list: the email hash and masked email, the reason and source, and any note the merchant adds.</td><td>To make sure excluded customers are not emailed again.</td></tr>
+    <tr><td>Settings, campaigns and email templates the merchant writes, an activity log (time, event, status, error code and ids), a short ledger of processed Wix event ids, and daily summary counts.</td><td>To run and display the service, avoid duplicate sends and keep reports available after detail rows are removed.</td></tr>
+  </table>
+  <p>The app does not track email opens or clicks. Wix does not report them to the app and the app has no such fields. It reads no payment details or passwords.</p>
+
+  <h2>3. Where data is stored and who sends the email</h2>
+  <p>The app has no database of its own. Its data lives in private data collections (Wix Data) on the merchant's own Wix site, in a space reserved for the app. Each site has its own collections, so one merchant's data is never mixed with another's. Only site administrators and the app's backend, after Wix has verified the caller, can read or change them.</p>
+  <p>Emails are sent through Wix (Wix Email Marketing transmissions) as marketing email. Wix adds a per-recipient unsubscribe link, enforces marketing consent again at send time and applies its own sending limits. Ecom Swift LLC does not operate a mail server.</p>
+
+  <h2>4. Purposes and legal basis</h2>
+  <p>We process the data only to provide the app to the merchant: detecting abandoned checkouts, sending the merchant's reminders to customers who agreed, applying quiet hours and sending limits, creating the merchant's discount codes, reporting recoveries and keeping the do-not-contact list.</p>
+  <p>The merchant decides whether and how to email its customers and needs a valid legal basis to do so. The app is designed around consent: it sends only to contacts whose Wix marketing status is subscribed. Merchants remain responsible for collecting that consent, for a postal address and sender identification in their emails where the law requires it, for their own privacy policy, and for complying with laws such as the GDPR, the UK GDPR, the CAN-SPAM Act and CASL.</p>
+
+  <h2>5. Scheduling relay (Cloudflare)</h2>
+  <p>Wix gives apps no built-in timer, so the app uses a small scheduling relay running on Cloudflare Workers, operated by Ecom Swift LLC. It exists only to wake the installed app when a reminder is due. For each site it holds the app instance id, the web address the app is woken at, the next time something is due and a failure counter. It holds no customer data: no emails, names, cart contents, orders or Wix credentials. When a site has nothing scheduled, or the app is removed, the relay's entry for it is deleted. Cloudflare, Inc. acts as our sub-processor for this limited data. If the relay is offline, reminders still go out when the merchant opens the dashboard or the store has other activity, and may then be late.</p>
+
+  <h2>6. Other service providers</h2>
+  <ul>
+    <li><strong>Wix</strong> hosts the app and the data, provides the abandoned checkouts, contacts and orders, creates discount codes, sends the emails and identifies the site owner.</li>
+    <li><strong>Cloudflare</strong> runs the scheduling relay described above.</li>
+  </ul>
+  <p>We do not sell personal data, do not share it for advertising and use no advertising network. The app has no third-party analytics and no AI model provider. It sets no cookies of its own. The optional storefront sign-up form is loaded through Wix only when the visitor's cookie choices allow it, and may keep a few small non-personal values in the visitor's browser (for example a short-lived copy of the form's settings).</p>
+
+  <h2>7. Retention and deletion</h2>
+  <table>
+    <tr><th>Data</th><th>Rule</th></tr>
+    <tr><td>Abandoned checkouts, email deliveries, recoveries, finished reminders, discount code records, storefront sign-ups, activity log</td><td>Deleted after the merchant's retention setting (default 90 days, 30 to 730). Each day is summarised first so older reports still work. Reminders still waiting to be sent are not removed by this.</td></tr>
+    <tr><td>Daily summaries (counts and totals)</td><td>Deleted after 24 months.</td></tr>
+    <tr><td>Processed-event ledger</td><td>Deleted after 14 days.</td></tr>
+    <tr><td>Settings, campaigns, email templates, do-not-contact list</td><td>Kept until the merchant deletes them or the app is removed (settings and the do-not-contact list are kept after removal, see below).</td></tr>
+    <tr><td>A contact deleted in Wix</td><td>The app removes that contact's checkouts, reminders, deliveries and do-not-contact entries. Recorded orders keep their amounts but lose the link to the contact.</td></tr>
+    <tr><td>App removed</td><td>Pending reminders are cancelled first, then customer data is erased in batches. Settings and the do-not-contact hashes are kept, and the scheduling relay entry is deleted.</td></tr>
+    <tr><td>"Erase all app data" (merchant, on demand)</td><td>Same as app removed, with a typed confirmation. Settings and the do-not-contact hashes are kept so excluded customers are not emailed again.</td></tr>
+    <tr><td>Duplicated site</td><td>Pending reminders are cancelled and sending starts paused.</td></tr>
+  </table>
+  <p>Deletion runs in the background in small batches, so it can take some time to finish on a large store. Data that Wix itself holds (contacts, orders, abandoned checkouts, sent email records) is governed by Wix and the merchant's Wix account, not by this app.</p>
+
+  <h2>8. Security</h2>
+  <p>Data is encrypted in transit. Every dashboard request is checked against a verified Wix identity, and every event from Wix is verified before it is processed. Stored data is limited to what the app needs: customer emails are kept only as a masked form and a salted one-way hash. The scheduling relay and the app sign their messages and the relay only calls allow-listed addresses. Raw technical errors are not shown to users. No system is perfectly secure, and the data in the merchant's site is also protected by the merchant's own Wix account security.</p>
+
+  <h2>9. International transfers</h2>
+  <p>Wix and Cloudflare operate globally, so data may be processed in countries other than where the merchant or the customer lives. Those providers apply their own transfer safeguards. We do not transfer personal data anywhere else.</p>
+
+  <h2>10. Your rights</h2>
+  <p>Because the merchant is the controller, customers who want to access, correct, delete or object to the use of their data, or who want to stop receiving emails, should contact the store first. Every email carries an unsubscribe link provided by Wix. Merchants can view and delete what the app stores for their site and can add any customer to the do-not-contact list. Depending on where you live (for example under the GDPR, the UK GDPR or the CCPA) you may have rights to access, correct, delete or restrict personal data. You can also write to <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a> and we will help the merchant fulfil the request. We respond within 30 days. We do not sell or share personal information as those terms are defined in the CCPA.</p>
+
+  <h2>11. Children</h2>
+  <p>The app is built for businesses and is not directed at children under 13 (or under 16 where the law sets that age). We do not knowingly process children's data for our own purposes.</p>
+
+  <h2>12. Changes</h2>
+  <p>If we change this policy in a material way we will update the date above and notify merchants in the app.</p>
+
+  <footer>
+    <p><strong>Contact.</strong> Ecom Swift LLC · <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
