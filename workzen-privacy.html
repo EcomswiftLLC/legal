@@ -1,51 +1,57 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WorkZen Privacy Policy</title>
-<style>body{font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:40px auto;padding:0 20px;color:#101b3b;background:#faf7f0}h1{font-size:34px;letter-spacing:-.02em}h2{margin-top:32px;font-size:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #e6e1d6;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f5f1e7}code{background:#f5f1e7;padding:1px 5px;border-radius:4px}a{color:#2f8f73}</style>
+<style>body{font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:780px;margin:40px auto;padding:0 20px;color:#101b3b;background:#faf7f0}h1{font-size:34px;letter-spacing:-.03em}h2{margin-top:32px;font-size:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #e6e1d6;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f5f1e7}code{background:#f5f1e7;padding:1px 5px;border-radius:4px}a{color:#1b6f4f}@media (prefers-color-scheme:dark){body{background:#0b1226;color:#eeece4}th,td{border-color:#243053}th,code{background:#17223f}a{color:#6fd0ac}}</style>
 </head><body>
 <h1>WorkZen Privacy Policy</h1>
-<p>Last updated: 13 October 2026</p>
+<p>Last updated: 14 October 2026</p>
 <p>Publisher: Ecom Swift LLC · <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
 <p>WorkZen is a productivity extension for Google Chrome. This policy describes exactly what the extension does with data. It is written from the implemented code, not from a template.</p>
 <h2>The short version</h2>
 <ul>
-<li>WorkZen has no account, no server and no analytics.</li>
-<li>Everything you enter stays in your own Chrome profile on your own device.</li>
-<li>We never receive, see, sell or share your tasks, notes, time entries or settings.</li>
+<li>WorkZen has no account, no analytics, no ads and no tracking.</li>
+<li>Your tasks, notes, time entries and settings stay in your own Chrome profile on your own device.</li>
 <li>WorkZen does not read the websites you visit or your browsing history.</li>
+<li>The only personal data that can leave your device is the email address you type to unlock Premium. It is sent to our license server to check your plan.</li>
 </ul>
 <h2>What WorkZen stores, and where</h2>
-<p>WorkZen saves the following in <code>chrome.storage.local</code>, which lives inside your Chrome profile on your computer:</p>
+<p>WorkZen saves the following in <code>chrome.storage.local</code>, inside your Chrome profile on your computer:</p>
 <ul>
-<li>Tasks (title, notes, due date and time, priority, status, project, tags, estimate)</li>
-<li>Projects (name and colour)</li>
-<li>Focus sessions and time entries (start, end, duration, linked task title)</li>
-<li>Planner time blocks</li>
-<li>Your settings (timer lengths, reminder preferences, theme, optional display name, daily goal)</li>
-<li>Internal state: the running timer, the install time, and flags for onboarding, the 48-hour recap and the review request</li>
+<li>Tasks (title, notes, subtasks, due date and time, repeat rule, priority, status, project, tags, estimate)</li>
+<li>Projects (name, colour, optional hourly rate)</li>
+<li>Focus sessions, time entries, planner time blocks and day templates</li>
+<li>Your settings, including optional display name, focus workflows, blocked-site list and schedule</li>
+<li>Internal state: the running timer, install time and counters for the 48-hour report and the review request</li>
+<li>Your Premium license record (see below)</li>
 </ul>
-<p>This data is not synced by WorkZen. If you use Chrome sync, <code>chrome.storage.local</code> is not synced by Chrome either. The data is not encrypted by WorkZen beyond the protection your operating system and Chrome profile provide. Anyone with access to your unlocked computer and Chrome profile can read it.</p>
+<p>WorkZen does not sync this data. It is not encrypted by WorkZen beyond the protection your operating system and Chrome profile provide. Anyone with access to your unlocked computer and Chrome profile can read it.</p>
 <h2>Data that leaves your device</h2>
-<p>By default, none.</p>
-<p>The only network activity is a page that opens when you click a link: the Chrome Web Store review page (once configured), this privacy policy, our website, or a mail or WhatsApp link. Those pages are run by their own operators under their own policies. WorkZen sends them nothing from your data.</p>
-<p>WorkZen loads no remote code, fonts, scripts or images. Fonts are bundled inside the extension.</p>
+<ol>
+<li><strong>Premium unlock and checks.</strong> If you buy Premium and unlock it, WorkZen sends the email you typed, plus the product name <code>workzen</code>, to <code>www.ecomswiftllc.com</code>. The server answers with your plan. WorkZen repeats this check about once a day in the background while a license is stored. If you cancel the monthly plan from inside WorkZen, it sends your email and order number to the same server. Free users send nothing. This email is used only to look up your plan and is handled under our privacy practices at ecomswiftllc.com.</li>
+<li><strong>Links you click.</strong> The Chrome Web Store review page, our pricing page, our website, mail and WhatsApp links open normally in your browser. Those sites run under their own policies. WorkZen sends them nothing from your data. Pricing and contact links carry a short campaign tag such as <code>utm_source=workzen</code>.</li>
+</ol>
+<p>WorkZen loads no remote code, fonts, scripts or images. Everything it runs is bundled in the extension.</p>
+<h2>Features that touch the browser</h2>
+<ul>
+<li><strong>Right-click &quot;Add to WorkZen as a task&quot;.</strong> When you select text and choose this menu item, WorkZen saves the selected text and the address of that page into a new task. Nothing is read or saved otherwise.</li>
+<li><strong>Website blocker.</strong> If you turn it on, Chrome asks for a permission to block content. WorkZen then blocks only the sites you list, only while the rules are active. If you also allow access to all sites so that WorkZen can show its own block page, that access is used only to redirect a blocked address to WorkZen. WorkZen never reads page content. The rules and list stay on your device. You can remove the permissions at any time.</li>
+<li><strong>Idle detection.</strong> If you track time and step away, WorkZen asks whether to keep or discard the idle time. Chrome tells WorkZen only whether the computer is idle or locked, never what you were doing.</li>
+<li><strong>Ambient sounds and the end-of-session chime</strong> are generated on your device. Nothing is downloaded or recorded.</li>
+<li><strong>Free-plan report every 48 hours.</strong> On the free plan, WorkZen can open a tab with a performance report built from your own local data, and a Premium offer. You can turn it off in Settings or from the report itself. Premium users never get it.</li>
+</ul>
 <h2>Permissions and why they are needed</h2>
-<table><thead><tr><th>Permission</th><th>Why</th></tr></thead><tbody><tr><td><code>storage</code></td><td>Saves your tasks, time and settings on your device.</td></tr><tr><td><code>alarms</code></td><td>Wakes the extension at the exact moment a timer ends or a reminder is due, even when the popup is closed.</td></tr><tr><td><code>notifications</code></td><td>Shows timer, reminder and recap notifications. You can switch every notification off in Settings.</td></tr><tr><td><code>offscreen</code></td><td>Plays the short chime when a timer ends. Chrome requires an offscreen document for sound from a background worker. It plays a locally generated tone. Nothing is recorded.</td></tr></tbody></table>
-<p>WorkZen requests no host permissions. It cannot access any website&#x27;s content.</p>
+<table><thead><tr><th>Permission</th><th>Why</th></tr></thead><tbody><tr><td><code>storage</code></td><td>Saves your tasks, time and settings on your device.</td></tr><tr><td><code>alarms</code></td><td>Wakes the extension when a timer ends, a reminder is due, the toolbar countdown ticks, a blocker schedule changes, or the free-plan report is due.</td></tr><tr><td><code>notifications</code></td><td>Shows timer, reminder and end-of-day notifications. You can switch every notification off in Settings.</td></tr><tr><td><code>offscreen</code></td><td>Plays the end-of-session chime and ambient sounds. Chrome requires an offscreen document for sound from a background worker.</td></tr><tr><td><code>idle</code></td><td>Lets the time tracker ask what to do with time you were away.</td></tr><tr><td><code>contextMenus</code></td><td>Adds the right-click &quot;Add to WorkZen as a task&quot; item.</td></tr><tr><td><code>sidePanel</code></td><td>Lets you keep WorkZen open in Chrome&#x27;s side panel.</td></tr><tr><td><code>declarativeNetRequest</code> (optional)</td><td>Blocks the sites on your block list. Requested only when you turn the blocker on.</td></tr><tr><td>All sites (optional)</td><td>Lets the blocker redirect to WorkZen&#x27;s block page instead of a browser error. Requested only if you choose that option.</td></tr></tbody></table>
 <h2>Your controls</h2>
 <ul>
-<li>Export all your data as a JSON file in Settings.</li>
-<li>Import a previously exported file (merge keeps your existing records, replace swaps them after confirmation).</li>
-<li>Delete all your data, or reset WorkZen completely, in Settings.</li>
+<li>Export all your data as JSON, import it again, and export CSV files in Settings.</li>
+<li>Delete all your data, or reset WorkZen completely, in Settings. Your Premium license is kept so you do not lose what you paid for. Use &quot;Remove from this device&quot; on the Premium page to forget it.</li>
 <li>Uninstalling the extension removes all of its stored data from Chrome.</li>
-<li>Turn off notifications, sounds and each kind of reminder in Settings.</li>
+<li>Turn off notifications, sounds, idle detection, the blocker and the 48-hour report in Settings.</li>
 </ul>
-<h2>Engagement messages</h2>
-<p>About 48 hours after you first use WorkZen it can show a one-time recap built from your own local records. It can then invite you to leave a Chrome Web Store review. You can choose &quot;Not now&quot; or &quot;Don&#x27;t ask again&quot;. Premium plans are described honestly as upcoming. No purchase is possible in this version, and WorkZen never collects payment details.</p>
 <h2>Children</h2>
 <p>WorkZen is not directed at children under 13 and does not knowingly collect personal information from anyone.</p>
 <h2>Changes</h2>
-<p>If this policy changes, the new version will be published at the same address and the &quot;last updated&quot; date will change. If a future version adds any feature that sends data off your device, that feature will be optional and will be disclosed here and in the store listing before it ships.</p>
+<p>If this policy changes, the new version will be published at the same address and the &quot;last updated&quot; date will change. Any future feature that sends data off your device will be optional and disclosed here and in the store listing before it ships.</p>
 <h2>Contact</h2>
 <p>Ecom Swift LLC · <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
 </body></html>

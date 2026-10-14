@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkZen Premium | Ecom Swift LLC</title>
+<meta name="description" content="WorkZen Premium: $3.99 per month or $49.99 once. Deep reports, ambient sounds, Pro website blocker, billable rates and more.">
+<style>
+:root{--bg:#faf7f0;--card:#fff;--ink:#101b3b;--muted:#566078;--line:#e6e1d6;--accent:#2f8f73;--accent-soft:#cdebdd;--navy:#101b3b;--navy-ink:#faf7f0}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1226;--card:#121b35;--ink:#eeece4;--muted:#a0a9bd;--line:#243053;--accent:#6fd0ac;--accent-soft:#1d3a40;--navy:#cdebdd;--navy-ink:#0b1226}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:22px 0;display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.02em}
+header .mark{width:30px;height:30px;border-radius:8px;background:var(--navy);display:grid;place-items:center}
+header .mark svg{width:20px;height:20px}
+.hero{text-align:center;padding:30px 0 6px}
+.eyebrow{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:999px;margin-bottom:16px}
+h1{font-size:40px;line-height:1.1;letter-spacing:-.04em;margin:0 0 12px;font-weight:700}
+.hero p{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:34px 0}
+.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.plan.best{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 18px 44px rgba(16,27,59,.12)}
+.badge{position:absolute;top:-12px;right:20px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:999px}
+.tier{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.price{font-size:48px;font-weight:700;letter-spacing:-.05em;line-height:1.1;margin:8px 0 2px}
+.price small{font-size:16px;font-weight:600;color:var(--muted);letter-spacing:0}
+.note{color:var(--muted);font-size:14px;margin-bottom:16px}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;padding:13px 16px;border-radius:12px;border:1px solid var(--navy);color:var(--ink)}
+.plan.best .btn{background:var(--navy);color:var(--navy-ink)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin:18px 0}
+.panel h2{font-size:22px;letter-spacing:-.03em;margin:0 0 16px}
+.feats{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.feats li{display:flex;flex-direction:column}
+.feats strong{font-size:15.5px}
+.feats span{color:var(--muted);font-size:14.5px}
+ul.free{margin:0;padding-left:20px;display:grid;gap:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step b{display:block;color:var(--accent);font-size:13px;margin-bottom:4px}
+dt{font-weight:700;margin-top:14px} dd{margin:4px 0 0;color:var(--muted)}
+footer{color:var(--muted);font-size:13.5px;text-align:center;padding:30px 0 50px}
+footer a,.panel a{color:var(--accent)}
+@media(max-width:760px){.plans,.feats,.steps{grid-template-columns:1fr}h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><img src="data:image/png;base64,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" width="30" height="30" alt="" style="border-radius:8px"> WorkZen by Ecom Swift LLC</header>
+<section class="hero">
+<span class="eyebrow">WorkZen Premium</span>
+<h1>The power tools for calm, focused work</h1>
+<p>WorkZen is free for everyday use. Premium adds deep reports, ambient sounds, a Pro website blocker, billable rates and more, for $3.99 a month or $49.99 once.</p>
+</section>
+<div class="plans">
+<div class="plan"><div class="tier">Monthly</div><div class="price">$3.99<small> / month</small></div><div class="note">Cancel any time from the extension or your account.</div><a class="btn" href="mailto:support@ecomswiftllc.com?subject=Get%20WorkZen%20Premium%20-%20Monthly%20%28%243.99%29&amp;body=Hi%20Ecom%20Swift%20LLC%2C%0A%0AI%27d%20like%20WorkZen%20Premium%20on%20the%20Monthly%20plan%20%28%243.99%29.%0A%0AMy%20purchase%20email%20%28for%20unlocking%20in%20the%20extension%29%3A%20%0A%0AThanks%21">Get Premium Monthly</a></div>
+<div class="plan best"><span class="badge">Best value</span><div class="tier">Lifetime</div><div class="price">$49.99<small> once</small></div><div class="note">One payment. Every Premium feature, for good.</div><a class="btn" href="mailto:support@ecomswiftllc.com?subject=Get%20WorkZen%20Premium%20-%20Lifetime%20%28%2449.99%29&amp;body=Hi%20Ecom%20Swift%20LLC%2C%0A%0AI%27d%20like%20WorkZen%20Premium%20on%20the%20Lifetime%20plan%20%28%2449.99%29.%0A%0AMy%20purchase%20email%20%28for%20unlocking%20in%20the%20extension%29%3A%20%0A%0AThanks%21">Get Premium Lifetime</a></div>
+</div>
+<section class="panel"><h2>Everything in Premium</h2><ul class="feats">
+<li><strong>Custom focus workflows</strong><span>Deep Work 50/10, Sprint 15/3, 90-minute cycles, or build your own. Switch in one click.</span></li>
+<li><strong>Ambient focus sounds</strong><span>Rain, brown, pink and white noise that play while you focus, even with the popup closed.</span></li>
+<li><strong>Deep reports up to 365 days</strong><span>Heatmap calendar, best hours of the day, period comparison, weekly review and CSV export.</span></li>
+<li><strong>Billable rates and earnings</strong><span>Set an hourly rate per project and get an invoice-ready breakdown of your tracked time.</span></li>
+<li><strong>Pro website blocker</strong><span>Unlimited sites (free: 10), weekly schedules and Strict Mode that cannot be switched off mid-session.</span></li>
+<li><strong>Day templates</strong><span>Save a perfect day once, then apply it to any date in one click.</span></li>
+<li><strong>Calendar export (.ics)</strong><span>Send your time blocks and deadlines to Google Calendar, Outlook or Apple Calendar.</span></li>
+<li><strong>Bulk task editing</strong><span>Select many tasks to complete, reprioritize, move or delete together.</span></li>
+<li><strong>Eisenhower matrix</strong><span>See what is urgent and important at a glance and drag tasks between quadrants.</span></li>
+<li><strong>Accent themes</strong><span>Ocean, violet, rose and amber on top of the signature mint, in light and dark.</span></li>
+<li><strong>Unlimited projects</strong><span>Free includes 3 active projects. Premium has no limit.</span></li>
+<li><strong>CSV exports</strong><span>Export tasks, time entries and reports to open in Excel or Google Sheets.</span></li>
+</ul></section>
+<section class="panel"><h2>Always free, on every plan</h2><ul class="free">
+<li>Pomodoro timer with custom lengths, long breaks, auto-start, +5 minutes and a badge countdown</li>
+<li>Tasks with priorities, due dates, projects, tags, estimates, subtasks and notes</li>
+<li>Recurring tasks, natural-language quick add and a board view</li>
+<li>Time tracking with manual entries, idle detection and undo</li>
+<li>Day and week planner with drag and drop and overlap warnings</li>
+<li>Website blocker for up to 10 sites</li>
+<li>Reminders, side panel, right-click &quot;Add as task&quot; and keyboard shortcuts</li>
+<li>Reports for 30 days, backup export and import (JSON and CSV)</li>
+</ul></section>
+<section class="panel"><h2>How to get Premium</h2><div class="steps">
+<div class="step"><b>1. Choose a plan</b>Click a plan above. It opens an email to us with your plan filled in. Add the email address you want to use for unlocking.</div>
+<div class="step"><b>2. Pay the invoice</b>We reply with a secure invoice. Pay it by card and your plan is attached to that email address.</div>
+<div class="step"><b>3. Unlock in WorkZen</b>Open WorkZen, go to Premium, type the same email and press Unlock. Premium switches on at once.</div>
+</div></section>
+<section class="panel"><h2>Questions</h2><dl>
+<dt>Does Premium send my tasks anywhere?</dt><dd>No. Your tasks, notes and time stay on your device. The only thing checked online is whether your purchase email has an active plan.</dd>
+<dt>Can I cancel the monthly plan?</dt><dd>Yes, any time, from the Premium page inside WorkZen or from your account. Premium features switch off when the paid period ends and your data stays.</dd>
+<dt>What happens to my data if I stop paying?</dt><dd>Nothing is deleted. Free features keep working. Premium-only extras such as deep reports and templates are locked until you come back.</dd>
+<dt>Can I use it on more than one computer?</dt><dd>Yes. Unlock with the same email in each Chrome profile.</dd>
+<dt>Who makes WorkZen?</dt><dd>Ecom Swift LLC. We also build and fix websites, stores, SEO and automations. <a href="https://www.ecomswiftllc.com/contact?utm_source=workzen&amp;utm_medium=pricing">Talk to us</a> about AI automation, Shopify, Amazon, WordPress, Wix or custom development.</dd>
+</dl></section>
+<footer>&copy; Ecom Swift LLC &middot; <a href="https://ecomswiftllc.github.io/legal/workzen-privacy.html">Privacy</a> &middot; <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></footer>
+</div>
+</body></html>
