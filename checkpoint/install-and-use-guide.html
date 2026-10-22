@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Guide - Checkpoint: Checkout Rules</title>
+<meta name="description" content="How to install Checkpoint, build order, payment and delivery rules, test them and turn on the storefront helpers.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Checkpoint<small>Help center</small></a>
+<nav aria-label="Main"><ul><li><a href="index.html">Help center</a></li><li><a href="install-and-use-guide.html" aria-current="page">Guide</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+</div></header>
+<main id="main">
+
+<div class="prose">
+<p class="eyebrow">Guide</p>
+<h1>Install and use Checkpoint</h1>
+<hr class="rule">
+<p class="lead">Checkpoint adds rules to your checkout. The rules run on Shopify's servers, so they apply to every shopper and can't be skipped by changing the page.</p>
+
+<h2 id="install">1. Install and open the app</h2>
+<p>Install Checkpoint from the Shopify App Store and approve the permissions. The app opens inside your Shopify admin. Its menu has Home, Order rules, Payment rules, Delivery rules, Templates, Test a cart, Activity and Settings.</p>
+<div class="note">Checkpoint works with Shopify's current checkout. If your store still uses the old <code>checkout.liquid</code> checkout, upgrade first, because Shopify Functions only run on the current checkout.</div>
+
+<h2 id="first">2. Add your first rule</h2>
+<p>Open <strong>Templates</strong> and choose a ready-made rule such as a minimum order value, a limit per product, blocking PO boxes or hiding Cash on Delivery for big orders. It opens in the editor with sensible values. Change what you need, then save. The save bar at the top appears as soon as there is something to save.</p>
+<p>Every template says what to check before turning it on, for example the amount or the tag to use.</p>
+
+<h2 id="order">3. Order rules</h2>
+<p>Order rules stop checkout and show the shopper your message. Choose a rule type:</p>
+<table>
+<tr><th>Rule type</th><th>What it checks</th></tr>
+<tr><td>Quantity of items</td><td>A minimum, a maximum, or a multiple (for case packs) for the whole cart, or for chosen products, variants, collections, tags, vendors or product types. You decide whether to add the matching products together or check each product on its own.</td></tr>
+<tr><td>Order value</td><td>A minimum or maximum subtotal, in your store currency. Shoppers see the amount in their own currency.</td></tr>
+<tr><td>Number of different products</td><td>A minimum or maximum number of cart lines.</td></tr>
+<tr><td>Block checkout</td><td>Stops checkout whenever the conditions are true, for example a PO box address, a blocked country or postcode, or wholesale-only products for retail customers.</td></tr>
+</table>
+<h3>Conditions</h3>
+<p>Add conditions to make a rule apply only in some situations. Combine them with <em>all</em> or <em>any</em>. You can use the cart subtotal, total items, number of products, weight, whether the customer is logged in, the customer's past orders and tags, the delivery country, province, postcode, city and address line, the shopper's language, and the tags, products, variants, collections, vendors and types in the cart.</p>
+<p>Postcodes accept single codes (<code>90210</code>), numeric ranges (<code>2000-2234</code>) and prefixes (<code>SW1*</code>).</p>
+<div class="note">Conditions about the delivery address are checked once the shopper has typed their address, so a rule like "block PO boxes" appears at the delivery step of checkout.</div>
+<h3>Schedule</h3>
+<p>Start and end dates use your store's time zone. You can also limit a rule to certain days of the week.</p>
+<h3>Messages</h3>
+<p>Write the message shoppers see. You can use <code>{min}</code>, <code>{max}</code>, <code>{step}</code>, <code>{have}</code> and <code>{product}</code>. Fill in as many of the 12 languages as you like: English, French, German, Spanish, Italian, Portuguese, Dutch, Swedish, Danish, Polish, Turkish and Japanese. A language you leave empty uses a built-in message in that language, and if the shopper's language is not one of those, English is used.</p>
+
+<h2 id="payment">4. Payment rules</h2>
+<p>Hide, rename or reorder payment methods by their name. For example, hide Cash on Delivery when the subtotal is above 200, rename Bank transfer to explain when the order ships, or show cards first. A hide can be limited to the express checkout buttons or to the payment list. Checkout always keeps at least one payment method.</p>
+<p>Rules are applied from top to bottom, so use the arrows on the list to put the most important rule first.</p>
+
+<h2 id="delivery">5. Delivery rules</h2>
+<p>Hide, rename or reorder delivery options by name, type (shipping, pickup, local delivery, pickup point) or price. Shopify requires the cheapest shipping option to stay first, so a move that would break this is skipped. Every delivery group keeps at least one option, and carrier-calculated rates keep their carrier name when renamed.</p>
+
+<h2 id="test">6. Test a cart</h2>
+<p>The Test a cart page runs a cart you describe through your live rules: products with quantities, prices, tags and collections, the customer, the address, the language and the date. It shows the messages shoppers would see, and which payment and delivery options would be hidden or renamed. It uses the same logic as checkout and places no order.</p>
+
+<h2 id="helpers">7. Storefront helpers (optional)</h2>
+<p>In <strong>Settings</strong>, choose <strong>Open theme editor</strong> and turn on <strong>Checkpoint helpers</strong> under App embeds, then save your theme. On product pages the quantity box follows your minimum, maximum and multiple rules and a short note explains them. On the cart page a notice lists what is still needed before checkout. The helper loads one small script, only on product and cart pages, and makes no network requests.</p>
+<p>It shows simple rules only (plain minimums, maximums and multiples that don't depend on the cart contents or the address). Checkout enforces all rules either way.</p>
+
+<h2 id="activity">8. Activity, undo, export and import</h2>
+<p><strong>Activity</strong> lists your last 40 changes. Undo brings back the earlier version of a rule, or a deleted rule. <strong>Settings</strong> lets you export all rules to a file and import them into another store. Imported rules are added to the existing ones.</p>
+
+<h2 id="limits">Good to know</h2>
+<ul>
+<li>While a shopper is only adding to the cart, only a maximum quantity can stop them. Minimums, multiples, order value and blocking rules apply at checkout, because a shopper can't meet a minimum before they've added anything.</li>
+<li>Shopify lets a checkout Function read about 10 KB of rules. The Space used bar on each list shows how much you have used. Short messages and fewer languages leave more room.</li>
+<li>If a checkout Function ever fails to run, checkout is not blocked.</li>
+<li>Rules created by Checkpoint are stored in your own store as app data and are removed when you uninstall the app.</li>
+</ul>
+</div>
+
+</main>
+<footer class="site"><div class="in">
+<p>Checkpoint: Checkout Rules is made by Ecom Swift LLC.<br>Support: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
+<ul aria-label="Footer"><li><a href="install-and-use-guide.html">Guide</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="changelog.html">Changelog</a></li></ul>
+</div></footer>
+</body>
+</html>

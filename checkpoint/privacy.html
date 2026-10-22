@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy policy - Checkpoint: Checkout Rules</title>
+<meta name="description" content="What Checkpoint: Checkout Rules stores, where it lives and what happens when you uninstall.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="bar-in">
+<a class="brand" href="index.html"><span class="mark" aria-hidden="true"></span>Checkpoint<small>Help center</small></a>
+<nav aria-label="Main"><ul><li><a href="index.html">Help center</a></li><li><a href="install-and-use-guide.html">Guide</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html" aria-current="page">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+</div></header>
+<main id="main">
+
+<div class="prose">
+<p class="eyebrow">Privacy policy</p>
+<h1>Privacy policy for Checkpoint: Checkout Rules</h1>
+<hr class="rule">
+<p class="meta">Last updated: October 22, 2026</p>
+<p class="lead">Checkpoint keeps your rules in your own Shopify store and runs them inside Shopify. Our server holds no merchant, shopper or order data.</p>
+
+<h2 id="who">Who we are</h2>
+<p>Checkpoint: Checkout Rules is provided by Ecom Swift LLC ("we"). Contact: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>. For the shoppers who use your checkout, you (the store owner) decide how the rules are used, and we provide the software.</p>
+
+<h2 id="where">Where your data lives</h2>
+<table>
+<tr><th>Data</th><th>Where</th></tr>
+<tr><td>Your rules (names, conditions, messages, schedules)</td><td>In your Shopify store, as app-owned metafields on the checkout rule objects Shopify creates for the app.</td></tr>
+<tr><td>Activity log and the names you picked for products and collections</td><td>In an app-owned metafield on the app installation in your store.</td></tr>
+<tr><td>Storefront helper settings</td><td>In an app-owned metafield on the app installation in your store.</td></tr>
+<tr><td>On our server</td><td>Nothing about your store, your shoppers or your orders.</td></tr>
+</table>
+
+<h2 id="server">What our server does</h2>
+<p>Our server runs on Cloudflare. It does two things: it serves the app's admin page (static files) to your browser inside the Shopify admin, and it receives Shopify's webhook calls (uninstall and the mandatory privacy topics). It checks each webhook's signature and answers; it stores nothing. Cloudflare may keep standard technical logs of requests (such as IP address and time) for security and reliability.</p>
+<p>Your browser talks to Shopify's Admin API directly, using the session Shopify gives the app, to read and save your rules. Those calls do not pass through our server.</p>
+
+<h2 id="shoppers">Shoppers and checkout</h2>
+<p>When a shopper checks out, Shopify runs the app's Functions on Shopify's own servers. A Function reads the data it needs to apply your rules, for example the cart lines, the products' tags and collections, the shopper's language and country, whether the shopper is logged in, the customer's number of orders and tags, and the delivery address. It returns messages or changes to payment and delivery options. This happens inside Shopify. We do not receive, copy or store this data.</p>
+<p>The optional storefront helper reads the current product or cart in the shopper's browser to adjust the quantity box and show a notice. It sets no cookies, makes no network requests and sends nothing anywhere.</p>
+
+<h2 id="share">Sharing</h2>
+<p>We do not sell personal data, use it for advertising or share it with anyone. The only service providers are Shopify (the platform) and Cloudflare (hosting of the admin page).</p>
+
+<h2 id="retention">Retention and deletion</h2>
+<ul>
+<li>Your rules and settings stay in your store until you delete them or uninstall the app. Uninstalling removes the app's data from your store.</li>
+<li>Because we hold no merchant or shopper data, requests from Shopify to export or delete customer or shop data are acknowledged without anything to return or erase.</li>
+</ul>
+
+<h2 id="security">Security</h2>
+<p>Data is encrypted in transit. Changes to rules go to Shopify through the Admin API under the logged-in merchant's own session. Webhook calls are verified with Shopify's signature before they are acted on.</p>
+
+<h2 id="rights">Your rights</h2>
+<p>Depending on where you live (for example under the GDPR, the UK GDPR or the CCPA) you may have rights to access, correct, delete or restrict personal data. Since we hold none, requests about shoppers' orders should go to the store owner. For anything else write to <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>; we respond within 30 days.</p>
+
+<h2 id="children">Children</h2>
+<p>The app is built for businesses and isn't directed at children under 13.</p>
+
+<h2 id="changes">Changes</h2>
+<p>If we change this policy in a material way we will update the date above and tell merchants in the app.</p>
+</div>
+
+</main>
+<footer class="site"><div class="in">
+<p>Checkpoint: Checkout Rules is made by Ecom Swift LLC.<br>Support: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
+<ul aria-label="Footer"><li><a href="install-and-use-guide.html">Guide</a></li><li><a href="faq.html">FAQ</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="changelog.html">Changelog</a></li></ul>
+</div></footer>
+</body>
+</html>
