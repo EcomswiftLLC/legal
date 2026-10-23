@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Arrivo: Delivery Date Tracking</title>
+<meta name="description" content="Privacy Policy for the Arrivo: Delivery Date Tracking app for Wix by Ecom Swift LLC.">
+<style>
+  :root{ --bg:#ffffff; --ink:#1f2430; --muted:#5b6275; --line:#e4e6f0; --brand:#7a5c1c; --soft:#f8f4ea; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:10px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  .meta{color:var(--muted);font-size:14px;margin:0}
+  h2{font-size:18px;margin:34px 0 10px;color:var(--brand)}
+  p,li{color:#2b3040}
+  a{color:var(--brand)}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;margin:12px 0}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600}
+  .callout{background:var(--soft);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 16px;margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Ecom Swift LLC</div>
+    <h1>Privacy Policy - Arrivo: Delivery Date Tracking</h1>
+    <p class="meta">Last updated: October 23, 2026</p>
+  </header>
+
+  <p>Arrivo: Delivery Date Tracking is a Wix app, published by Ecom Swift LLC, that shows estimated delivery dates on a Wix Stores site and provides a public order tracking page. This policy explains what data the app handles, where it lives and why.</p>
+
+  <div class="callout"><strong>Short version.</strong> The app stores the delivery rules and settings the site owner writes, plus anonymous daily counters. To answer a tracking lookup it reads the matching order from the site's own Wix Stores data at that moment and returns only a small set of fields to the person who entered the matching order number and email address. It does not copy orders, does not receive payment details, and sets no cookies. Wix hosts the app and keeps its data on the site owner's own Wix site. Ecom Swift LLC does not receive a copy of that data.</div>
+
+  <h2>1. Who we are</h2>
+  <p>The app is published by Ecom Swift LLC. You can reach us at <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a>.</p>
+
+  <h2>2. What the app processes</h2>
+  <table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>Settings written by the site owner: delivery rules, shop time zone, cut-off time, working days, holidays and closures, appearance options, tracking page text and links, custom carrier names and tracking address templates.</td><td>To calculate and display delivery dates and to build the tracking page.</td></tr>
+    <tr><td>Anonymous daily counters: for each day, a number for each event type (estimates shown, tracking page views, orders found, orders not found, carrier links opened, country changes). Nothing else is stored with them: no visitor identifier, no IP address, no order number, no product.</td><td>To show the site owner how the app is used.</td></tr>
+    <tr><td>Catalog data read through Wix: for a product page or cart, the product's collections and stock status.</td><td>To apply rules that depend on collection or stock. Not stored.</td></tr>
+    <tr><td>Order data, read on demand through Wix when a visitor submits the tracking form or opens a thank-you page: order number, order date, status, shipping method, destination country, line items (name, picture, quantity, options), the buyer's first name, fulfillment status, tracking numbers and carrier names. The buyer's email address is compared on the server with the address submitted and is never returned.</td><td>To show the buyer the status of their own order. Only the fields listed here leave the server. Names other than the first name, street addresses, phone numbers, prices, discounts and payment details are never sent to the browser. Not stored.</td></tr>
+    <tr><td>What the visitor's browser sends to the app's backend: for a lookup, the order number and email address the visitor typed; for a thank-you page, the order id from the page address; for a product or cart, product ids. Wix adds its standard site and visitor token.</td><td>To answer the request.</td></tr>
+    <tr><td>Rate-limit entries: short one-way hashes of the order number and of the network address, with a request count and a time.</td><td>To slow down guessing of order numbers and other abuse. See section 5.</td></tr>
+    <tr><td>Site owner identity as verified by Wix for each dashboard request.</td><td>To allow only the site owner and collaborators to change settings or preview orders.</td></tr>
+  </table>
+  <p>The app does not read payment details or passwords. It does not use AI model providers, advertising networks or third-party analytics. No paid carrier tracking service is used: the app links to the carrier's own public tracking page.</p>
+
+  <h2>3. Where data is stored</h2>
+  <p>The app has no database of its own. Its settings, counters and rate-limit entries live in private data collections (Wix Data) on the site owner's own Wix site, in a space reserved for the app. Each site has its own collections, so one site's data is never mixed with another's. Only the app's backend, after Wix has verified the caller, and site administrators can read or change them. The app needs the Wix CMS (Wix Data) on the site for this.</p>
+  <p>The visitor's browser keeps two small items in local storage on the store's own domain: the country the visitor chose for delivery estimates, and a flag that tells the page whether delivery rules exist so it can reserve space and avoid layout shifts. Neither identifies the visitor. The app sets no cookies.</p>
+
+  <h2>4. Tracking page protections</h2>
+  <p>A tracking lookup succeeds only when the order number and the email address both match the same order. A wrong order number and a wrong email address produce the same answer, and the answer always takes about the same time, so the page cannot be used to find out which order numbers or email addresses exist. Lookups are limited per order, per network address and per site.</p>
+
+  <h2>5. Rate limiting</h2>
+  <p>To protect the service from abuse, the backend keeps a one-way hash of the order number and of the network address, a request count and a timestamp, in a private collection on the site. Entries expire within about an hour after they stop being used, and expired entries are deleted as the app runs. They are not linked to any other data.</p>
+
+  <h2>6. Service providers</h2>
+  <ul>
+    <li><strong>Wix</strong> hosts the app and the data, provides the product and order data, and identifies the site owner.</li>
+  </ul>
+  <p>We do not sell personal data and do not share data for advertising. We receive no copy of the site's data and operate no other server that handles it.</p>
+
+  <h2>7. Retention and deletion</h2>
+  <table>
+    <tr><th>Data</th><th>Rule</th></tr>
+    <tr><td>Settings</td><td>Kept until the site owner changes them or removes the app.</td></tr>
+    <tr><td>Daily counters</td><td>Kept in the site's data collection until the site owner deletes the rows or removes the app. They contain no personal data.</td></tr>
+    <tr><td>Rate-limit entries</td><td>Expire within about an hour of last use and are deleted as the app runs.</td></tr>
+    <tr><td>Order data</td><td>Not stored by the app. It stays in Wix Stores and is governed by Wix and the site owner.</td></tr>
+    <tr><td>Local storage in a visitor's browser</td><td>Stays until the visitor clears site data.</td></tr>
+  </table>
+  <p>When the app is removed, Wix handles what happens to its data collections according to Wix's app removal rules.</p>
+
+  <h2>8. Security</h2>
+  <p>Data is encrypted in transit. Every dashboard request is checked against a verified Wix identity before anything is read or written, and every input is validated on the server. Public endpoints return only the fields described above and are rate limited. Merchant-written text is shown as plain text, never as HTML. No system is perfectly secure, and the data on the site is also protected by the site owner's own Wix account security.</p>
+
+  <h2>9. International transfers</h2>
+  <p>Wix operates globally, so data may be processed in countries other than where the site owner or the visitor lives. Wix applies its own transfer safeguards. We do not transfer personal data anywhere else.</p>
+
+  <h2>10. Your rights</h2>
+  <p>The app keeps no personal data about site visitors beyond the short-lived rate-limit hashes described above. A site owner can view and change everything the app stores for their site from the app's dashboard, and can contact us at <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a> with any privacy question. Visitors who have questions about their order data should contact the store first.</p>
+
+  <h2>11. Children</h2>
+  <p>The app is built for businesses and is not directed at children under 13 (or under 16 where the law sets that age). It does not knowingly process children's data.</p>
+
+  <h2>12. Changes</h2>
+  <p>If we change this policy in a material way we will update the date above and notify site owners in the app.</p>
+
+  <footer>
+    <p><strong>Contact.</strong> Ecom Swift LLC · <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
