@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Descrio: AI Description &amp; SEO</title>
+<meta name="description" content="Privacy Policy for the Descrio: AI Description &amp; SEO app for Wix by Ecom Swift LLC.">
+<style>
+  :root{ --bg:#ffffff; --ink:#1f2430; --muted:#5b6275; --line:#e4e6f0; --brand:#8a6a1f; --soft:#faf6ea; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:10px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  .meta{color:var(--muted);font-size:14px;margin:0}
+  h2{font-size:18px;margin:34px 0 10px;color:var(--brand)}
+  p,li{color:#2b3040}
+  a{color:var(--brand)}
+  .lead{font-size:17px}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600}
+  .callout{background:var(--soft);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 16px;margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Ecom Swift LLC</div>
+    <h1>Privacy Policy - Descrio: AI Description &amp; SEO</h1>
+    <p class="meta">Last updated: October 24, 2026</p>
+  </header>
+
+  <p class="lead">Descrio is a Wix app, published by Ecom Swift LLC, that helps a site owner review and improve the written content and search metadata of their own site: product descriptions, SEO titles, meta descriptions and image alt text for Wix Stores products, blog posts, site pages and booking services. This policy explains what data the app handles, where it lives and why.</p>
+
+  <div class="callout"><strong>Two roles.</strong> The site owner who installs the app (the "merchant") decides what content is changed. Ecom Swift LLC provides the software and acts as a processor on the merchant's instructions. Wix hosts the app and stores its data on the merchant's own site. Descrio does not collect data about the merchant's customers or site visitors.</div>
+
+  <h2>1. Who we are</h2>
+  <p>The app is published by Ecom Swift LLC. You can reach us at <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a>.</p>
+
+  <h2>2. What the app processes</h2>
+  <table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>Content of the merchant's own site, read live from Wix while the merchant uses the dashboard: names, descriptions, SEO titles, meta descriptions, image alt text, categories, options and similar product facts, blog post titles and excerpts, page and service names. This content is not copied into a separate catalog.</td><td>To score each item, find missing fields, and show the table, the suggestions and the before and after comparison.</td></tr>
+    <tr><td>Change history: for every change the merchant applies, the previous and the new value of the changed fields, the item reference, the time, the engine used and the Wix user id of the person who applied it.</td><td>To provide one-click undo and the history view.</td></tr>
+    <tr><td>Approval queue entries: suggestions the merchant chose to hold for review, including the suggested text.</td><td>To let the merchant approve or reject them later. Entries expire after 14 days.</td></tr>
+    <tr><td>Bulk job records: item references, a position in the list, counters and status. No product text.</td><td>To show progress and let a bulk run be resumed.</td></tr>
+    <tr><td>Settings the merchant chooses: brand voice presets, tone, length, language, keywords, defaults, retention days, and a cached summary of the last scan (counts only).</td><td>To apply the merchant's preferences and show the overview.</td></tr>
+    <tr><td>For the optional AI engine: the name, a shortened description and a few factual attributes of the selected items (for example category, brand, option names), the chosen language, voice and keywords. Email addresses, phone numbers, web addresses with tokens and long number sequences are removed before sending. No customer, order or visitor data is included.</td><td>To generate the suggested text. See section 4.</td></tr>
+    <tr><td>Usage counters kept by the AI service: the Wix app instance id, the date and the number of items generated, plus a hashed short-lived rate-limit key.</td><td>To apply a fair daily allowance per site and keep the service free for everyone.</td></tr>
+  </table>
+  <p>The app does not read or store customer names, emails, orders, payment details or passwords. It sets no cookies of its own and has no advertising or analytics trackers.</p>
+
+  <h2>3. Where data is stored</h2>
+  <p>The app has no database of its own for merchant content. History, queue, jobs and settings live in private data collections (Wix Data) on the merchant's own Wix site, in a space reserved for the app. Each site has its own collections. Only site administrators and the app's backend, after Wix has verified the caller, can read or change them.</p>
+
+  <h2>4. The four writing engines</h2>
+  <ul>
+    <li><strong>Smart templates</strong> run inside the app. Nothing is sent to any other service.</li>
+    <li><strong>Rules</strong> (pattern, prepend, append, find and replace) run inside the app. Nothing is sent to any other service. Saved rule presets are kept in the app's settings on the merchant's site.</li>
+    <li><strong>AI engine (optional).</strong> When the merchant selects it, the data described above is sent over an encrypted connection to a small service operated by Ecom Swift LLC on Cloudflare Workers, which verifies the Wix identity of the request, applies the daily allowance, and calls a language model on Cloudflare Workers AI. Prompts and generated text are not stored by us and are not used to train models by us. If the allowance is used up or the service is unavailable, the app falls back to Smart templates.</li>
+    <li><strong>Wix SEO suggestions (optional).</strong> When selected, the app calls Wix's own SEO suggestion service on the merchant's site, under Wix's terms and the merchant's own Wix allowance.</li>
+  </ul>
+  <p><strong>Exports and backups.</strong> CSV exports, history exports and settings backups are created in the merchant's browser and downloaded to the merchant's own device. We do not receive or keep them.</p>
+  <p>Generated text is a suggestion for the merchant to review. We do not promise any search ranking, traffic or sales result.</p>
+
+  <h2>5. Purposes and legal basis</h2>
+  <p>We process the data only to provide the app to the merchant: reading content, producing suggestions, applying the changes the merchant approves, keeping history for undo and applying fair usage limits. The merchant remains responsible for the content they publish and for complying with the laws that apply to their site.</p>
+
+  <h2>6. Service providers</h2>
+  <ul>
+    <li><strong>Wix</strong> hosts the app and its data, provides the site content and identifies the site owner.</li>
+    <li><strong>Cloudflare</strong> runs the optional AI service and its small usage database and provides the language model (Cloudflare, Inc. is our sub-processor for this limited data).</li>
+  </ul>
+  <p>We do not sell personal data, do not share it for advertising and use no advertising network.</p>
+
+  <h2>7. Retention and deletion</h2>
+  <table>
+    <tr><th>Data</th><th>Rule</th></tr>
+    <tr><td>Change history</td><td>Deleted after the merchant's retention setting (default 90 days).</td></tr>
+    <tr><td>Approval queue</td><td>Deleted 14 days after creation if not decided, and after a decision once the retention period passes.</td></tr>
+    <tr><td>Bulk job records</td><td>Deleted 90 days after the job finishes.</td></tr>
+    <tr><td>Settings</td><td>Kept until the merchant deletes them or the app is removed.</td></tr>
+    <tr><td>AI service usage counters</td><td>Daily rows are deleted after 35 days. Rate-limit keys expire within minutes.</td></tr>
+    <tr><td>App removed, or "Delete my Descrio data" (merchant, on demand)</td><td>History, queue, jobs and settings stored by the app are erased.</td></tr>
+  </table>
+  <p>Content that Wix itself holds (products, posts, pages, SEO settings) is governed by Wix and the merchant's account. Changes the merchant applied remain in place after the app is removed; the history needed to undo them is removed.</p>
+
+  <h2>8. Security</h2>
+  <p>Data is encrypted in transit. Every dashboard request is checked against a verified Wix identity, and the AI service verifies the Wix token of each request before doing any work. The app stores only what it needs and never logs content. No system is perfectly secure, and the data on the merchant's site is also protected by the merchant's own Wix account security.</p>
+
+  <h2>9. International transfers</h2>
+  <p>Wix and Cloudflare operate globally, so data may be processed in countries other than where the merchant lives. Those providers apply their own transfer safeguards. We do not transfer personal data anywhere else.</p>
+
+  <h2>10. Your rights</h2>
+  <p>The merchant can view and delete what the app stores for their site from the Settings page. Depending on where you live (for example under the GDPR, the UK GDPR or the CCPA) you may have rights to access, correct, delete or restrict personal data. You can write to <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a> and we will help. We respond within 30 days. We do not sell or share personal information as those terms are defined in the CCPA.</p>
+
+  <h2>11. Children</h2>
+  <p>The app is built for businesses and is not directed at children under 13 (or under 16 where the law sets that age).</p>
+
+  <h2>12. Changes</h2>
+  <p>If we change this policy in a material way we will update the date above and notify merchants in the app.</p>
+
+  <footer>
+    <p><strong>Contact.</strong> Ecom Swift LLC &middot; <a href="mailto:wix@ecomswiftllc.com">wix@ecomswiftllc.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
