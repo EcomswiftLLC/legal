@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Professional PDF Editor Privacy Policy</title>
+<style>body{font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:780px;margin:40px auto;padding:0 20px;color:#101b3b;background:#faf7f0}h1{font-size:34px;letter-spacing:-.03em}h2{margin-top:32px;font-size:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #e6e1d6;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f5f1e7}code{background:#f5f1e7;padding:1px 5px;border-radius:4px}a{color:#1b6f4f}@media (prefers-color-scheme:dark){body{background:#0b1226;color:#eeece4}th,td{border-color:#243053}th,code{background:#17223f}a{color:#6fd0ac}}</style>
+</head><body>
+<h1>Professional PDF Editor Privacy Policy</h1>
+<p>Last updated: 24 October 2026</p>
+<p>Publisher: Ecom Swift LLC · <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
+<p>Professional PDF Editor is an extension for Google Chrome. This policy describes exactly what the extension does with data. It is written from the implemented code, not from a template.</p>
+<h2>The short version</h2>
+<ul>
+<li>Your documents are opened and processed inside the browser on your own computer. The extension has no server and does not upload your files, text, signatures, passwords or page contents.</li>
+<li>It stores your settings, saved signatures (only if you save one), your Premium status (the email you paid with, the plan and its end date) or an optional license key, and optionally your own AI key, in the extension's local storage on your computer. Downloaded OCR language files are kept in the browser's IndexedDB. Nothing is synced.</li>
+<li>There is no analytics, advertising, tracking or crash reporting code.</li>
+<li>The AI tools use Chrome's built-in AI by default, which runs on your computer and sends nothing.</li>
+<li>Three optional features contact the internet: unlocking Premium, downloading an OCR language, and (only if you choose your own key instead of the built-in AI) sending text to the AI provider you picked. None runs unless you start it, and the last two ask you on screen first.</li>
+<li>The extension loads and runs only code that ships inside its package. It downloads no code.</li>
+</ul>
+<h2>Single purpose</h2>
+<p>Work with PDF files: edit, sign, organize, convert and read them on your own computer.</p>
+<h2>Permissions and why they are needed</h2>
+<table><thead><tr><th>Permission</th><th>When</th><th>Why</th></tr></thead><tbody>
+<tr><td><code>storage</code></td><td>Always</td><td>Saves settings, saved signatures, the Premium status and, if you tick "Remember the key", your AI key on this device.</td></tr>
+<tr><td><code>activeTab</code> and <code>scripting</code></td><td>Only after you click "Save page as PDF"</td><td>Reads and prepares the current tab so it can be captured as a PDF. Scripts are injected on demand; none are declared for all sites.</td></tr>
+<tr><td><code>contextMenus</code></td><td>Always</td><td>Right-click entries such as "Save page as PDF".</td></tr>
+<tr><td><code>alarms</code></td><td>Always (idle unless Premium is involved)</td><td>Two timers: a one-minute check for a payment after you open checkout (it stops when the payment is found or after 30 minutes), and a re-check of a stored Premium plan about every 6 hours.</td></tr>
+<tr><td>Host access to <code>https://www.ecomswiftllc.com/*</code></td><td>Always</td><td>Our own website only, used for Premium: look up the paid plan, cancel it, and, only while a payment is in progress, read the email typed on the checkout page so Premium can unlock by itself. No other site is covered.</td></tr>
+<tr><td><code>debugger</code></td><td>Declared always (Chrome does not allow it as an optional permission)</td><td>"Save this page as PDF": Chrome's print engine produces a real multi-page PDF with selectable text. It is attached to a tab only when you start a save and detached right after; Chrome shows its own "started debugging this browser" banner meanwhile. Nothing is read from a page except to print it, and nothing is sent anywhere.</td></tr>
+<tr><td>Optional site access (<code>https://*/*</code>, <code>http://*/*</code>)</td><td>Requested per site</td><td>(1) Capturing a web page you asked to save; (2) reaching an AI server you typed in that is not one of the well-known provider hosts. Never requested at install.</td></tr>
+</tbody></table>
+<p>There are no other permissions, no content scripts declared for any site and no <code>web_accessible_resources</code>. The only install-time host access is our website above.</p>
+<h2>Data we collect</h2>
+<ul>
+<li><strong>Personal information:</strong> only if you buy or unlock Premium. The email address you type to unlock it is sent to the Ecom Swift LLC website (<code>www.ecomswiftllc.com</code>) to look up your paid plan, and is kept on your device. It is not used for anything else, not sold, and the extension sends no marketing.</li>
+<li>The extension does not collect health, financial, authentication or location data, web history, user activity or website content.</li>
+<li>We do not sell or transfer user data to third parties, and we do not use or transfer data for purposes unrelated to the single purpose above.</li>
+<li>The extension uses no remote code.</li>
+</ul>
+<h2>Network activity (complete list)</h2>
+<table><thead><tr><th>What</th><th>Where to</th><th>When</th><th>What is sent</th></tr></thead><tbody>
+<tr><td>OCR language file</td><td><code>cdn.jsdelivr.net/npm/@tesseract.js-data/&lt;lang&gt;/4.0.0_best_int/&lt;lang&gt;.traineddata.gz</code></td><td>You select a non-English language and click "Download and use" (a size check is made when the dialog opens)</td><td>A request for that file. No document data.</td></tr>
+<tr><td>AI request, own key only (not for Chrome's built-in AI, which stays on the device)</td><td>The API address you configured (<code>generativelanguage.googleapis.com</code>, <code>api.anthropic.com</code>, <code>api.openai.com</code> or your own server)</td><td>You press "Send ..." after seeing how much text goes and agreeing</td><td>The selected text, your question or instruction, and your key in the request header</td></tr>
+<tr><td>Premium unlock and re-check</td><td><code>https://www.ecomswiftllc.com/_functions/activate</code> (and <code>cancelPlan</code> when you cancel)</td><td>You press "Unlock Premium", wait for a payment after opening checkout, or cancel; afterwards about every 6 hours while the app is open, only while a Premium plan is stored</td><td>The product key <code>pdf</code> and the email you typed (and the order id when cancelling). No document data, file names or usage data. Payment itself happens on the website with Wix, never in the extension.</td></tr>
+<tr><td>Checkout email capture</td><td>A small script the service worker injects into pages of <code>www.ecomswiftllc.com</code> only, only after you pressed "Get Premium" (for 6 hours at most)</td><td>You buy Premium as a guest</td><td>The script reads only the email field of the checkout form (and asks the site, with your own session, whether a logged-in member owns a plan). The email stays on your device and is used for the lookup above. Nothing else on the page is read.</td></tr>
+<tr><td>Web page capture</td><td>The page you are saving is already open in your browser</td><td>You save a page</td><td>Nothing extra; Chrome's own print engine runs locally</td></tr>
+</tbody></table>
+<p>There is no other request to any Ecom Swift LLC server from the extension, and none at all if you never open the Premium page. The links in the footer (website, email, WhatsApp) are ordinary links that open only when you click them.</p>
+<h2>Your AI key and consent</h2>
+<ul>
+<li>The key is never part of the package. It is held in memory unless you tick "Remember the key", then it is stored in <code>chrome.storage.local</code> of this browser profile (not synced).</li>
+<li>Consent is recorded per provider host, can be withdrawn on the AI page, and "Delete saved settings, signatures, AI key and OCR languages" in Settings removes everything above.</li>
+</ul>
+<h2>Retention and deletion</h2>
+<p>Everything lives on your device. Removing the extension deletes it. Settings has a button to delete saved data without removing the extension (the Premium status is kept; remove it on the Premium page).</p>
+<h2>Children</h2>
+<p>Professional PDF Editor is not directed at children under 13 and does not knowingly collect personal information from anyone.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published at the same address and the "last updated" date will change. Any future feature that sends data off your device will be optional and disclosed here and in the store listing before it ships.</p>
+<h2>Contact</h2>
+<p>Ecom Swift LLC · <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
+</body></html>
