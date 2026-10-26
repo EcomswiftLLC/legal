@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shrinkwise - Foreground Service (Media Processing) Demonstration</title>
+<meta name="description" content="Demonstration of the media processing foreground service in the Shrinkwise video compressor app.">
+<style>
+  :root{--bg:#0f0d17;--card:#171424;--ink:#f1eefa;--muted:#b0a9c6;--brand:#b79cff;--line:#2a2540}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  h1{font-size:22px;margin:0 0 6px}
+  p.sub{color:var(--muted);margin:0 0 24px}
+  video{width:100%;max-width:420px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:24px}
+  h2{font-size:15px;color:var(--brand);margin:0 0 8px;text-transform:uppercase;letter-spacing:.08em}
+  ol{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:28px}
+  a{color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Shrinkwise: Media Processing Foreground Service</h1>
+  <p class="sub">Ecom Swift LLC &middot; demonstration for the Google Play foreground-service declaration</p>
+
+  <video controls playsinline preload="metadata" src="squeezo-fgs-demo.mp4"></video>
+
+  <div class="card">
+    <h2>What the video shows</h2>
+    <ol>
+      <li>The user has picked a video and tapped <strong>Compress 1 video</strong>. The compression starts only because the user tapped it, and the screen shows the progress ring and a Cancel button.</li>
+      <li>The user leaves the app (Home). Compression <strong>continues in the background</strong> and the status bar shows the app icon.</li>
+      <li>The notification shade shows the <strong>Compressing video</strong> notification with a live percentage, a progress bar and a <strong>Cancel</strong> action.</li>
+      <li>The user returns to the app. The job kept running, reaches 100% and the finished file is saved to Movies/Shrinkwise with a before and after comparison. The service and its notification end when the job ends.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Why a foreground service is required</h2>
+    <p>Shrinkwise compresses and converts videos the user selected. Re-encoding a long or high resolution video can take several minutes, and the work must not be stopped when the user switches to another app or the screen turns off. It therefore runs as a foreground service of type <code>mediaProcessing</code> (<code>FOREGROUND_SERVICE_MEDIA_PROCESSING</code>, Android 15 and newer) and <code>dataSync</code> (<code>FOREGROUND_SERVICE_DATA_SYNC</code>, Android 14 only, where the media processing type does not exist). It is always started by the user tapping Compress, always shows a notification with Cancel, and stops when the job ends. All processing happens on the device and nothing is uploaded.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to reproduce in the app</h2>
+    <ol>
+      <li>Open Shrinkwise, tap <strong>Compress video</strong> and pick a video of about 20 seconds or longer.</li>
+      <li>Tap <strong>Compress</strong>, then press Home and open the notification shade.</li>
+      <li>Watch the progress notification, then reopen the app to see the saved result.</li>
+    </ol>
+  </div>
+
+  <footer>Shrinkwise: Video Compressor &middot; &copy; 2026 Ecom Swift LLC &middot; <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></footer>
+</div>
+</body>
+</html>
