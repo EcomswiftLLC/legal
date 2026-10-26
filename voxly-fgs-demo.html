@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tapewave - Foreground Service (Microphone) Demonstration</title>
+<meta name="description" content="Demonstration of the microphone foreground service in the Tapewave voice recorder app.">
+<style>
+  :root{--bg:#0f0d17;--card:#171424;--ink:#f1eefa;--muted:#b0a9c6;--brand:#b79cff;--line:#2a2540}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  h1{font-size:22px;margin:0 0 6px}
+  p.sub{color:var(--muted);margin:0 0 24px}
+  video{width:100%;max-width:420px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:24px}
+  h2{font-size:15px;color:var(--brand);margin:0 0 8px;text-transform:uppercase;letter-spacing:.08em}
+  ol{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:28px}
+  a{color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Tapewave: Microphone Foreground Service</h1>
+  <p class="sub">Ecom Swift LLC &middot; demonstration for the Google Play foreground-service declaration</p>
+
+  <video controls playsinline preload="metadata" src="voxly-fgs-demo.mp4"></video>
+
+  <div class="card">
+    <h2>What the video shows</h2>
+    <ol>
+      <li>The user opens Tapewave and taps <strong>Voice recorder</strong>. Recording starts only because the user tapped it, and the screen shows the timer, level meter and the Pause, Mark and Save controls.</li>
+      <li>The user leaves the app (Home). Recording <strong>continues in the background</strong> and a persistent notification shows the running timer. The system microphone indicator is visible in the status bar.</li>
+      <li>The screen is turned off and back on. The recording kept running and the notification timer kept advancing.</li>
+      <li>The notification offers <strong>Pause</strong>, <strong>Mark</strong> and <strong>Stop</strong>. The user taps Stop and the take is saved to the library.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Why a foreground service is required</h2>
+    <p>Tapewave is a voice recorder. People record lectures, meetings and voice memos with the screen off or while using other apps. The recording must not be cut off when the app is not on screen, so it runs as a foreground service of type <code>microphone</code> (<code>FOREGROUND_SERVICE_MICROPHONE</code>). It is always started by the user, always shows a notification, and ends when the user taps Stop. Audio stays on the device.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to reproduce in the app</h2>
+    <ol>
+      <li>Open Tapewave and tap <strong>Voice recorder</strong> on the Home screen.</li>
+      <li>Press Home or turn the screen off; open the notification shade to see the recording notification.</li>
+      <li>Tap <strong>Stop</strong> in the notification (or open the app and tap Save).</li>
+    </ol>
+  </div>
+
+  <footer>Tapewave: Voice Recorder &amp; Audio Editor &middot; &copy; 2026 Ecom Swift LLC &middot; <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></footer>
+</div>
+</body>
+</html>
