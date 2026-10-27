@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steptrail - Foreground Service (Health and Location) Demonstration</title>
+<meta name="description" content="Demonstration of the health and location foreground services in the Steptrail step counter app.">
+<style>
+  :root{--bg:#0f0d17;--card:#171424;--ink:#f1eefa;--muted:#b0a9c6;--brand:#b79cff;--line:#2a2540}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  h1{font-size:22px;margin:0 0 6px}
+  p.sub{color:var(--muted);margin:0 0 24px}
+  video{width:100%;max-width:420px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:24px}
+  h2{font-size:15px;color:var(--brand);margin:0 0 8px;text-transform:uppercase;letter-spacing:.08em}
+  ol{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:28px}
+  a{color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Steptrail: Health and Location Foreground Services</h1>
+  <p class="sub">Ecom Swift LLC &middot; demonstration for the Google Play foreground-service declaration</p>
+
+  <video controls playsinline preload="metadata" src="steptrail-fgs-demo.mp4"></video>
+
+  <div class="card">
+    <h2>What the video shows</h2>
+    <ol>
+      <li>In Settings the user turns on <strong>Keep counting</strong>. The app starts the step counting foreground service (type <code>health</code>) and a quiet notification with a Pause action appears in the shade.</li>
+      <li>On the Walks tab the user turns on <strong>Record my route</strong> and taps <strong>Start walk</strong>. The walk starts only because the user tapped it. The screen shows live time, steps, distance, pace and the route drawn from GPS.</li>
+      <li>The user presses Home. The walk <strong>keeps running in the background</strong>. The notification shade shows the <strong>Walk in progress</strong> notification with elapsed time, steps, distance and a Pause action, and the location indicator is visible in the status bar.</li>
+      <li>The user returns through the notification, sees the route continuing, and holds the stop button. The walk is saved, the service stops and its notification disappears.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Why foreground services are required</h2>
+    <p>Steptrail is a step counter and walk tracker. Counting steps all day and recording a walk with the phone in a pocket or with the screen off must continue when the user is not looking at the app, so the work runs in two foreground services. <code>CountingService</code> uses type <code>health</code> (<code>FOREGROUND_SERVICE_HEALTH</code>): it keeps the step sensor registered so steps are counted on phones that stop background apps, and it exists only while the user has switched on Keep counting. <code>WalkService</code> uses types <code>health</code> and <code>location</code> (<code>FOREGROUND_SERVICE_LOCATION</code>): it records the steps, time and, only if the user turned on Record my route, the GPS route of a walk the user started. Location is used only in the foreground service while a walk is running, never in the background otherwise. Both services always show a notification with a Pause action, stop when the user stops the walk or turns the setting off, and all data stays on the device.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to reproduce in the app</h2>
+    <ol>
+      <li>Open Steptrail, go to Settings and switch on <strong>Keep counting</strong>. Pull down the notification shade to see the counting notification.</li>
+      <li>Open the Walks tab, switch on <strong>Record my route</strong>, choose Walk and tap <strong>Start walk</strong> (allow location when asked).</li>
+      <li>Press Home and open the notification shade to see the walk notification, then return to the app and hold the stop button to finish.</li>
+    </ol>
+  </div>
+
+  <footer>Steptrail: Step Counter &middot; &copy; 2026 Ecom Swift LLC &middot; <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></footer>
+</div>
+</body>
+</html>
