@@ -41,15 +41,13 @@ section { background: var(--card); border: 1px solid var(--line); border-radius:
 </section>
 
 <section>
-<h2>Website blocker</h2>
-<p>The website blocker only works when you add sites to it and blocking is on (during a focus session, a "Block now" period, or a schedule you set). While blocking is on:</p>
-<ul>
-<li>The app runs a small local server that listens only on your own PC (<code>127.0.0.1</code>). Nothing outside your PC can reach it.</li>
-<li>The app changes your Windows <em>automatic proxy setup script</em> setting for your user account to point at that local server. The script sends only the sites on your block list to the app, which answers with a calm block page (or refuses the connection for secure sites). All other traffic keeps the route it had before, including any proxy setup script or proxy you already used.</li>
-<li>Before changing anything, the app saves your previous proxy settings on your PC. It puts them back exactly when blocking ends, when you quit the app, and the next time the app starts if it was closed unexpectedly. If the app is not running, browsing connects the usual way.</li>
-<li>The app counts how many times a blocked site was opened each day, to show you that number. It does not record or send the pages you visit.</li>
-</ul>
-<p>The optional app blocker, when you turn it on, checks the names of running programs on your PC and closes the ones you listed while blocking is on. Program names are not stored beyond your list and are never sent anywhere.</p>
+<h2>Focus Guard</h2>
+<p>Focus Guard is off until you turn it on. When it is on and active (during a focus session, a "Guard now" period, or a schedule you set), the app checks the names of running programs on your PC and asks the ones on your list to close. It does not change any Windows setting and does not look at what you do in other programs. The app counts how many programs it closed each day, to show you that number. Program names are not stored beyond your list and are never sent anywhere.</p>
+</section>
+
+<section>
+<h2>Auto-Plan</h2>
+<p>Auto-Plan arranges your tasks into time blocks on your PC, using your tasks, your time blocks, your working hours and your past focus sessions. The calculation runs entirely on your PC. Nothing is sent to any server or AI service.</p>
 </section>
 
 <section>
