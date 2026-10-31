@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipStack privacy policy</title>
+<style>
+:root { --bg: #f5f6f8; --card: #fff; --ink: #15171d; --mut: #626774; --line: #e3e5ea; --acc: #5442d6; color-scheme: light dark; }
+@media (prefers-color-scheme: dark) { :root { --bg: #14161b; --card: #1a1d23; --ink: #ececf0; --mut: #989ba7; --line: #282b34; --acc: #a99dff; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+h1 { font-size: 30px; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 6px; }
+h2 { font-size: 18px; margin: 32px 0 8px; }
+p, li { color: var(--ink); }
+.muted { color: var(--mut); }
+ul { padding-left: 20px; }
+code { font-size: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; }
+a { color: var(--acc); }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px 24px 16px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy policy</h1>
+<p class="muted">ClipStack: Clipboard Manager &amp; History for Windows, by Ecom Swift LLC. Last updated 31 October 2026.</p>
+
+<section>
+<h2>In short</h2>
+<ul>
+<li>ClipStack keeps a history of what you copy so you can paste it again. That history stays on your PC, in ClipStack's own data folder, and clip content is encrypted for your Windows account.</li>
+<li>No account, no sign-in, no advertising, no analytics and no tracking. ClipStack does not upload your clips, snippets, settings or anything else to Ecom Swift LLC or anyone else.</li>
+<li>ClipStack itself makes no internet connections. The only online parts are Microsoft Store purchases and licence checks, which Windows and the Microsoft Store handle, and web pages that open in your browser when you click a link.</li>
+<li>Copies that password managers and other apps mark as private are never kept.</li>
+</ul>
+</section>
+
+<section>
+<h2>What the app reads</h2>
+<p>While capture is on, ClipStack reads what you copy: text, formatted text (HTML and RTF), links, lists of copied files and colours, and with ClipStack Pro also images. It also reads the name of the app the copy came from, so you can see it in the list and choose apps to ignore. To paste, ClipStack reads which window you were typing in and where its text cursor is, so it can put the popup next to it and return to that window.</p>
+<p>ClipStack does not keep a copy when the app that made it marks it as private or as excluded from clipboard history (the clipboard flags Windows documents for this, used by password managers), when it comes from an app you added to the ignore list, or while capture is paused or turned off.</p>
+<p>When you ask ClipStack Pro to copy text from an image, it uses the text recognition (OCR) engine built into Windows, on your PC, with the languages you have installed. The image is not sent anywhere.</p>
+</section>
+
+<section>
+<h2>What the app stores, and where</h2>
+<p>Everything is stored in ClipStack's data folder on your PC (for the Microsoft Store version, the folder Windows gives the app for its own data). The Trust and privacy page in the app shows the folder.</p>
+<ul>
+<li>your clipboard history: clip content, titles, tags, snippets and collection names are encrypted on disk (AES-256-GCM). The key is protected by Windows for your Windows account (DPAPI), so another account on the PC cannot read it;</li>
+<li>details stored without encryption so the list opens quickly: when each clip was copied and last used, how often you pasted it, the app it came from, its kind, size, character count and image dimensions, whether it is pinned, and a keyed fingerprint (HMAC) used to spot duplicates, which does not reveal the content;</li>
+<li>your settings, including shortcuts, language, theme and the list of apps to ignore;</li>
+<li>daily usage counts for Insights (how many clips you copied and pasted), computed and kept on your PC. You can delete them on the Trust and privacy page;</li>
+<li>a saved copy of your Microsoft Store licence check, protected for your Windows account, so Pro keeps working for a short time when the Store cannot be reached;</li>
+<li>log files for troubleshooting. Logs do not contain clip content, and your user name and profile path are masked.</li>
+</ul>
+<p>How long clips are kept is up to you: the free version keeps the newest 200 clips for up to 30 days, and you can choose less. Clips detected as sensitive (payment card numbers, API keys and tokens, private keys) are masked in lists, left out of search and backups, and removed after the time you choose. Detection is a pattern check and cannot recognise every secret. You can delete single clips or clear everything at any time.</p>
+</section>
+
+<section>
+<h2>Other apps and the clipboard</h2>
+<p>The Windows clipboard is shared by every app you run. When ClipStack pastes for you, it puts the clip on the clipboard and sends the paste keys to the window you were typing in. Any app you run can read the clipboard while something is on it; ClipStack cannot change that. Encryption on disk protects your history if the files are copied off this PC; it does not protect against other software running as you.</p>
+</section>
+
+<section>
+<h2>Start with Windows</h2>
+<p>If you turn on Start ClipStack with Windows (during setup or in Settings), ClipStack starts in the background when you sign in, with an icon in the notification area, so your shortcuts and history are ready. It does the same local work described above. It is listed in Windows Settings under Apps &gt; Startup, and you can turn it off there or in ClipStack.</p>
+</section>
+
+<section>
+<h2>Backups and files you save</h2>
+<p>With ClipStack Pro you can save a backup of your clips, snippets and collections. Backups are encrypted with a password you choose, saved where you pick, and never sent anywhere. Sensitive clips are never included. If you forget the password, the backup cannot be opened, by you or by us. Snippet exports are plain, unencrypted JSON files saved where you pick. Clips you save to a file or drag out of ClipStack go where you put them.</p>
+</section>
+
+<section>
+<h2>Purchases</h2>
+<p>ClipStack Pro is bought through the Microsoft Store. Microsoft handles payment, renewal, cancellation and your payment details; ClipStack never sees or stores them. The app asks the Microsoft Store, through Windows, which ClipStack Pro licence your Microsoft account has, and shows the Store's prices. Microsoft's privacy statement applies to the Microsoft Store.</p>
+</section>
+
+<section>
+<h2>Contacting us</h2>
+<p>The support link in the app opens your own email app with a message to <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>. Nothing is sent unless you send it, and nothing is attached unless you add it.</p>
+</section>
+
+<section>
+<h2>Removing ClipStack</h2>
+<p>Uninstalling ClipStack removes its data folder, including your history, snippets, settings, usage counts and logs. Backups and files you saved yourself stay where you saved them.</p>
+</section>
+
+<section>
+<h2>Children</h2>
+<p>ClipStack does not collect personal information from anyone, including children.</p>
+</section>
+
+<section>
+<h2>Changes and contact</h2>
+<p>If this policy changes, the new version and date will appear on this page. Questions: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>. Ecom Swift LLC, Wyoming, United States.</p>
+</section>
+</main>
+</body>
+</html>
