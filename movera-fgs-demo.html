@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movera - Foreground Service (Health) Demonstration</title>
+<meta name="description" content="Demonstration of the workout foreground service in the Movera home workout app.">
+<style>
+  :root{--bg:#0f0d17;--card:#171424;--ink:#f1eefa;--muted:#b0a9c6;--brand:#b79cff;--line:#2a2540}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  h1{font-size:22px;margin:0 0 6px}
+  p.sub{color:var(--muted);margin:0 0 24px}
+  video{width:100%;max-width:420px;display:block;margin:0 auto;border-radius:14px;border:1px solid var(--line);background:#000}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:24px}
+  h2{font-size:15px;color:var(--brand);margin:0 0 8px;text-transform:uppercase;letter-spacing:.08em}
+  ol{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  footer{color:var(--muted);font-size:13px;margin-top:28px}
+  a{color:var(--brand)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Movera: Workout Foreground Service</h1>
+  <p class="sub">Ecom Swift LLC &middot; demonstration for the Google Play foreground-service declaration</p>
+
+  <video controls playsinline preload="metadata" src="movera-fgs-demo.mp4"></video>
+
+  <div class="card">
+    <h2>What the video shows</h2>
+    <ol>
+      <li>The video starts with a workout already running, which the user started by tapping <strong>Start</strong> on the day's workout. The player shows the animated exercise, its name and a countdown timer. The app runs the workout foreground service (type <code>health</code>).</li>
+      <li>The workout moves from the exercise to a rest period with the next exercise previewed. Timer and exercise continue without the user touching the phone.</li>
+      <li>The notification shade shows the <strong>Movera Workout &middot; Day 1: Full body</strong> notification with the current step, a progress bar and <strong>Pause</strong>, <strong>+20 s</strong> and <strong>Next</strong> actions.</li>
+      <li>The user returns to the app and the workout continues in the foreground.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Why a foreground service is required</h2>
+    <p>A guided workout is a timed sequence of exercises with optional spoken cues. It has to keep running when the user locks the phone or switches app, otherwise the timer stops in the middle of an exercise, and it cannot be paused and resumed by the system without breaking the session. The work runs in <code>WorkoutService</code>, a foreground service of type <code>health</code> (<code>FOREGROUND_SERVICE_HEALTH</code>). It is started only when the user taps Start on a workout, always shows a notification with Pause, +20 s and Next, and stops when the workout ends or the user ends it. The service reads no sensors and sends no data anywhere; everything stays on the device.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to reproduce in the app</h2>
+    <ol>
+      <li>Open Movera and tap <strong>Start</strong> on the workout for the day, then <strong>Start now</strong>.</li>
+      <li>Lock the screen or press Home, then pull down the notification shade to see the workout notification.</li>
+      <li>Return to the app and tap the close button, then <strong>End workout</strong>, to stop the service.</li>
+    </ol>
+  </div>
+
+  <footer>Movera: Home Workout &middot; &copy; 2026 Ecom Swift LLC &middot; <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></footer>
+</div>
+</body>
+</html>
