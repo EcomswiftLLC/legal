@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Reviewly: Photo, UGC reviews</title>
+<meta name="description" content="Privacy Policy for Reviewly: Photo, UGC reviews by Ecom Swift LLC.">
+<style>
+  :root{ --bg:#ffffff; --ink:#1f2430; --muted:#5b6275; --line:#e4e6f0; --brand:#0f5c4d; --soft:#eef6f3; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 72px}
+  header{border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;margin-bottom:10px}
+  h1{font-size:26px;line-height:1.25;margin:0 0 8px}
+  .meta{color:var(--muted);font-size:14px;margin:0}
+  h2{font-size:18px;margin:34px 0 10px;color:var(--brand)}
+  p,li{color:#2b3040}
+  a{color:var(--brand)}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;margin:12px 0}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:var(--soft);font-weight:600}
+  .callout{background:var(--soft);border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 16px;margin:18px 0}
+  footer{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">Ecom Swift LLC</div>
+    <h1>Privacy Policy - Reviewly: Photo, UGC reviews</h1>
+    <p class="meta">Last updated: October 29, 2026</p>
+  </header>
+
+  <p>Reviewly: Photo, UGC reviews is a product reviews service published by Ecom Swift LLC. A store owner ("the merchant") installs the Reviewly: Photo, UGC reviews plugin in their Framer project, which adds one small script to the published site. Shoppers on that site can then read and write product reviews, with photos and short videos. The merchant can also import a list of customers (a CSV file) or send purchases to a private webhook so the service can mark real buyers. This policy explains what data the service handles, where it lives and why.</p>
+
+  <div class="callout"><strong>The Framer plugin.</strong> The Reviewly: Photo, UGC reviews plugin for Framer works entirely inside the merchant's Framer project. The reviews the merchant types or imports are stored in the project's own code file (and, if the merchant asks, in a CMS collection of that project) and are published with the site. The plugin makes no network request, has no account and sends nothing to Ecom Swift LLC or anyone else, so for the plugin we collect and process no personal data. Photos the merchant adds with the plugin's upload button go into the project's own Framer asset storage, handled by Framer under Framer's terms, not by us. Video links are stored only as addresses of YouTube or Vimeo videos. The rest of this policy describes the separate hosted service used on other platforms and through the web dashboard.</div>
+
+  <div class="callout"><strong>Short version.</strong> We store the merchant's account details, the reviews shoppers write (including any photos or short videos they add) and, if the merchant imports them, the customers used to mark verified buyers. We use no cookies, no advertising and no analytics trackers, and we never sell data. A shopper's IP address is turned into a salted one-way code that is used only to limit spam. The merchant decides what happens to the reviews on their store.</div>
+
+  <h2>1. Who we are</h2>
+  <p>The service is published by Ecom Swift LLC. Contact us at <a href="mailto:framer@ecomswiftllc.com">framer@ecomswiftllc.com</a>. For the review content on a store, the merchant is the data controller and Ecom Swift LLC acts as their processor.</p>
+
+  <h2>2. What we process</h2>
+  <table>
+    <tr><th>What</th><th>Why</th></tr>
+    <tr><td>Merchant account: store name, store domain, contact email, a one-way hash of the admin key, one-way hashes of short-lived sign-in codes and dashboard sessions, and the settings the merchant chooses. The merchant types the store name and domain (and optionally an email) into the dashboard when creating the account. The Framer plugin itself sends nothing to our servers: it makes no network request, reads no page content, CMS content, files or other project data, and only writes the install snippet and component into the project.</td><td>To run the dashboard, check that requests come from the merchant's site and to contact the merchant about the service.</td></tr>
+    <tr><td>Reviews: the shopper's name, star rating, optional headline, review text, optional email address, the product page path, the date, and any reply from the merchant.</td><td>To show approved reviews on the store and let the merchant moderate, answer, export and remove them.</td></tr>
+    <tr><td>Review videos a shopper chooses to add (a clip of up to 30 seconds, shrunk in the shopper's browser and stored in small parts), or a YouTube or Vimeo link the shopper pastes.</td><td>To show them with the review once the merchant approves it. The merchant can remove any video. A pasted link is only a link: the video itself stays with YouTube or Vimeo, which load only when a visitor presses play, using their privacy-friendly player addresses, and are subject to their own policies.</td></tr>
+    <tr><td>Review photos a shopper chooses to add (up to three per review, resized to a small image in the shopper's browser).</td><td>To show them with the review once the merchant approves it. The merchant can remove any photo.</td></tr>
+    <tr><td>If the merchant imports customers (a CSV file or a webhook): the customer's email address, first name, order number, the products bought and the order date. Reviewly: Photo, UGC reviews has no access to the merchant's payment or store accounts; it only keeps what the merchant sends.</td><td>To show a Verified buyer badge on reviews written by real customers and to list customers who are ready to be asked for a review. We never ask for payment details.</td></tr>
+    <tr><td>Opt-outs: a one-way hash of the email address of anyone who asks not to receive review requests.</td><td>To make sure that person is never listed for a review request again.</td></tr>
+    <tr><td>If the merchant switches on automatic review requests: the merchant's own Brevo or Resend API key (stored encrypted, never shown again), the sender name and address, the wording of the email and a count of emails sent or failed.</td><td>To send review requests for the merchant from the merchant's own email account. The key is used only for that and can be removed at any time in the dashboard.</td></tr>
+    <tr><td>When a site is first set up: the site name, its published address and, if given, an email address may also be shared with Ecom Swift LLC's own internal install record.</td><td>So we can offer the merchant help getting started. It is not shared with anyone else.</td></tr>
+    <tr><td>A salted one-way hash of the shopper's IP address, stored with a submitted review.</td><td>To stop spam and abuse, for example by limiting how many reviews one network can send per hour. The IP address itself is not stored and the hash cannot be reversed into it.</td></tr>
+    <tr><td>Standard server request data (such as the page address and browser type) handled by our hosting provider while serving a request.</td><td>To deliver the service and keep it secure.</td></tr>
+  </table>
+  <p>An email address typed into a review form is never shown publicly. It is visible only to the merchant. By default Reviewly: Photo, UGC reviews does not send emails to shoppers: the merchant sends review requests from their own tools. If the merchant switches on automatic review requests, the service sends a one-time email to each customer on the merchant's list through the merchant's own Brevo or Resend account (the merchant's sender address, the customer's email address and first name, the product name and the review link are passed to that provider, which has its own policy). Every such email has a one-click link that stops further requests for that address.</p>
+
+  <h2>3. Cookies and browser storage</h2>
+  <p>We set no cookies. The review widget may keep a short-lived copy of review data in the shopper's browser session storage so a page does not reload the same data repeatedly. It is cleared when the browser tab is closed.</p>
+
+  <h2>4. Where data lives and who sees it</h2>
+  <p>Data is stored with Cloudflare, Inc. (Workers and D1) on its global network. The merchant can see all reviews on their store, including shopper emails. Reviews are shown publicly on the merchant's store only after the merchant's moderation rules allow it. We do not share data with advertisers or data brokers and we do not sell personal data.</p>
+
+  <h2>5. How long we keep it</h2>
+  <p>Reviews are kept until the merchant deletes them or deletes their account. Deleting an account in the dashboard permanently removes the account and all of its reviews. Salted IP hashes, photos and videos are removed together with the review they belong to. If the merchant clears the customer list, the imported customers are deleted; reviews stay. The merchant's admin key is shown once in the dashboard and never passes through the Framer plugin. The plugin only holds the public site key, which is also printed in the published page's code. The dashboard link the plugin opens is a plain address with no key or project data. Removing the plugin's code from the site stops the service from running there.</p>
+
+  <h2>6. Your choices and rights</h2>
+  <p>Merchants can export every review as CSV or JSON, edit or delete any review, clear their imported customer list, and delete their whole account at any time. A shopper who wants a review changed or removed should contact the store that published it, or write to us at the address above and we will help route or act on the request. Depending on where you live you may have rights to access, correct or delete your personal data. We honor such requests.</p>
+
+  <h2>7. Security</h2>
+  <p>All traffic uses HTTPS. Admin keys are stored only as one-way hashes. Review text is displayed as plain text so it cannot run code on a store, and uploaded photos and videos are checked by their file contents and served only as images or video. We limit submissions per network and filter obvious spam, but no system is perfectly secure.</p>
+
+  <h2>8. Children</h2>
+  <p>The service is for store owners and their adult customers and is not directed at children under 13.</p>
+
+  <h2>9. Changes</h2>
+  <p>If we change this policy we will update the date above. Material changes will also be announced in the dashboard.</p>
+
+  <footer>Ecom Swift LLC, Wyoming, USA &middot; <a href="mailto:framer@ecomswiftllc.com">framer@ecomswiftllc.com</a></footer>
+</div>
+</body>
+</html>
