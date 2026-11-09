@@ -19,12 +19,12 @@
   <h1>AI Writing Assistant: Penlark: Privacy Policy</h1>
   <p class="muted">Effective date: 8 November 2026</p>
 
-  <p>Penlark (AI Writing Assistant: Penlark) is made by Ecom Swift LLC. It writes drafts for everyday and work messages, such as emails, replies, posts, bios, listings and notes. You don't need an account. This page explains, in plain words, what stays on your phone, what is sent to our server and an AI provider, and what we keep.</p>
+  <p>Penlark (AI Writing Assistant: Penlark) is made by Ecom Swift LLC. It writes drafts for everyday and work messages, such as emails, replies, posts, bios, listings and notes. You don't need an account. This page explains, in plain words, what stays on your phone, what is sent to our server and Cloudflare Workers AI, and what we keep.</p>
 
   <h2>The short version</h2>
   <ul>
-    <li>The details you type to get a draft are sent to our server and to an AI provider, so that the draft can be written. The app tells you this before your first request, and asks you to accept it.</li>
-    <li>Our server keeps no copy of your text and no copy of the draft. It keeps only an anonymous count so that free daily credits work.</li>
+    <li>The details you type to get a draft are sent to our server and to Cloudflare Workers AI, which runs the writing model, so that the draft can be written. The app tells you this before your first request, and asks you to accept it.</li>
+    <li>Our server keeps no copy of your text and no copy of the draft. It keeps only an anonymous count so that the daily request limit works.</li>
     <li>If you report a draft, the reported draft is kept so we can review it. Nothing else you wrote is kept.</li>
     <li>Your saved drafts, folders and voice profiles stay on your phone. We don't have them.</li>
     <li>We do not sell your data, and there is no account.</li>
@@ -34,17 +34,17 @@
   <ul>
     <li><strong>Drafts you save,</strong> with their folders and favourite marks, in a database in the app's private storage.</li>
     <li><strong>Voice profiles:</strong> the name, role, business, usual tone, sign-off and style note you enter. They are stored only on your phone. They are included in a request only when "Use my voice" is on, so the draft can sound like you.</li>
-    <li><strong>Settings and counters:</strong> language, tone, length, theme, how many drafts you copied or exported (used to space out the rating request and ads), and your remaining daily credits.</li>
+    <li><strong>Settings and counters:</strong> language, tone, length, theme, how many drafts you copied or exported (used to space out the rating request and ads), and your remaining daily requests.</li>
     <li><strong>An anonymous install ID,</strong> a random number made when the app first starts. It is not linked to your name, email, phone or Google account.</li>
   </ul>
   <p>You can remove everything on your phone at any time in Settings, under Delete all my data. Penlark turns off Android backup for its data, so drafts are not copied to the cloud by Android.</p>
 
-  <h2>What is sent to our server and an AI provider</h2>
-  <p>When you tap Write, Penlark sends the answers you gave, the template you chose, your tone, length and language choices, and (if "Use my voice" is on) your voice profile. The same goes for the refine buttons, together with the draft being changed. Everything travels over an encrypted connection to our server, which adds safety rules and passes the request to an AI provider to write the text. The draft comes back the same way.</p>
-  <p>Please don't type anything into Penlark that you don't want to share with an AI provider, such as passwords, card numbers or health details.</p>
+  <h2>What is sent to our server and Cloudflare Workers AI</h2>
+  <p>When you tap Write, Penlark sends the answers you gave, the template you chose, your tone, length and language choices, and (if "Use my voice" is on) your voice profile. The same goes for the refine buttons, together with the draft being changed. Everything travels over an encrypted connection to our server, which adds safety rules and passes the request to Cloudflare Workers AI to write the text. The draft comes back the same way.</p>
+  <p>Please don't type anything into Penlark that you don't want to share with a cloud AI service, such as passwords, card numbers or health details.</p>
   <ul>
-    <li><strong>Retention:</strong> our server does not store the text of requests or drafts. It stores the anonymous install ID, the number of drafts used today and the number of rewarded videos watched today, so that free credits and limits work, and counters used to keep the service running and to stop abuse.</li>
-    <li><strong>The AI provider</strong> processes the request to write the draft, and its own terms and privacy policy apply to that processing.</li>
+    <li><strong>Retention:</strong> our server does not store the text of requests or drafts. It stores the anonymous install ID, the number of AI requests used today so that the daily limits work, and counters used to keep the service running and to stop abuse.</li>
+    <li><strong>Cloudflare Workers AI</strong> processes the request to write the draft. Cloudflare states in its <a href="https://developers.cloudflare.com/workers-ai/platform/data-usage/">Workers AI data usage page</a> that it does not use this content to train AI models and does not retain inputs or outputs after the request is answered, apart from limited legal and security exceptions. Cloudflare's own terms and privacy policy apply to that processing.</li>
     <li><strong>Safety checks:</strong> requests and drafts are checked automatically by rules on your phone and on our server. Requests that break the rules are refused and not charged.</li>
   </ul>
 
@@ -52,8 +52,8 @@
   <p>Every draft has a Report button. If you send a report, we receive the reported draft, the reason you picked, your optional note and, if you leave the box ticked, the request that produced it. We keep reports so we can improve the safety rules, and we delete them when we no longer need them. You can untick "include my request" before you send.</p>
 
   <h2>Ads</h2>
-  <p>Penlark shows ads from Google AdMob, unless you have Premium or bought Remove ads. Banners appear only on the Library and Settings screens. A full-screen ad can appear after you finish copying, sharing or exporting a draft, and never while a draft is being written. A rewarded video is always your choice: it gives you free credits when you watch it to the end. Before ads load, a consent form from Google's User Messaging Platform appears where the law requires one (for example in the European Economic Area and the United Kingdom). Ad requests do not include what you wrote.</p>
-  <p>To give you the credit for a rewarded video, the anonymous install ID is passed to the ad service and checked by our server. You can change your ad consent in Settings, under Ad privacy choices (shown where the law requires it), and you can reset or delete your advertising ID in your Android settings. Google's privacy policy applies to the ads it serves.</p>
+  <p>Penlark shows ads from Google AdMob, unless you have Premium or bought Remove ads. Banners appear only on the Library and Settings screens. A full-screen ad can appear after you finish copying, sharing or exporting a draft, and never while a draft is being written. Before ads load, a consent form from Google's User Messaging Platform appears where the law requires one (for example in the European Economic Area and the United Kingdom). Ad requests do not include what you wrote.</p>
+  <p>You can change your ad consent in Settings, under Ad privacy choices (shown where the law requires it), and you can reset or delete your advertising ID in your Android settings. Google's privacy policy applies to the ads it serves.</p>
 
   <h2>Purchases</h2>
   <p>Premium (weekly, monthly or yearly) and Remove ads are sold through Google Play Billing. Google handles payment, and we never see your card or payment details. The app only learns which products your Google account owns, so it can unlock them.</p>
