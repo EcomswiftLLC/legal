@@ -17,35 +17,34 @@
 </head>
 <body>
   <h1>Linelens: AI Content Detector, Privacy Policy</h1>
-  <p class="muted">Last updated: 8 November 2026</p>
+  <p class="muted">Last updated: 9 November 2026</p>
 
-  <p>Linelens (AI Content Detector: Linelens) is made by Ecom Swift LLC. You do not need an account. The quick check runs on your phone. The full check sends what you submit to our server and to an AI provider so a model can write its reasoning. We do not sell personal information.</p>
+  <p>Linelens (AI Content Detector: Linelens) is made by Ecom Swift LLC. You do not need an account. The quick check runs on your phone. The full check sends the text you submit to our server and to Cloudflare Workers AI so a model can write its reasoning. Pictures never leave your phone. We do not sell personal information.</p>
 
   <h2>What stays on your phone</h2>
   <ul>
     <li><strong>The quick check:</strong> the on-device signals for text are computed on your phone. Nothing is sent.</li>
-    <li><strong>Picture details:</strong> camera data, editing software and Content Credentials are read from the file on your phone.</li>
+    <li><strong>Pictures:</strong> camera data, editing software and Content Credentials are read from the file on your phone. The picture itself is never uploaded and no AI estimate is made from it.</li>
     <li><strong>History:</strong> your saved checks, notes and small thumbnails are stored only on your phone. You can switch history off or clear it in Settings. Uninstalling the app removes them.</li>
     <li><strong>Settings and counters:</strong> your theme, and counters that pace the Premium offer and the rating request, stay on your phone.</li>
   </ul>
 
   <h2>What is sent when you run a full check</h2>
   <ul>
-    <li><strong>Text:</strong> the text you submit is sent to our server and to an AI provider, which generates the answer.</li>
-    <li><strong>Pictures:</strong> a smaller copy of the picture is sent, re-encoded so it carries no metadata and no location.</li>
-    <li><strong>Retention:</strong> our server does not keep what you send. It keeps only anonymous usage counters and a random install identifier so that free daily credits can be counted. The AI provider processes the request to answer it under its own terms.</li>
+    <li><strong>Text:</strong> the text you submit is sent to our server (hosted on Cloudflare Workers) and to Cloudflare Workers AI, which generates the answer.</li>
+    <li><strong>Retention:</strong> our server does not keep what you send. It keeps only anonymous usage counters and a random install identifier so that your daily checks can be counted. According to Cloudflare's data usage documentation for Workers AI, Cloudflare does not train its models on what you send and does not keep it after the answer is returned. Our server does not keep the content either.</li>
     <li><strong>No account, no sale:</strong> there is no sign-in, and we do not sell your data or use what you submit to build advertising profiles.</li>
   </ul>
   <p>You are shown a plain-language notice before the first full check, and you can decline it. Please do not enter passwords, payment details or other sensitive information.</p>
 
   <h2>Reports</h2>
-  <p>Every result has a Report action. If you send a report, we keep the reported result, the reason and your note. If you leave the box ticked, we also keep the text you checked, so that we can review it and make results safer. Pictures are not included in reports.</p>
+  <p>Every result has a Report action. If you send a report, we keep the reported result, the reason and your note. If you leave the box ticked, we also keep the text you checked, so that we can review it and make results safer. Pictures are never part of a report.</p>
 
   <h2>Files you open</h2>
   <p>Linelens asks for no storage, camera, contacts, location or microphone permission. It opens only the file or picture you choose with Android's own picker, or the text or picture you share into it from another app.</p>
 
   <h2>Advertising</h2>
-  <p>The free version shows ads from Google AdMob. Before ads load, a consent form appears where the law requires one. AdMob can use your device's advertising ID and general device information to show and measure ads. Banners appear on the History and Settings screens. A full-screen ad may appear between results, with limits on how often. A rewarded video plays only when you choose to watch one for extra free credits. Premium removes ads. You can change your consent in Settings, under Ad privacy choices (shown where the law requires it). Google's privacy policy applies to the ads it serves: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+  <p>The free version shows ads from Google AdMob. Before ads load, a consent form appears where the law requires one. AdMob can use your device's advertising ID and general device information to show and measure ads. Banners appear on the History and Settings screens. A full-screen ad may appear between results, with limits on how often. Premium removes ads. You can change your consent in Settings, under Ad privacy choices (shown where the law requires it). Google's privacy policy applies to the ads it serves: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
 
   <h2>Purchases</h2>
   <p>Premium is sold through Google Play Billing. Google handles the payment, and we never see your card or payment details. The app learns only which products your Google account owns, so it can unlock them. Subscriptions renew automatically until you cancel them in Google Play.</p>
