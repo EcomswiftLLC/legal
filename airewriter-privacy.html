@@ -17,14 +17,14 @@
 </head>
 <body>
   <h1>AI Rewriter: Wordlark: Privacy Policy</h1>
-  <p class="muted">Effective date: 8 November 2026</p>
+  <p class="muted">Effective date: 9 November 2026</p>
 
-  <p>Wordlark (AI Rewriter: Wordlark) is made by Ecom Swift LLC. It rewrites text you already have: it can paraphrase it, change its tone, shorten or expand it, fix grammar and simplify it. You don't need an account. This page explains, in plain words, what stays on your phone, what is sent to our server and an AI provider, and what we keep.</p>
+  <p>Wordlark (AI Rewriter: Wordlark) is made by Ecom Swift LLC. It rewrites text you already have: it can paraphrase it, change its tone, shorten or expand it, fix grammar and simplify it. You don't need an account. This page explains, in plain words, what stays on your phone, what is sent to our server and to Cloudflare Workers AI, and what we keep.</p>
 
   <h2>The short version</h2>
   <ul>
-    <li>The text you ask Wordlark to rewrite is sent to our server and to an AI provider, so that the rewrite can be made. The app tells you this before your first rewrite and asks you to accept it.</li>
-    <li>Our server keeps no copy of your text and no copy of the result. It keeps only anonymous counters so that free daily credits work.</li>
+    <li>The text you ask Wordlark to rewrite is sent to our server and on to Cloudflare Workers AI, so that the rewrite can be made. The app tells you this before your first rewrite and asks you to accept it.</li>
+    <li>Our server keeps no copy of your text and no copy of the result. It keeps only anonymous counters so that the daily limit works.</li>
     <li>If you report a result, the reported result is kept so we can review it. Nothing else you wrote is kept.</li>
     <li>Your history, favourites and writing samples stay on your phone. We don't have them.</li>
     <li>We do not sell your data, and there is no account.</li>
@@ -34,17 +34,17 @@
   <ul>
     <li><strong>History and favourites:</strong> the text you rewrote, the results, the mode you used and the time, in a database in the app's private storage. History keeps up to 200 items, and favourites are kept until you remove them.</li>
     <li><strong>Writing samples:</strong> if you add samples of your own writing so that results can sound more like you, they are stored only on your phone. When that feature is used, a short summary of your style and a few short excerpts are included in the request, as described below.</li>
-    <li><strong>Settings and counters:</strong> theme, language, last mode, how many results you copied or exported (used to space out the rating request and ads), and your remaining daily credits.</li>
+    <li><strong>Settings and counters:</strong> theme, language, last mode, how many results you copied or exported (used to space out the rating request and ads), and your remaining daily rewrites.</li>
     <li><strong>An anonymous install ID,</strong> a random number made when the app first starts. It is not linked to your name, email, phone or Google account.</li>
   </ul>
   <p>You can remove everything on your phone at any time in Settings, under Delete everything on this phone. Wordlark turns off Android backup for its data, so history is not copied to the cloud by Android.</p>
 
-  <h2>What is sent to our server and an AI provider</h2>
-  <p>When you tap Rewrite, Wordlark sends the text you chose, the mode and tone you picked and, where it applies, your language choice. If you use your writing style, the style summary and short excerpts are sent too. Everything travels over an encrypted connection to our server, which adds safety rules and passes the request to an AI provider to produce the rewrite. The result comes back the same way.</p>
-  <p>Please don't rewrite anything you don't want to share with an AI provider, such as passwords, card numbers or health details.</p>
+  <h2>What is sent to our server and to Cloudflare Workers AI</h2>
+  <p>When you tap Rewrite, Wordlark sends the text you chose, the mode and tone you picked and, where it applies, your language choice. If you use your writing style, the style summary and short excerpts are sent too. Everything travels over an encrypted connection to our server, which adds safety rules and passes the request to Cloudflare Workers AI, an AI model service run by Cloudflare, Inc., to produce the rewrite. The result comes back the same way.</p>
+  <p>Please don't rewrite anything you don't want to share with an AI service, such as passwords, card numbers or health details.</p>
   <ul>
-    <li><strong>Retention:</strong> our server does not store the text of requests or results. It stores the anonymous install ID, the number of rewrites used today and the number of rewarded videos watched today, so that free credits and limits work, and counters used to keep the service running and to stop abuse.</li>
-    <li><strong>The AI provider</strong> processes the request to make the rewrite, and its own terms and privacy policy apply to that processing.</li>
+    <li><strong>Retention:</strong> our server does not store the text of requests or results. It stores the anonymous install ID, the number of rewrites used today, so that the daily limit works, and counters used to keep the service running and to stop abuse.</li>
+    <li><strong>Cloudflare Workers AI</strong> processes the request to make the rewrite. According to Cloudflare's data usage page for Workers AI, it does not use your text to train its models and does not keep it. Cloudflare's own terms and privacy policy apply to that processing. No other AI provider receives your text.</li>
     <li><strong>Safety checks:</strong> requests and results are checked automatically by rules on your phone and on our server. Requests that break the rules are refused and not charged.</li>
   </ul>
 
@@ -59,8 +59,8 @@
   <p>Every result has a Report button. If you send a report, we receive the reported result, the reason you picked, your optional note and, if you leave the box ticked, the text that produced it. We keep reports so we can improve the safety rules, and we delete them when we no longer need them. You can untick the box before you send.</p>
 
   <h2>Ads</h2>
-  <p>Wordlark shows ads from Google AdMob, unless you have Premium or bought Remove ads. Banners appear only on the Library and Settings screens. A full-screen ad can appear after you finish copying, sharing or exporting a result, and never while a rewrite is being made. A rewarded video is always your choice: it gives you free credits when you watch it to the end. Before ads load, a consent form from Google's User Messaging Platform appears where the law requires one (for example in the European Economic Area and the United Kingdom). Ad requests do not include what you wrote.</p>
-  <p>To give you the credit for a rewarded video, the anonymous install ID is passed to the ad service and checked by our server. You can change your ad consent in Settings, under Ad privacy choices (shown where the law requires it), and you can reset or delete your advertising ID in your Android settings. Google's privacy policy applies to the ads it serves.</p>
+  <p>Wordlark shows ads from Google AdMob, unless you have Premium or bought Remove ads. Banners appear only on the Library and Settings screens. A full-screen ad can appear after you finish copying, sharing or exporting a result, and never while a rewrite is being made. Wordlark does not offer rewarded videos. Before ads load, a consent form from Google's User Messaging Platform appears where the law requires one (for example in the European Economic Area and the United Kingdom). Ad requests do not include what you wrote.</p>
+  <p>You can change your ad consent in Settings, under Ad privacy choices (shown where the law requires it), and you can reset or delete your advertising ID in your Android settings. Google's privacy policy applies to the ads it serves.</p>
 
   <h2>Purchases</h2>
   <p>Premium (weekly, monthly or yearly) and Remove ads are sold through Google Play Billing. Google handles payment, and we never see your card or payment details. The app only learns which products your Google account owns, so it can unlock them.</p>
