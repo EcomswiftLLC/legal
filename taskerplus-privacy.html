@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasker Plus: Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.65; color: #0e1226; background: #f5f6fa; }
+  @media (prefers-color-scheme: dark) { body { color: #f2f4fa; background: #090b14; } a { color: #9395ff; } h1,h2 { color:#fff; } .muted { color: #a3acc8; } }
+  h1 { font-size: 30px; letter-spacing: -0.5px; }
+  h2 { font-size: 20px; margin-top: 32px; }
+  .muted { color: #555d7c; }
+  a { color: #4a4bdb; }
+  ul { padding-left: 20px; }
+</style>
+</head>
+<body>
+  <h1>Tasker Plus: Privacy Policy</h1>
+  <p class="muted">Effective date: 9 November 2026</p>
+
+  <p>Tasker Plus is made by Ecom Swift LLC. It lets your phone run its own routines: you choose a trigger, such as a time, a battery level or a Wi-Fi network, and what should happen. You don't need an account. Your automations, run history and settings stay on your phone. We don't run a server that receives them, and we don't sell personal information.</p>
+
+  <h2>What Tasker Plus stores on your phone</h2>
+  <ul>
+    <li><strong>Your automations:</strong> triggers, steps, tasks, variables, notes and earlier versions of tasks. They are kept in the app's private storage.</li>
+    <li><strong>Activity log:</strong> a list of recent runs with each step and its result. You can clear it in the app. Values from secrets are never written to it.</li>
+    <li><strong>Secrets:</strong> API keys and tokens you add are encrypted with a key held in the Android Keystore. They are not shown again, not included in exports and not written to the log.</li>
+    <li><strong>Settings and counters:</strong> theme, the folder you chose for file steps, switches such as "Let other apps run tasks", and counters used to space out ads and the rating request.</li>
+  </ul>
+  <p>Cloud backup of the app's data is switched off. Uninstalling the app removes everything, and "Delete all my data" in Settings removes it at any time.</p>
+
+  <h2>Permissions, and why they are asked for</h2>
+  <p>Tasker Plus asks for each sensitive permission only when you add an automation that needs it, with a short explanation first. The app works with all optional permissions denied; the automations that need them simply stay off. It does not use SMS or call log permissions, and it does not read your contacts, photos or messages.</p>
+  <ul>
+    <li><strong>Foreground service and notifications:</strong> a small notification shows that the engine is running, so Android lets automations keep working in the background.</li>
+    <li><strong>Location, including "all the time":</strong> only for automations with a place trigger, to know when you arrive at or leave a place you defined. Locations are compared on the phone and never sent anywhere.</li>
+    <li><strong>Usage access:</strong> only to know which app is on screen, for "when this app is open" automations. Nothing is recorded or sent.</li>
+    <li><strong>Notification access:</strong> only for "when a notification arrives" automations. The app, title and text are held in memory while the trigger is checked, then dropped. They are not stored.</li>
+    <li><strong>Do Not Disturb access and Modify system settings:</strong> to switch Do Not Disturb, the ringer, brightness, screen timeout and auto-rotate when an automation says so.</li>
+    <li><strong>Phone state:</strong> to know when a call rings, is answered or is missed. Phone numbers are not read.</li>
+    <li><strong>Bluetooth connection, NFC, alarms and reminders, set alarm, boot, wake lock, vibrate:</strong> for the matching triggers and steps.</li>
+    <li><strong>Display over other apps:</strong> optional. Android blocks apps from opening screens in the background, so with this permission an automation can open an app for you; without it, you get a notification to tap.</li>
+    <li><strong>Internet and network state:</strong> for ads, Google Play purchases, and for network steps you add yourself.</li>
+  </ul>
+
+  <h2>When data leaves your phone</h2>
+  <ul>
+    <li><strong>Network steps you create:</strong> web requests, downloads and ping send what you put into them to the address you chose. Tasker Plus does not add anything else.</li>
+    <li><strong>Sharing and drafts:</strong> steps that share text, or open a text message, email or dialer, hand the content to the app you pick. They only open a draft; you send it.</li>
+    <li><strong>Export:</strong> a .tpx file is written where you choose. It does not contain secrets. Imported automations always arrive switched off.</li>
+    <li><strong>Other apps:</strong> only if you switch on "Let other apps run tasks", an app that knows your private token can start a task by name.</li>
+  </ul>
+
+  <h2>Advertising</h2>
+  <p>Tasker Plus is free to use and shows ads from Google AdMob, unless you have Premium. Before ads load, a consent form from Google's User Messaging Platform appears where the law requires one. AdMob can use your device's advertising ID and general device information to show ads and measure them. Your automations and logs are never shared with the ad service. Banners appear on list screens only, never in the editor or while an automation runs. A rewarded video plays only when you choose to watch one, to use Premium features for 24 hours. You can change your consent in Settings, where the law requires that option, and reset your advertising ID in Android settings. Google's privacy policy applies to the ads it serves: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+
+  <h2>Purchases</h2>
+  <p>Premium is sold through Google Play Billing. Google handles the payment and we never see your card details. The app only learns which products your Google account owns, so it can unlock them.</p>
+
+  <h2>Ratings</h2>
+  <p>At a calm moment, for example after your automations have run successfully a few times, the app may ask whether you are enjoying it. If you choose to rate, Google Play's own review sheet opens.</p>
+
+  <h2>Data sent to Google services</h2>
+  <p>The ad service and Google Play services may collect approximate location (from your IP address), app interactions, crash logs, diagnostics and device identifiers, as described in Google's policies. We do not receive this data about you as an individual. Tasker Plus has no analytics of its own and does not sell or rent any data.</p>
+
+  <h2>You are in control of what runs</h2>
+  <p>Automations can change settings on your phone. Tasker Plus switches off an automation that starts too often, lets you pause everything with one tap, and shows every run in the activity log. Test a new automation with the test run, which changes nothing on the phone.</p>
+
+  <h2>Children</h2>
+  <p>Tasker Plus is a general-audience tool. It is not directed at children, and we don't knowingly collect personal information from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a><br>Ecom Swift LLC</p>
+</body>
+</html>
