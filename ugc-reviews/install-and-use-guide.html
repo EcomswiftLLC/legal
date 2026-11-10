@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Install and use guide - ReviewFlow: Reviews &amp; UGC help center</title>
-<meta name="description" content="Step-by-step guide to installing ReviewFlow: Reviews &amp; UGC, adding the reviews block, importing reviews and turning on review requests.">
+<meta name="description" content="Step-by-step guide to installing ReviewFlow: Reviews &amp; UGC, adding the reviews block, importing reviews, review requests, store reviews and integrations.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
 <p class="eyebrow">Install and use guide</p>
 <h1>From install to your first reviews</h1>
 <hr class="rule">
-<p class="lead">Five steps, in the order most stores do them. Each step says what to click and what you should see. The same steps are in the app under <strong>Get started</strong>.</p>
+<p class="lead">Five steps, in the order most stores do them. Each step says what to click and what you should see. The same steps are in the app under <strong>Get started</strong>. After them come five things you can add when you want them.</p>
 <nav class="toc" aria-label="On this page"><strong>On this page</strong>
 <ul>
 <li><a href="#before">Before you start</a></li>
@@ -31,6 +31,11 @@
 <li><a href="#step-3">3. Set how the widget looks</a></li>
 <li><a href="#step-4">4. Add or import reviews</a></li>
 <li><a href="#step-5">5. Turn on review requests</a></li>
+<li><a href="#store-reviews">Store reviews</a></li>
+<li><a href="#product-groups">Product groups</a></li>
+<li><a href="#sharing">Share a review</a></li>
+<li><a href="#order-status">Ask on the order status page</a></li>
+<li><a href="#integrations">Integrations</a></li>
 <li><a href="#daily">Day to day</a></li>
 <li><a href="#trouble">If something is wrong</a></li>
 <li><a href="#uninstall">Uninstalling</a></li>
@@ -66,7 +71,7 @@
 <li>Back in ReviewFlow: Reviews &amp; UGC, press <strong>Add star ratings</strong> and add <strong>Star rating</strong> near the product title.</li>
 <li>Press <strong>Mark as done</strong> on the Dashboard. Shopify does not let an app see which blocks a theme uses, so this one is your confirmation.</li>
 </ol>
-<p>Other blocks you can add the same way: <strong>Review carousel</strong>, <strong>Photo wall</strong>, <strong>All reviews</strong> (for a page of its own), <strong>Trust badge</strong> and <strong>Questions and answers</strong>.</p><p>Two features are app embeds, which you switch on under App embeds in the theme editor&rsquo;s left sidebar instead of placing them on a page: <strong>Product card stars</strong>, which adds a small rating to product cards on collection and search pages, and <strong>Review rich results</strong>, which prints the structured data search engines read. Whether a search engine shows stars is up to the search engine.</p>
+<p>Other blocks you can add the same way: <strong>Review carousel</strong>, <strong>Photo wall</strong>, <strong>All reviews</strong> (for a page of its own), <strong>Trust badge</strong>, <strong>Questions and answers</strong> and <strong>Store reviews</strong> (see <a href="#store-reviews">Store reviews</a> below).</p><p>Two features are app embeds, which you switch on under App embeds in the theme editor&rsquo;s left sidebar instead of placing them on a page: <strong>Product card stars</strong>, which adds a small rating to product cards on collection and search pages, and <strong>Review rich results</strong>, which prints the structured data search engines read. Whether a search engine shows stars is up to the search engine.</p>
 <div class="seen"><span class="label">What you will see</span>
 <p>In the theme editor, the block appears in the list on the left and a preview in the middle. Until the product has reviews, the block shows a short invitation to write the first one. On your live store, the same block shows the star summary, the reviews and a Write a review button.</p></div>
 </li>
@@ -75,7 +80,7 @@
 <p>Open <strong>Widget settings</strong>.</p>
 <ul>
 <li><strong>Look:</strong> choose a layout, light, dark or automatic colors, and the colors themselves.</li>
-<li><strong>Features:</strong> switch photos, videos, helpful votes, search, sorting, filters, the verified badge, abuse reports, the review form and questions on or off.</li>
+<li><strong>Features:</strong> switch photos, videos, helpful votes, search, sorting, filters, the verified badge, abuse reports, the Share button, the review form and questions on or off.</li>
 <li><strong>Lists:</strong> how many reviews load per page, and which reviews the carousel, photo wall and all reviews page highlight.</li>
 <li><strong>Wording:</strong> replace any text shoppers see. An empty field keeps the default.</li>
 </ul>
@@ -101,7 +106,7 @@
 <p>Review requests are off until you choose a mode. Open <strong>Review requests</strong>.</p>
 <ul>
 <li><strong>Send e-mails after orders are fulfilled:</strong> ReviewFlow: Reviews &amp; UGC e-mails the customer after the number of days you set (5 by default), with up to two reminders. Each e-mail lists the products of the order with a row of stars and a link that opens the review form. Every e-mail has an unsubscribe link.</li>
-<li><strong>No e-mails:</strong> ReviewFlow: Reviews &amp; UGC sends nothing. Shoppers can still write a review from the product page. Prompts on the Shopify thank-you page and in customer accounts are not available in this release.</li>
+<li><strong>No e-mails:</strong> ReviewFlow: Reviews &amp; UGC sends nothing. Shoppers can still write a review from the product page, and you can still ask on the order status page (see <a href="#order-status">Ask on the order status page</a> below). A prompt on the Shopify thank-you page is not available.</li>
 <li><strong>Off:</strong> no requests.</li>
 </ul>
 <p>In the e-mail mode, set the sender name, the reply-to address, the subject and the introduction. Add a postal address for the footer, which e-mail law in many countries requires. By default e-mails go out through a shared sending service operated by Ecom Swift LLC with a limit per store per day (25 by default). You can instead paste your own Resend or Brevo key, which is stored encrypted. Use <strong>Send a test e-mail</strong> to see one first. You can skip orders with certain tags, for example wholesale.</p>
@@ -111,6 +116,75 @@
 <p>A live preview of the e-mail on the right of the settings, using a sample product. On the Dashboard, the row <strong>Asking customers for reviews</strong> changes from Off to E-mail on.</p></div>
 </li>
 </ol>
+
+<h2 id="more">More you can set up</h2>
+<p>These five are optional. Set up the ones you want, in any order, after the steps above.</p>
+
+<h3 id="store-reviews">Store reviews</h3>
+<p>Let customers review your store as a whole: your service, the delivery, how the order went. Store reviews are kept apart from product reviews. They never change a product&rsquo;s star rating, and they do not appear in the review carousel, the photo wall or the Google Shopping feed.</p>
+<ol>
+<li>In your Shopify admin go to Online Store, Themes, Customize.</li>
+<li>On the home page, or any other page, add the block named <strong>Store reviews</strong> (under Apps) and press Save.</li>
+<li>Open that page on your store. The button <strong>Write a store review</strong> opens the form <strong>Review our store</strong>.</li>
+<li>In ReviewFlow: Reviews &amp; UGC open <strong>Reviews</strong> and set <strong>Review type</strong> to <strong>Store reviews</strong> to see these alone. You can publish, hide, mark as spam, reply or delete, as with any review. You cannot change what the customer wrote.</li>
+</ol>
+<p>If you installed the app before store reviews existed, open the app once after the update. That prepares the place in your store where the block reads its data.</p>
+<div class="seen"><span class="label">What you will see</span>
+<p>Before the first review, the block says <strong>No store reviews yet</strong> with the button. After that it shows your store&rsquo;s star average, the rating breakdown and the reviews. In Reviews, a store review has a <strong>Store review</strong> badge where the product name would be. The Dashboard shows store reviews on a line of their own.</p></div>
+
+<h3 id="product-groups">Product groups</h3>
+<p>If you sell the same item as several products, for example one product per color or size, put those products in a group. Every product in the group then shows the reviews of all of them, with one star rating for the group.</p>
+<ol>
+<li>Open <strong>Settings</strong>, then the <strong>Product groups</strong> tab, and press <strong>Add group</strong>.</li>
+<li>Type a <strong>Group name</strong>. Only you see it.</li>
+<li>Press <strong>Add products</strong>, choose the products, then press <strong>Done</strong>. A group needs at least 2 products and can hold up to 25. A product can be in one group.</li>
+<li>Press Save in the bar at the top and keep the page open until the banner <strong>Updating star ratings</strong> is gone.</li>
+</ol>
+<p>Nothing is copied or changed. Each review stays with the product it was written for, and on the other products of the group it is labeled, for example &ldquo;Reviewed: Blue ceramic mug&rdquo;. Take a product out of its group and it shows its own reviews and rating again. Group products only when they really are the same item.</p>
+<div class="seen"><span class="label">What you will see</span>
+<p>Each product page of the group lists the reviews of the whole group with the same star rating and count. In Reviews, every review is still listed under its own product.</p></div>
+
+<h3 id="sharing">Share a review</h3>
+<p><strong>On your store.</strong> Every review has a <strong>Share</strong> button next to Helpful and Report. On a phone or tablet it opens the share sheet of the device. On a computer it opens a menu with Copy link, X, Facebook, WhatsApp, Pinterest (when the review has a photo) and E-mail. The link opens the product page at that review. To remove the button, open Settings, Widget, Features and untick <strong>Share button on reviews</strong>.</p>
+<p><strong>From the app.</strong></p>
+<ol>
+<li>Open <strong>Reviews</strong> and click a published review.</li>
+<li>Under the moderation buttons find <strong>Share this review</strong>. Press <strong>Copy link</strong>, or one of the buttons that open X, Facebook, WhatsApp, Pinterest or an e-mail with the link and the review&rsquo;s own words.</li>
+<li>To post it as a picture, choose the <strong>Image format</strong> (square post or story), the <strong>Image colors</strong> and, if the review has photos, the <strong>Customer photo</strong>, then press <strong>Download image</strong>.</li>
+</ol>
+<div class="seen"><span class="label">What you will see</span>
+<p>A preview of the image next to the choices. It shows the stars, words and name exactly as the customer wrote them; a review that is too long for the image ends with an ellipsis. Nothing in this section can be typed into. A store review has no product page to link to, so it offers the image and no link.</p></div>
+
+<h3 id="order-status">Ask on the order status page</h3>
+<p>Customers come back to the order status page to follow their delivery. The <strong>Product review prompt</strong> block asks for a review there. It needs the new customer accounts.</p>
+<ol>
+<li>In your Shopify admin go to Settings, Checkout, and press Customize.</li>
+<li>Choose the <strong>Order status</strong> page, press Add block and choose <strong>Product review prompt</strong>.</li>
+<li>Optional: type your own <strong>Heading</strong>, and tick <strong>Offer a video review too</strong> to add a Record a video link.</li>
+<li>Press Save.</li>
+</ol>
+<p>For a customer who is signed in to their account, the block lists the products of the order that have shipped, and a review written through it is marked Verified buyer. It shows nothing until something has shipped, nothing for a cancelled order, and it leaves out products that are not on your online store. For a customer who is not signed in, it lists the products of the order with a plain link, and the review is not marked verified.</p>
+<div class="seen"><span class="label">What you will see</span>
+<p>In the editor, a preview made from the editor&rsquo;s sample order. On a real order, the heading <strong>How was your order?</strong> (<strong>Review your purchase</strong> for a customer who is not signed in) and one row for each product with a <strong>Write a review</strong> button, which opens the product page with the review form open.</p></div>
+
+<h3 id="integrations">Integrations: webhook and Klaviyo</h3>
+<p>Open <strong>Settings</strong>, then the <strong>Integrations</strong> tab. Both are off until you turn them on.</p>
+<p><strong>Webhook</strong>, for Zapier, Make, Omnisend or your own server:</p>
+<ol>
+<li>Paste the address of your receiver into <strong>Webhook address</strong>. It must start with https://.</li>
+<li>Press <strong>Create signing secret</strong> and copy the secret into your receiver. It is shown once.</li>
+<li>Tick <strong>Send events to a webhook address</strong>, choose the events under <strong>Events to send</strong>, and press Save in the bar at the top.</li>
+<li>Press <strong>Send test event</strong>. The page tells you what your receiver answered.</li>
+</ol>
+<p><strong>Klaviyo:</strong></p>
+<ol>
+<li>In Klaviyo create a private API key with full access to Events.</li>
+<li>Paste it into <strong>Klaviyo private API key</strong>, tick <strong>Send events to Klaviyo</strong>, choose the events and press Save.</li>
+<li>Under <strong>Test Klaviyo</strong> type your own e-mail address and press <strong>Send test event</strong>. This also creates the two metrics in Klaviyo, &ldquo;ReviewFlow Review Submitted&rdquo; and &ldquo;ReviewFlow Review Request Sent&rdquo;, so you can choose them as a flow trigger.</li>
+</ol>
+<p>Webhook events carry the review or question and the product, and never a customer&rsquo;s name or e-mail address. Klaviyo events include the buyer&rsquo;s e-mail address, so only reviews written through an order link (the review request e-mail or the order status page) are sent to Klaviyo. Each event is sent once: if your receiver is down or takes longer than 3 seconds, that event is not sent again. The <a href="privacy.html#integrations">privacy policy</a> lists what is sent.</p>
+<div class="seen"><span class="label">What you will see</span>
+<p>Each card starts with its state: <strong>Off: nothing is sent</strong>, or <strong>On: events are sent to your address</strong> for the webhook and <strong>On: events are sent to Klaviyo</strong> for Klaviyo. After you save, the signing secret and the key are never shown again, only their last four characters.</p></div>
 
 <h2 id="daily">Day to day</h2>
 <ul>
