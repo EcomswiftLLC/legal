@@ -38,6 +38,7 @@
 <div><dt>Product groups</dt><dd>In a private shop metafield in your store. A group lists products; it holds no customer data.</dd></div>
 <div><dt>Your own e-mail provider key, webhook signing secret and Klaviyo key, if you add them</dt><dd>In a private shop metafield, encrypted before they are stored.</dd></div>
 <div><dt>Which orders were already asked for a review</dt><dd>In a private metafield on each order in your store.</dd></div>
+<div><dt>The code behind a review link from the order status page</dt><dd>In a metafield on that order in your store. It is a random code, not personal data. You can read it; only the order&rsquo;s own customer, through Shopify, can set it.</dd></div>
 <div><dt>On our servers</dt><dd>Only the items in the next section.</dd></div>
 </dl>
 
@@ -53,14 +54,14 @@
 
 <h2 id="shoppers">When a shopper writes a review</h2>
 <p>The review form sends the rating, the title and text, the name the shopper typed and any photos or videos to our server through Shopify&rsquo;s app proxy. Every request is signed by Shopify and checked. The server applies the store&rsquo;s moderation rules and writes the review into the store&rsquo;s own Shopify data. The photos and videos are uploaded straight to the store&rsquo;s Shopify Files.</p>
-<p>To mark a review as a verified buyer, the server checks the order named by the signed link in the review request e-mail or on the order status page, or the orders of the logged-in customer, through Shopify&rsquo;s API. A review stores a one-way fingerprint of the buyer and of the order line so it can detect a second review of the same purchase. The shopper&rsquo;s e-mail address is not stored.</p>
+<p>To mark a review as a verified buyer, the server checks the order named by the link in the review request e-mail or on the order status page, or the orders of the logged-in customer, through Shopify&rsquo;s API. A review stores a one-way fingerprint of the buyer and of the order line so it can detect a second review of the same purchase. The shopper&rsquo;s e-mail address is not stored.</p>
 <p>To limit abuse and duplicate votes, the server combines the shopper&rsquo;s IP address and browser type, or the logged-in customer id, into a one-way code that is used briefly in memory. It is not written to storage or logs. The widget remembers which reviews a visitor marked helpful in the browser&rsquo;s local storage on that device. The widget sets no cookies.</p>
 
 <h2 id="video">Recording a video and sharing links</h2>
 <p>When a shopper presses Record a video, the browser asks for permission to use the camera and microphone of their device. The recording is made on the device and is kept in the page&rsquo;s memory until the shopper sends the review or closes the form; it is not uploaded before the shopper presses Submit, and it is uploaded straight to the store&rsquo;s Shopify Files like any other video. Nothing is recorded without that permission, and the shopper can stop and record again. The review links and QR codes a merchant creates only open the store&rsquo;s own product page; they contain no personal data.</p>
 <p>Each review on a store can have a Share button. On a phone or tablet it opens the share sheet of the device. On a computer it opens a small menu of ordinary links: Copy link, X, Facebook, WhatsApp, Pinterest and E-mail. No script, pixel or widget of any of those services is loaded, and nothing is sent to them unless the shopper chooses one. What is shared is the link to the product page at that review, with the stars, part of the review text and the name already shown on the store. In the app, a merchant can copy the same link and download an image of a published review. The image is drawn in the merchant&rsquo;s browser and the app does not upload it anywhere.</p>
 <h2 id="order-status">Review prompt on the order status page</h2>
-<p>A store can add the Product review prompt block to its Order status page. For a customer who is signed in, the block sends our server two things: the order id and the session token Shopify gives the block, which names the store and the signed-in customer. The server reads that one order from Shopify to confirm that it belongs to the signed-in customer and to see which items have shipped, and answers with review links for those products. It does not ask Shopify for the customer&rsquo;s name, e-mail address, phone number or postal address, and it stores nothing. The answer (product names and review links) is kept by the block in the customer&rsquo;s browser for up to 12 hours so the page does not have to ask again. For a customer who is not signed in, the block does not contact our server at all.</p>
+<p>A store can add the Product review prompt block to its Order status page. The block sends nothing to the server of Ecom Swift LLC. It talks to Shopify only. For a customer who is signed in, it reads that customer&rsquo;s own order from Shopify to see which items have shipped, and it stores one random code on the order, in the store&rsquo;s Shopify data. The review links the block shows carry that code. When a review is submitted through such a link, our server compares the code in the link with the code on the order, and the review is marked Verified buyer when they match. The code is random. It is not personal data, it says nothing about the customer, and it is deleted with the order&rsquo;s data. The block does not read the customer&rsquo;s name, e-mail address, phone number or postal address, and it keeps nothing in the customer&rsquo;s browser. For a customer who is not signed in, the block reads no order and stores no code.</p>
 <h2 id="integrations">Integrations: webhook and Klaviyo</h2>
 <p>Both are off until the merchant turns them on under Settings, Integrations, and the merchant chooses which events are sent. Events are sent once, right after they happen. Reviews filed as spam are not sent.</p>
 <dl class="map">
@@ -89,14 +90,15 @@
 
 <h2 id="permissions">Why ReviewFlow: Reviews &amp; UGC asks for each permission</h2>
 <dl class="map">
-<div><dt>Orders and customers (read), fulfillments</dt><dd>To mark a review as a verified buyer, to find fulfilled orders for review request e-mails, and to confirm on the order status page that an order belongs to the signed-in customer and which items have shipped.</dd></div>
-<div><dt>Orders (write)</dt><dd>To record on an order that a review request was sent. It is the only change the app makes to an order.</dd></div>
+<div><dt>Orders and customers (read), fulfillments</dt><dd>To mark a review as a verified buyer, including the check of the code behind a review link from the order status page, and to find fulfilled orders for review request e-mails.</dd></div>
+<div><dt>Orders (write)</dt><dd>To record on an order that a review request was sent. It is the only change our server makes to an order.</dd></div>
+<div><dt>Customer accounts: the customer&rsquo;s orders (read and write)</dt><dd>Used only by the Product review prompt block on the order status page, for a customer who is signed in: to see which items of that customer&rsquo;s own order have shipped, and to store one random code on that order. Nothing is sent to our server.</dd></div>
 <div><dt>Products (read and write)</dt><dd>To read product names and links and to write each product&rsquo;s rating and the data the widgets print, including the shared rating of a product group.</dd></div>
 <div><dt>Files (read and write)</dt><dd>To store and read review photos and videos.</dd></div>
 <div><dt>Discounts (write)</dt><dd>To create the single-use code of the optional photo review reward.</dd></div>
 <div><dt>Metaobjects and their definitions (read and write)</dt><dd>To store reviews and questions in your store and to create the structure they need.</dd></div>
 </dl>
-<p>Store reviews, product groups, sharing, the order status page block and the integrations use these same permissions. None of them added a new one.</p>
+<p>Store reviews, product groups, sharing and the integrations use these same permissions. None of them added a new one. The order status page block added the two customer account permissions. If you installed the app before that, Shopify asks you to approve them when you update the app.</p>
 
 <h2 id="security">Security</h2>
 <p>Access tokens and merchant keys are encrypted before storage. Requests from your storefront, Shopify webhooks and the admin are verified before they are acted on. No system is perfectly secure, and we cannot promise it.</p>
