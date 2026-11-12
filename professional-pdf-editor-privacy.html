@@ -4,7 +4,7 @@
 <style>body{font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:780px;margin:40px auto;padding:0 20px;color:#101b3b;background:#faf7f0}h1{font-size:34px;letter-spacing:-.03em}h2{margin-top:32px;font-size:20px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #e6e1d6;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f5f1e7}code{background:#f5f1e7;padding:1px 5px;border-radius:4px}a{color:#1b6f4f}@media (prefers-color-scheme:dark){body{background:#0b1226;color:#eeece4}th,td{border-color:#243053}th,code{background:#17223f}a{color:#6fd0ac}}</style>
 </head><body>
 <h1>Professional PDF Editor Privacy Policy</h1>
-<p>Last updated: 24 October 2026</p>
+<p>Last updated: 12 November 2026</p>
 <p>Publisher: Ecom Swift LLC · <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a></p>
 <p>Professional PDF Editor is an extension for Google Chrome. This policy describes exactly what the extension does with data. It is written from the implemented code, not from a template.</p>
 <h2>The short version</h2>
@@ -34,7 +34,7 @@
 <li><strong>Personal information:</strong> only if you buy or unlock Premium. The email address you type to unlock it is sent to the Ecom Swift LLC website (<code>www.ecomswiftllc.com</code>) to look up your paid plan, and is kept on your device. It is not used for anything else, not sold, and the extension sends no marketing.</li>
 <li>The extension does not collect health, financial, authentication or location data, web history, user activity or website content.</li>
 <li>We do not sell or transfer user data to third parties, and we do not use or transfer data for purposes unrelated to the single purpose above.</li>
-<li>The extension uses no remote code.</li>
+<li>The extension uses no remote code: the OCR engine, PDF engine and every other program ships inside the package, and the only file fetched from the internet by the OCR feature is an optional language data file.</li>
 </ul>
 <h2>Network activity (complete list)</h2>
 <table><thead><tr><th>What</th><th>Where to</th><th>When</th><th>What is sent</th></tr></thead><tbody>
@@ -50,6 +50,18 @@
 <li>The key is never part of the package. It is held in memory unless you tick "Remember the key", then it is stored in <code>chrome.storage.local</code> of this browser profile (not synced).</li>
 <li>Consent is recorded per provider host, can be withdrawn on the AI page, and "Delete saved settings, signatures, AI key and OCR languages" in Settings removes everything above.</li>
 </ul>
+<h2>Data sharing and third parties</h2>
+<p>We do not sell your data, rent it, or share it for advertising, profiling or credit decisions. Data leaves your device only in the three optional cases listed under "Network activity", and only to these parties:</p>
+<ul>
+<li><b>Ecom Swift LLC (www.ecomswiftllc.com, hosted on Wix).</b> Receives the email you typed to unlock Premium, the product key <code>pdf</code> and, when you cancel, the order id, to confirm your plan. Wix processes the payment on its own checkout page, under Wix's own privacy policy. The extension never sees card details.</li>
+<li><b>jsDelivr (cdn.jsdelivr.net).</b> Serves the open-source Tesseract language data file you ask for. It receives an ordinary web request for that one file (your IP address is visible to any web host). It is data only: no program code is downloaded. The OCR engine itself ships inside the extension.</li>
+<li><b>The AI provider you choose</b> (Google Gemini, Anthropic, OpenAI or a server you run), only if you add your own key and press Send. It receives the text you selected and your instruction, under that provider's own terms. Chrome's built-in AI sends nothing.</li>
+</ul>
+<p>Use of information received from Chrome APIs follows the Chrome Web Store User Data Policy, including the Limited Use requirements: data is used only to provide the single purpose above, is not transferred except as listed here, is not used for advertising, and is not read by people except with your consent, to comply with law, or for security.</p>
+<h2>How your data is stored and protected</h2>
+<p>Documents are processed in memory in your browser and are never written to any server. Settings, saved signatures, Premium status and an optional AI key are stored in the extension's local storage (chrome.storage.local) and downloaded OCR languages in the browser database (IndexedDB), both inside your Chrome profile on your computer and protected by your operating system account. Requests to our website and to AI providers use HTTPS. We keep no copy of your email beyond the paid-plan record that Wix holds for your purchase.</p>
+<h2>Your choices and rights</h2>
+<p>You can use every free tool without giving any personal information. You can see what is stored in Settings and delete it with "Delete saved settings, signatures, AI key and OCR languages", withdraw AI consent at any time, cancel Premium on the Premium page, or remove the extension to delete everything it stored. To ask us to access, correct or delete the paid-plan record held for your purchase, write to support@ecomswiftllc.com from the email you paid with; we reply within 30 days.</p>
 <h2>Retention and deletion</h2>
 <p>Everything lives on your device. Removing the extension deletes it. Settings has a button to delete saved data without removing the extension (the Premium status is kept; remove it on the Premium page).</p>
 <h2>Children</h2>
