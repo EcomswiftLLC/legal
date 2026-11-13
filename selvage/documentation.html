@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Selvage documentation | Ecom Swift LLC</title>
+<meta name="description" content="The Selvage merchant guide: setup, color schemes and fonts, header and mega menu, collection filters, product page blocks, cart drawer, gift cards, languages, animation, apps and performance, plus common questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:#f6f3ee;color:#1c1a17;font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.65}
+a{color:#8c4f3d;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#6e3b2c}
+a:focus-visible,summary:focus-visible,.tw:focus-visible{outline:3px solid #1c1a17;outline-offset:3px}
+h1,h2,h3,h4{font-family:'Source Serif 4',serif;font-weight:400;color:#1c1a17;line-height:1.2;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+header.hero{padding:40px 0 28px}
+.kick{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#7d4636;font-weight:600;margin:0 0 14px}
+h1{font-size:52px;line-height:1.08;margin:0 0 16px}
+.lede{font-family:'Source Serif 4',serif;font-style:italic;font-size:22px;line-height:1.4;color:#4a433c;max-width:700px;margin:0 0 16px}
+header p{color:#3d3933;max-width:700px;margin:0 0 12px}
+.cta{display:inline-block;margin:6px 12px 8px 0;padding:13px 24px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:#7d4636;color:#fff;text-decoration:none}
+.cta:hover{background:#6a3a2c;color:#fff}
+nav.toc{margin:8px 0 8px;padding:28px 0 8px;border-top:1px solid #d9d1c4}
+nav.toc h2{font-size:26px;margin-bottom:16px}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+nav.toc a{display:flex;gap:12px;align-items:baseline;padding:12px 14px;background:#fff;border:1px solid #e3ddd3;text-decoration:none;color:#1c1a17;height:100%}
+nav.toc a:hover{border-color:#b07a67}
+nav.toc .n{font-size:12px;font-weight:700;letter-spacing:.06em;color:#7d4636;min-width:22px}
+nav.toc .t{font-weight:600;font-size:15px;line-height:1.35}
+.words{margin:28px 0 8px;padding:24px 26px;background:#fff;border:1px solid #e3ddd3}
+.words h2{font-size:24px;margin-bottom:10px}
+.words ul{margin:0}
+section.chap{padding:40px 0 8px;border-top:1px solid #d9d1c4;margin-top:36px;max-width:760px}
+.num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7d4636;font-weight:700;margin:0 0 8px}
+section.chap h2,#faq>h2{font-size:38px;margin-bottom:18px}
+h3{font-size:25px;margin:34px 0 10px}
+h4{font-size:19px;font-family:'Source Sans 3',sans-serif;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 14px;color:#3d3933}
+ul,ol{margin:0 0 16px;padding-left:24px;color:#3d3933}
+li{margin:0 0 6px;padding-left:2px}
+li::marker{color:#9a5f4d}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.88em;background:#ece5d9;padding:1px 6px;border-radius:3px;color:#33281f;overflow-wrap:anywhere}
+pre{background:#1c1a17;color:#f6f3ee;padding:16px 18px;overflow-x:auto;margin:0 0 18px;font-size:14px;line-height:1.55}
+pre code{background:none;color:inherit;padding:0}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid #e3ddd3;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:15.5px;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid #e9e3d8}
+th{font-weight:700;background:#efe9de;color:#1c1a17;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;color:#1c1a17;min-width:140px}
+.top{margin:26px 0 0;font-size:15px}
+#faq{padding:40px 0 8px;border-top:1px solid #d9d1c4;margin-top:36px;max-width:760px}
+details{background:#fff;border:1px solid #e3ddd3;margin:0 0 10px}
+summary{cursor:pointer;padding:15px 48px 15px 18px;font-weight:600;font-size:17px;list-style:none;position:relative;color:#1c1a17}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:11px;font-size:24px;line-height:1;color:#7d4636;font-weight:400}
+details[open] summary::after{content:"\2212"}
+details[open] summary{border-bottom:1px solid #eee7db}
+.ans{padding:14px 18px 4px}
+.ans p:last-child{margin-bottom:12px}
+footer{margin:44px 0 0;padding:26px 0 48px;border-top:1px solid #d9d1c4}
+footer p{font-size:15px;max-width:700px}
+@media(max-width:900px){nav.toc ol{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){
+body{font-size:16px}
+.wrap{padding:0 16px}
+header.hero{padding:28px 0 20px}
+h1{font-size:34px}
+.lede{font-size:19px}
+nav.toc ol{grid-template-columns:1fr}
+section.chap h2,#faq>h2{font-size:30px}
+h3{font-size:22px}
+.words{padding:18px}
+.cta{display:block;text-align:center;margin-right:0}
+summary{padding:14px 44px 14px 14px;font-size:16px}
+.ans{padding:12px 14px 2px}
+th,td{padding:9px 11px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body><div class="wrap"><main>
+<header class="hero">
+<p class="kick">Selvage theme for Shopify</p>
+<h1>Selvage documentation</h1>
+<p class="lede">The merchant guide for the Selvage theme, version 1.0.0.</p>
+<p>This guide explains how to set up and run a store with the Selvage theme. It is written from the theme&#x27;s own settings and code for version 1.0.0. If a setting in your theme editor does not match what you read here, check your theme version under Theme settings and contact support.</p>
+<a class="cta" href="https://www.ecomswiftllc.com/selvage-support" target="_top">Contact Selvage support</a>
+</header>
+<nav class="toc" id="contents" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ol><li><a href="#getting-started"><span class="n">01</span><span class="t">Getting started</span></a></li><li><a href="#color-schemes-and-fonts"><span class="n">02</span><span class="t">Color schemes and fonts</span></a></li><li><a href="#header-and-mega-menu"><span class="n">03</span><span class="t">Header and mega menu</span></a></li><li><a href="#home-page-sections"><span class="n">04</span><span class="t">Home page sections</span></a></li><li><a href="#collection-page-and-filters"><span class="n">05</span><span class="t">Collection page and filters</span></a></li><li><a href="#product-page-and-blocks"><span class="n">06</span><span class="t">Product page and blocks</span></a></li><li><a href="#cart-drawer"><span class="n">07</span><span class="t">Cart drawer</span></a></li><li><a href="#gift-card-page"><span class="n">08</span><span class="t">Gift card page</span></a></li><li><a href="#localization"><span class="n">09</span><span class="t">Localization</span></a></li><li><a href="#animation-and-reduced-motion"><span class="n">10</span><span class="t">Animation settings and reduced motion</span></a></li><li><a href="#app-compatibility"><span class="n">11</span><span class="t">App compatibility</span></a></li><li><a href="#accessibility"><span class="n">12</span><span class="t">Accessibility notes</span></a></li><li><a href="#performance-tips"><span class="n">13</span><span class="t">Performance tips</span></a></li><li><a href="#support"><span class="n">14</span><span class="t">Support</span></a></li><li><a href="#faq"><span class="n">FAQ</span><span class="t">Frequently asked questions</span></a></li></ol></nav>
+<div class="words" id="words"><h2>Words used in this guide</h2><ul>
+<li>Theme editor: the customizer opened from Online Store, Themes, Customize.</li>
+<li>Theme settings: the settings that apply to the whole store, found in the theme editor sidebar. In Selvage they are grouped as Colors, Typography, Layout, Product cards, Animation, Cart, Search, Logo and favicon, and Social media.</li>
+<li>Section: a full-width part of a page, such as a slideshow or a featured collection.</li>
+<li>Block: a smaller piece inside a section, such as a single price or a single menu promotion.</li>
+<li>Color scheme: a saved set of colors. Each section picks one.</li>
+</ul></div>
+<section class="chap" id="getting-started" aria-labelledby="getting-started-h"><p class="num">Chapter 1</p><h2 id="getting-started-h">Getting started</h2><p>Selvage is an Online Store 2.0 theme for women's fashion stores. Every page is built from sections you can add, remove and reorder in the theme editor.</p>
+<h3 id="getting-started-before-you-open-the-theme-editor">Before you open the theme editor</h3>
+<p>Prepare these in your Shopify admin first. The theme reads them, and several sections look empty without them.</p>
+<ol>
+<li>Products with photos. Use the same aspect ratio for every product photo when you can. The theme crops photos to a fixed frame on collection pages, and the frame is set in Theme settings under Product cards.</li>
+<li>Product options. Name your color option Color and your size option Size. The theme looks for these names to show color dots and size chips on product cards. Other names still work on the product page, but cards will not show them.</li>
+<li>Collections. Create the collections you want in the menu, for example Dresses and Knitwear.</li>
+<li>Menus. In Content, Menus, check that you have a menu with the handle <code>main-menu</code> (your main navigation) and one with the handle <code>footer</code>. The header and footer use them by default.</li>
+<li>Policies. In Settings, Policies, add your refund and shipping policies. Several blocks link to them when they exist.</li>
+<li>Payments. Turn on the payment methods you accept. The payment icons in the footer and on product pages come from this list.</li>
+</ol>
+<h3 id="getting-started-choose-a-preset">Choose a preset</h3>
+<p>Selvage includes three presets: Selvage (editorial luxury), Toile (airy and romantic) and Bias (modern and bold). The preset you add from the Theme Store comes with its own starting home, product and collection page layouts, header and footer. Switching presets later in the theme editor changes colors, fonts, page width, product cards and motion only. It does not change your page layouts, products or content. Pick the preset closest to your brand when you add the theme, and then adjust.</p>
+<h3 id="getting-started-add-your-brand">Add your brand</h3>
+<p>Open Online Store, Themes, Customize, then Theme settings.</p>
+<ol>
+<li>Logo and favicon. Upload your logo and favicon. The favicon works best as a 48 x 48 px .png. The logo can be a wide wordmark or a square or portrait mark. Portrait and square logos are limited to half the logo width setting in height.</li>
+<li>Colors. Review the six color schemes. See <a href="#color-schemes-and-fonts">Color schemes and fonts</a>.</li>
+<li>Typography. Choose a heading font and a body font. See the same page.</li>
+<li>Social media. Paste the full address of each profile you use. Leave the rest empty. Empty fields show nothing.</li>
+<li>Sharing image. This image appears when someone shares a page that has no image of its own. A 1200 x 628 px .jpg is recommended.</li>
+</ol>
+<h3 id="getting-started-build-the-home-page">Build the home page</h3>
+<p>Select Home page in the theme editor, then add, remove and reorder sections. <a href="#home-page-sections">Home page sections</a> lists every section and what it does.</p>
+<p>Replace the starter text. Defaults in sections are written to show you how to use them, not to be published as they are.</p>
+<h3 id="getting-started-set-up-the-shopping-experience">Set up the shopping experience</h3>
+<ul>
+<li>Cart: choose between a drawer and a cart page. See <a href="#cart-drawer">Cart drawer</a>.</li>
+<li>Collection filters: install Shopify's free Search &amp; Discovery app and choose your filters. See <a href="#collection-page-and-filters">Collection page and filters</a>.</li>
+<li>Product page: add the blocks you need and set the optional product fields. See <a href="#product-page-and-blocks">Product page and blocks</a>.</li>
+<li>Languages and countries: see <a href="#localization">Localization</a>.</li>
+</ul>
+<h3 id="getting-started-check-before-you-launch">Check before you launch</h3>
+<p>Work through this list on a phone and on a computer.</p>
+<ol>
+<li>Open the home page, a collection, a product with options and a product without options.</li>
+<li>Choose a color and a size, add the product to the cart, then change the quantity and remove the item.</li>
+<li>Go to checkout and check that your payment methods appear.</li>
+<li>Search for a product and for a word that returns nothing.</li>
+<li>Open the contact page and send a test message.</li>
+<li>Use only the keyboard on the home page and a product page. You should always see where the focus is.</li>
+<li>Turn on your device's reduced motion setting and reload. Animations should be calm or off.</li>
+</ol>
+<h3 id="getting-started-what-the-theme-does-not-do">What the theme does not do</h3>
+<p>The theme stays within Shopify's built-in features. It does not include a wishlist, countdown timers that restart, fake stock counts or visitor counts, discount code fields in the cart, or an Instagram feed. Product reviews, subscriptions and bundle discounts need Shopify features or apps. See <a href="#app-compatibility">App compatibility</a>.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="color-schemes-and-fonts" aria-labelledby="color-schemes-and-fonts-h"><p class="num">Chapter 2</p><h2 id="color-schemes-and-fonts-h">Color schemes and fonts</h2><h3 id="color-schemes-and-fonts-color-schemes">Color schemes</h3>
+<p>A color scheme is a saved set of colors. Every section has a Color scheme setting, so you can give each section its own look without changing the rest of the store.</p>
+<p>Open Theme settings, then Colors. Selvage includes six schemes. They are named Scheme 1 to Scheme 6 in the editor, and each one has these colors:</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Color</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Background</td>
+<td>The section background.</td>
+</tr>
+<tr>
+<td>Background gradient</td>
+<td>Replaces the background color when you set it.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Body text.</td>
+</tr>
+<tr>
+<td>Heading</td>
+<td>Headings.</td>
+</tr>
+<tr>
+<td>Muted text</td>
+<td>Captions, secondary text.</td>
+</tr>
+<tr>
+<td>Lines and borders</td>
+<td>Hairline rules and outlines.</td>
+</tr>
+<tr>
+<td>Solid button background and Solid button label</td>
+<td>Filled buttons.</td>
+</tr>
+<tr>
+<td>Outline button</td>
+<td>Outline buttons.</td>
+</tr>
+<tr>
+<td>Accent</td>
+<td>Links and small highlights.</td>
+</tr>
+<tr>
+<td>Badge background and Badge text</td>
+<td>Product badges.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="color-schemes-and-fonts-presets">Presets</h3>
+<p>Selvage includes three presets: Selvage, Toile and Bias. Each preset sets its own six color schemes, fonts, page width, product card style and motion level. Applying a preset changes presentation settings only, not your products, pages or section content. The descriptions below are for the default Selvage preset.</p>
+<p>The default schemes in the Selvage preset are:</p>
+<ul>
+<li>Scheme 1: ivory background with espresso text. Used for most sections.</li>
+<li>Scheme 2: a slightly deeper cream. Used for the editorial story and the newsletter.</li>
+<li>Scheme 3: espresso background with light text. Used for the footer, the announcement bar and text over images.</li>
+<li>Scheme 4: champagne. Scheme 5: dusty rose. Scheme 6: charcoal with light text. Use them for campaigns and promotions.</li>
+</ul>
+<p>Tips:</p>
+<ul>
+<li>Choose a text color that is clearly different from the background. Aim for a contrast ratio of at least 4.5 to 1 for body text and 3 to 1 for large text, buttons and borders. Free contrast checkers on the web will calculate it.</li>
+<li>When a section has text over an image, it also has a "Color scheme over image" setting. That scheme sets the text, button and overlay colors on top of the picture.</li>
+<li>Checkout colors are not part of the theme. Change them in Settings, Checkout and accounts, Customize.</li>
+<li>Shop Pay and other accelerated checkout buttons keep their own brand colors. The theme does not recolor them.</li>
+</ul>
+<h3 id="color-schemes-and-fonts-fonts">Fonts</h3>
+<p>Open Theme settings, then Typography.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heading font</td>
+<td>All headings. Default: Cormorant.</td>
+</tr>
+<tr>
+<td>Body font</td>
+<td>Paragraphs and most interface text. Default: Jost.</td>
+</tr>
+<tr>
+<td>Navigation and button font</td>
+<td>Menu links, buttons and small labels. It starts as the same font as the body font.</td>
+</tr>
+</tbody>
+</table></div>
+<p>You pick fonts from Shopify's font library. Custom font files are not supported, and you do not need an app for fonts.</p>
+<p>Fine-tune the type with these settings:</p>
+<ul>
+<li>Heading size: scales every heading between 80% and 140%.</li>
+<li>Heading letter spacing and Heading line height.</li>
+<li>Heading case: Normal or Uppercase.</li>
+<li>Body text size and Body line height.</li>
+<li>Navigation and button letter spacing, case and weight.</li>
+</ul>
+<p>Selvage loads bold, italic and bold italic styles of your chosen fonts when the font family offers them. If a font has no italic, browsers create a slanted version.</p>
+<p>Choosing a very wide font, a very large heading size or Uppercase heading case can make long product names wrap onto many lines. Check a collection page and a product with a long title after you change them.</p>
+<h3 id="color-schemes-and-fonts-layout-corners-and-lines">Layout, corners and lines</h3>
+<p>Under Theme settings, Layout:</p>
+<ul>
+<li>Page width: Narrow (1280 px), Standard (1520 px), Wide (1760 px) or Full width.</li>
+<li>Side margin: 12 to 64 px.</li>
+<li>Space between sections: Compact, Standard or Airy.</li>
+<li>Button corner radius, Input corner radius: 0 gives square corners, which is the default look.</li>
+<li>Line thickness: 1 to 3 px for hairlines.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="header-and-mega-menu" aria-labelledby="header-and-mega-menu-h"><p class="num">Chapter 3</p><h2 id="header-and-mega-menu-h">Header and mega menu</h2><p>The header lives in the header group, together with the announcement bar. Open any page in the theme editor and select Header or Announcement bar at the top of the page.</p>
+<h3 id="header-and-mega-menu-announcement-bar">Announcement bar</h3>
+<p>Add one Message block for each message.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text</td>
+<td>The message.</td>
+</tr>
+<tr>
+<td>Mobile text</td>
+<td>An optional shorter message for small screens.</td>
+</tr>
+<tr>
+<td>Link</td>
+<td>Where the message goes when selected.</td>
+</tr>
+<tr>
+<td>Icon</td>
+<td>None, or one of: truck, returns, gift, sparkles, leaf, map pin, globe, clock, shield check, package, star.</td>
+</tr>
+<tr>
+<td>Rotate messages</td>
+<td>Shows one message at a time when you have more than one. Rotation pauses on hover and focus and stops when a visitor prefers reduced motion.</td>
+</tr>
+<tr>
+<td>Time per message</td>
+<td>Seconds before the next message.</td>
+</tr>
+<tr>
+<td>Show arrows</td>
+<td>Adds previous and next arrows.</td>
+</tr>
+<tr>
+<td>Let visitors close the bar</td>
+<td>Visitors can close it. It stays closed until they close the browser tab.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The default message is a placeholder. Replace it with a real offer or remove the section.</p>
+<p>Only promise things your store does. Do not publish urgency messages such as stock counts or timers unless they are true.</p>
+<h3 id="header-and-mega-menu-header">Header</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logo</td>
+<td>Overrides the logo in Theme settings for this header. Leave empty to use the Theme settings logo, or your store name.</td>
+</tr>
+<tr>
+<td>Logo width</td>
+<td>Width in pixels. Portrait and square logos are limited to half this value in height.</td>
+</tr>
+<tr>
+<td>Mobile logo and Mobile logo width</td>
+<td>An optional second logo for screens narrower than 990 px.</td>
+</tr>
+<tr>
+<td>Logo position</td>
+<td>Center (a centered wordmark above the navigation line) or Left.</td>
+</tr>
+<tr>
+<td>Menu</td>
+<td>The navigation menu. Defaults to <code>main-menu</code>.</td>
+</tr>
+<tr>
+<td>Customer account menu</td>
+<td>The menu used by the account button. Defaults to <code>customer-account-main-menu</code>.</td>
+</tr>
+<tr>
+<td>Show line under header</td>
+<td>A thin line under the header.</td>
+</tr>
+<tr>
+<td>Sticky header</td>
+<td>The header stays at the top and condenses into a single bar while you scroll.</td>
+</tr>
+<tr>
+<td>Hide while scrolling down</td>
+<td>Shows the header again when a visitor scrolls up. Needs the sticky header.</td>
+</tr>
+<tr>
+<td>Show transparent header on home page</td>
+<td>The header sits over the first section. Best when the home page starts with a full-width image or video.</td>
+</tr>
+<tr>
+<td>Transparent header text color scheme</td>
+<td>Only the text and icon colors of this scheme are used.</td>
+</tr>
+<tr>
+<td>Show country/region selector, Show language selector</td>
+<td>Appear only if your store has more than one country or language.</td>
+</tr>
+<tr>
+<td>Promotion image, heading and link</td>
+<td>Shown in the mobile menu.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The account button is Shopify's account component. It shows on both phones and computers.</p>
+<p>The search button opens a search drawer. The cart button opens the cart drawer or goes to the cart page, depending on your Cart setting.</p>
+<h4 id="header-and-mega-menu-transparent-header">Transparent header</h4>
+<p>Turn it on only when the first section of your home page is an image or video. Text over an image can be hard to read, so check the contrast. If your first section is plain, leave it off.</p>
+<h3 id="header-and-mega-menu-menus-with-dropdowns">Menus with dropdowns</h3>
+<p>Selvage supports three levels:</p>
+<ol>
+<li>Top-level links appear in the main bar.</li>
+<li>Their child links appear in a dropdown.</li>
+<li>Grandchild links appear under each child link.</li>
+</ol>
+<p>Build your menu in Content, Menus. Dropdowns open when you hover, tap or move keyboard focus into them. With the keyboard, the Down arrow on a top-level link opens its panel and moves into it, the Left and Right arrows move between top-level links, and Escape closes the panel and returns focus to its link.</p>
+<p>A top-level item with the link <code>#</code> becomes a button that only opens its panel.</p>
+<h3 id="header-and-mega-menu-mega-menu">Mega menu</h3>
+<p>The mega menu is a full-width panel with several columns. It is built from two things: your menu, and a Mega menu block.</p>
+<ol>
+<li>Build a menu where a top-level item has child links. Each child link becomes a column heading, and its own child links are listed under it.</li>
+<li>In the theme editor, select Header, then Add block, then Mega menu.</li>
+<li>In Menu item, type the name of the top-level item exactly as it appears in your menu, for example Clothing. Capital letters and spaces around the name do not matter.</li>
+<li>Optionally add a promotion: an image, a heading, a description, a button label and a link.</li>
+<li>Optionally pick a featured Product, or a Collection (used only when no product is selected).</li>
+</ol>
+<p>If the name does not match, the item shows as a normal dropdown. Add one Mega menu block for each top-level item that needs one.</p>
+<h3 id="header-and-mega-menu-mobile-menu">Mobile menu</h3>
+<p>On small screens the menu opens in a drawer. Links with child links open a second panel with a Back button. The drawer also shows the optional promotion and the country and language selectors.</p>
+<h3 id="header-and-mega-menu-tips">Tips</h3>
+<ul>
+<li>Keep top-level names short so they fit in one line.</li>
+<li>Use a square or landscape promotion image of at least 800 px wide.</li>
+<li>Check the header with the longest menu you plan to use at tablet width.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="home-page-sections" aria-labelledby="home-page-sections-h"><p class="num">Chapter 4</p><h2 id="home-page-sections-h">Home page sections</h2><p>Open Online Store, Themes, Customize, then choose Home page. Select Add section to see every section you can use. Most of them also work on other pages that support sections.</p>
+<p>Every content section has these shared settings, so they are not repeated below:</p>
+<ul>
+<li>Color scheme: the saved set of colors the section uses.</li>
+<li>Top padding and Bottom padding: 0 uses the store's standard section spacing (set in Theme settings, Layout). Any other value overrides it in pixels.</li>
+</ul>
+<h3 id="home-page-sections-the-starting-home-page">The starting home page</h3>
+<p>The default home page contains these sections in order: Hero, Trust and service, Featured collections, Featured collection, Editorial story, Shop by category, Lookbook, Image with text, Promotional campaign, Testimonials, Brand values, Journal, Newsletter and Recently viewed. Remove what you do not need.</p>
+<p>Recently viewed shows nothing until a visitor has opened a product. Leave it in place, it hides itself.</p>
+<h3 id="home-page-sections-opening-sections">Opening sections</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Use it for</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hero</td>
+<td>The first section of the page.</td>
+<td>Five layouts: asymmetrical, editorial (full width), split, full screen and minimal. Takes a desktop image, a mobile image, a second image and an optional background video. Heading lines reveal one by one; turn that off with "Reveal heading line by line". Two buttons. Content position has nine positions.</td>
+</tr>
+<tr>
+<td>Slideshow</td>
+<td>Several campaign images in a row.</td>
+<td>Add a Slide block per slide. Autoplay is off by default. When on, it pauses on hover and focus, has a pause button and stays off when a visitor prefers reduced motion. Fill in "Slideshow description" for screen readers.</td>
+</tr>
+<tr>
+<td>Image banner</td>
+<td>One banner with text over an image.</td>
+<td>Height small to full screen. "Show text below the image on mobile" keeps text readable on small screens.</td>
+</tr>
+<tr>
+<td>Video</td>
+<td>A film from YouTube or Vimeo, or an uploaded video.</td>
+<td>The player loads only after a visitor selects play. Add a cover image and a description for screen readers.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use only one Hero or Slideshow as the very first section. The theme loads the first image of the first section at high priority, and later images load as the visitor scrolls.</p>
+<h3 id="home-page-sections-product-and-collection-sections">Product and collection sections</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Use it for</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Featured collection</td>
+<td>A row or grid of products from one collection.</td>
+<td>Desktop layout is grid or carousel. Mobile layout is carousel or grid. Show 2 to 24 products, with 2 to 5 per row on desktop. There is also a "Product carousel" preset.</td>
+</tr>
+<tr>
+<td>Featured collections</td>
+<td>Cards that lead to collections.</td>
+<td>Add a Collection block per card. Each card can replace the collection image, heading and description. Text below or over the image.</td>
+</tr>
+<tr>
+<td>Shop by category</td>
+<td>A row of category tiles.</td>
+<td>Add a Category block per tile. Three to six tiles per row on desktop.</td>
+</tr>
+<tr>
+<td>Featured product</td>
+<td>One product with its buy buttons.</td>
+<td>Supports the same blocks as the product page, including app blocks.</td>
+</tr>
+<tr>
+<td>Collage</td>
+<td>A mix of images, products and collections in tiles.</td>
+<td>Tile sizes: small, large, wide. Large and wide tiles set the rhythm.</td>
+</tr>
+<tr>
+<td>Lookbook</td>
+<td>One photograph with product hotspots.</td>
+<td>Add a Hotspot block per product. Set horizontal and vertical positions from 0 to 100. Add a separate mobile image to use different positions on small screens.</td>
+</tr>
+<tr>
+<td>Shop the look</td>
+<td>A photo beside a list of products, with an "add all to bag" button.</td>
+<td>Add a Product block per piece.</td>
+</tr>
+<tr>
+<td>Recently viewed</td>
+<td>Products the visitor has opened on this device.</td>
+<td>Stored in the visitor's browser only. Nothing is sent anywhere.</td>
+</tr>
+<tr>
+<td>Related products</td>
+<td>Product page only. Automatic recommendations.</td>
+<td>Already included in the product template.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="home-page-sections-story-and-content-sections">Story and content sections</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Use it for</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Editorial story</td>
+<td>A brand story with one or two images.</td>
+<td>Optional parallax. Text position top, middle or bottom.</td>
+</tr>
+<tr>
+<td>Image with text</td>
+<td>An image beside text.</td>
+<td>Five layouts: image left, image right, overlap, editorial and two images.</td>
+</tr>
+<tr>
+<td>Promotional campaign</td>
+<td>A seasonal event or offer.</td>
+<td>Optional countdown, see below.</td>
+</tr>
+<tr>
+<td>Rich text</td>
+<td>A heading and text block.</td>
+<td>Add Caption, Heading, Text and Button blocks. Choose heading level h2 or h3 to keep the page outline correct.</td>
+</tr>
+<tr>
+<td>Brand values</td>
+<td>A short list of principles.</td>
+<td>Up to eight Value blocks, each with an icon, heading and text.</td>
+</tr>
+<tr>
+<td>Multicolumn</td>
+<td>Columns of text, with an image or icon.</td>
+<td>Up to eight Column blocks. On mobile, stack the columns or swipe through them.</td>
+</tr>
+<tr>
+<td>Trust and service</td>
+<td>Shipping, returns, support and payment promises.</td>
+<td>Blocks for secure checkout, shipping, returns, customer support, payment options and up to four custom items. Links default to your store policies when you leave the link empty. Only show promises you keep.</td>
+</tr>
+<tr>
+<td>Testimonials</td>
+<td>Customer quotes.</td>
+<td>Up to 12. Use only words from real customers who agreed to be quoted. A rating of 0 hides the stars.</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td>Questions and answers.</td>
+<td>Up to 20. The answers are also sent to search engines as structured data.</td>
+</tr>
+<tr>
+<td>Image gallery</td>
+<td>Your own photographs.</td>
+<td>Grid or mosaic. Add captions and links.</td>
+</tr>
+<tr>
+<td>Logo list</td>
+<td>Brands, stockists or press.</td>
+<td>Only list names you actually work with.</td>
+</tr>
+<tr>
+<td>Store locations</td>
+<td>Shops with addresses and hours.</td>
+<td>Up to 12 locations. Paste a link to the address in the map service you prefer.</td>
+</tr>
+<tr>
+<td>Journal</td>
+<td>Latest articles from a blog.</td>
+<td>Choose the blog and how many posts to show.</td>
+</tr>
+<tr>
+<td>Newsletter</td>
+<td>An email signup.</td>
+<td>Subscribers are added to your customer list with the newsletter tag.</td>
+</tr>
+<tr>
+<td>Divider, Spacer</td>
+<td>Space and rules between sections.</td>
+<td></td>
+</tr>
+<tr>
+<td>Custom liquid</td>
+<td>Code from an app or a developer.</td>
+<td>Only add code from sources you trust.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="home-page-sections-promotional-countdown">Promotional countdown</h3>
+<p>The Promotional campaign section can show a countdown. It counts down to the end date and time that you enter, in your store's time zone.</p>
+<ul>
+<li>End date uses the format YYYY-MM-DD, for example 2026-12-31.</li>
+<li>End time uses 24-hour time, for example 18:00. If you leave it empty, the countdown ends at midnight.</li>
+<li>When the date has passed, the countdown disappears and never restarts. You can show a short text after the end date, or hide the whole section.</li>
+<li>Leave the date empty to hide the countdown.</li>
+</ul>
+<p>Because the countdown follows a real date, it is not an evergreen timer. Do not set fake dates.</p>
+<h3 id="home-page-sections-images">Images</h3>
+<ul>
+<li>Always upload the largest sensible original. The theme creates smaller versions for each screen.</li>
+<li>Use the focal point tool in the image picker so the important part stays in view when the image is cropped.</li>
+<li>Hero: 2400 x 1600 px or larger for the desktop image and 1080 x 1350 px for the mobile image.</li>
+<li>Add alt text to important images in your Shopify admin under Content, Files.</li>
+</ul>
+<h3 id="home-page-sections-page-structure-tips">Page structure tips</h3>
+<ul>
+<li>Each page needs one main heading (h1). On the home page, the first section provides it when it is a Hero, Slideshow or Image banner. Other sections use h2 headings.</li>
+<li>Alternate color schemes between neighboring sections to make a clear rhythm.</li>
+<li>Aim for no more than one animated or moving section in view at a time.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="collection-page-and-filters" aria-labelledby="collection-page-and-filters-h"><p class="num">Chapter 5</p><h2 id="collection-page-and-filters-h">Collection page and filters</h2><p>The collection page is the Collection section on the Collection template. In the theme editor, open Collection pages (choose any collection to preview) and select Collection.</p>
+<h3 id="collection-page-and-filters-banner">Banner</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show collection image</td>
+<td>Shows the image you set on the collection in your Shopify admin.</td>
+</tr>
+<tr>
+<td>Banner layout</td>
+<td>Split (image beside the title) or Wide (full-width image).</td>
+</tr>
+<tr>
+<td>Show collection description</td>
+<td>Shows the collection description.</td>
+</tr>
+<tr>
+<td>Show product count</td>
+<td>Shows the number of products.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Set the collection image and description in Products, Collections.</p>
+<h3 id="collection-page-and-filters-product-grid">Product grid</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Layout</td>
+<td>Classic (even grid), Editorial rhythm, Large image or Compact.</td>
+</tr>
+<tr>
+<td>Feature product frequency</td>
+<td>With Editorial rhythm, every product at this position (3 to 15) becomes a double-width campaign product. The default is 7.</td>
+</tr>
+<tr>
+<td>Products per row on desktop</td>
+<td>2 to 5.</td>
+</tr>
+<tr>
+<td>Products per row on mobile</td>
+<td>1 or 2.</td>
+</tr>
+<tr>
+<td>Products per page</td>
+<td>8 to 48, in steps of 4.</td>
+</tr>
+<tr>
+<td>Pagination</td>
+<td>Numbers, or a Load more button.</td>
+</tr>
+<tr>
+<td>Show layout toggle</td>
+<td>Lets shoppers switch to larger images. It is hidden with the Large image layout.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Product card appearance is set once for the whole store in Theme settings, Product cards:</p>
+<ul>
+<li>Image ratio: Portrait, Tall portrait, Square or Landscape.</li>
+<li>Image fit: Fill the frame, or Show the whole image.</li>
+<li>Show second image on hover.</li>
+<li>Show quick add button.</li>
+<li>Show vendor.</li>
+<li>Show color swatches and Show sizes on hover.</li>
+<li>Badge position: top left, top right or bottom left.</li>
+<li>Days a product counts as new: products created within this many days show a New badge. Use 0 to turn the badge off.</li>
+</ul>
+<h4 id="collection-page-and-filters-product-badges">Product badges</h4>
+<p>A card shows up to two corner tabs. The theme picks them in this order:</p>
+<ol>
+<li>Sold out, when the product is not available.</li>
+<li>Your own text, from the product metafield <code>custom.badge</code>.</li>
+<li>Sale, when the compare-at price is higher than the price.</li>
+<li>New, for products created within the number of days you set.</li>
+</ol>
+<p>To use your own badge text, add a product metafield with the namespace and key <code>custom.badge</code>, type Single line text, then fill it in on each product that needs it. Examples: Limited edition, Back in stock.</p>
+<h4 id="collection-page-and-filters-color-dots-and-size-chips">Color dots and size chips</h4>
+<p>If a product has an option named Color (or Colour), or a first option with swatches, the card shows color dots. If it has an option whose name contains Size, the card shows size chips on hover and on keyboard focus. Name your options that way if you want them to appear.</p>
+<h4 id="collection-page-and-filters-quick-add">Quick add</h4>
+<p>On cards, the quick add tab adds a single-variant product straight to the cart. A product with options opens a quick view window to choose options. A product that requires a subscription plan links to its page instead.</p>
+<h3 id="collection-page-and-filters-filtering-and-sorting">Filtering and sorting</h3>
+<p>Filtering and sorting come from Shopify. The theme does not invent any filters. Turn them on or off with Enable filtering and Enable sorting.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable filtering</td>
+<td>Shows the filters Shopify provides for the collection.</td>
+</tr>
+<tr>
+<td>Filter layout on desktop</td>
+<td>Sidebar or Top.</td>
+</tr>
+<tr>
+<td>Enable sorting</td>
+<td>Shows the sort menu.</td>
+</tr>
+</tbody>
+</table></div>
+<p>On phones, filters open in a drawer. Filters apply as soon as a shopper changes them, and the product count is announced to screen readers. If JavaScript is off, filters work as a normal form with an Apply button.</p>
+<h4 id="collection-page-and-filters-set-up-filters-with-the-search-and-discovery-app">Set up filters with the Search and Discovery app</h4>
+<ol>
+<li>In your Shopify admin, open Apps and install Shopify's free Search &amp; Discovery app.</li>
+<li>Open the app and choose Filters.</li>
+<li>Add the filters you want. Shopify offers availability, price, product type, vendor, product options (such as Color and Size), tags and metafields.</li>
+<li>Drag filters into the order you want. Save.</li>
+</ol>
+<p>Changes can take a few minutes to appear on your store.</p>
+<p>Tips:</p>
+<ul>
+<li>Filters show as swatches or images when Search &amp; Discovery presents them that way. Swatches come from your product options. See <a href="#product-page-and-blocks">Product page and blocks</a>.</li>
+<li>Keep the filter list short. Four to six filters fit a fashion store well.</li>
+<li>If the app has no filters for a collection, the filter area does not appear.</li>
+</ul>
+<h4 id="collection-page-and-filters-search-page">Search page</h4>
+<p>The search results page uses the same filters and sorting. Results can include products, articles and pages. Pages and articles show as separate result types. Turn article images on or off with "Show article images".</p>
+<h3 id="collection-page-and-filters-empty-collections-and-sold-out-products">Empty collections and sold-out products</h3>
+<p>An empty collection shows a message and a link to all products. If filters match nothing, shoppers see a message and a Clear all button. Sold-out products stay in the grid with a Sold out badge.</p>
+<h3 id="collection-page-and-filters-collection-list-page">Collection list page</h3>
+<p>The collection list page (Collections list section) shows every collection. You can sort them (alphabetical, by product count, or by date), set the image ratio, choose 1 or 2 per row on mobile, and show or hide the product count. It uses each collection's image.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="product-page-and-blocks" aria-labelledby="product-page-and-blocks-h"><p class="num">Chapter 6</p><h2 id="product-page-and-blocks-h">Product page and blocks</h2><p>Open Online Store, Themes, Customize, then choose Products and select any product to preview. The product page is the Product information section followed by Related products.</p>
+<p>Everything in the information column is a block. You can add, remove and reorder blocks, and each block is explained below. The default order is: Vendor, Heading, Rating, Price, Variant picker, Size guide, Quantity selector, Inventory status, Buy buttons, Pickup availability, Trust badges, Description, Bundle, SKU, Share and Sticky add to bag.</p>
+<h3 id="product-page-and-blocks-gallery-and-layout">Gallery and layout</h3>
+<p>Settings on the Product information section:</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show breadcrumbs</td>
+<td>Home, collection and product trail above the product.</td>
+</tr>
+<tr>
+<td>Desktop layout</td>
+<td>Mosaic (one full-width image, then pairs) or Thumbnails (a main image with a thumbnail rail). On mobile the images are always a swipeable carousel with a counter.</td>
+</tr>
+<tr>
+<td>Thumbnail position</td>
+<td>Left or Bottom (Thumbnails layout only).</td>
+</tr>
+<tr>
+<td>Offset paired images</td>
+<td>Offsets the second image of each pair in the Mosaic layout.</td>
+</tr>
+<tr>
+<td>Image ratio</td>
+<td>Natural, Portrait, Tall portrait or Square.</td>
+</tr>
+<tr>
+<td>Image fit</td>
+<td>Fill the frame, or Show the whole image.</td>
+</tr>
+<tr>
+<td>Open images in fullscreen with zoom</td>
+<td>Opens a fullscreen viewer.</td>
+</tr>
+<tr>
+<td>Loop videos</td>
+<td>Loops hosted and YouTube or Vimeo videos.</td>
+</tr>
+<tr>
+<td>Desktop media width</td>
+<td>50, 58 or 66 percent of the page.</td>
+</tr>
+<tr>
+<td>Sticky column on desktop</td>
+<td>Keeps the information column, the media column or neither in view while scrolling.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The gallery shows images, uploaded video, YouTube and Vimeo video, and 3D models. When a shopper picks a variant that has its own image, that image moves to the front.</p>
+<p>Upload images of the same aspect ratio for the best result. Mixed ratios still work, but the Natural ratio setting will make the page height jump between products.</p>
+<h3 id="product-page-and-blocks-product-options-and-swatches">Product options and swatches</h3>
+<p>The Variant picker block shows one group of controls for each product option.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Color options</td>
+<td>Swatch, Buttons or Dropdown. Applies to options named Color, Colour, Shade, Tone or Print, and to options that have swatches.</td>
+</tr>
+<tr>
+<td>Other options</td>
+<td>Buttons or Dropdown. Used for Size and everything else.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Unavailable and sold-out values stay selectable so shoppers can see them. The Add to bag button is disabled or replaced for a combination that does not exist or is sold out.</p>
+<h4 id="product-page-and-blocks-set-up-color-swatches">Set up color swatches</h4>
+<ol>
+<li>Name the option Color.</li>
+<li>In your Shopify admin, give each option value a color or an image using Shopify's swatch feature for product options. The exact steps change over time, so search the Shopify Help Center for "swatches".</li>
+<li>Save the product and check the product page.</li>
+</ol>
+<p>If an option value has no swatch, the theme tries the last word of the value name as a color. "Navy blue" becomes blue. A name that is not a color name shows an empty ring with the name as its text label. Add real swatches for names such as Oatmeal or Espresso.</p>
+<h3 id="product-page-and-blocks-price-quantity-and-buy-buttons">Price, quantity and buy buttons</h3>
+<ul>
+<li>Price: shows the price, the compare-at price with sale styling, and the unit price when the product has one. Options: Price size (regular or large), Show tax and shipping note, and Show Shop Pay Installments, which appears only when installments are turned on in your payment settings. A tax note appears when your store's prices include tax.</li>
+<li>Quantity selector: minimum, maximum and step follow the quantity rules you set for each variant.</li>
+<li>Buy buttons: Add to bag, plus accelerated checkout buttons (such as Shop Pay) when you leave Show dynamic checkout buttons on. Choose a solid or outline Add to bag style. Subscription products show their purchase options here.</li>
+<li>Pickup availability: shows whether local pickup is available for the selected variant. It needs pickup turned on for at least one location in your shipping settings.</li>
+</ul>
+<h4 id="product-page-and-blocks-gift-cards">Gift cards</h4>
+<p>For a gift card product, the Buy buttons block can show a recipient form: recipient email, name, message and a send date. Turn it off with "Show recipient form for gift cards". Dynamic checkout buttons are hidden when the recipient form is on.</p>
+<h3 id="product-page-and-blocks-size-guide">Size guide</h3>
+<p>Add the Size guide block. It opens a panel from a link next to the size options. The content comes from the first of these that exists:</p>
+<ol>
+<li>The product metafield <code>custom.size_guide</code> (type Page). This lets one product use a different guide from another.</li>
+<li>The Size guide page set in the block.</li>
+<li>The size chart typed into the block.</li>
+</ol>
+<p>To set up the product metafield:</p>
+<ol>
+<li>In Settings, Custom data, Products, choose Add definition.</li>
+<li>Name it Size guide. Set the namespace and key to <code>custom.size_guide</code>.</li>
+<li>Choose the type Page.</li>
+<li>Create a page for each guide in Content, Pages. For example, Dresses size guide.</li>
+<li>On each product, pick the right page in the Size guide metafield.</li>
+</ol>
+<p>To type a size chart in the block instead:</p>
+<ul>
+<li>Write one row per line, with values separated by commas.</li>
+<li>The first row is the heading row. The first column is the size.</li>
+<li>Ranges such as 84-88 work.</li>
+<li>Example:</li>
+</ul>
+<pre><code>Size,Bust,Waist,Hips
+XS,80-84,62-66,88-92
+S,84-88,66-70,92-96
+</code></pre>
+<ul>
+<li>Choose whether your numbers are in centimeters or inches. Shoppers can switch between the two, and the theme converts the measurement columns.</li>
+<li>You can add measuring notes and a measuring image. The image is shown below the chart or page.</li>
+</ul>
+<p>If the product has no guide at all, the block does not show on the live store. In the theme editor it shows a short reminder.</p>
+<h3 id="product-page-and-blocks-bundles">Bundles</h3>
+<p>The Bundle block ("Complete the set") shows the current product with up to four other products. Shoppers can tick which items to include, pick variants, see a live total and add the whole set in one step.</p>
+<p>The theme does not create discounts. Savings appear only when the items have compare-at prices. To give a real bundle discount, create an automatic discount in Shopify, or use a bundles app. You can write a note under the total to say so.</p>
+<p>Choose the products in one of two ways:</p>
+<ul>
+<li>Per product: add a product metafield with the namespace and key <code>custom.bundle_products</code>, type List of products, and pick the products on each product. This overrides the block's list.</li>
+<li>For all products: pick the Products in the block settings.</li>
+</ul>
+<p>Without JavaScript the block shows plain links to each product.</p>
+<h3 id="product-page-and-blocks-complete-the-look-complementary-products">Complete the look (complementary products)</h3>
+<p>The Complete the look block shows Shopify's complementary product recommendations, with a list of fallback products you choose in the block. Each item has an image, price, variant picker and an include checkbox, and one button adds the selected items.</p>
+<p>To set up complementary products:</p>
+<ol>
+<li>Install Shopify's free Search &amp; Discovery app.</li>
+<li>Open it, choose Recommendations, then Complementary products.</li>
+<li>Pick the product and the products that go with it.</li>
+</ol>
+<p>Related products at the bottom of the page work without setup. Shopify chooses them from your orders and product data, and they improve over time.</p>
+<h3 id="product-page-and-blocks-trust-badges">Trust badges</h3>
+<p>The Trust badges block shows up to five badges with line icons or your own icon images.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Badge set</td>
+<td>Essentials, Guarantee, Quality, Shipping or Custom. Each set fills in neutral, translated text for badges 1 to 4. Text you enter replaces it.</td>
+</tr>
+<tr>
+<td>Return window in days</td>
+<td>Used in the returns text. Match your refund policy.</td>
+</tr>
+<tr>
+<td>Show description</td>
+<td>Shows or hides the short line under each badge heading.</td>
+</tr>
+<tr>
+<td>Link shipping and returns badges to store policies</td>
+<td>Links to your policy pages when they exist.</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>Grid, Row or List.</td>
+</tr>
+<tr>
+<td>Style</td>
+<td>Luxe, Outlined or Plain.</td>
+</tr>
+<tr>
+<td>Show on</td>
+<td>All screens, Desktop only or Mobile only.</td>
+</tr>
+<tr>
+<td>Badge 1 to 5</td>
+<td>Icon, custom icon image, heading, description and link.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Only show promises your store keeps. If you do not offer free returns for 30 days, change the number of days or pick a different set.</p>
+<h3 id="product-page-and-blocks-other-blocks">Other blocks</h3>
+<ul>
+<li>Heading, Vendor, SKU, Description (open or collapsible), Text.</li>
+<li>Collapsible row: for materials and care, shipping or returns. It uses a native details element, so it works without JavaScript. Connect a product metafield to the Content setting to show different text on each product. Presets: Materials and care, Shipping, Returns.</li>
+<li>Icon with text: a short point such as Fit, with an icon or your own icon image.</li>
+<li>Shipping and returns: a delivery estimate and up to three lines with icons, plus links to your shipping and refund policies.</li>
+<li>Guarantee seal: a round seal with your return window.</li>
+<li>Inventory status: uses real inventory data only. It shows a sold out message, a backorder message, or a low stock message when tracked stock is at or below the threshold you choose. The exact number left shows only for inventory that Shopify tracks, and you can turn it off. An In stock message is optional.</li>
+<li>Rating: shows a rating from the <code>reviews.rating</code> product metafield, which many reviews apps fill in. You can also add a reviews app block inside it. The theme never invents a rating.</li>
+<li>Payment icons: the payment methods enabled in your store.</li>
+<li>Share: Pinterest, Facebook and X links, and a copy link button.</li>
+<li>Custom Liquid: for code from an app or developer.</li>
+</ul>
+<h3 id="product-page-and-blocks-sticky-add-to-bag">Sticky add to bag</h3>
+<p>The Sticky add to bag block shows a bar at the bottom of the screen after the main buy buttons scroll out of view. It follows the variant chosen in the main form. Options: Show quantity selector, Show on (all screens or mobile only), and a color scheme. The bar is hidden while a drawer is open.</p>
+<h3 id="product-page-and-blocks-reviews">Reviews</h3>
+<p>Reviews are not built into the theme. Install a reviews app that supports theme app blocks, then add its block inside the Rating block or anywhere in the information column. See <a href="#app-compatibility">App compatibility</a>.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="cart-drawer" aria-labelledby="cart-drawer-h"><p class="num">Chapter 7</p><h2 id="cart-drawer-h">Cart drawer</h2><h3 id="cart-drawer-choose-a-cart-type">Choose a cart type</h3>
+<p>Open Theme settings, then Cart.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cart type</td>
+<td>Drawer: the cart slides in from the side when a shopper adds an item or selects the cart icon. Page: the cart icon and Add to bag go to the cart page.</td>
+</tr>
+<tr>
+<td>Show cart note</td>
+<td>Lets shoppers add a note to their order.</td>
+</tr>
+<tr>
+<td>Free shipping threshold</td>
+<td>A whole number in your store currency, for example 150. Leave it empty to hide the shipping progress message.</td>
+</tr>
+<tr>
+<td>Show product recommendations on the cart page</td>
+<td>Shows suggested products on the cart page.</td>
+</tr>
+</tbody>
+</table></div>
+<p>On the cart page itself, the full cart always shows, even when the cart type is Drawer.</p>
+<h3 id="cart-drawer-what-the-drawer-shows">What the drawer shows</h3>
+<ul>
+<li>Each line item with its image, linked title, options, selling plan and any line properties. Properties whose names start with an underscore are hidden.</li>
+<li>The unit price when the product has one, the original and final price, and any line discounts.</li>
+<li>A quantity stepper that follows the quantity rules you set for the variant, and a remove link.</li>
+<li>Free shipping progress, when you set a threshold.</li>
+<li>The subtotal, cart-level discounts with their names and amounts, the estimated total, and a note about tax and shipping.</li>
+<li>The optional order note.</li>
+<li>The checkout button and accelerated checkout buttons such as Shop Pay.</li>
+<li>An empty cart message when there is nothing in the bag.</li>
+</ul>
+<p>Changes announce themselves to screen readers, for example "Quantity updated".</p>
+<p>If JavaScript fails to load, quantity changes and removals still work as normal form submissions.</p>
+<h3 id="cart-drawer-discounts">Discounts</h3>
+<p>The cart does not have a discount code field. Codes are entered at checkout. Automatic discounts and any code already applied appear in the cart summary. To run a promotion, create an automatic discount in Shopify.</p>
+<h3 id="cart-drawer-free-shipping-progress">Free shipping progress</h3>
+<p>The progress message compares the cart total with the number you entered. It shows only when the shopper's cart uses your store currency. If you sell in other currencies, shoppers in those currencies do not see the progress message, because the threshold is not converted. Check your shipping rates match the threshold you publish. The theme only displays a message; Shopify's shipping rates decide who really gets free shipping.</p>
+<h3 id="cart-drawer-cart-page-settings">Cart page settings</h3>
+<p>Select the Cart page in the theme editor, then Cart:</p>
+<ul>
+<li>Heading for the recommendations.</li>
+<li>Collection for an empty bag: products shown when the cart is empty. Leave it empty to show all products.</li>
+<li>Color scheme and padding.</li>
+</ul>
+<p>With items in the cart, the recommendations come from Shopify's related product data for the cart's products.</p>
+<h3 id="cart-drawer-tips">Tips</h3>
+<ul>
+<li>Keep the free shipping threshold just above your average order value, and state the same amount in your shipping policy.</li>
+<li>Do not use the cart note for required information such as gift messages. Use a product field or gift card recipient form for that.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="gift-card-page" aria-labelledby="gift-card-page-h"><p class="num">Chapter 8</p><h2 id="gift-card-page-h">Gift card page</h2><h3 id="gift-card-page-sell-gift-cards">Sell gift cards</h3>
+<ol>
+<li>Create a gift card product in your Shopify admin and add the amounts as variants. The exact steps are in the Shopify Help Center under "digital gift cards".</li>
+<li>Add the product to a collection and show it in your menu.</li>
+<li>On the product page, keep the Buy buttons block. For a gift card product it can show a recipient form (see <a href="#product-page-and-blocks">Product page and blocks</a>).</li>
+</ol>
+<h3 id="gift-card-page-the-recipient-form">The recipient form</h3>
+<p>When "Show recipient form for gift cards" is on, buyers can send the gift card to someone else.</p>
+<ul>
+<li>Recipient email (required to send to someone else).</li>
+<li>Recipient name (optional).</li>
+<li>Message (optional, up to 200 characters).</li>
+<li>Send on (optional). Leave it empty to send right away. Buyers can schedule up to 90 days ahead.</li>
+</ul>
+<p>If the form is turned off, Shopify sends the gift card to the buyer.</p>
+<p>If Shopify rejects a form entry and the page reloads, the theme keeps what the buyer typed and shows Shopify's error message.</p>
+<h3 id="gift-card-page-the-gift-card-page">The gift card page</h3>
+<p>When a customer receives a gift card, they open a page that Shopify renders with the file <code>templates/gift_card.liquid</code>. This page is not edited in the theme editor sections list. It shows:</p>
+<ul>
+<li>Your logo, or your store name when no logo is set in Theme settings.</li>
+<li>The balance and the original value.</li>
+<li>The gift card code, with a Copy code button.</li>
+<li>The expiry date, when the gift card has one.</li>
+<li>A QR code and a short instruction for using the code at checkout, or in person.</li>
+<li>An Add to Apple Wallet button, when Shopify provides a pass for the card.</li>
+<li>A Print button and a Start shopping button.</li>
+<li>A message when the gift card has expired or is no longer active. The QR code is hidden in that case.</li>
+</ul>
+<p>The page uses the first color scheme (Scheme 1) and your fonts. Change the logo in Theme settings, Logo and favicon.</p>
+<p>The QR code is drawn in the browser with a small, MIT-licensed library included in the theme, and it uses Shopify's own gift card identifier. If the QR code does not show, the code and the Copy button still work.</p>
+<h3 id="gift-card-page-change-the-wording">Change the wording</h3>
+<p>The gift card page text comes from the theme's language file. To change it, open the theme editor, choose the language menu, then Edit default theme content, and search for "gift card".</p>
+<h3 id="gift-card-page-test-it">Test it</h3>
+<p>Create a test gift card in Products, Gift cards, send it to your own email and open the link. Check the page on a phone, and print it once.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="localization" aria-labelledby="localization-h"><p class="num">Chapter 9</p><h2 id="localization-h">Localization</h2><p>Selvage works with Shopify Markets and Shopify's language tools. It does not translate your content by itself.</p>
+<h3 id="localization-country-and-currency-selector">Country and currency selector</h3>
+<p>Add countries and regions in Settings, Markets. When your store has more than one country or region, a selector appears. If it has only one, nothing is shown.</p>
+<p>You can place the selector in three places:</p>
+<ul>
+<li>The header: the settings "Show country/region selector" and "Show language selector".</li>
+<li>The footer: add the Country and language block and choose which selectors it shows.</li>
+<li>The mobile menu drawer, which shows the same selectors as the header.</li>
+</ul>
+<p>The selectors are standard Shopify localization forms in a disclosure list. They work without JavaScript. Escape closes the list.</p>
+<h3 id="localization-language-selector">Language selector</h3>
+<p>Add languages in Settings, Languages. When your store has more than one language, a selector appears.</p>
+<h3 id="localization-what-gets-translated">What gets translated</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Content</th>
+<th>How to translate it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Products, collections, pages, menus, policies</td>
+<td>Shopify's Translate &amp; Adapt app, or a translation app of your choice.</td>
+</tr>
+<tr>
+<td>Text you type in the theme editor (headings, buttons, announcement messages)</td>
+<td>Translate &amp; Adapt, under Online Store, Themes.</td>
+</tr>
+<tr>
+<td>Fixed theme text (button labels, messages, cart text)</td>
+<td>The theme's language file. Selvage 1.0.0 includes English only. Open the theme editor, choose the language menu and select Edit default theme content to change any English wording. For other languages, use Translate &amp; Adapt or a translation app.</td>
+</tr>
+</tbody>
+</table></div>
+<p>If you translate only some text, shoppers will see a mix of languages. Translate everything a shopper sees before you publish a language.</p>
+<h3 id="localization-right-to-left-languages">Right-to-left languages</h3>
+<p>The theme sets the text direction to right-to-left for Arabic, Hebrew, Persian and Urdu. Selvage 1.0.0 was not tested in right-to-left languages, so preview each page in your language before publishing it.</p>
+<h3 id="localization-prices-and-currency">Prices and currency</h3>
+<p>Prices follow the currency of the shopper's market and are formatted with your store's money format. The free shipping progress message in the cart shows only for carts in the store currency (see <a href="#cart-drawer">Cart drawer</a>).</p>
+<h3 id="localization-tips">Tips</h3>
+<ul>
+<li>Keep announcement messages short. Translations are often longer.</li>
+<li>Check long words in navigation. Menu items can wrap in some languages.</li>
+<li>Check the size guide in every language. The guide itself is a page, so translate the page.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="animation-and-reduced-motion" aria-labelledby="animation-and-reduced-motion-h"><p class="num">Chapter 10</p><h2 id="animation-and-reduced-motion-h">Animation settings and reduced motion</h2><p>Selvage uses motion sparingly: content fades or slides up as it enters the screen, images can reveal with a wipe, large images can drift slowly as you scroll, and pages fade into each other. All of it is optional.</p>
+<h3 id="animation-and-reduced-motion-animation-settings">Animation settings</h3>
+<p>Open Theme settings, then Animation.</p>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Animation intensity</td>
+<td>Off, Subtle, Standard or Expressive. Subtle uses shorter, smaller movements. Expressive uses longer, larger ones. Off turns movement off.</td>
+</tr>
+<tr>
+<td>Reveal content on scroll</td>
+<td>Content fades up as it enters the screen.</td>
+</tr>
+<tr>
+<td>Reveal images with a wipe</td>
+<td>Images uncover with a curtain effect.</td>
+</tr>
+<tr>
+<td>Zoom images on hover</td>
+<td>A slight zoom on product and collection images when the pointer is over them.</td>
+</tr>
+<tr>
+<td>Fade between pages</td>
+<td>A short cross-fade between pages, in browsers that support it.</td>
+</tr>
+<tr>
+<td>Enable parallax on large images</td>
+<td>Large images move slightly slower than the page. Each section that supports it has its own "Enable parallax" checkbox too.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Content is visible without animation. If JavaScript does not run, nothing stays hidden.</p>
+<h3 id="animation-and-reduced-motion-reduced-motion">Reduced motion</h3>
+<p>Visitors can ask their device to reduce motion: in system settings on Windows, macOS, iOS and Android, there is a setting called Reduce motion or Show animations. Selvage respects it everywhere, without any setting from you:</p>
+<ul>
+<li>Scroll reveals, image reveals, page fades and parallax are switched off, and content shows at once.</li>
+<li>Animations and transitions finish almost instantly.</li>
+<li>The slideshow does not advance automatically, even if you turned autoplay on.</li>
+<li>The announcement bar does not rotate messages.</li>
+<li>The hero background video does not play. The image stays as the cover. The same happens when the visitor has asked for reduced data use.</li>
+<li>Smooth scrolling is turned off.</li>
+</ul>
+<p>You cannot turn these protections off, and you should not try to work around them with custom code.</p>
+<h3 id="animation-and-reduced-motion-pausing-moving-content">Pausing moving content</h3>
+<p>Moving content that starts by itself must be pausable. In Selvage:</p>
+<ul>
+<li>Slideshow autoplay is off by default. When you turn it on, it pauses on hover and keyboard focus and shows a pause button.</li>
+<li>The announcement bar rotation pauses on hover and focus.</li>
+<li>Countdowns show the end date as text as well as the ticking numbers. The ticking numbers are not read out every second.</li>
+</ul>
+<h3 id="animation-and-reduced-motion-tips">Tips</h3>
+<ul>
+<li>Pick one moment of motion per section. A hero with a video, parallax, wipe reveal and animated heading is too much.</li>
+<li>Avoid autoplay when you can. A still image with a clear heading often converts as well.</li>
+<li>If your customers are older, or you sell to a wide audience, start with Subtle.</li>
+<li>Test on a real phone. Motion that feels smooth on a computer can stutter on an older phone.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="app-compatibility" aria-labelledby="app-compatibility-h"><p class="num">Chapter 11</p><h2 id="app-compatibility-h">App compatibility</h2><p>Selvage follows Shopify's Online Store 2.0 rules, so apps that use theme app extensions work without editing theme code.</p>
+<h3 id="app-compatibility-app-blocks">App blocks</h3>
+<p>An app block is a block that an app provides. You add it in the theme editor like any other block.</p>
+<p>Selvage accepts app blocks in:</p>
+<ul>
+<li>The Product information section on the product page.</li>
+<li>The Featured product section.</li>
+<li>The Rating block, so a reviews app can sit inside it.</li>
+</ul>
+<p>How to add one:</p>
+<ol>
+<li>Install the app and follow its setup steps.</li>
+<li>Open the theme editor and go to the template you want, for example Products.</li>
+<li>Select Add block in the section, then pick the app under Apps.</li>
+<li>Drag the block into place and save.</li>
+</ol>
+<p>Apps often add their own blocks to the Bundle block's section too. They sit next to the Bundle block.</p>
+<h3 id="app-compatibility-app-embeds">App embeds</h3>
+<p>An app embed runs across the whole page, for example a chat widget, a loyalty badge or a cookie banner. Turn it on under Theme settings, App embeds. App embeds do not depend on any theme section. Selvage does not change the page head that Shopify fills in, so app embeds and scripts load as the app expects.</p>
+<h3 id="app-compatibility-custom-liquid">Custom Liquid</h3>
+<p>Use the Custom liquid section, the Custom Liquid block on the product page, or the Custom Liquid block in the footer when an app asks you to paste a snippet.</p>
+<ul>
+<li>Only paste code from sources you trust.</li>
+<li>Duplicate your theme before you paste anything.</li>
+<li>Scripts that you add yourself can slow down the store. See <a href="#performance-tips">Performance tips</a>.</li>
+</ul>
+<h3 id="app-compatibility-features-that-need-an-app-or-a-shopify-feature">Features that need an app or a Shopify feature</h3>
+<div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
+<thead>
+<tr>
+<th>You want</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product reviews and star ratings</td>
+<td>A reviews app that supports app blocks. If it writes ratings to the <code>reviews.rating</code> product metafield, the Rating block shows them without an extra block.</td>
+</tr>
+<tr>
+<td>Subscriptions</td>
+<td>A selling plans app. Subscription options show in the Buy buttons block and in the cart.</td>
+</tr>
+<tr>
+<td>Bundle discounts</td>
+<td>A Shopify automatic discount or a bundles app. The Bundle block groups products, but does not create discounts.</td>
+</tr>
+<tr>
+<td>Filters, complementary products</td>
+<td>Shopify Search &amp; Discovery.</td>
+</tr>
+<tr>
+<td>Email marketing and signup forms</td>
+<td>The theme includes a newsletter form that adds subscribers to Shopify's customer list. Connect your email tool to Shopify's customers.</td>
+</tr>
+<tr>
+<td>Translations</td>
+<td>Shopify Translate &amp; Adapt, or a translation app.</td>
+</tr>
+<tr>
+<td>Wishlist</td>
+<td>Not included. Use an app that supports app blocks if you need one.</td>
+</tr>
+<tr>
+<td>Instagram feed</td>
+<td>Not included. The Image gallery section lets you upload your own photographs.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="app-compatibility-apps-that-edit-theme-code">Apps that edit theme code</h3>
+<p>Some older apps edit your theme files. Selvage uses its own markup and class names, so those edits may not find what they look for, and they can break layouts. Prefer apps that use app blocks and app embeds. If an app asks to edit theme code, duplicate your theme first, and ask the app's support whether it supports Selvage.</p>
+<h3 id="app-compatibility-if-something-looks-wrong-after-an-install">If something looks wrong after an install</h3>
+<ol>
+<li>Turn off the app embed or remove the app block and reload.</li>
+<li>If the problem goes away, contact the app's support.</li>
+<li>If it stays, contact Selvage support. See <a href="#support">Support</a>.</li>
+</ol><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="accessibility" aria-labelledby="accessibility-h"><p class="num">Chapter 12</p><h2 id="accessibility-h">Accessibility notes</h2><p>Selvage is built to meet WCAG 2.2 level AA. This page lists what the theme does, what stays in your hands, and what has not been verified yet.</p>
+<h3 id="accessibility-status">Status</h3>
+<p>Selvage 1.0.0 was checked with source-level scripts during development. These checks look for missing alt text, unlabeled fields, unnamed buttons, removed focus outlines and missing reduced-motion rules. They found no errors on the last run.</p>
+<p>A full test on a live store with a screen reader, keyboard-only use, browser zoom and a contrast tool has not been completed. If you find a barrier, please tell us (see <a href="#support">Support</a>).</p>
+<h3 id="accessibility-what-the-theme-provides">What the theme provides</h3>
+<ul>
+<li>A "Skip to content" link as the first focusable element.</li>
+<li>Landmarks: header, main content, footer and navigation regions.</li>
+<li>One main heading (h1) per page. Heading levels are visually distinct.</li>
+<li>Keyboard use for menus, drawers, dialogs, carousels, the size guide and the quantity controls. Escape closes drawers and menus, and focus returns to the control that opened them.</li>
+<li>Visible focus outlines on links, buttons and fields.</li>
+<li>Drawers and dialogs use the native dialog element, so focus is kept inside while they are open.</li>
+<li>Messages for things that change without a page load, such as adding to the cart or applying filters, are announced to screen readers.</li>
+<li>Form fields have labels, error lists link to the fields that need attention, and forms work as plain HTML forms without JavaScript.</li>
+<li>Images use alt text from your product and media settings. Decorative images are hidden from screen readers.</li>
+<li>Reduced motion is respected everywhere. See <a href="#animation-and-reduced-motion">Animation settings and reduced motion</a>.</li>
+<li>Slideshows and rotating messages can be paused.</li>
+<li>Color swatches have a text name for screen readers.</li>
+<li>Primary controls are designed with large touch targets, and small controls are designed to keep at least 24 by 24 pixels of tappable area. This has not been measured on a rendered store.</li>
+<li>The page language is set from the visitor's language.</li>
+</ul>
+<h3 id="accessibility-what-you-need-to-do">What you need to do</h3>
+<ul>
+<li>Write alt text for every important image in Content, Files, and for product media. Describe what the picture shows, not "image of". Leave decorative images empty.</li>
+<li>Choose color schemes with enough contrast: at least 4.5 to 1 for text, and 3 to 1 for large text, buttons and borders. Test text over images, especially with the transparent header.</li>
+<li>Use descriptive link and button labels. "Shop dresses" is better than "Click here".</li>
+<li>Keep heading order logical. Use heading levels to structure the page, not to change the size.</li>
+<li>Do not put text inside images. Use the Heading and Body text settings, so the text can be read, translated and zoomed.</li>
+<li>Add a description to every video, and use the "Slideshow description" setting.</li>
+<li>Keep Animation intensity modest, and avoid autoplay.</li>
+<li>Preview every page at 200 percent browser zoom and on a narrow phone.</li>
+</ul>
+<h3 id="accessibility-known-limits">Known limits</h3>
+<ul>
+<li>The error and success message colors in forms are fixed colors. They have good contrast on the light color schemes but not on the darkest ones. If you use a dark scheme for a section with a form, check the message colors.</li>
+<li>Third-party app blocks and embeds have their own accessibility. Test them before you publish.</li>
+<li>Right-to-left layouts have not been tested.</li>
+<li>The QR code on the gift card page has a text alternative, and the gift card code is shown as text.</li>
+</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="performance-tips" aria-labelledby="performance-tips-h"><p class="num">Chapter 13</p><h2 id="performance-tips-h">Performance tips</h2><p>How fast your store feels depends on your images, your apps and your page design as much as on the theme. This page lists what the theme does, and what you can do.</p>
+<p>Selvage has not been measured with Lighthouse on a live store yet, so this guide gives no scores. Measure your own store with the online store speed report in your Shopify admin and with PageSpeed Insights.</p>
+<h3 id="performance-tips-what-the-theme-does">What the theme does</h3>
+<ul>
+<li>Scripts are deferred or loaded as modules, so they do not block the page.</li>
+<li>Scripts and styles for a feature load only on pages that use it. For example, the QR code script loads only on the gift card page, and the filter script only on collection and search pages.</li>
+<li>Fonts come from Shopify's font service, with the heading and body fonts preloaded, and use a fallback font while they load.</li>
+<li>Images use responsive sizes. Apart from the logo, only the first image in the first section is loaded eagerly and at high priority. All other images load as the visitor scrolls.</li>
+<li>Image frames reserve their space, so the page does not jump while images load.</li>
+<li>Animations use transforms and opacity wherever possible.</li>
+<li>There is no jQuery and no third-party script requested from outside Shopify. The only bundled third-party code is a small QR code library used on the gift card page. The only outside embeds are YouTube and Vimeo videos that you choose, and they load after a visitor presses play.</li>
+<li>The video section loads its player only after a visitor presses play.</li>
+</ul>
+<h3 id="performance-tips-what-you-can-do">What you can do</h3>
+<h4 id="performance-tips-images">Images</h4>
+<ul>
+<li>Upload images at the size you need, not the largest file you have. A hero image of 2400 px wide is enough. Photos from a camera at 6000 px are not.</li>
+<li>Use JPEG for photographs. Shopify serves modern formats to browsers that support them.</li>
+<li>Put the most important image first. Make it the one that looks good before it finishes loading.</li>
+<li>Use the focal point tool, so you do not need extra-wide crops.</li>
+</ul>
+<h4 id="performance-tips-page-design">Page design</h4>
+<ul>
+<li>Keep the home page to the sections you need. Ten to twelve sections is plenty.</li>
+<li>Avoid more than one autoplay video on a page. Use a cover image and let visitors press play.</li>
+<li>Use the Video section instead of embedding a video with code.</li>
+<li>Set "Products to show" in Featured collection to what a visitor will really look at. Eight is a good start.</li>
+<li>Turn on Load more instead of showing 48 products per page on collection pages, or lower Products per page.</li>
+</ul>
+<h4 id="performance-tips-apps">Apps</h4>
+<ul>
+<li>Every app can add scripts and styles. Remove apps you no longer use, and turn off their app embeds.</li>
+<li>Remove an app's leftover code snippets from Custom Liquid sections.</li>
+<li>Add apps one at a time and measure your store after each one.</li>
+</ul>
+<h4 id="performance-tips-fonts">Fonts</h4>
+<ul>
+<li>Use two fonts at most: one for headings and one for body text. A third font for navigation adds a download.</li>
+<li>Avoid very large font families with many weights.</li>
+</ul>
+<h4 id="performance-tips-animation">Animation</h4>
+<ul>
+<li>Choose Subtle or Off in Theme settings, Animation if your store feels slow on older phones.</li>
+</ul>
+<h3 id="performance-tips-test-before-you-publish">Test before you publish</h3>
+<ol>
+<li>Open PageSpeed Insights for the home page, a collection page and a product page, on mobile.</li>
+<li>Fix large images first, then apps.</li>
+<li>Test again after every change.</li>
+</ol><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="support" aria-labelledby="support-h"><p class="num">Chapter 14</p><h2 id="support-h">Support</h2><h3 id="support-how-to-get-help">How to get help</h3>
+<p>Use the support form: https://www.ecomswiftllc.com/selvage-support</p>
+<p>Our team replies within 2 business days. Business days are Monday to Friday, except public holidays in the United States.</p>
+<p>Before you write, please have these ready:</p>
+<ol>
+<li>Your store address, for example <code>your-store.myshopify.com</code>.</li>
+<li>The page address where the problem happens.</li>
+<li>What you expected, and what happened instead.</li>
+<li>Screenshots or a short screen recording, if possible. The form accepts file uploads.</li>
+<li>The device and browser, for example "iPhone 15, Safari".</li>
+<li>Whether it happens in a duplicate of the theme with apps turned off.</li>
+</ol>
+<p>Do not send passwords or customer data. If we need access to your store, we will explain how to grant it safely.</p>
+<h3 id="support-what-support-covers">What support covers</h3>
+<ul>
+<li>Questions about how theme settings, sections and blocks work.</li>
+<li>Problems in the theme such as broken layouts, dead links and logic errors.</li>
+<li>Bugs. We fix critical bugs as soon as possible, and release fixes in theme updates.</li>
+<li>Questions about adding the theme to your store from the Theme Store.</li>
+</ul>
+<h3 id="support-what-support-does-not-cover">What support does not cover</h3>
+<p>These are paid services and are not included in the theme price:</p>
+<ul>
+<li>Custom design or code changes.</li>
+<li>Installing or configuring apps, and connecting them to your theme.</li>
+<li>Adding your products, images and content.</li>
+<li>Migrating a store from another theme or platform.</li>
+<li>Applying theme updates to your store, including re-applying code changes you made.</li>
+<li>Help with problems that come from an app, your Shopify plan or your domain provider. Please contact those providers.</li>
+</ul>
+<p>If you want any of these, ask in the support form and we will tell you how to get a quote, or you can hire a Shopify Partner.</p>
+<h3 id="support-before-you-edit-code">Before you edit code</h3>
+<p>Customizing theme code is not supported. If you edit code:</p>
+<ol>
+<li>Duplicate your theme first (Online Store, Themes, Actions, Duplicate), and work in the copy.</li>
+<li>Keep notes of each change so you can reapply it after an update.</li>
+<li>Consider hiring a Shopify Partner. Search the Shopify Experts marketplace.</li>
+</ol>
+<p>We cannot guarantee that code changes you make will keep working after updates.</p>
+<h3 id="support-updates">Updates</h3>
+<p>New versions are published in the Theme Store. Shopify tells you when an update is available. An update adds a new copy of the theme. It does not change your live theme. Your settings stay in your current version, so reapply any code changes in the new copy and preview it before you publish.</p><p class="top"><a href="#contents">Back to contents</a></p></section>
+<section id="faq" aria-labelledby="faq-h"><p class="num">Common questions</p><h2 id="faq-h">Frequently asked questions</h2>
+<details><summary>Why does my product card not show color dots or size chips?</summary><div class="ans"><p>The theme looks for options named Color (or Colour) and Size. Rename your options in the product, and check Theme settings, Product cards that "Show color swatches" and "Show sizes on hover" are on.</p></div></details><details><summary>Why are my color swatches empty?</summary><div class="ans"><p>An option value without a swatch uses the last word of its name as a color. Names such as Oatmeal do not work this way. Give each value a color or image swatch in your product options. See <a href="#product-page-and-blocks">Product page and blocks</a>.</p></div></details><details><summary>Why do my collection filters not appear?</summary><div class="ans"><p>Filtering uses the filters you set up in Shopify's Search &amp; Discovery app. Install it, add filters, and make sure Enable filtering is on in the Collection section. See <a href="#collection-page-and-filters">Collection page and filters</a>.</p></div></details><details><summary>Why does the mega menu not show?</summary><div class="ans"><p>The Mega menu block's "Menu item" must match the name of a top-level item in the header menu. Check the spelling. See <a href="#header-and-mega-menu">Header and mega menu</a>.</p></div></details><details><summary>Why does my size guide not show?</summary><div class="ans"><p>Add the Size guide block, then set one of: the product metafield <code>custom.size_guide</code> (type Page), a page in the block, or a size chart in the block. See <a href="#product-page-and-blocks">Product page and blocks</a>.</p></div></details><details><summary>Why is the free shipping message missing from the cart?</summary><div class="ans"><p>The message needs a number in Theme settings, Cart, Free shipping threshold, and it shows only for carts in your store currency. See <a href="#cart-drawer">Cart drawer</a>.</p></div></details><details><summary>Why does the cart open as a page and not as a drawer?</summary><div class="ans"><p>Check Theme settings, Cart, Cart type. Also, the cart page always shows the full cart even when the type is Drawer.</p></div></details><details><summary>Why is the Sale price not showing?</summary><div class="ans"><p>A product shows a sale when its compare-at price is higher than its price. Set the compare-at price on the variant.</p></div></details><details><summary>Why does my new badge text not appear?</summary><div class="ans"><p>Check the product metafield <code>custom.badge</code> (single line text) is filled in. A product also shows Sold out and Sale badges first, and a card shows at most two badges.</p></div></details><details><summary>How do I add product reviews?</summary><div class="ans"><p>Install a reviews app that supports app blocks and add its block in the Rating block. See <a href="#app-compatibility">App compatibility</a>.</p></div></details><details><summary>Does the theme have a wishlist or an Instagram feed?</summary><div class="ans"><p>No. Use an app if you need them. See <a href="#app-compatibility">App compatibility</a>.</p></div></details><details><summary>Animations bother me or my customers. How do I switch them off?</summary><div class="ans"><p>Set Theme settings, Animation, Animation intensity to Off. Visitors whose devices ask for reduced motion never see the movement. See <a href="#animation-and-reduced-motion">Animation settings and reduced motion</a>.</p></div></details><details><summary>Does the theme work in other languages?</summary><div class="ans"><p>The theme includes English text. Use Shopify's language tools to translate everything else. See <a href="#localization">Localization</a>.</p></div></details><details><summary>My text is hard to read over an image. What can I do?</summary><div class="ans"><p>Raise the Overlay opacity in that section, or choose a Color scheme over image with stronger contrast.</p></div></details>
+<p class="top"><a href="#contents">Back to contents</a></p></section>
+<footer><p>Can't find your answer? <a href="https://www.ecomswiftllc.com/selvage-support" target="_top">Send us a message</a> and we will reply within 2 business days.</p>
+<p>Selvage is a Shopify theme by Ecom Swift LLC. Shopify is a trademark of Shopify Inc. Ecom Swift LLC is an independent theme developer and is not affiliated with, endorsed by or sponsored by Shopify Inc.</p></footer>
+</main></div></body></html>
