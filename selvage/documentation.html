@@ -6,35 +6,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;1,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
 body{margin:0;background:#f6f3ee;color:#1c1a17;font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.65}
 a{color:#8c4f3d;text-decoration:underline;text-underline-offset:2px}
 a:hover{color:#6e3b2c}
-a:focus-visible,summary:focus-visible,.tw:focus-visible{outline:3px solid #1c1a17;outline-offset:3px}
+a:focus-visible,summary:focus-visible,.tw:focus-visible,select:focus-visible{outline:3px solid #1c1a17;outline-offset:3px}
 h1,h2,h3,h4{font-family:'Source Serif 4',serif;font-weight:400;color:#1c1a17;line-height:1.2;margin:0}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px}
-header.hero{padding:40px 0 28px}
-.kick{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#7d4636;font-weight:600;margin:0 0 14px}
-h1{font-size:52px;line-height:1.08;margin:0 0 16px}
-.lede{font-family:'Source Serif 4',serif;font-style:italic;font-size:22px;line-height:1.4;color:#4a433c;max-width:700px;margin:0 0 16px}
-header p{color:#3d3933;max-width:700px;margin:0 0 12px}
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:0;max-width:980px;margin:0 auto}
+aside.side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:28px 18px 28px 24px;border-right:1px solid #d9d1c4}
+aside.side .lab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7d4636;font-weight:700;margin:0 0 12px}
+aside.side ol{list-style:none;margin:0;padding:0}
+aside.side li{margin:0}
+aside.side a{display:flex;gap:10px;align-items:baseline;padding:7px 10px;color:#3d3933;text-decoration:none;font-size:15px;line-height:1.35;border-left:3px solid transparent}
+aside.side a:hover{background:#ece5d9}
+aside.side a[aria-current="true"]{border-left-color:#7d4636;background:#fff;color:#1c1a17;font-weight:600}
+aside.side .n{font-size:11px;font-weight:700;letter-spacing:.04em;color:#7d4636;min-width:22px}
+main{padding:0 28px 0 36px;min-width:0}
+.jump{display:none}
+header.hero{padding:34px 0 18px}
+.kick{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#7d4636;font-weight:600;margin:0 0 12px}
+h1{font-size:44px;line-height:1.08;margin:0 0 14px}
+.lede{font-family:'Source Serif 4',serif;font-style:italic;font-size:21px;line-height:1.4;color:#4a433c;margin:0 0 14px}
+header p{color:#3d3933;margin:0 0 12px}
 .cta{display:inline-block;margin:6px 12px 8px 0;padding:13px 24px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:#7d4636;color:#fff;text-decoration:none}
 .cta:hover{background:#6a3a2c;color:#fff}
-nav.toc{margin:8px 0 8px;padding:28px 0 8px;border-top:1px solid #d9d1c4}
-nav.toc h2{font-size:26px;margin-bottom:16px}
-nav.toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-nav.toc a{display:flex;gap:12px;align-items:baseline;padding:12px 14px;background:#fff;border:1px solid #e3ddd3;text-decoration:none;color:#1c1a17;height:100%}
-nav.toc a:hover{border-color:#b07a67}
-nav.toc .n{font-size:12px;font-weight:700;letter-spacing:.06em;color:#7d4636;min-width:22px}
-nav.toc .t{font-weight:600;font-size:15px;line-height:1.35}
-.words{margin:28px 0 8px;padding:24px 26px;background:#fff;border:1px solid #e3ddd3}
-.words h2{font-size:24px;margin-bottom:10px}
+.words{margin:22px 0 8px;padding:20px 22px;background:#fff;border:1px solid #e3ddd3}
+.words h2{font-size:22px;margin-bottom:8px}
 .words ul{margin:0}
-section.chap{padding:40px 0 8px;border-top:1px solid #d9d1c4;margin-top:36px;max-width:760px}
+section.chap{padding:34px 0 6px;border-top:1px solid #d9d1c4;margin-top:30px}
 .num{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7d4636;font-weight:700;margin:0 0 8px}
-section.chap h2,#faq>h2{font-size:38px;margin-bottom:18px}
-h3{font-size:25px;margin:34px 0 10px}
-h4{font-size:19px;font-family:'Source Sans 3',sans-serif;font-weight:700;margin:24px 0 8px}
+section.chap h2,#faq>h2{font-size:34px;margin-bottom:16px}
+h3{font-size:23px;margin:30px 0 10px}
+h4{font-size:18px;font-family:'Source Sans 3',sans-serif;font-weight:700;margin:22px 0 8px}
 p{margin:0 0 14px;color:#3d3933}
 ul,ol{margin:0 0 16px;padding-left:24px;color:#3d3933}
 li{margin:0 0 6px;padding-left:2px}
@@ -47,9 +50,9 @@ table{border-collapse:collapse;width:100%;font-size:15.5px;line-height:1.5}
 th,td{text-align:left;vertical-align:top;padding:10px 14px;border-bottom:1px solid #e9e3d8}
 th{font-weight:700;background:#efe9de;color:#1c1a17;white-space:nowrap}
 tr:last-child td{border-bottom:0}
-td:first-child{font-weight:600;color:#1c1a17;min-width:140px}
-.top{margin:26px 0 0;font-size:15px}
-#faq{padding:40px 0 8px;border-top:1px solid #d9d1c4;margin-top:36px;max-width:760px}
+td:first-child{font-weight:600;color:#1c1a17;min-width:130px}
+.top{margin:24px 0 0;font-size:15px}
+#faq{padding:34px 0 8px;border-top:1px solid #d9d1c4;margin-top:30px}
 details{background:#fff;border:1px solid #e3ddd3;margin:0 0 10px}
 summary{cursor:pointer;padding:15px 48px 15px 18px;font-weight:600;font-size:17px;list-style:none;position:relative;color:#1c1a17}
 summary::-webkit-details-marker{display:none}
@@ -58,19 +61,23 @@ details[open] summary::after{content:"\2212"}
 details[open] summary{border-bottom:1px solid #eee7db}
 .ans{padding:14px 18px 4px}
 .ans p:last-child{margin-bottom:12px}
-footer{margin:44px 0 0;padding:26px 0 48px;border-top:1px solid #d9d1c4}
-footer p{font-size:15px;max-width:700px}
-@media(max-width:900px){nav.toc ol{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){
+footer{margin:40px 0 0;padding:24px 0 48px;border-top:1px solid #d9d1c4}
+footer p{font-size:15px}
+@media(max-width:760px){
+html{scroll-padding-top:72px}
 body{font-size:16px}
-.wrap{padding:0 16px}
-header.hero{padding:28px 0 20px}
-h1{font-size:34px}
+.layout{display:block}
+aside.side{display:none}
+main{padding:0 16px}
+.jump{display:block;position:sticky;top:0;z-index:5;background:#f6f3ee;margin:0 -16px;padding:10px 16px;border-bottom:1px solid #d9d1c4}
+.jump label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.jump select{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid #b8ab97;background:#fff;color:#1c1a17;border-radius:0}
+header.hero{padding:22px 0 12px}
+h1{font-size:32px}
 .lede{font-size:19px}
-nav.toc ol{grid-template-columns:1fr}
-section.chap h2,#faq>h2{font-size:30px}
-h3{font-size:22px}
-.words{padding:18px}
+section.chap h2,#faq>h2{font-size:28px}
+h3{font-size:21px}
+.words{padding:16px}
 .cta{display:block;text-align:center;margin-right:0}
 summary{padding:14px 44px 14px 14px;font-size:16px}
 .ans{padding:12px 14px 2px}
@@ -78,7 +85,10 @@ th,td{padding:9px 11px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
-<body><div class="wrap"><main>
+<body id="top"><div class="layout">
+<aside class="side"><nav aria-label="Guide chapters"><p class="lab">Contents</p><ol><li><a href="#getting-started" data-id="getting-started"><span class="n">01</span><span class="t">Getting started</span></a></li><li><a href="#color-schemes-and-fonts" data-id="color-schemes-and-fonts"><span class="n">02</span><span class="t">Color schemes and fonts</span></a></li><li><a href="#header-and-mega-menu" data-id="header-and-mega-menu"><span class="n">03</span><span class="t">Header and mega menu</span></a></li><li><a href="#home-page-sections" data-id="home-page-sections"><span class="n">04</span><span class="t">Home page sections</span></a></li><li><a href="#collection-page-and-filters" data-id="collection-page-and-filters"><span class="n">05</span><span class="t">Collection page and filters</span></a></li><li><a href="#product-page-and-blocks" data-id="product-page-and-blocks"><span class="n">06</span><span class="t">Product page and blocks</span></a></li><li><a href="#cart-drawer" data-id="cart-drawer"><span class="n">07</span><span class="t">Cart drawer</span></a></li><li><a href="#gift-card-page" data-id="gift-card-page"><span class="n">08</span><span class="t">Gift card page</span></a></li><li><a href="#localization" data-id="localization"><span class="n">09</span><span class="t">Localization</span></a></li><li><a href="#animation-and-reduced-motion" data-id="animation-and-reduced-motion"><span class="n">10</span><span class="t">Animation settings and reduced motion</span></a></li><li><a href="#app-compatibility" data-id="app-compatibility"><span class="n">11</span><span class="t">App compatibility</span></a></li><li><a href="#accessibility" data-id="accessibility"><span class="n">12</span><span class="t">Accessibility notes</span></a></li><li><a href="#performance-tips" data-id="performance-tips"><span class="n">13</span><span class="t">Performance tips</span></a></li><li><a href="#support" data-id="support"><span class="n">14</span><span class="t">Support</span></a></li><li><a href="#faq" data-id="faq"><span class="n">FAQ</span><span class="t">Frequently asked questions</span></a></li></ol></nav></aside>
+<main>
+<div class="jump"><label for="jump">Jump to a chapter</label><select id="jump"><option value="top" selected>Start of the guide</option><option value="getting-started">01  Getting started</option><option value="color-schemes-and-fonts">02  Color schemes and fonts</option><option value="header-and-mega-menu">03  Header and mega menu</option><option value="home-page-sections">04  Home page sections</option><option value="collection-page-and-filters">05  Collection page and filters</option><option value="product-page-and-blocks">06  Product page and blocks</option><option value="cart-drawer">07  Cart drawer</option><option value="gift-card-page">08  Gift card page</option><option value="localization">09  Localization</option><option value="animation-and-reduced-motion">10  Animation settings and reduced motion</option><option value="app-compatibility">11  App compatibility</option><option value="accessibility">12  Accessibility notes</option><option value="performance-tips">13  Performance tips</option><option value="support">14  Support</option><option value="faq">FAQ  Frequently asked questions</option></select></div>
 <header class="hero">
 <p class="kick">Selvage theme for Shopify</p>
 <h1>Selvage documentation</h1>
@@ -86,7 +96,6 @@ th,td{padding:9px 11px}
 <p>This guide explains how to set up and run a store with the Selvage theme. It is written from the theme&#x27;s own settings and code for version 1.0.0. If a setting in your theme editor does not match what you read here, check your theme version under Theme settings and contact support.</p>
 <a class="cta" href="https://www.ecomswiftllc.com/selvage-support" target="_top">Contact Selvage support</a>
 </header>
-<nav class="toc" id="contents" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ol><li><a href="#getting-started"><span class="n">01</span><span class="t">Getting started</span></a></li><li><a href="#color-schemes-and-fonts"><span class="n">02</span><span class="t">Color schemes and fonts</span></a></li><li><a href="#header-and-mega-menu"><span class="n">03</span><span class="t">Header and mega menu</span></a></li><li><a href="#home-page-sections"><span class="n">04</span><span class="t">Home page sections</span></a></li><li><a href="#collection-page-and-filters"><span class="n">05</span><span class="t">Collection page and filters</span></a></li><li><a href="#product-page-and-blocks"><span class="n">06</span><span class="t">Product page and blocks</span></a></li><li><a href="#cart-drawer"><span class="n">07</span><span class="t">Cart drawer</span></a></li><li><a href="#gift-card-page"><span class="n">08</span><span class="t">Gift card page</span></a></li><li><a href="#localization"><span class="n">09</span><span class="t">Localization</span></a></li><li><a href="#animation-and-reduced-motion"><span class="n">10</span><span class="t">Animation settings and reduced motion</span></a></li><li><a href="#app-compatibility"><span class="n">11</span><span class="t">App compatibility</span></a></li><li><a href="#accessibility"><span class="n">12</span><span class="t">Accessibility notes</span></a></li><li><a href="#performance-tips"><span class="n">13</span><span class="t">Performance tips</span></a></li><li><a href="#support"><span class="n">14</span><span class="t">Support</span></a></li><li><a href="#faq"><span class="n">FAQ</span><span class="t">Frequently asked questions</span></a></li></ol></nav>
 <div class="words" id="words"><h2>Words used in this guide</h2><ul>
 <li>Theme editor: the customizer opened from Online Store, Themes, Customize.</li>
 <li>Theme settings: the settings that apply to the whole store, found in the theme editor sidebar. In Selvage they are grouped as Colors, Typography, Layout, Product cards, Animation, Cart, Search, Logo and favicon, and Social media.</li>
@@ -138,7 +147,7 @@ th,td{padding:9px 11px}
 <li>Turn on your device's reduced motion setting and reload. Animations should be calm or off.</li>
 </ol>
 <h3 id="getting-started-what-the-theme-does-not-do">What the theme does not do</h3>
-<p>The theme stays within Shopify's built-in features. It does not include a wishlist, countdown timers that restart, fake stock counts or visitor counts, discount code fields in the cart, or an Instagram feed. Product reviews, subscriptions and bundle discounts need Shopify features or apps. See <a href="#app-compatibility">App compatibility</a>.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="color-schemes-and-fonts" aria-labelledby="color-schemes-and-fonts-h"><p class="num">Chapter 2</p><h2 id="color-schemes-and-fonts-h">Color schemes and fonts</h2><h3 id="color-schemes-and-fonts-color-schemes">Color schemes</h3>
+<p>The theme stays within Shopify's built-in features. It does not include a wishlist, countdown timers that restart, fake stock counts or visitor counts, discount code fields in the cart, or an Instagram feed. Product reviews, subscriptions and bundle discounts need Shopify features or apps. See <a href="#app-compatibility">App compatibility</a>.</p><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="color-schemes-and-fonts" aria-labelledby="color-schemes-and-fonts-h"><p class="num">Chapter 2</p><h2 id="color-schemes-and-fonts-h">Color schemes and fonts</h2><h3 id="color-schemes-and-fonts-color-schemes">Color schemes</h3>
 <p>A color scheme is a saved set of colors. Every section has a Color scheme setting, so you can give each section its own look without changing the rest of the store.</p>
 <p>Open Theme settings, then Colors. Selvage includes six schemes. They are named Scheme 1 to Scheme 6 in the editor, and each one has these colors:</p>
 <div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
@@ -250,7 +259,7 @@ th,td{padding:9px 11px}
 <li>Space between sections: Compact, Standard or Airy.</li>
 <li>Button corner radius, Input corner radius: 0 gives square corners, which is the default look.</li>
 <li>Line thickness: 1 to 3 px for hairlines.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="header-and-mega-menu" aria-labelledby="header-and-mega-menu-h"><p class="num">Chapter 3</p><h2 id="header-and-mega-menu-h">Header and mega menu</h2><p>The header lives in the header group, together with the announcement bar. Open any page in the theme editor and select Header or Announcement bar at the top of the page.</p>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="header-and-mega-menu" aria-labelledby="header-and-mega-menu-h"><p class="num">Chapter 3</p><h2 id="header-and-mega-menu-h">Header and mega menu</h2><p>The header lives in the header group, together with the announcement bar. Open any page in the theme editor and select Header or Announcement bar at the top of the page.</p>
 <h3 id="header-and-mega-menu-announcement-bar">Announcement bar</h3>
 <p>Add one Message block for each message.</p>
 <div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
@@ -390,7 +399,7 @@ th,td{padding:9px 11px}
 <li>Keep top-level names short so they fit in one line.</li>
 <li>Use a square or landscape promotion image of at least 800 px wide.</li>
 <li>Check the header with the longest menu you plan to use at tablet width.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="home-page-sections" aria-labelledby="home-page-sections-h"><p class="num">Chapter 4</p><h2 id="home-page-sections-h">Home page sections</h2><p>Open Online Store, Themes, Customize, then choose Home page. Select Add section to see every section you can use. Most of them also work on other pages that support sections.</p>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="home-page-sections" aria-labelledby="home-page-sections-h"><p class="num">Chapter 4</p><h2 id="home-page-sections-h">Home page sections</h2><p>Open Online Store, Themes, Customize, then choose Home page. Select Add section to see every section you can use. Most of them also work on other pages that support sections.</p>
 <p>Every content section has these shared settings, so they are not repeated below:</p>
 <ul>
 <li>Color scheme: the saved set of colors the section uses.</li>
@@ -602,7 +611,7 @@ th,td{padding:9px 11px}
 <li>Each page needs one main heading (h1). On the home page, the first section provides it when it is a Hero, Slideshow or Image banner. Other sections use h2 headings.</li>
 <li>Alternate color schemes between neighboring sections to make a clear rhythm.</li>
 <li>Aim for no more than one animated or moving section in view at a time.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="collection-page-and-filters" aria-labelledby="collection-page-and-filters-h"><p class="num">Chapter 5</p><h2 id="collection-page-and-filters-h">Collection page and filters</h2><p>The collection page is the Collection section on the Collection template. In the theme editor, open Collection pages (choose any collection to preview) and select Collection.</p>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="collection-page-and-filters" aria-labelledby="collection-page-and-filters-h"><p class="num">Chapter 5</p><h2 id="collection-page-and-filters-h">Collection page and filters</h2><p>The collection page is the Collection section on the Collection template. In the theme editor, open Collection pages (choose any collection to preview) and select Collection.</p>
 <h3 id="collection-page-and-filters-banner">Banner</h3>
 <div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
 <thead>
@@ -738,7 +747,7 @@ th,td{padding:9px 11px}
 <h3 id="collection-page-and-filters-empty-collections-and-sold-out-products">Empty collections and sold-out products</h3>
 <p>An empty collection shows a message and a link to all products. If filters match nothing, shoppers see a message and a Clear all button. Sold-out products stay in the grid with a Sold out badge.</p>
 <h3 id="collection-page-and-filters-collection-list-page">Collection list page</h3>
-<p>The collection list page (Collections list section) shows every collection. You can sort them (alphabetical, by product count, or by date), set the image ratio, choose 1 or 2 per row on mobile, and show or hide the product count. It uses each collection's image.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="product-page-and-blocks" aria-labelledby="product-page-and-blocks-h"><p class="num">Chapter 6</p><h2 id="product-page-and-blocks-h">Product page and blocks</h2><p>Open Online Store, Themes, Customize, then choose Products and select any product to preview. The product page is the Product information section followed by Related products.</p>
+<p>The collection list page (Collections list section) shows every collection. You can sort them (alphabetical, by product count, or by date), set the image ratio, choose 1 or 2 per row on mobile, and show or hide the product count. It uses each collection's image.</p><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="product-page-and-blocks" aria-labelledby="product-page-and-blocks-h"><p class="num">Chapter 6</p><h2 id="product-page-and-blocks-h">Product page and blocks</h2><p>Open Online Store, Themes, Customize, then choose Products and select any product to preview. The product page is the Product information section followed by Related products.</p>
 <p>Everything in the information column is a block. You can add, remove and reorder blocks, and each block is explained below. The default order is: Vendor, Heading, Rating, Price, Variant picker, Size guide, Quantity selector, Inventory status, Buy buttons, Pickup availability, Trust badges, Description, Bundle, SKU, Share and Sticky add to bag.</p>
 <h3 id="product-page-and-blocks-gallery-and-layout">Gallery and layout</h3>
 <p>Settings on the Product information section:</p>
@@ -941,7 +950,7 @@ S,84-88,66-70,92-96
 <h3 id="product-page-and-blocks-sticky-add-to-bag">Sticky add to bag</h3>
 <p>The Sticky add to bag block shows a bar at the bottom of the screen after the main buy buttons scroll out of view. It follows the variant chosen in the main form. Options: Show quantity selector, Show on (all screens or mobile only), and a color scheme. The bar is hidden while a drawer is open.</p>
 <h3 id="product-page-and-blocks-reviews">Reviews</h3>
-<p>Reviews are not built into the theme. Install a reviews app that supports theme app blocks, then add its block inside the Rating block or anywhere in the information column. See <a href="#app-compatibility">App compatibility</a>.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="cart-drawer" aria-labelledby="cart-drawer-h"><p class="num">Chapter 7</p><h2 id="cart-drawer-h">Cart drawer</h2><h3 id="cart-drawer-choose-a-cart-type">Choose a cart type</h3>
+<p>Reviews are not built into the theme. Install a reviews app that supports theme app blocks, then add its block inside the Rating block or anywhere in the information column. See <a href="#app-compatibility">App compatibility</a>.</p><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="cart-drawer" aria-labelledby="cart-drawer-h"><p class="num">Chapter 7</p><h2 id="cart-drawer-h">Cart drawer</h2><h3 id="cart-drawer-choose-a-cart-type">Choose a cart type</h3>
 <p>Open Theme settings, then Cart.</p>
 <div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
 <thead>
@@ -999,7 +1008,7 @@ S,84-88,66-70,92-96
 <ul>
 <li>Keep the free shipping threshold just above your average order value, and state the same amount in your shipping policy.</li>
 <li>Do not use the cart note for required information such as gift messages. Use a product field or gift card recipient form for that.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="gift-card-page" aria-labelledby="gift-card-page-h"><p class="num">Chapter 8</p><h2 id="gift-card-page-h">Gift card page</h2><h3 id="gift-card-page-sell-gift-cards">Sell gift cards</h3>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="gift-card-page" aria-labelledby="gift-card-page-h"><p class="num">Chapter 8</p><h2 id="gift-card-page-h">Gift card page</h2><h3 id="gift-card-page-sell-gift-cards">Sell gift cards</h3>
 <ol>
 <li>Create a gift card product in your Shopify admin and add the amounts as variants. The exact steps are in the Shopify Help Center under "digital gift cards".</li>
 <li>Add the product to a collection and show it in your menu.</li>
@@ -1032,7 +1041,7 @@ S,84-88,66-70,92-96
 <h3 id="gift-card-page-change-the-wording">Change the wording</h3>
 <p>The gift card page text comes from the theme's language file. To change it, open the theme editor, choose the language menu, then Edit default theme content, and search for "gift card".</p>
 <h3 id="gift-card-page-test-it">Test it</h3>
-<p>Create a test gift card in Products, Gift cards, send it to your own email and open the link. Check the page on a phone, and print it once.</p><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="localization" aria-labelledby="localization-h"><p class="num">Chapter 9</p><h2 id="localization-h">Localization</h2><p>Selvage works with Shopify Markets and Shopify's language tools. It does not translate your content by itself.</p>
+<p>Create a test gift card in Products, Gift cards, send it to your own email and open the link. Check the page on a phone, and print it once.</p><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="localization" aria-labelledby="localization-h"><p class="num">Chapter 9</p><h2 id="localization-h">Localization</h2><p>Selvage works with Shopify Markets and Shopify's language tools. It does not translate your content by itself.</p>
 <h3 id="localization-country-and-currency-selector">Country and currency selector</h3>
 <p>Add countries and regions in Settings, Markets. When your store has more than one country or region, a selector appears. If it has only one, nothing is shown.</p>
 <p>You can place the selector in three places:</p>
@@ -1077,7 +1086,7 @@ S,84-88,66-70,92-96
 <li>Keep announcement messages short. Translations are often longer.</li>
 <li>Check long words in navigation. Menu items can wrap in some languages.</li>
 <li>Check the size guide in every language. The guide itself is a page, so translate the page.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="animation-and-reduced-motion" aria-labelledby="animation-and-reduced-motion-h"><p class="num">Chapter 10</p><h2 id="animation-and-reduced-motion-h">Animation settings and reduced motion</h2><p>Selvage uses motion sparingly: content fades or slides up as it enters the screen, images can reveal with a wipe, large images can drift slowly as you scroll, and pages fade into each other. All of it is optional.</p>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="animation-and-reduced-motion" aria-labelledby="animation-and-reduced-motion-h"><p class="num">Chapter 10</p><h2 id="animation-and-reduced-motion-h">Animation settings and reduced motion</h2><p>Selvage uses motion sparingly: content fades or slides up as it enters the screen, images can reveal with a wipe, large images can drift slowly as you scroll, and pages fade into each other. All of it is optional.</p>
 <h3 id="animation-and-reduced-motion-animation-settings">Animation settings</h3>
 <p>Open Theme settings, then Animation.</p>
 <div class="tw" role="region" aria-label="Table, scrolls sideways on small screens" tabindex="0"><table>
@@ -1139,7 +1148,7 @@ S,84-88,66-70,92-96
 <li>Avoid autoplay when you can. A still image with a clear heading often converts as well.</li>
 <li>If your customers are older, or you sell to a wide audience, start with Subtle.</li>
 <li>Test on a real phone. Motion that feels smooth on a computer can stutter on an older phone.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="app-compatibility" aria-labelledby="app-compatibility-h"><p class="num">Chapter 11</p><h2 id="app-compatibility-h">App compatibility</h2><p>Selvage follows Shopify's Online Store 2.0 rules, so apps that use theme app extensions work without editing theme code.</p>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="app-compatibility" aria-labelledby="app-compatibility-h"><p class="num">Chapter 11</p><h2 id="app-compatibility-h">App compatibility</h2><p>Selvage follows Shopify's Online Store 2.0 rules, so apps that use theme app extensions work without editing theme code.</p>
 <h3 id="app-compatibility-app-blocks">App blocks</h3>
 <p>An app block is a block that an app provides. You add it in the theme editor like any other block.</p>
 <p>Selvage accepts app blocks in:</p>
@@ -1215,7 +1224,7 @@ S,84-88,66-70,92-96
 <li>Turn off the app embed or remove the app block and reload.</li>
 <li>If the problem goes away, contact the app's support.</li>
 <li>If it stays, contact Selvage support. See <a href="#support">Support</a>.</li>
-</ol><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="accessibility" aria-labelledby="accessibility-h"><p class="num">Chapter 12</p><h2 id="accessibility-h">Accessibility notes</h2><p>Selvage is built to meet WCAG 2.2 level AA. This page lists what the theme does, what stays in your hands, and what has not been verified yet.</p>
+</ol><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="accessibility" aria-labelledby="accessibility-h"><p class="num">Chapter 12</p><h2 id="accessibility-h">Accessibility notes</h2><p>Selvage is built to meet WCAG 2.2 level AA. This page lists what the theme does, what stays in your hands, and what has not been verified yet.</p>
 <h3 id="accessibility-status">Status</h3>
 <p>Selvage 1.0.0 was checked with source-level scripts during development. These checks look for missing alt text, unlabeled fields, unnamed buttons, removed focus outlines and missing reduced-motion rules. They found no errors on the last run.</p>
 <p>A full test on a live store with a screen reader, keyboard-only use, browser zoom and a contrast tool has not been completed. If you find a barrier, please tell us (see <a href="#support">Support</a>).</p>
@@ -1253,7 +1262,7 @@ S,84-88,66-70,92-96
 <li>Third-party app blocks and embeds have their own accessibility. Test them before you publish.</li>
 <li>Right-to-left layouts have not been tested.</li>
 <li>The QR code on the gift card page has a text alternative, and the gift card code is shown as text.</li>
-</ul><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="performance-tips" aria-labelledby="performance-tips-h"><p class="num">Chapter 13</p><h2 id="performance-tips-h">Performance tips</h2><p>How fast your store feels depends on your images, your apps and your page design as much as on the theme. This page lists what the theme does, and what you can do.</p>
+</ul><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="performance-tips" aria-labelledby="performance-tips-h"><p class="num">Chapter 13</p><h2 id="performance-tips-h">Performance tips</h2><p>How fast your store feels depends on your images, your apps and your page design as much as on the theme. This page lists what the theme does, and what you can do.</p>
 <p>Selvage has not been measured with Lighthouse on a live store yet, so this guide gives no scores. Measure your own store with the online store speed report in your Shopify admin and with PageSpeed Insights.</p>
 <h3 id="performance-tips-what-the-theme-does">What the theme does</h3>
 <ul>
@@ -1302,7 +1311,7 @@ S,84-88,66-70,92-96
 <li>Open PageSpeed Insights for the home page, a collection page and a product page, on mobile.</li>
 <li>Fix large images first, then apps.</li>
 <li>Test again after every change.</li>
-</ol><p class="top"><a href="#contents">Back to contents</a></p></section><section class="chap" id="support" aria-labelledby="support-h"><p class="num">Chapter 14</p><h2 id="support-h">Support</h2><h3 id="support-how-to-get-help">How to get help</h3>
+</ol><p class="top"><a href="#top">Back to top</a></p></section><section class="chap" id="support" aria-labelledby="support-h"><p class="num">Chapter 14</p><h2 id="support-h">Support</h2><h3 id="support-how-to-get-help">How to get help</h3>
 <p>Use the support form: https://www.ecomswiftllc.com/selvage-support</p>
 <p>Our team replies within 2 business days. Business days are Monday to Friday, except public holidays in the United States.</p>
 <p>Before you write, please have these ready:</p>
@@ -1342,10 +1351,24 @@ S,84-88,66-70,92-96
 </ol>
 <p>We cannot guarantee that code changes you make will keep working after updates.</p>
 <h3 id="support-updates">Updates</h3>
-<p>New versions are published in the Theme Store. Shopify tells you when an update is available. An update adds a new copy of the theme. It does not change your live theme. Your settings stay in your current version, so reapply any code changes in the new copy and preview it before you publish.</p><p class="top"><a href="#contents">Back to contents</a></p></section>
+<p>New versions are published in the Theme Store. Shopify tells you when an update is available. An update adds a new copy of the theme. It does not change your live theme. Your settings stay in your current version, so reapply any code changes in the new copy and preview it before you publish.</p><p class="top"><a href="#top">Back to top</a></p></section>
 <section id="faq" aria-labelledby="faq-h"><p class="num">Common questions</p><h2 id="faq-h">Frequently asked questions</h2>
 <details><summary>Why does my product card not show color dots or size chips?</summary><div class="ans"><p>The theme looks for options named Color (or Colour) and Size. Rename your options in the product, and check Theme settings, Product cards that "Show color swatches" and "Show sizes on hover" are on.</p></div></details><details><summary>Why are my color swatches empty?</summary><div class="ans"><p>An option value without a swatch uses the last word of its name as a color. Names such as Oatmeal do not work this way. Give each value a color or image swatch in your product options. See <a href="#product-page-and-blocks">Product page and blocks</a>.</p></div></details><details><summary>Why do my collection filters not appear?</summary><div class="ans"><p>Filtering uses the filters you set up in Shopify's Search &amp; Discovery app. Install it, add filters, and make sure Enable filtering is on in the Collection section. See <a href="#collection-page-and-filters">Collection page and filters</a>.</p></div></details><details><summary>Why does the mega menu not show?</summary><div class="ans"><p>The Mega menu block's "Menu item" must match the name of a top-level item in the header menu. Check the spelling. See <a href="#header-and-mega-menu">Header and mega menu</a>.</p></div></details><details><summary>Why does my size guide not show?</summary><div class="ans"><p>Add the Size guide block, then set one of: the product metafield <code>custom.size_guide</code> (type Page), a page in the block, or a size chart in the block. See <a href="#product-page-and-blocks">Product page and blocks</a>.</p></div></details><details><summary>Why is the free shipping message missing from the cart?</summary><div class="ans"><p>The message needs a number in Theme settings, Cart, Free shipping threshold, and it shows only for carts in your store currency. See <a href="#cart-drawer">Cart drawer</a>.</p></div></details><details><summary>Why does the cart open as a page and not as a drawer?</summary><div class="ans"><p>Check Theme settings, Cart, Cart type. Also, the cart page always shows the full cart even when the type is Drawer.</p></div></details><details><summary>Why is the Sale price not showing?</summary><div class="ans"><p>A product shows a sale when its compare-at price is higher than its price. Set the compare-at price on the variant.</p></div></details><details><summary>Why does my new badge text not appear?</summary><div class="ans"><p>Check the product metafield <code>custom.badge</code> (single line text) is filled in. A product also shows Sold out and Sale badges first, and a card shows at most two badges.</p></div></details><details><summary>How do I add product reviews?</summary><div class="ans"><p>Install a reviews app that supports app blocks and add its block in the Rating block. See <a href="#app-compatibility">App compatibility</a>.</p></div></details><details><summary>Does the theme have a wishlist or an Instagram feed?</summary><div class="ans"><p>No. Use an app if you need them. See <a href="#app-compatibility">App compatibility</a>.</p></div></details><details><summary>Animations bother me or my customers. How do I switch them off?</summary><div class="ans"><p>Set Theme settings, Animation, Animation intensity to Off. Visitors whose devices ask for reduced motion never see the movement. See <a href="#animation-and-reduced-motion">Animation settings and reduced motion</a>.</p></div></details><details><summary>Does the theme work in other languages?</summary><div class="ans"><p>The theme includes English text. Use Shopify's language tools to translate everything else. See <a href="#localization">Localization</a>.</p></div></details><details><summary>My text is hard to read over an image. What can I do?</summary><div class="ans"><p>Raise the Overlay opacity in that section, or choose a Color scheme over image with stronger contrast.</p></div></details>
-<p class="top"><a href="#contents">Back to contents</a></p></section>
+<p class="top"><a href="#top">Back to top</a></p></section>
 <footer><p>Can't find your answer? <a href="https://www.ecomswiftllc.com/selvage-support" target="_top">Send us a message</a> and we will reply within 2 business days.</p>
 <p>Selvage is a Shopify theme by Ecom Swift LLC. Shopify is a trademark of Shopify Inc. Ecom Swift LLC is an independent theme developer and is not affiliated with, endorsed by or sponsored by Shopify Inc.</p></footer>
-</main></div></body></html>
+</main></div><script>
+(function(){
+var links=[].slice.call(document.querySelectorAll('aside.side a'));
+var sel=document.getElementById('jump');
+if(sel){sel.addEventListener('change',function(){var t=document.getElementById(sel.value);if(t){t.scrollIntoView();}});}
+if('IntersectionObserver' in window){
+ var secs=links.map(function(a){return document.getElementById(a.getAttribute('data-id'));}).filter(Boolean);
+ var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){
+   links.forEach(function(a){a.removeAttribute('aria-current');if(a.getAttribute('data-id')===en.target.id){a.setAttribute('aria-current','true');}});
+   if(sel){sel.value=en.target.id;}
+ }});},{rootMargin:'0px 0px -70% 0px',threshold:0});
+ secs.forEach(function(x){io.observe(x);});
+}
+})();
+</script></body></html>
