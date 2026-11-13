@@ -12,7 +12,7 @@ Embed notes:
 
 - The top block adds `padding-top: 150px` at 760px and below, to clear the Wix mobile header. If the header stops overlapping, remove the last rule in its `<style>` block.
 - Both embeds use `target="_top"` links, so they open in the full window and not inside the embed frame.
-- The documentation link points to `https://www.ecomswiftllc.com/nocturne-docs`. The policy link points to `https://ecomswiftllc.github.io/legal/nocturne/nocturne-support-policy.html`. This works only after GitHub Pages serves the `nocturne` folder. If a Wix policy page exists, swap the URL in `nocturne-support-bottom.html`.
+- The documentation link points to `https://www.ecomswiftllc.com/nocturne-documentation`. The policy link points to `https://ecomswiftllc.github.io/legal/nocturne/nocturne-support-policy.html`. This works only after GitHub Pages serves the `nocturne` folder. If a Wix policy page exists, swap the URL in `nocturne-support-bottom.html`.
 - Set the embed heights to fit the content, with no inner scroll. Re-check the heights on a 390px wide screen.
 
 ## Form fields
@@ -71,7 +71,7 @@ Body:
 >
 > Please do not send passwords or customer data by email. If we need to look inside your store, we will ask you to send a staff account request that you control.
 >
-> In the meantime, the Nocturne documentation describes every setting by the name shown in the theme editor: https://www.ecomswiftllc.com/nocturne-docs
+> In the meantime, the Nocturne documentation describes every setting by the name shown in the theme editor: https://www.ecomswiftllc.com/nocturne-documentation
 >
 > Ecom Swift LLC
 > support@ecomswiftllc.com
