@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vyvora support policy | Ecom Swift LLC</title>
+<meta name="description" content="Support policy for the Vyvora Shopify theme: reply within 2 business days, what support covers and does not cover, and how to ask for help.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Schibsted+Grotesk:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:wght@800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#15161A;--bone:#F1EFE8;--volt:#C6F432;--cobalt:#2342F5;--tangerine:#FF6B1F;
+  --muted:#55575E;--rule:#C9C6BC;--chalk:#E4E1D8;
+  --head:'Bricolage Grotesque','Arial Black',system-ui,sans-serif;
+  --body:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --num:'Sofia Sans Extra Condensed','Arial Narrow',sans-serif;
+  --gut:clamp(1rem,4vw,3rem);
+  --notch:polygon(0 0,calc(100% - 1.25rem) 0,100% 1.25rem,100% 100%,0 100%);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bone);color:var(--graphite);font-family:var(--body);font-size:1.0625rem;line-height:1.6;overflow-wrap:break-word}
+h1,h2{font-family:var(--head);font-weight:800;letter-spacing:-.035em;margin:0;text-wrap:balance}
+p,ul,dl{margin:0 0 1rem}
+p,li,dd{max-width:62ch}
+a{color:var(--cobalt);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:3px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em;background:var(--chalk);padding:.06em .32em;border-radius:.3em;overflow-wrap:anywhere}
+.skip{position:absolute;left:var(--gut);top:-5rem;z-index:30;background:var(--graphite);color:var(--bone);padding:.75rem 1.25rem;border-radius:999px;font-weight:700;text-decoration:none}
+.skip:focus{top:.75rem;outline-color:var(--volt)}
+.title{background:var(--volt);padding:clamp(2.5rem,7vw,5rem) var(--gut) clamp(2rem,5vw,3rem)}
+.title__in,.end__in{max-width:56rem;margin:0 auto}
+.title h1{font-size:clamp(2.75rem,9vw,6.5rem);line-height:.88;letter-spacing:-.045em;max-width:9em}
+.title p{font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.45;max-width:34rem;margin:1.25rem 0 0}
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));margin:2rem 0 0;border:2px solid var(--graphite);max-width:44rem}
+.board>div{padding:.75rem 1rem .85rem;border-right:2px solid var(--graphite)}
+.board>div:last-child{border-right:0}
+.board dt{font-size:.9375rem;font-weight:500}
+.board dd{margin:.1rem 0 0;font-family:var(--num);font-weight:800;font-size:2.3rem;line-height:1}
+.board dd small{font-family:var(--body);font-size:.9375rem;font-weight:500}
+@media (max-width:40rem){.board>div{border-right:0;border-bottom:2px solid var(--graphite)}.board>div:last-child{border-bottom:0}}
+.page{max-width:calc(56rem + 2 * var(--gut));margin:0 auto;padding:clamp(1.5rem,4vw,3rem) var(--gut) 1rem}
+.page section{padding-top:clamp(2.25rem,5vw,3.25rem)}
+.page section:first-child{padding-top:.5rem}
+.page h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;padding-top:.9rem;border-top:3px solid var(--graphite);margin-bottom:1rem}
+.page section:first-child h2{border-top:0;padding-top:0}
+.page ul{padding-left:1.25rem}
+.page li{margin:0 0 .45rem;padding-left:.15rem}
+.facts{margin:0 0 1.25rem;border-top:2px solid var(--graphite)}
+.facts>div{padding:.75rem 0;border-bottom:1px solid var(--rule)}
+.facts dt{font-weight:700}
+.facts dd{margin:.15rem 0 0}
+@media (min-width:44rem){.facts>div{display:grid;grid-template-columns:13rem minmax(0,1fr);column-gap:1.75rem}.facts dd{margin:0}}
+.note{background:var(--tangerine);color:var(--graphite);clip-path:var(--notch);padding:1rem 1.6rem 1.05rem 1.2rem;margin:1.25rem 0;max-width:44rem}
+.note p{margin:0;max-width:none}
+.note strong{font-family:var(--head);font-weight:800;letter-spacing:-.02em}
+.end{background:var(--cobalt);color:#fff;padding:clamp(2.25rem,6vw,3.75rem) var(--gut);margin-top:clamp(2.5rem,6vw,4rem)}
+.end a{color:#fff}
+.end :focus-visible{outline-color:var(--volt)}
+.end__fine{display:block;margin-top:1.5rem;font-size:.875rem;color:#E1E6FF;max-width:62ch}
+@media (forced-colors:active){.title,.end{border:2px solid CanvasText}.note{clip-path:none;border:2px solid CanvasText}}
+@media print{.skip{display:none}.title,.end{background:none;color:#000;padding:0 0 1rem}.end a,.end__fine{color:#000}.note{background:none;clip-path:none;border:1.5pt solid #000}a{color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the policy</a>
+<header class="title">
+  <div class="title__in">
+    <h1>Vyvora support policy</h1>
+    <p>How we answer your questions about the Vyvora theme, how quickly, and what is included.</p>
+    <dl class="board">
+      <div><dt>First reply within</dt><dd>2 <small>business days</small></dd></div>
+      <div><dt>Cost for theme buyers</dt><dd>Free</dd></div>
+    </dl>
+  </div>
+</header>
+<main id="main" class="page" tabindex="-1">
+<section aria-labelledby="reply">
+<h2 id="reply">Reply time</h2>
+<p>We reply to every support request within 2 business days. Business days are Monday to Friday, except public holidays in the United States. Requests sent on a weekend or holiday count from the next business day.</p>
+<p>A reply means we have answered your question, or told you what we need to answer it and what happens next. Some bug fixes take longer than a reply, and we say how long when that happens.</p>
+<p>Reach us through the <a href="https://www.ecomswiftllc.com/vyvora-support" target="_top">Vyvora support page</a> or by email at <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>.</p>
+</section>
+
+<section aria-labelledby="free">
+<h2 id="free">Support is free</h2>
+<p>Support is free for everyone who bought Vyvora. It is never bundled into the theme price and is never sold as an add-on to the theme.</p>
+</section>
+
+<section aria-labelledby="covered">
+<h2 id="covered">What we help with</h2>
+<ul>
+<li><strong>Installation help:</strong> adding Vyvora to your theme library, previewing it, publishing it and updating to a new version.</li>
+<li><strong>Bugs:</strong> anything in Vyvora that does not work as the documentation describes, such as a broken layout, a control that does not respond or a page that shows an error.</li>
+<li><strong>Questions about theme settings:</strong> what a setting, section or block does and how to get the result you want with it.</li>
+</ul>
+<p>When we confirm a bug, we fix it in Vyvora and release the fix as a theme update. Bugs that stop shoppers from buying come first.</p>
+</section>
+
+<section aria-labelledby="not-covered">
+<h2 id="not-covered">What support does not include</h2>
+<ul>
+<li><strong>Custom development:</strong> new features, design changes and edits to the theme's code, or restoring your own code changes after an update.</li>
+<li><strong>Third-party apps:</strong> installing, setting up or fixing apps. If an app causes a problem, its developer can help.</li>
+<li><strong>Store content:</strong> adding products and collections, writing text, preparing images or moving content from another theme or platform.</li>
+</ul>
+<p>We can quote for custom work separately if you ask. Accepting or declining a quote never changes the support you get as a theme buyer.</p>
+<div class="note"><p><strong>Duplicate before you edit code.</strong> Changes to theme files are not covered and can make updates harder. Work on a copy of the theme.</p></div>
+</section>
+
+<section aria-labelledby="request">
+<h2 id="request">What to include in a request</h2>
+<dl class="facts">
+<div><dt>Store URL</dt><dd>For example <code>https://your-store.myshopify.com</code>.</dd></div>
+<div><dt>Example page</dt><dd>The full address of a page where the problem shows.</dd></div>
+<div><dt>Theme version</dt><dd>Listed in the theme editor under <strong>Theme settings</strong>.</dd></div>
+<div><dt>Browser and device</dt><dd>For example Firefox on a Mac.</dd></div>
+<div><dt>What happened</dt><dd>What you expected, what you saw, and the steps that lead to it.</dd></div>
+<div><dt>Screenshots</dt><dd>A screenshot or short screen recording, if you have one.</dd></div>
+</dl>
+</section>
+
+<section aria-labelledby="privacy">
+<h2 id="privacy">Store access and your data</h2>
+<ul>
+<li>Never send passwords, payment details or customer data in a message.</li>
+<li>If we need to see inside your store, we ask you to approve a collaborator or staff request that you control. Remove it once the issue is solved.</li>
+<li>We use the details you send only to answer your request.</li>
+</ul>
+</section>
+
+<section aria-labelledby="docs">
+<h2 id="docs">Documentation</h2>
+<p>The <a href="https://www.ecomswiftllc.com/vyvora-documentation" target="_top">Vyvora documentation</a> explains every setting by its label in the theme editor and lists fixes for common problems.</p>
+</section>
+</main>
+<footer class="end">
+  <div class="end__in">
+    <p>Questions about this policy? Email <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>.</p>
+    <span class="end__fine">Vyvora is a Shopify theme by Ecom Swift LLC. Shopify is a trademark of Shopify Inc. Ecom Swift LLC is an independent theme developer and is not affiliated with, endorsed by or sponsored by Shopify Inc.</span>
+  </div>
+</footer>
+</body>
+</html>
