@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Footlight documentation | Ecom Swift LLC</title>
+<meta name="description" content="Setup guide for the Footlight Shopify theme: installation, theme settings, every section, product and collection pages, cart, accessibility, troubleshooting and support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F2EA;--stone:#E9E2D4;--ink:#1C1A18;--quiet:#5A544B;
+  --bordeaux:#5A1626;--bordeaux-deep:#3F0F1A;
+  --proj:#111010;--champagne:#CDB68C;--proj-text:#EFE8DA;--proj-quiet:#B8AE9C;
+  --line:#D3CABA;
+  --serif:'Cormorant Garamond','Cormorant',Georgia,'Times New Roman',serif;
+  --sans:'Instrument Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --gut:clamp(1.25rem,4vw,3.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.7;font-weight:400;overflow-wrap:break-word}
+img,svg{max-width:100%;height:auto}
+h1,h2,h3,h4{font-family:var(--serif);color:inherit;margin:0;text-wrap:balance}
+h4{font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.5}
+p,ul,ol,dl{margin:0 0 1.1rem}
+p,li,dd{max-width:68ch}
+a{color:var(--bordeaux);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{color:var(--bordeaux-deep);text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--champagne)}
+.dark a{color:var(--champagne)}
+.dark a:hover{color:#fff}
+strong{font-weight:600}
+code,kbd{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;font-size:.875em;background:var(--stone);padding:.08em .35em;overflow-wrap:anywhere}
+.skip{position:absolute;left:var(--gut);top:-4rem;z-index:20;background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:.7rem 1.1rem;text-decoration:none}
+.skip:focus{top:.75rem;outline:2px solid var(--champagne);outline-offset:3px}
+.skip:hover{color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.note{border-left:2px solid var(--bordeaux);padding:.15rem 0 .15rem 1.1rem;margin:1.6rem 0;max-width:68ch}
+.note p:last-child{margin-bottom:0}
+.note .note__lead{font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.3;color:var(--bordeaux);margin:0 0 .25rem}
+@media (forced-colors:active){.note{border-left-color:CanvasText}}
+
+/* Title card: the one dark scene at the top of the page */
+.card{background:var(--proj);color:var(--proj-text);padding:clamp(3rem,6vw,5rem) var(--gut) clamp(2.5rem,5vw,4rem)}
+.card__in{max-width:78rem;margin:0 auto}
+.card h1{font-weight:300;font-size:clamp(2.75rem,8vw,6rem);line-height:.98;letter-spacing:-.012em;max-width:9em}
+.card__lede{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.35;color:var(--proj-text);max-width:34rem;margin:1.75rem 0 0}
+.card__meta{color:var(--proj-quiet);font-size:.9375rem;margin:1.5rem 0 0}
+.card__links{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin:2rem 0 0;padding:0;list-style:none}
+.card__links li{margin:0}
+.card__links a{font-weight:500;padding:.5rem 0;display:inline-block}
+/* Shell */
+.shell{max-width:calc(78rem + 2 * var(--gut));margin:0 auto;padding:0 var(--gut) 2rem;display:block}
+@media (min-width:62rem){.shell{display:grid;grid-template-columns:16.5rem minmax(0,1fr);column-gap:clamp(2.5rem,6vw,5.5rem)}}
+/* Contents */
+.toc-wrap{margin:1.75rem 0 0}
+.toc-wrap>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-style:italic;font-size:1.5rem;padding:.7rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.toc-wrap>summary::-webkit-details-marker{display:none}
+.toc-wrap>summary::after{content:"+";font-family:var(--sans);font-style:normal;font-size:1.5rem;line-height:1;color:var(--bordeaux)}
+.toc-wrap[open]>summary::after{content:"\2212"}
+.toc{padding:1rem 0 .5rem}
+.toc ul{list-style:none;margin:0;padding:0}
+.toc li{margin:0;max-width:none}
+.toc__group{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.25rem;line-height:1.3;color:var(--ink);margin:0 0 .35rem}
+.toc>ul>li{margin-top:1.4rem}
+.toc>ul>li:first-child{margin-top:0}
+.toc a{display:block;color:var(--ink);text-decoration:none;font-size:.9375rem;line-height:1.4;padding:.32rem 0 .32rem .85rem;border-left:1px solid var(--line)}
+.toc a:hover{color:var(--bordeaux);border-left-color:var(--bordeaux)}
+.toc a[aria-current="location"]{color:var(--bordeaux);border-left:2px solid var(--bordeaux);padding-left:calc(.85rem - 1px);font-weight:500}
+.toc ul ul ul a{padding-left:1.7rem;font-size:.875rem;color:var(--quiet)}
+.toc ul ul ul a[aria-current="location"]{padding-left:calc(1.7rem - 1px);color:var(--bordeaux)}
+@media (min-width:62rem){
+  .toc-side{position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;padding:3rem 1rem 2rem 0;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+  .toc-wrap{margin:0}
+  .toc-wrap>summary{display:none}
+  .toc-wrap::before{content:"Contents";display:block;font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.2;margin-bottom:1rem}
+}
+/* Content */
+.doc{min-width:0;padding-top:1rem}
+@media (min-width:62rem){.doc{padding-top:3rem}}
+.doc section{padding-top:clamp(3.5rem,7vw,5.5rem);scroll-margin-top:0}
+.doc section:first-child{padding-top:1rem}
+.doc h2{font-weight:400;font-size:clamp(2.25rem,5vw,3.5rem);line-height:1.05;letter-spacing:-.005em;padding-top:1.4rem;border-top:1px solid var(--ink);margin-bottom:1.5rem;scroll-margin-top:1.5rem}
+.doc section:first-child h2{border-top:0;padding-top:0}
+.doc h3{font-weight:500;font-size:clamp(1.65rem,3vw,2rem);line-height:1.15;margin:3rem 0 1rem;scroll-margin-top:1.5rem}
+.doc h4{margin:1.75rem 0 .4rem}
+.lead{font-family:var(--serif);font-size:clamp(1.35rem,2.2vw,1.65rem);line-height:1.4;max-width:42rem}
+.doc ul,.doc ol{padding-left:1.25rem}
+.doc li{margin:0 0 .45rem;padding-left:.2rem}
+.doc li::marker{color:var(--bordeaux)}
+.steps{list-style:none;padding:0;counter-reset:step}
+.steps>li{counter-increment:step;position:relative;padding:.9rem 0 .9rem 3rem;margin:0;border-top:1px solid var(--line);max-width:none}
+.steps>li:last-child{border-bottom:1px solid var(--line)}
+.steps>li::before{content:counter(step);position:absolute;left:0;top:.55rem;font-family:var(--serif);font-size:1.9rem;line-height:1.2;color:var(--bordeaux)}
+.steps>li>*:last-child{margin-bottom:0}
+/* Setting lists */
+.settings{margin:1.4rem 0 1.8rem;border-top:1px solid var(--line)}
+.settings>div{padding:.85rem 0;border-bottom:1px solid var(--line)}
+.settings dt{font-weight:600;line-height:1.45}
+.settings dd{margin:.2rem 0 0;max-width:62ch}
+.settings dd p:last-child{margin-bottom:0}
+@media (min-width:48rem){.settings>div{display:grid;grid-template-columns:13.5rem minmax(0,1fr);column-gap:2rem}.settings dd{margin:0}}
+.block-title{font-family:var(--serif);font-style:italic;font-size:1.4rem;font-weight:400;margin:2rem 0 -.6rem;color:var(--quiet)}
+/* Tables */
+.table-wrap{overflow-x:auto;margin:1.4rem 0 1.8rem}
+.table-wrap:focus-visible{outline-offset:2px}
+table{border-collapse:collapse;width:100%;font-size:.9375rem;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:.7rem 1rem .7rem 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;white-space:nowrap}
+thead th{border-bottom:1px solid var(--ink)}
+caption{text-align:left;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--quiet);padding-bottom:.6rem}
+.swatch{display:inline-block;width:.9em;height:.9em;border:1px solid var(--ink);vertical-align:-.1em;margin-right:.45em}
+/* FAQ */
+.faq details{border-top:1px solid var(--line);max-width:none}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:1.05rem 2.5rem 1.05rem 0;font-weight:500;position:relative;line-height:1.45}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:.25rem;top:.85rem;font-size:1.6rem;line-height:1;color:var(--bordeaux);font-weight:400}
+.faq details[open] summary::after{content:"\2212"}
+.faq .ans{padding:0 0 .5rem}
+.faq summary:focus-visible{outline-offset:-2px}
+/* End card */
+.end{background:var(--proj);color:var(--proj-text);padding:clamp(3rem,7vw,5rem) var(--gut)}
+.end__in{max-width:78rem;margin:0 auto}
+.end h2{font-weight:300;font-size:clamp(2.25rem,6vw,4.25rem);line-height:1;letter-spacing:-.01em;max-width:16ch;margin:0 0 1.25rem}
+.end p{color:var(--proj-text)}
+.end small,.end .end__fine{color:var(--proj-quiet);font-size:.875rem;max-width:60ch;display:block;margin-top:2rem}
+@media print{.toc-side,.skip{display:none}.card,.end{background:none;color:#000}.card h1{color:#000}}
+@media (forced-colors:active){.card,.end{border-bottom:1px solid CanvasText}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the documentation</a>
+<header class="card dark">
+  <div class="card__in">
+    <h1>Footlight documentation</h1>
+    <p class="card__lede">Set up your store, learn each setting by the name you see in the theme editor, and find help when you need it.</p>
+    <p class="card__meta">Version 1.0.0. Made by Ecom Swift LLC for the Shopify Theme Store.</p>
+    <ul class="card__links">
+      <li><a href="#installation">Start with installation</a></li>
+      <li><a href="#support">Contact support</a></li>
+    </ul>
+  </div>
+</header>
+<div class="shell">
+  <div class="toc-side">
+    <details class="toc-wrap" id="toc-wrap">
+      <summary>Contents</summary>
+      <nav class="toc" aria-label="Contents">
+<ul>
+<li><p class="toc__group">Getting started</p>
+<ul>
+<li><a href="#welcome">About Footlight</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#editor">Theme editor basics</a></li>
+<li><a href="#launch">Launch checklist</a></li>
+</ul>
+</li>
+<li><p class="toc__group">Configuration</p>
+<ul>
+<li><a href="#theme-settings">Theme settings</a>
+<ul>
+<li><a href="#settings-colors">Colors</a></li>
+<li><a href="#settings-typography">Typography</a></li>
+<li><a href="#settings-layout">Layout</a></li>
+<li><a href="#settings-buttons">Buttons</a></li>
+<li><a href="#settings-cards">Product cards</a></li>
+<li><a href="#settings-motion">Motion</a></li>
+<li><a href="#settings-cart">Cart</a></li>
+<li><a href="#settings-search">Search</a></li>
+<li><a href="#settings-social">Social media</a></li>
+<li><a href="#settings-favicon">Favicon</a></li>
+<li><a href="#settings-localization">Currency and language</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="toc__group">Header and footer</p>
+<ul>
+<li><a href="#top-bar">Top bar</a></li>
+<li><a href="#header">Header and main menu</a></li>
+<li><a href="#index">The Index and menu images</a></li>
+<li><a href="#footer">Footer</a></li>
+</ul>
+</li>
+<li><p class="toc__group">Home page sections</p>
+<ul>
+<li><a href="#home-sections">Home page sections</a>
+<ul>
+<li><a href="#sec-hero">Hero slideshow</a></li>
+<li><a href="#sec-campaign">Editorial campaign</a></li>
+<li><a href="#sec-collections">Featured collections</a></li>
+<li><a href="#sec-products">Featured products</a></li>
+<li><a href="#sec-split">Image with text</a></li>
+<li><a href="#sec-film">Campaign film</a></li>
+<li><a href="#sec-look">Shop the look</a></li>
+<li><a href="#sec-story">Brand story</a></li>
+<li><a href="#sec-promo">Promotional campaign</a></li>
+<li><a href="#sec-testimonials">Testimonials</a></li>
+<li><a href="#sec-press">Press and recognition</a></li>
+<li><a href="#sec-gallery">Editorial gallery</a></li>
+<li><a href="#sec-blog">Blog posts</a></li>
+<li><a href="#sec-newsletter">Newsletter</a></li>
+<li><a href="#sec-collection-list">Collection list</a></li>
+<li><a href="#sec-rich-text">Rich text</a></li>
+<li><a href="#sec-featured-product">Featured product</a></li>
+<li><a href="#sec-trust">Trust badges section</a></li>
+<li><a href="#sec-custom-liquid">Custom Liquid</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="toc__group">Shopping pages</p>
+<ul>
+<li><a href="#product-pages">Product pages</a>
+<ul>
+<li><a href="#product-gallery">Media gallery</a></li>
+<li><a href="#product-layout">Layout and blocks</a></li>
+<li><a href="#product-variants">Variants and swatches</a></li>
+<li><a href="#product-size">Size guide</a></li>
+<li><a href="#product-bundle">Complete the look</a></li>
+<li><a href="#product-trust">Trust badges</a></li>
+<li><a href="#product-related">Complementary and recommended products</a></li>
+<li><a href="#product-recent">Recently viewed</a></li>
+<li><a href="#product-quick">Quick view and quick add</a></li>
+<li><a href="#product-gift">Gift card products</a></li>
+</ul>
+</li>
+<li><a href="#collection-pages">Collection pages</a></li>
+<li><a href="#search">Search and predictive search</a></li>
+<li><a href="#cart">Cart drawer and cart page</a></li>
+</ul>
+</li>
+<li><p class="toc__group">Customers and content</p>
+<ul>
+<li><a href="#gift-cards">Gift cards</a></li>
+<li><a href="#accounts">Customer accounts</a></li>
+<li><a href="#blog">Blog and articles</a></li>
+<li><a href="#pages">Pages and the contact form</a></li>
+<li><a href="#not-found">404 page</a></li>
+<li><a href="#password">Password page</a></li>
+</ul>
+</li>
+<li><p class="toc__group">Reference</p>
+<ul>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#localization">Localization: languages and countries</a></li>
+<li><a href="#seo">SEO tips</a></li>
+<li><a href="#accessibility">Accessibility notes</a></li>
+<li><a href="#performance">Performance tips</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a>
+<ul>
+<li><a href="#ts-header">Header and navigation</a></li>
+<li><a href="#ts-products">Products and cart</a></li>
+<li><a href="#ts-collections">Collections and search</a></li>
+<li><a href="#ts-general">Anything else</a></li>
+</ul>
+</li>
+<li><a href="#faq">Frequently asked questions</a></li>
+<li><a href="#support">Support</a></li>
+</ul>
+</li>
+</ul>
+      </nav>
+    </details>
+  </div>
+  <main id="main" class="doc" tabindex="-1">
+<section data-group="Getting started" aria-labelledby="welcome">
+<h2 id="welcome">About Footlight</h2>
+<p class="lead">Footlight is a Shopify theme for fashion and clothing stores. Each page reads as a sequence of scenes: full width images, large serif headings and quiet text, with dark and light sections taking turns.</p>
+<p>This guide covers how to install the theme, how to set it up in the theme editor, and what every setting does. Setting names in this guide match the names you see in the editor, so you can search this page for a label and find its description.</p>
+<p>What you get in the theme:</p>
+<ul>
+<li>A home page made of 15 sections that you can reorder, edit, hide or remove, from a hero slideshow to a newsletter signup.</li>
+<li>The Index, a full screen navigation that replaces dropdown menus. It supports three levels of links and can show a picture beside each top level link.</li>
+<li>Product pages with a frame index beside the images, variant and color swatch pickers, a size guide, a "Complete the look" block, trust badges, complementary and related products, and recently viewed products.</li>
+<li>Collection pages with filtering, sorting, optional campaign tiles and numbered pages or a load more button.</li>
+<li>A cart drawer or cart page, predictive search, a gift card page, customer account pages, a blog, a contact form, a 404 page and a password page.</li>
+</ul>
+<p>Footlight is an Online Store 2.0 theme. Every page is built from sections, and apps can add blocks to the product page and to the featured product section.</p>
+<div class="note">
+<p class="note__lead">About the starter content</p>
+<p>The text and images that come with the theme are examples. Replace them with your own before you publish. The <a href="#launch">launch checklist</a> lists the places that need your attention.</p>
+</div>
+</section>
+
+<section data-group="Getting started" aria-labelledby="installation">
+<h2 id="installation">Installation</h2>
+<ol class="steps">
+<li>Open the Footlight page in the Shopify Theme Store and add the theme to your store's theme library.</li>
+<li>In your Shopify admin, go to <strong>Online Store</strong>, then <strong>Themes</strong>. Footlight appears in the theme library, below your live theme.</li>
+<li>If you already have a live theme, make a backup first. Open the actions menu on the live theme and choose <strong>Duplicate</strong>.</li>
+<li>Select <strong>Customize</strong> next to Footlight to open the theme editor. While Footlight is unpublished, nothing you change affects your live store.</li>
+<li>To see Footlight on a phone or to share it with a colleague, open the actions menu on Footlight and choose <strong>Preview</strong>.</li>
+<li>When you are ready, select <strong>Publish</strong>. Footlight replaces your live theme right away.</li>
+</ol>
+<p>Your products, collections, pages, navigation menus and store policies belong to your store, so they stay in place when you switch themes. Theme settings and the content you type into sections belong to a theme, so they do not carry over from another theme.</p>
+<h3 id="updates">Updates</h3>
+<p>When we release a new version, Shopify shows an update notice on the theme in your theme library. Make a backup copy of your live theme before you update, and check the updated theme in a preview before you publish it. The theme version number is shown in the theme editor under <strong>Theme settings</strong>.</p>
+</section>
+
+<section data-group="Getting started" aria-labelledby="editor">
+<h2 id="editor">Theme editor basics</h2>
+<p>Open the editor from <strong>Online Store</strong>, <strong>Themes</strong>, then <strong>Customize</strong>.</p>
+<h3 id="editor-pages">Pages and sections</h3>
+<ul>
+<li>Use the page selector at the top of the editor to move between the home page, product pages, collection pages, the cart, search, blog pages, the 404 page, the password page and others.</li>
+<li>The left panel lists the sections on the page you are editing. The <strong>Header</strong> group at the top and the <strong>Footer</strong> group at the bottom appear on every page. The header group holds the <strong>Top bar</strong> and the <strong>Header</strong>.</li>
+<li>Select a section to see its settings. Many sections also contain blocks, such as slides, chapters or menu columns. Add, reorder, hide or remove them from the same panel.</li>
+<li>Use <strong>Add section</strong> to place a new section on a page. Each section is available only where it makes sense. For example, <strong>Hero slideshow</strong> can be added to the home page, pages and collection pages, and <strong>Related products</strong> only to the product page.</li>
+<li>Drag sections to reorder them, or use the eye icon to hide a section without losing its settings.</li>
+</ul>
+<h3 id="editor-shared">Settings every section shares</h3>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Chooses one of the color schemes defined in <a href="#settings-colors">Theme settings, Colors</a>. Each scheme sets the background, text, accent and button colors for the whole section.</dd></div>
+<div><dt>Top padding, Bottom padding</dt><dd>Space above and below the section, in pixels. Padding is reduced automatically on small screens.</dd></div>
+</dl>
+<h3 id="editor-text">Text that is not in a section</h3>
+<p>Some words come from the theme itself, such as "Add to bag", "Sold out" and the labels in the cart. To change them, open the actions menu on Footlight in your theme library and choose <strong>Edit default theme content</strong>. Text you type into a section in the editor is edited in that section.</p>
+<h3 id="editor-limits">What the editor does not show</h3>
+<p>The gift card page and the customer account pages are code templates, so they do not appear in the page selector. Their text can still be changed with <strong>Edit default theme content</strong>, and their colors follow your theme settings.</p>
+</section>
+
+<section data-group="Getting started" aria-labelledby="launch">
+<h2 id="launch">Launch checklist</h2>
+<p>Go through this list before you publish. Each item names the place where the starter text or a default lives.</p>
+<ul>
+<li><strong>Trust badges and policy text on product pages.</strong> The product template ships with a trust badges block ("Delivery", "Returns", "Secure checkout") and three collapsible rows ("Details", "Materials and care", "Shipping and returns"). The rows mention order preparation times and returns of unworn pieces. Keep a statement only if it is true for your store, and rewrite the rest.</li>
+<li><strong>Brand and campaign text.</strong> The starter copy in <strong>Brand story</strong>, <strong>Promotional campaign</strong>, <strong>Image with text</strong>, <strong>Rich text</strong> and the hero slides is written as an example. Replace it with your own words, products and offers.</li>
+<li><strong>Testimonials and press.</strong> Add only feedback and coverage you have really received, quoted exactly, with permission where it is needed.</li>
+<li><strong>Logo, favicon and menus.</strong> Upload your logo in the <strong>Header</strong> section, set a favicon in <strong>Theme settings</strong>, and check that the <strong>Main menu</strong> setting points to your main menu.</li>
+<li><strong>Cart message.</strong> The default says "Shipping and taxes are calculated at checkout." Keep it only if that is how your store works.</li>
+<li><strong>Free shipping bar.</strong> It is off by default. Turn it on in the <strong>Cart drawer</strong> section only if you really offer free shipping above the amount you enter.</li>
+<li><strong>Search and Discovery app.</strong> Install Shopify's free Search and Discovery app to set up filters, product recommendations and complementary products.</li>
+<li><strong>Store policies.</strong> Add your refund, shipping, privacy and terms policies under <strong>Settings</strong>, then <strong>Policies</strong>. The footer can link to them.</li>
+<li><strong>Image alt text.</strong> Add a short description to each important image in <strong>Content</strong>, then <strong>Files</strong>, or in the product media editor.</li>
+<li><strong>Test on a phone.</strong> Open the preview on a phone. Try the Index, add a product to the bag, change a variant, and place a test order.</li>
+</ul>
+</section>
+
+<section data-group="Configuration" data-toc="children" aria-labelledby="theme-settings">
+<h2 id="theme-settings">Theme settings</h2>
+<p>Theme settings apply to the whole store. In the editor, open <strong>Theme settings</strong> from the left rail. They are grouped as described below.</p>
+
+<h3 id="settings-colors">Colors</h3>
+<p>Footlight uses color schemes. A scheme is a set of colors that a section can use. Every section has a <strong>Color scheme</strong> setting, so you can alternate light and dark scenes down a page. The theme includes six schemes, shown in the editor as Scheme 1 to Scheme 6.</p>
+<div class="table-wrap" role="region" aria-label="Default color schemes" tabindex="0">
+<table>
+<caption>Default color schemes</caption>
+<thead><tr><th scope="col">Scheme</th><th scope="col">Background</th><th scope="col">Text</th><th scope="col">Accent</th><th scope="col">Used by default for</th></tr></thead>
+<tbody>
+<tr><th scope="row">Scheme 1</th><td><span class="swatch" style="background:#F6F2EA"></span>#F6F2EA</td><td>#1C1A18</td><td>#5A1626</td><td>Most light sections, the header and the cart</td></tr>
+<tr><th scope="row">Scheme 2</th><td><span class="swatch" style="background:#E9E2D4"></span>#E9E2D4</td><td>#1C1A18</td><td>#5A1626</td><td>Secondary light sections</td></tr>
+<tr><th scope="row">Scheme 3</th><td><span class="swatch" style="background:#111010"></span>#111010</td><td>#EFE8DA</td><td>#CDB68C</td><td>Hero, campaign film, the Index, footer, 404 and password pages</td></tr>
+<tr><th scope="row">Scheme 4</th><td><span class="swatch" style="background:#2A2826"></span>#2A2826</td><td>#F1EBDF</td><td>#CDB68C</td><td>Top bar, press and recognition</td></tr>
+<tr><th scope="row">Scheme 5</th><td><span class="swatch" style="background:#4A1422"></span>#4A1422</td><td>#F4EBDF</td><td>#D9C29A</td><td>Promotional campaign, campaign tiles</td></tr>
+<tr><th scope="row">Scheme 6</th><td><span class="swatch" style="background:#D8C7A5"></span>#D8C7A5</td><td>#1C1A18</td><td>#4A1422</td><td>Shop the look</td></tr>
+</tbody>
+</table>
+</div>
+<p>Each scheme has these settings:</p>
+<dl class="settings">
+<div><dt>Background</dt><dd>The solid background color.</dd></div>
+<div><dt>Background gradient</dt><dd>Optional. When you set a gradient, it replaces the solid background.</dd></div>
+<div><dt>Text</dt><dd>The color of headings and body text.</dd></div>
+<div><dt>Accent</dt><dd>The color of links and small highlights.</dd></div>
+<div><dt>Solid button background</dt><dd>The fill of primary buttons.</dd></div>
+<div><dt>Solid button label</dt><dd>The text color on primary buttons.</dd></div>
+</dl>
+<p>Keep a strong difference between a scheme's background and its text. A ratio of at least 4.5 to 1 is the common target for body text. On dark backgrounds the keyboard focus outline uses the accent color, and on light backgrounds it uses the text color, so check that your accent is visible on its background.</p>
+
+<h3 id="settings-typography">Typography</h3>
+<dl class="settings">
+<div><dt>Heading font</dt><dd>Pick any font from Shopify's font library. The default is Cormorant. Large, light headings and italic captions are part of the look, so a serif with an italic style works best.</dd></div>
+<div><dt>Heading size</dt><dd>Scales every heading from 80% to 130%.</dd></div>
+<div><dt>Body font</dt><dd>Pick any font from the library. The default is Instrument Sans.</dd></div>
+<div><dt>Body text size</dt><dd>From 14 to 18 pixels.</dd></div>
+</dl>
+<p>Footlight loads the regular, italic and bold styles of each font, and a lighter weight of the heading font when one exists. Fonts with fewer styles load faster. Only fonts from Shopify's library are available. You cannot upload a custom font in theme settings.</p>
+
+<h3 id="settings-layout">Layout</h3>
+<dl class="settings">
+<div><dt>Page width</dt><dd>Choose <strong>Narrow</strong> (content up to 1360 pixels wide), <strong>Standard</strong> (1680 pixels), <strong>Wide</strong> (1920 pixels) or <strong>Full width</strong>. Full width also uses smaller side margins.</dd></div>
+<div><dt>Image corner radius</dt><dd>From 0 to 24 pixels. The default of 0 keeps images as sharp rectangles.</dd></div>
+</dl>
+
+<h3 id="settings-buttons">Buttons</h3>
+<dl class="settings">
+<div><dt>Button corner radius</dt><dd>From 0 to 40 pixels. The default of 0 gives square buttons.</dd></div>
+</dl>
+
+<h3 id="settings-cards">Product cards</h3>
+<p>These settings apply to every product card: collection grids, featured products, search results and recommendations.</p>
+<dl class="settings">
+<div><dt>Image ratio</dt><dd>Portrait 4:5, Tall 3:4 or Square.</dd></div>
+<div><dt>Show second image on hover</dt><dd>Fades to the product's second image when a visitor points at the card. Needs a mouse or similar pointer, so touch screens show the first image.</dd></div>
+<div><dt>Show vendor</dt><dd>Shows the product vendor above the title.</dd></div>
+<div><dt>Show color swatches</dt><dd>Shows small swatches for products with an option named Color or Colour. Up to five swatches are shown, followed by a count of the rest.</dd></div>
+<div><dt>Show quick add</dt><dd>Adds a text control under the image. On devices with a mouse it appears when the card is hovered or focused, and on touch screens it is always visible. For a product with one variant it reads "Add to bag" and adds the product. For a product with options it reads "Choose options" and opens the quick view. Sold out products do not show it.</dd></div>
+<div><dt>Show sale and sold out badges</dt><dd>Shows "Sale" when the compare-at price is higher than the price, and "Sold out" when no variant is available.</dd></div>
+</dl>
+<div class="note">
+<p class="note__lead">Custom badge text</p>
+<p>To show your own badge on a product, add a product tag that starts with <code>badge:</code>, for example <code>badge:New</code>. The badge reads "New". A sold out or sale badge takes priority over a custom one, and the custom badge only appears when badges are turned on.</p>
+</div>
+
+<h3 id="settings-motion">Motion</h3>
+<dl class="settings">
+<div><dt>Animation level</dt><dd>Choose <strong>Full</strong>, <strong>Reduced</strong> or <strong>Off</strong>. Visitors whose device is set to reduce motion see a calmer version, whatever you choose.</dd></div>
+</dl>
+
+<h3 id="settings-cart">Cart</h3>
+<dl class="settings">
+<div><dt>Cart type</dt><dd><strong>Drawer</strong> opens the bag in a panel on the right when a visitor adds a product or selects the bag. <strong>Page</strong> sends visitors to the full cart page instead.</dd></div>
+<div><dt>Show order note</dt><dd>Adds an optional note field to the bag.</dd></div>
+<div><dt>Cart message</dt><dd>A line of text shown with the totals above the checkout button. Only state things that are true, such as shipping rules you actually apply. Leave it empty to hide it.</dd></div>
+</dl>
+
+<h3 id="settings-search">Search</h3>
+<dl class="settings">
+<div><dt>Enable predictive search</dt><dd>Shows matching suggestions, products, collections, pages and articles while a visitor types, up to four of each. With it off, visitors press Enter to see the results page.</dd></div>
+<div><dt>Suggested searches</dt><dd>Choose a navigation menu. Its links appear when the search field is empty and on the search page when nothing is found.</dd></div>
+</dl>
+
+<h3 id="settings-social">Social media</h3>
+<p>Paste the full address of each profile. Footlight supports Instagram, Facebook, Pinterest, TikTok, YouTube, X, Tumblr, Snapchat and Vimeo, each with its own <strong>link</strong> setting. Only the profiles you fill in are shown. They appear in the Index (when <strong>Show social media icons</strong> is on) and in the <strong>Social media</strong> block of the footer.</p>
+
+<h3 id="settings-favicon">Favicon</h3>
+<dl class="settings">
+<div><dt>Favicon</dt><dd>The small icon shown in browser tabs. A 32 by 32 pixel .png file is recommended.</dd></div>
+</dl>
+
+<h3 id="settings-localization">Currency and language</h3>
+<dl class="settings">
+<div><dt>Show country and currency selector</dt><dd>Lets visitors change their country or region and currency. It appears only when your store sells in more than one market.</dd></div>
+<div><dt>Show language selector</dt><dd>Lets visitors change language. It appears only when your store has more than one language.</dd></div>
+</dl>
+<p>See <a href="#localization">Localization</a> for how to add markets and languages and where the selectors appear.</p>
+</section>
+
+<section data-group="Header and footer" aria-labelledby="top-bar">
+<h2 id="top-bar">Top bar</h2>
+<p>The <strong>Top bar</strong> is a thin strip above the header for short messages. It lives in the header group, so it appears on every page. To hide it, hide the section in the editor.</p>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Default is Scheme 4.</dd></div>
+<div><dt>Time per message</dt><dd>5 to 12 seconds. Messages rotate only when there is more than one.</dd></div>
+<div><dt>Show country and language selectors</dt><dd>Shows the selectors in the top bar on large screens when your store sells in more than one market or language. Off by default.</dd></div>
+</dl>
+<p class="block-title">Message block (up to 6)</p>
+<dl class="settings">
+<div><dt>Text</dt><dd>The message.</dd></div>
+<div><dt>Link</dt><dd>Where the message goes when selected.</dd></div>
+<div><dt>Link label</dt><dd>Without a label, the whole message becomes the link.</dd></div>
+</dl>
+<p>When there are several messages, visitors get previous, next and pause controls. Rotation stops while the pointer or keyboard focus is on the bar and while the browser tab is in the background.</p>
+</section>
+
+<section data-group="Header and footer" aria-labelledby="header">
+<h2 id="header">Header and main menu</h2>
+<p>The header has three parts. On the left is the <strong>Index</strong> button and, on large screens, a few top level links. The logo sits in the center. On the right are search, the account icon (when customer accounts are on) and the bag with an item count.</p>
+<h3 id="header-settings">Header settings</h3>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Default is Scheme 1.</dd></div>
+<div><dt>Logo</dt><dd>Transparent .png or .svg works best. Without a logo, your store name is shown as text.</dd></div>
+<div><dt>Logo over images</dt><dd>A light version of your logo, used while the header sits over the home page hero.</dd></div>
+<div><dt>Logo width on desktop</dt><dd>60 to 300 pixels.</dd></div>
+<div><dt>Logo width on mobile</dt><dd>40 to 200 pixels.</dd></div>
+<div><dt>Main menu</dt><dd>The navigation menu shown in the Index. Supports three levels. Create and edit menus under <strong>Content</strong>, then <strong>Menus</strong>.</dd></div>
+<div><dt>Show top-level links beside the Index button</dt><dd>On large screens, shows up to five top level links next to the Index button. Links that do not fit are left out and stay in the Index. A link that has sub-items opens the Index instead of going to its page.</dd></div>
+<div><dt>Customer account menu</dt><dd>The menu shown in the account sheet when customer accounts are on.</dd></div>
+<div><dt>Sticky header</dt><dd><strong>None</strong> scrolls away with the page. <strong>Always</strong> stays at the top. <strong>On scroll up</strong> hides while a visitor scrolls down and returns as soon as they scroll up.</dd></div>
+<div><dt>Show header over the home page hero</dt><dd>When the first section of the home page is a <strong>Hero slideshow</strong>, the header sits transparently over it. Once a visitor scrolls, the header becomes solid. With this off, or when the first section is something else, the header sits above the content as usual.</dd></div>
+</dl>
+<p>The search icon opens a search panel. If predictive search is on, results appear as a visitor types. See <a href="#search">Search</a>.</p>
+</section>
+
+<section data-group="Header and footer" aria-labelledby="index">
+<h2 id="index">The Index and menu images</h2>
+<p>The Index is Footlight's main navigation. It opens as a full screen panel with large serif links. It replaces dropdown and mega menus, so deep menus work the same way on a phone and on a desktop.</p>
+<h3 id="index-use">How shoppers use it</h3>
+<ul>
+<li>Select <strong>Index</strong> in the header to open it. <strong>Close</strong> or the Escape key closes it.</li>
+<li>A link with sub-items has a plus button beside it. Select the button to open the sub-items, up to two more levels. On a device with a mouse, pointing at a link for a moment also opens its sub-items.</li>
+<li>At the bottom of the panel are a search field, a link to the account (when accounts are on), the country and language selectors, and social media icons. Each can be switched off in the header settings.</li>
+<li>The panel works with a keyboard. Focus stays inside it while it is open and returns to the Index button when it closes.</li>
+</ul>
+<h3 id="index-settings">Index settings</h3>
+<dl class="settings">
+<div><dt>Index color scheme</dt><dd>Default is Scheme 3, the dark projection scheme.</dd></div>
+<div><dt>Show country and language selectors</dt><dd>Shows the selectors at the bottom of the Index when your store sells in more than one market or language.</dd></div>
+<div><dt>Show social media icons</dt><dd>Shows the profiles you added in theme settings.</dd></div>
+</dl>
+<h3 id="index-images">Adding an image to a menu item</h3>
+<p>On screens 990 pixels wide and up, the Index can show a picture beside the links. The picture changes when a visitor points at, or moves keyboard focus to, a top level link. On smaller screens the picture is not shown.</p>
+<ol class="steps">
+<li>In the <strong>Header</strong> section, select <strong>Add block</strong> and choose <strong>Index image</strong>.</li>
+<li>Choose an <strong>Image</strong>. A 4:5 aspect ratio is recommended.</li>
+<li>In <strong>Navigation item name</strong>, type the exact name of a top level link from your menu, for example <code>Women</code>. The match ignores capital letters and extra spaces at the ends, but the words must be the same.</li>
+<li>Optionally add a <strong>Caption</strong>. If you add both a <strong>Link label</strong> and a <strong>Link</strong>, a link appears under the picture.</li>
+</ol>
+<dl class="settings">
+<div><dt>Image</dt><dd>The picture for the matching link.</dd></div>
+<div><dt>Navigation item name</dt><dd>The exact name of a top level link. Leave it empty to use this block as the default picture, shown when a link has no picture of its own.</dd></div>
+<div><dt>Caption</dt><dd>A short line in italic under the picture.</dd></div>
+<div><dt>Link label, Link</dt><dd>Both are needed to show the link.</dd></div>
+</dl>
+<div class="note">
+<p class="note__lead">If a picture does not appear</p>
+<p>Check that the name matches the menu link exactly, that the block has an image, and that you are looking at a screen at least 990 pixels wide. If no block has an empty name, links without a match use the first Index image block.</p>
+</div>
+</section>
+
+<section data-group="Header and footer" aria-labelledby="footer">
+<h2 id="footer">Footer</h2>
+<p>The footer is in the footer group and appears on every page. It holds up to six blocks, plus a closing heading and a utility row.</p>
+<h3 id="footer-settings">Footer settings</h3>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Default is Scheme 3.</dd></div>
+<div><dt>Large heading</dt><dd>A wide heading across the bottom of the footer. Choose <strong>None</strong>, <strong>Store name</strong> or <strong>Custom text</strong>.</dd></div>
+<div><dt>Custom text</dt><dd>The text for the large heading when you choose <strong>Custom text</strong>.</dd></div>
+<div><dt>Show country and language selectors</dt><dd>Shown when your store sells in more than one market or language.</dd></div>
+<div><dt>Show Follow on Shop</dt><dd>Adds Shopify's Follow button so customers can follow your store in the Shop app. Shop Pay must be on, and the button appears only when Shopify offers it for your store.</dd></div>
+<div><dt>Show payment icons</dt><dd>Shows the payment methods enabled in your store.</dd></div>
+<div><dt>Show policy links</dt><dd>Links to the policies you added under <strong>Settings</strong>, then <strong>Policies</strong>.</dd></div>
+</dl>
+<h3 id="footer-blocks">Footer blocks</h3>
+<dl class="settings">
+<div><dt>Brand</dt><dd>One per footer. A logo (with <strong>Logo width</strong> from 60 to 300 pixels) and a short <strong>Text</strong>. Without a logo, the store name is shown.</dd></div>
+<div><dt>Footer menu</dt><dd>A <strong>Heading</strong> and a <strong>Menu</strong>. If the heading is empty, the menu name is used. Add as many as you like within the six block limit.</dd></div>
+<div><dt>Email signup</dt><dd>One per footer. A <strong>Heading</strong>, <strong>Text</strong> and an email field. Subscribers are added to your customer list with the tag <code>newsletter</code>.</dd></div>
+<div><dt>Text</dt><dd>A <strong>Heading</strong> and <strong>Text</strong>, for a short note about your studio or store.</dd></div>
+<div><dt>Social media</dt><dd>One per footer. A <strong>Heading</strong> and a <strong>Style</strong> of <strong>Names</strong> or <strong>Icons</strong>. Add the links in theme settings.</dd></div>
+<div><dt>Contact</dt><dd>A <strong>Heading</strong>, <strong>Email</strong>, <strong>Phone</strong> and <strong>Address</strong>.</dd></div>
+</dl>
+</section>
+
+<section data-group="Home page sections" data-toc="children" aria-labelledby="home-sections">
+<h2 id="home-sections">Home page sections</h2>
+<p>The home page ships with 15 sections in this order: hero slideshow, editorial campaign, featured collections, new arrivals, image with text, campaign film, bestsellers, shop the look, brand story, promotional campaign, testimonials, press and recognition, editorial gallery, blog posts and newsletter. Reorder, hide or delete any of them, and add the others listed below from <strong>Add section</strong>.</p>
+<p>Image sizes in the settings are recommendations for sharp results on large screens. Footlight serves a smaller version to smaller screens. Where a setting lets you choose an image shape, the image is cropped to that shape around the focal point you set in Shopify's file editor.</p>
+
+<h3 id="sec-hero">Hero slideshow</h3>
+<p>A full width slideshow of images or short silent videos with a heading, a caption and up to two buttons per slide. It can be added to the home page, to pages and to collection pages. A slideshow holds up to six slides. Slides change as a crossfade or a cut. With more than one slide, visitors get previous and next controls, and a pause or play control when the slides rotate or a video plays.</p>
+<dl class="settings">
+<div><dt>Frame color scheme</dt><dd>Used for the slideshow controls and the area behind the frame.</dd></div>
+<div><dt>Height</dt><dd><strong>Full screen</strong>, <strong>Tall</strong> or <strong>Cinema letterbox</strong>. Cinema letterbox shows slides at 2.39:1 between black bars on larger screens.</dd></div>
+<div><dt>Auto-rotate slides</dt><dd>Changes slides on a timer when there is more than one slide. It is turned off automatically for visitors who prefer reduced motion.</dd></div>
+<div><dt>Change slides every</dt><dd>5 to 12 seconds.</dd></div>
+<div><dt>Scene change</dt><dd><strong>Crossfade</strong> or <strong>Cut</strong>.</dd></div>
+<div><dt>Show progress line</dt><dd>A thin line that shows time until the next slide.</dd></div>
+<div><dt>Enable slow zoom on images</dt><dd>A slow zoom on the slide image.</dd></div>
+</dl>
+<p class="block-title">Slide block</p>
+<dl class="settings">
+<div><dt>Image</dt><dd>2400 by 1350 pixels is recommended.</dd></div>
+<div><dt>Mobile image</dt><dd>Optional. 1080 by 1350 pixels is recommended.</dd></div>
+<div><dt>Video</dt><dd>Plays muted on a loop. The image is shown until the video starts.</dd></div>
+<div><dt>Play video on mobile</dt><dd>Off by default. When off, phones show the image and download no video data.</dd></div>
+<div><dt>Overlay opacity</dt><dd>0 to 80 percent. A dark layer over the image that keeps the text readable.</dd></div>
+<div><dt>Text color scheme</dt><dd>Only the text and button colors of the scheme are used over the image.</dd></div>
+<div><dt>Content position</dt><dd>One of nine positions, from top left to bottom right.</dd></div>
+<div><dt>Heading, Caption, Subheading</dt><dd>The caption is set in italic under the heading, for example the campaign name.</dd></div>
+<div><dt>First button label, First button link, Second button label, Second button link</dt><dd>A button shows when it has a label.</dd></div>
+</dl>
+
+<h3 id="sec-campaign">Editorial campaign</h3>
+<p>A sequence of up to eight chapters, each with a large image, an optional smaller second image, a heading and a short text, arranged unevenly down the page.</p>
+<dl class="settings">
+<div><dt>Heading, Text</dt><dd>An introduction above the chapters.</dd></div>
+<div><dt>Show chapter numbers</dt><dd>Adds a number to each chapter. Off by default.</dd></div>
+</dl>
+<p class="block-title">Chapter block</p>
+<dl class="settings">
+<div><dt>Image</dt><dd>1800 by 1200 pixels is recommended.</dd></div>
+<div><dt>Image shape</dt><dd><strong>Landscape</strong>, <strong>Portrait</strong> or <strong>Cinema</strong>.</dd></div>
+<div><dt>Second image</dt><dd>Optional. Shown smaller and offset. 800 by 1000 pixels is recommended.</dd></div>
+<div><dt>Chapter label</dt><dd>Set in italic, for example "Chapter one".</dd></div>
+<div><dt>Heading, Text</dt><dd>The chapter's title and text.</dd></div>
+<div><dt>Link label, Link</dt><dd>A text link at the end of the chapter.</dd></div>
+</dl>
+
+<h3 id="sec-collections">Featured collections</h3>
+<p>A horizontal row of up to ten collection frames. Each block is one collection.</p>
+<dl class="settings">
+<div><dt>Heading</dt><dd>The section heading.</dd></div>
+<div><dt>Show link to all collections</dt><dd>Adds a link to your collection list page.</dd></div>
+<div><dt>Show product count</dt><dd>Shown when a collection has no caption.</dd></div>
+</dl>
+<p class="block-title">Collection block</p>
+<dl class="settings">
+<div><dt>Collection</dt><dd>The collection to show.</dd></div>
+<div><dt>Custom heading</dt><dd>Replaces the collection name.</dd></div>
+<div><dt>Custom image</dt><dd>Replaces the collection image. 1200 by 1600 pixels is recommended.</dd></div>
+<div><dt>Caption</dt><dd>Set in italic under the name.</dd></div>
+</dl>
+
+<h3 id="sec-products">Featured products</h3>
+<p>Products from one collection, shown in one of three layouts. The section comes in two presets, <strong>Featured products</strong> and <strong>Bestsellers</strong>. The presets differ only in their starting settings.</p>
+<dl class="settings">
+<div><dt>Heading, Subheading</dt><dd>Text above the products.</dd></div>
+<div><dt>Collection</dt><dd>The collection to pull products from. Use a collection of new arrivals or bestsellers to change the section's purpose.</dd></div>
+<div><dt>Number of products</dt><dd>2 to 12. The ranked layout shows up to 5.</dd></div>
+<div><dt>Layout</dt><dd><strong>Staggered grid</strong>, <strong>Horizontal reel</strong> or <strong>Ranked list</strong>.</dd></div>
+<div><dt>Show link to the collection</dt><dd>Adds a "View all" link to the collection.</dd></div>
+</dl>
+<div class="note">
+<p class="note__lead">About the ranked list</p>
+<p>The ranked list numbers products by their position in the collection. The numbers are not sales data. If you want a true bestseller ranking, choose a collection whose sort order is <strong>Best selling</strong>, and keep the heading honest about what the list shows.</p>
+</div>
+
+<h3 id="sec-split">Image with text</h3>
+<p>One large image beside a block of text, with optional buttons. The text can overlap the edge of the image.</p>
+<dl class="settings">
+<div><dt>Image</dt><dd>2048 by 2560 pixels is recommended.</dd></div>
+<div><dt>Image ratio</dt><dd>Portrait, Landscape, Square or Cinema.</dd></div>
+<div><dt>Image position</dt><dd>Left or Right.</dd></div>
+<div><dt>Image caption</dt><dd>A short caption under the image.</dd></div>
+<div><dt>Vertical text position</dt><dd>Top, Center or Bottom.</dd></div>
+<div><dt>Vertical offset</dt><dd>0 to 96 pixels. Moves the text past the top or bottom edge of the image on larger screens. It has no effect when the text is centered.</dd></div>
+<div><dt>Overlap the image edge</dt><dd>Lets the text block overlap the image.</dd></div>
+<div><dt>Text alignment</dt><dd>Left or Center.</dd></div>
+<div><dt>Subheading, Heading</dt><dd>The text above the body text.</dd></div>
+<div><dt>Heading size</dt><dd>Medium or Large.</dd></div>
+<div><dt>Body text</dt><dd>The paragraph text.</dd></div>
+<div><dt>First button label, First button link, Second button label, Second button link</dt><dd>Up to two buttons.</dd></div>
+</dl>
+
+<h3 id="sec-film">Campaign film</h3>
+<p>A video frame with a cover image. The video loads only after a visitor presses play.</p>
+<dl class="settings">
+<div><dt>Video source</dt><dd><strong>YouTube or Vimeo</strong> or <strong>Uploaded video</strong>.</dd></div>
+<div><dt>YouTube or Vimeo link</dt><dd>The address of the video. The player loads only after a visitor presses play.</dd></div>
+<div><dt>Uploaded video</dt><dd>A video uploaded to Shopify. It plays with sound and player controls after a visitor presses play.</dd></div>
+<div><dt>Cover image</dt><dd>2400 by 1000 pixels is recommended.</dd></div>
+<div><dt>Frame shape</dt><dd><strong>Cinema 2.39:1</strong> or <strong>Widescreen 16:9</strong>. Cinema frames show as 16:9 on mobile.</dd></div>
+<div><dt>Make section full width</dt><dd>Lets the frame run edge to edge.</dd></div>
+<div><dt>Heading, Text</dt><dd>The caption for the film.</dd></div>
+<div><dt>Caption position</dt><dd><strong>On the cover</strong> or <strong>Below the frame</strong>. On mobile the caption always sits below the frame. Use a dark color scheme when the caption sits on the cover.</dd></div>
+<div><dt>Accessibility note</dt><dd>Tell visitors about subtitles or a transcript, for example "Subtitles are available in the player." Add the captions themselves with your video host.</dd></div>
+</dl>
+
+<h3 id="sec-look">Shop the look</h3>
+<p>One image with hotspots on each piece. A hotspot opens a small product card in place, and a list of the same pieces sits beside the image. Up to eight hotspots.</p>
+<dl class="settings">
+<div><dt>Image</dt><dd>1600 by 2000 pixels is recommended.</dd></div>
+<div><dt>Image shape</dt><dd>Portrait or Landscape.</dd></div>
+<div><dt>Image position</dt><dd>Left or Right.</dd></div>
+<div><dt>Heading, Text</dt><dd>The introduction beside the image.</dd></div>
+</dl>
+<p class="block-title">Hotspot block</p>
+<dl class="settings">
+<div><dt>Product</dt><dd>The product the hotspot opens.</dd></div>
+<div><dt>Horizontal position, Vertical position</dt><dd>0 to 100 percent, in steps of 2. Use them to place the dot on the piece in the image.</dd></div>
+<div><dt>Label</dt><dd>A short name for the piece, for example "Coat".</dd></div>
+</dl>
+
+<h3 id="sec-story">Brand story</h3>
+<p>Text that stays in place while up to four images scroll beside it on larger screens. It can include a large pull quote.</p>
+<dl class="settings">
+<div><dt>Heading, Body text</dt><dd>Your story.</dd></div>
+<div><dt>Pull quote</dt><dd>Shown in large serif type below the body text. Leave it empty to hide it.</dd></div>
+<div><dt>Quote attribution</dt><dd>Who said it.</dd></div>
+<div><dt>Button label, Button link</dt><dd>An optional button.</dd></div>
+</dl>
+<p class="block-title">Image block</p>
+<dl class="settings">
+<div><dt>Image</dt><dd>1600 by 2000 pixels is recommended.</dd></div>
+<div><dt>Image ratio</dt><dd>Portrait, Landscape or Square.</dd></div>
+<div><dt>Caption</dt><dd>Set in italic under the image.</dd></div>
+</dl>
+
+<h3 id="sec-promo">Promotional campaign</h3>
+<p>A large banner for a real offer or event, over a background image or a flat color. Countdown timers and automatic urgency messages are not part of this section. Write the offer in your own words and keep the dates and terms accurate.</p>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Used as a flat background when no background image is set.</dd></div>
+<div><dt>Background image</dt><dd>2880 by 1620 pixels is recommended. Text over the image is shown in white.</dd></div>
+<div><dt>Image overlay opacity</dt><dd>20 to 80 percent. Darkens the image so text stays readable.</dd></div>
+<div><dt>Section height</dt><dd><strong>Adapt to content</strong>, <strong>Large</strong> or <strong>Full screen</strong>.</dd></div>
+<div><dt>Content position</dt><dd>Bottom or Center.</dd></div>
+<div><dt>Subheading, Heading, Body text</dt><dd>The offer text.</dd></div>
+<div><dt>Button label, Button link</dt><dd>An optional button.</dd></div>
+<div><dt>Framed image, Frame caption</dt><dd>A second image shown inside a matte frame, with a caption. The frame appears once an image is added. 1200 by 1500 pixels is recommended.</dd></div>
+</dl>
+
+<h3 id="sec-testimonials">Testimonials</h3>
+<p>Customer quotes. Publish only real feedback from your customers, with their permission, and do not edit quotes to sound better. Up to twelve quotes.</p>
+<dl class="settings">
+<div><dt>Heading</dt><dd>The section heading.</dd></div>
+<div><dt>Layout</dt><dd><strong>One quote at a time</strong> shows a single quote with previous and next controls. It does not rotate on its own. <strong>Staggered columns</strong> shows all quotes together.</dd></div>
+</dl>
+<p class="block-title">Testimonial block</p>
+<dl class="settings">
+<div><dt>Quote</dt><dd>The customer's own words.</dd></div>
+<div><dt>Name</dt><dd>Use only a name the customer agreed to share.</dd></div>
+<div><dt>Descriptor</dt><dd>Optional detail you can confirm, such as a city or the item they bought.</dd></div>
+<div><dt>Product</dt><dd>Optionally link the quote to the product it mentions.</dd></div>
+<div><dt>Portrait</dt><dd>Only with the customer's permission. 240 by 300 pixels is recommended.</dd></div>
+</dl>
+
+<h3 id="sec-press">Press and recognition</h3>
+<p>A list of publications that have covered your brand, up to twelve. Only list coverage you have really received, and quote it exactly.</p>
+<dl class="settings">
+<div><dt>Heading, Subheading</dt><dd>Text above the list.</dd></div>
+<div><dt>Reveal quotes on hover</dt><dd>Quotes appear when a visitor points at a publication. On touch screens and small screens quotes are always shown.</dd></div>
+</dl>
+<p class="block-title">Publication block</p>
+<dl class="settings">
+<div><dt>Publication name</dt><dd>Shown in large serif type. Also used as the logo's alt text.</dd></div>
+<div><dt>Logo, Logo width</dt><dd>Replaces the name. Use a transparent .png or .svg in a color that suits the scheme. Width from 80 to 280 pixels.</dd></div>
+<div><dt>Issue or date</dt><dd>For example, the month and year of the feature.</dd></div>
+<div><dt>Quote</dt><dd>Keep it to about 25 words.</dd></div>
+<div><dt>Link</dt><dd>A link to the article.</dd></div>
+</dl>
+
+<h3 id="sec-gallery">Editorial gallery</h3>
+<p>A rhythm of images you upload, up to twelve. It does not connect to Instagram or any other social media account. Frame sizes follow a fixed pattern of six.</p>
+<dl class="settings">
+<div><dt>Heading, Body text</dt><dd>The introduction.</dd></div>
+<div><dt>Social media link label, Social media link</dt><dd>An optional link to your profile. The label is shown once you add a link.</dd></div>
+</dl>
+<p class="block-title">Image block</p>
+<dl class="settings">
+<div><dt>Image</dt><dd>1800 pixels wide is recommended. Add alt text to the image in <strong>Content</strong>, then <strong>Files</strong>.</dd></div>
+<div><dt>Caption, Link</dt><dd>Optional.</dd></div>
+</dl>
+
+<h3 id="sec-blog">Blog posts</h3>
+<p>Your newest blog posts. The newest is shown large and the others are listed beside it.</p>
+<dl class="settings">
+<div><dt>Heading</dt><dd>The section heading.</dd></div>
+<div><dt>Blog</dt><dd>The blog to show.</dd></div>
+<div><dt>Number of posts</dt><dd>1 to 6.</dd></div>
+<div><dt>Image ratio</dt><dd>Landscape, Portrait or Square.</dd></div>
+<div><dt>Show date, Show author, Show excerpt</dt><dd>Turn each detail on or off.</dd></div>
+<div><dt>Excerpt length</dt><dd>10 to 50 words.</dd></div>
+<div><dt>Show link to the blog</dt><dd>Adds a link to the blog.</dd></div>
+</dl>
+
+<h3 id="sec-newsletter">Newsletter</h3>
+<p>An email signup. Subscribers are added to your customer list with the tag <code>newsletter</code>, and they accept marketing. Send your campaigns with Shopify Email or another email app.</p>
+<dl class="settings">
+<div><dt>Layout</dt><dd><strong>Large heading beside form</strong> or <strong>Centered</strong>.</dd></div>
+<div><dt>Heading, Body text</dt><dd>The invitation.</dd></div>
+<div><dt>Consent text</dt><dd>Shown below the form. Link to your privacy policy here.</dd></div>
+</dl>
+
+<h3 id="sec-collection-list">Collection list</h3>
+<p>A grid of collections. Without blocks it lists your store's collections automatically.</p>
+<dl class="settings">
+<div><dt>Heading</dt><dd>The section heading.</dd></div>
+<div><dt>Image ratio</dt><dd>Portrait, Landscape or Square.</dd></div>
+<div><dt>Columns on desktop</dt><dd>2 to 5. Two columns are shown on mobile.</dd></div>
+<div><dt>Collections shown automatically</dt><dd>2 to 12. Used when you add no collection blocks.</dd></div>
+<div><dt>Show product count, Show link to all collections</dt><dd>Turn each on or off.</dd></div>
+<div><dt>Collection block</dt><dd>Add up to twelve and choose a <strong>Collection</strong> in each to control what is shown.</dd></div>
+</dl>
+
+<h3 id="sec-rich-text">Rich text</h3>
+<p>A heading, text and up to two buttons.</p>
+<dl class="settings">
+<div><dt>Layout</dt><dd><strong>Left aligned</strong>, <strong>Centered</strong> or <strong>Heading beside text</strong>.</dd></div>
+<div><dt>Text width</dt><dd>Narrow, Medium or Wide. With the heading beside text layout, the width applies on smaller screens only.</dd></div>
+<div><dt>Heading, Heading size, Subheading, Body text</dt><dd>The content. Heading size is Medium or Large.</dd></div>
+<div><dt>First button label, First button link, Second button label, Second button link</dt><dd>Optional buttons.</dd></div>
+</dl>
+
+<h3 id="sec-featured-product">Featured product</h3>
+<p>One product with its image, price, variant picker and buy buttons, for use on the home page or any page. You build it from blocks: Title, Vendor, Price, Story text, Description, Variant picker, Quantity selector, Buy buttons, Product link, and app blocks.</p>
+<dl class="settings">
+<div><dt>Product</dt><dd>The product to show.</dd></div>
+<div><dt>Image</dt><dd>Replaces the product image. Variant images then stay fixed. 1600 by 2000 pixels is recommended.</dd></div>
+<div><dt>Image ratio</dt><dd>Portrait 4:5, Tall 3:4, Square or Natural.</dd></div>
+<div><dt>Image position on desktop</dt><dd>Left or Right.</dd></div>
+<div><dt>Story text block</dt><dd>A <strong>Heading</strong>, <strong>Text</strong> and a <strong>Text style</strong> of <strong>Body text</strong> or <strong>Large serif</strong>.</dd></div>
+<div><dt>Description block</dt><dd><strong>Words shown</strong>, 10 to 80. Shows the product description cut to that many words, as plain text.</dd></div>
+<div><dt>Variant picker, Buy buttons blocks</dt><dd>Work as on the product page. See <a href="#product-pages">Product pages</a>.</dd></div>
+<div><dt>Product link block</dt><dd>A <strong>Link label</strong>, "View full details" by default.</dd></div>
+</dl>
+
+<h3 id="sec-trust">Trust badges section</h3>
+<p>A row of short statements that you write, for example about shipping or returns, up to six. It can be added to any page except the header group. The same idea is available as a block inside the product page, described under <a href="#product-trust">Trust badges</a>.</p>
+<div class="note">
+<p class="note__lead">Keep these accurate</p>
+<p>Trust badges are plain text that you write. The theme does not check or verify them. Show only statements that are true for your store, such as policies you really offer. Do not claim certifications or guarantees you cannot back up.</p>
+</div>
+<dl class="settings">
+<div><dt>Heading</dt><dd>Optional heading above the badges.</dd></div>
+<div><dt>Layout</dt><dd>Horizontal or Vertical.</dd></div>
+<div><dt>Icon position</dt><dd>Top or Left.</dd></div>
+<div><dt>Icon size</dt><dd>16 to 48 pixels.</dd></div>
+<div><dt>Alignment</dt><dd>Left or Center.</dd></div>
+<div><dt>Borders</dt><dd>None, Hairline dividers or Boxed.</dd></div>
+<div><dt>Text size</dt><dd>Small or Medium.</dd></div>
+<div><dt>Show payment icons</dt><dd>Shows the payment methods enabled in your store. Off by default.</dd></div>
+<div><dt>Show on desktop, Show on mobile</dt><dd>Choose where the whole section appears.</dd></div>
+</dl>
+<p class="block-title">Badge block</p>
+<dl class="settings">
+<div><dt>Icon</dt><dd>Truck, Return, Shield, Lock, Star, Check mark, None or Custom image.</dd></div>
+<div><dt>Custom icon</dt><dd>Used when the icon is set to Custom image. 40 by 40 pixels, .svg or .png.</dd></div>
+<div><dt>Heading, Text</dt><dd>Your statement.</dd></div>
+<div><dt>Show on desktop, Show on mobile</dt><dd>Choose where this badge appears.</dd></div>
+</dl>
+
+<h3 id="sec-custom-liquid">Custom Liquid</h3>
+<p>A section for app snippets or your own Liquid code. It also has a <strong>Make section full width</strong> setting. Custom code is not covered by support. See the <a href="#support">support policy</a>.</p>
+</section>
+
+<section data-group="Shopping pages" data-toc="children" aria-labelledby="product-pages">
+<h2 id="product-pages">Product pages</h2>
+<p>The product page is built from one <strong>Product information</strong> section made of blocks, followed by <strong>Complete the look</strong>, <strong>Related products</strong> and <strong>Recently viewed</strong> sections. Open any product in the editor to change them. Changes apply to every product that uses the same template.</p>
+
+<h3 id="product-gallery">Media gallery</h3>
+<p>Product images, videos and 3D models sit in one column as a sequence of frames. On large screens a vertical frame index with numbers sits beside the images. It follows the page as a visitor scrolls, and selecting a number jumps to that frame. On phones the frames scroll sideways with a counter such as "1 / 5". The image of the selected variant leads the sequence.</p>
+<dl class="settings">
+<div><dt>Desktop gallery layout</dt><dd><strong>Stacked frames</strong> places the media one under the other. <strong>Carousel</strong> places the frames in one scrolling row, and visitors move through it with the frame index or the left and right arrow keys.</dd></div>
+<div><dt>Media width on desktop</dt><dd><strong>7 of 12 columns</strong> or <strong>8 of 12 columns</strong>.</dd></div>
+<div><dt>Image ratio</dt><dd><strong>Natural, between 3:4 and 4:3</strong> keeps each image's own shape. <strong>Crop to portrait 4:5</strong> crops every image. <strong>Fit in portrait 4:5 frame</strong> shows the whole image inside a 4:5 frame. Very tall or wide images sit on a tinted matte.</dd></div>
+<div><dt>Pair portrait images side by side</dt><dd>In the stacked layout, two portrait images that follow each other after the first image sit side by side.</dd></div>
+<div><dt>Enable image zoom</dt><dd>Selecting an image opens it in a zoom view. In the zoom view, visitors select the image to zoom in and out, and use the previous and next buttons or arrow keys to move between images. It applies to images, not to videos or 3D models.</dd></div>
+<div><dt>Show thumbnails on mobile</dt><dd>Adds small preview images under the gallery on phones. Off by default.</dd></div>
+</dl>
+<p>Videos you upload to a product, YouTube and Vimeo videos, and 3D models all work in the gallery. External videos and 3D models load only after a visitor chooses to play them. 3D models offer <strong>View in 3D</strong> and, on supported devices, <strong>View in your space</strong>.</p>
+
+<h3 id="product-layout">Layout and blocks</h3>
+<dl class="settings">
+<div><dt>Enable sticky product information on desktop</dt><dd>Keeps the product details in view while the images scroll.</dd></div>
+<div><dt>Show sticky add to bag bar</dt><dd>A slim bar with the product name, variant, price and an "Add to bag" button. It appears once the main buy button has scrolled out of view. It needs a <strong>Buy buttons</strong> block.</dd></div>
+<div><dt>Show breadcrumbs</dt><dd>Shows Home, the collection the visitor came from (when there is one) and the product name.</dd></div>
+</dl>
+<p>The information column is made of these blocks. Add, remove and reorder them in the editor.</p>
+<dl class="settings">
+<div><dt>Vendor</dt><dd>Links to the vendor's product list. One per page.</dd></div>
+<div><dt>Title</dt><dd>The product name as the page's main heading. One per page.</dd></div>
+<div><dt>Price</dt><dd>Shows the price, a compare-at price when the product is on sale, unit price when one is set, and a tax note when taxes are included. <strong>Show shipping note</strong> adds a line that shipping is calculated at checkout.</dd></div>
+<div><dt>Variant picker</dt><dd>See <a href="#product-variants">Variants and swatches</a>.</dd></div>
+<div><dt>Quantity selector</dt><dd>A quantity field. It follows the quantity rules you set in Shopify, such as minimums, maximums and multiples.</dd></div>
+<div><dt>Buy buttons</dt><dd>"Add to bag", accelerated checkout buttons and Shop Pay Installments. See below.</dd></div>
+<div><dt>Pickup availability</dt><dd>Shows pickup locations for the selected variant when local pickup is set up.</dd></div>
+<div><dt>Inventory status</dt><dd>Shows "In stock" or "Sold out", and "Only 3 left" style text only when you track inventory in Shopify and the real quantity is at or below your <strong>Low stock threshold</strong> (1 to 20). It shows "Available to order, ships when restocked" when a variant is out of stock but still sells.</dd></div>
+<div><dt>SKU</dt><dd>The selected variant's SKU.</dd></div>
+<div><dt>Description</dt><dd>The product description from Shopify.</dd></div>
+<div><dt>Text</dt><dd>A short rich text note with a <strong>Style</strong> of Body text or Caption. Use it for a line that repeats on every product, such as "Made in small runs and finished by hand."</dd></div>
+<div><dt>Collapsible row</dt><dd>A row that opens and closes. Set a <strong>Heading</strong>, <strong>Row content</strong>, optional <strong>Row content from page</strong> (shown after the row content) and <strong>Open by default</strong>. Add as many as you need.</dd></div>
+<div><dt>Share</dt><dd>A "Copy link" button, whose label you can change. A native share button also appears on devices that support sharing.</dd></div>
+<div><dt>Custom Liquid</dt><dd>Your own Liquid code. Not covered by support.</dd></div>
+<div><dt>Size guide, Complete the look, Trust badges, Complementary products</dt><dd>Described in their own parts below.</dd></div>
+<div><dt>App blocks</dt><dd>Apps that support Online Store 2.0 can add their blocks to this section.</dd></div>
+</dl>
+<h4>Buy buttons</h4>
+<dl class="settings">
+<div><dt>Show dynamic checkout buttons</dt><dd>Shows the payment methods available in your store, such as PayPal or Apple Pay, under "Add to bag". They are not shown for gift cards.</dd></div>
+<div><dt>Show Shop Pay Installments</dt><dd>Shows the installments banner when Shop Pay Installments is available in your store.</dd></div>
+</dl>
+<p>If a product has selling plans, such as subscriptions, a choice between a one-time purchase and each plan appears above the button, with the plan price. The cart shows the plan name on the line.</p>
+
+<h3 id="product-variants">Variants and swatches</h3>
+<p>The variant picker is built from the product's options. Choosing a value updates the price, availability, SKU, images and web address without reloading the page.</p>
+<dl class="settings">
+<div><dt>Style</dt><dd><strong>Pills</strong> shows each value as a button. <strong>Dropdown</strong> shows a menu for options that are not colors.</dd></div>
+<div><dt>Swatch shape</dt><dd><strong>Circle</strong>, <strong>Square</strong> or <strong>None</strong>. Options named <strong>Color</strong> or <strong>Colour</strong> show swatches when a shape is set. With <strong>None</strong>, color options show as pills.</dd></div>
+<div><dt>Strike through sold out options</dt><dd>Crosses out values that are sold out or do not exist as a variant. They stay selectable so shoppers can see why a combination is not available, and screen readers announce their status.</dd></div>
+</dl>
+<div class="note">
+<p class="note__lead">Setting swatch colors</p>
+<p>Swatches use the colors or images that you define for the option values in Shopify. A color value with no swatch defined shows as a text pill. Product cards use the same swatch data.</p>
+</div>
+
+<h3 id="product-size">Size guide</h3>
+<p>The <strong>Size guide</strong> block adds a link that opens a dialog. Nothing shows until you choose a page, an image, or both.</p>
+<dl class="settings">
+<div><dt>Button label</dt><dd>"Size guide" by default.</dd></div>
+<div><dt>Size guide page</dt><dd>A page from your store. Its content opens in the dialog, so you can write a size table in the normal page editor. Without JavaScript the link goes to the page.</dd></div>
+<div><dt>Image</dt><dd>Optional measurement diagram. 1200 by 900 pixels is recommended.</dd></div>
+</dl>
+
+<h3 id="product-bundle">Complete the look</h3>
+<p>An outfit sheet that lets a shopper add several pieces to the bag together. It is available as a block in the product information column and as a separate section (<strong>Complete the look</strong>), which the product template places below the product.</p>
+<p>Each piece has an include checkbox, its own variant choice and a quantity. A running total updates as the shopper changes the selection, and one button, "Add selected to bag", adds every selected piece.</p>
+<div class="note">
+<p class="note__lead">How it prices</p>
+<p>The button uses Shopify's standard add-to-cart request, <code>/cart/add.js</code>, to put the chosen pieces in the cart. Every piece keeps its own price. The theme applies no discount and invents no savings. The "You save" line appears only when the pieces themselves have a compare-at price that is higher than their price, and then it shows exactly that difference.</p>
+<p>If you want a real bundle discount, create an automatic discount in Shopify. Then, if you like, mention it in the <strong>Discount note</strong> setting. The note is plain text that you write. It does not apply any discount.</p>
+</div>
+<dl class="settings">
+<div><dt>Heading</dt><dd>"Complete the look" by default.</dd></div>
+<div><dt>Products</dt><dd>Choose up to six products. On product pages, the product being viewed is added first.</dd></div>
+<div><dt>Include the product being viewed</dt><dd>Section only. Applies on product pages.</dd></div>
+<div><dt>Use Shopify recommendations when no products are chosen</dt><dd>On product pages, uses complementary products from the Search and Discovery app, then related products. In the block it is called <strong>Use product recommendations when no products are selected</strong>.</dd></div>
+<div><dt>Recommended products</dt><dd>1 to 4. In the block it is called <strong>Recommended pieces</strong>.</dd></div>
+<div><dt>Select every piece by default</dt><dd>Starts with every available piece checked. In the block it is called <strong>Select all pieces by default</strong>.</dd></div>
+<div><dt>Show individual prices</dt><dd>Shows each piece's price. In the block it is called <strong>Show prices</strong>.</dd></div>
+<div><dt>Discount note</dt><dd>Only write this if you have created a matching automatic discount in Shopify.</dd></div>
+<div><dt>Layout</dt><dd>Section only. <strong>Contact sheet</strong> or <strong>List</strong>.</dd></div>
+</dl>
+<p>Sold out pieces cannot be selected. If a piece's chosen variant is sold out, the sheet asks the shopper to choose another. After the pieces are added, the cart drawer opens, or the shopper goes to the cart page if your cart type is <strong>Page</strong>.</p>
+
+<h3 id="product-trust">Trust badges</h3>
+<p>The <strong>Trust badges</strong> block shows up to four short statements under the buy buttons. Each statement has an icon, a heading and a line of text. A badge appears only when it has a heading or text.</p>
+<div class="note">
+<p class="note__lead">You are responsible for these statements</p>
+<p>The text is fully configurable and is never generated or checked by the theme. Keep every badge accurate and up to date, and match it to your actual shipping, returns and payment policies. The starter text in the product template is an example. Edit or remove it.</p>
+</div>
+<dl class="settings">
+<div><dt>Icon</dt><dd>Per badge: Truck, Return, Shield, Lock, Star, Check mark or None.</dd></div>
+<div><dt>Custom icon</dt><dd>Per badge. Replaces the icon. 96 by 96 pixels, .png or .svg.</dd></div>
+<div><dt>Heading, Text</dt><dd>Per badge. The words shown.</dd></div>
+<div><dt>Layout</dt><dd>Horizontal or Vertical.</dd></div>
+<div><dt>Icon position</dt><dd>Above text or Beside text.</dd></div>
+<div><dt>Border</dt><dd>None, Hairline dividers or Frame.</dd></div>
+<div><dt>Show on desktop, Show on mobile</dt><dd>Choose where the block appears.</dd></div>
+</dl>
+
+<h3 id="product-related">Complementary and recommended products</h3>
+<dl class="settings">
+<div><dt>Complementary products block</dt><dd>Shows "Pairs well with" (the heading is yours to change) with products Shopify marks as complementary. You set these up in the Search and Discovery app. The list loads after the page. If the product has no complementary products, nothing shows, not even the heading. Settings are <strong>Heading</strong>, <strong>Products to show</strong> (2, 3 or 4) and <strong>Layout</strong> (List or Grid).</dd></div>
+<div><dt>Related products section</dt><dd>Shows "You may also like" with products Shopify chooses from your sales and product data. Manage the logic with the Search and Discovery app. Settings are <strong>Heading</strong>, <strong>Maximum products to show</strong> (2 to 10), <strong>Layout</strong> (Grid or Carousel) and <strong>Products per row on desktop</strong> (2 to 5).</dd></div>
+</dl>
+
+<h3 id="product-recent">Recently viewed</h3>
+<p>The <strong>Recently viewed</strong> section shows products the shopper opened earlier. The list is kept in the shopper's own browser, on that device only, and is not shared between devices. When the section shows it, the theme asks your store for the product cards. Products are remembered when a product page includes this section, and up to 12 are kept. The section stays hidden until there is something to show, so it is empty the first time someone visits.</p>
+<dl class="settings">
+<div><dt>Heading</dt><dd>"Recently viewed" by default.</dd></div>
+<div><dt>Maximum products to show</dt><dd>2 to 12.</dd></div>
+<div><dt>Products per row on desktop</dt><dd>2 to 6.</dd></div>
+</dl>
+
+<h3 id="product-quick">Quick view and quick add</h3>
+<p>When <strong>Show quick add</strong> is on in theme settings, each available product card has a text control under its image. On devices with a mouse the control appears when the card is hovered or focused. On touch screens it is always visible.</p>
+<ul>
+<li>For a product with a single variant it reads "Add to bag" and adds the product directly.</li>
+<li>For a product with options it reads "Choose options" and opens the quick view, a dialog with the product's images, price, options, quantity and "Add to bag", plus a link to the full page. Without JavaScript the control links to the product page.</li>
+</ul>
+<p>The quick view has one setting, <strong>Color scheme</strong>. The <strong>Quick view</strong> section is built into the theme and is not added from the editor.</p>
+
+<h3 id="product-gift">Gift card products</h3>
+<p>Create a gift card product in Shopify admin, under <strong>Products</strong>, then <strong>Gift cards</strong>. On its page, shoppers see a checkbox, "Send as a gift to a recipient by email". When it is checked they can enter a recipient email, an optional recipient name, an optional message and an optional send date up to 90 days ahead. Leaving the date empty sends the card right away. Accelerated checkout buttons are hidden on gift card products.</p>
+</section>
+
+<section data-group="Shopping pages" aria-labelledby="collection-pages">
+<h2 id="collection-pages">Collection pages</h2>
+<p>The collection page shows a banner, a toolbar with filters and sorting, and a grid of product cards.</p>
+<dl class="settings">
+<div><dt>Banner layout</dt><dd><strong>Cinema frame</strong> shows the collection image in a wide frame under the title. <strong>Image behind text</strong> puts the title over the image. <strong>Text only</strong> shows no image. Without a collection image the text only layout is used.</dd></div>
+<div><dt>Show collection image</dt><dd>Set the image under <strong>Products</strong>, then <strong>Collections</strong>. 2400 by 1000 pixels is recommended.</dd></div>
+<div><dt>Show collection description</dt><dd>Shows the collection description under the title.</dd></div>
+<div><dt>Show product count</dt><dd>For example, "24 pieces".</dd></div>
+</dl>
+<h3 id="collection-filter">Filtering and sorting</h3>
+<dl class="settings">
+<div><dt>Enable filtering</dt><dd>Shows a <strong>Refine</strong> button. Filters can include availability, price, product type, vendor, color and other product options. Choose and arrange them with the Shopify Search and Discovery app. Active filters appear as removable chips with a "Clear all" link.</dd></div>
+<div><dt>Filter layout on desktop</dt><dd><strong>Drawer</strong> slides in from the side. <strong>Sidebar</strong> keeps the filters in a column beside the grid on large screens. Smaller screens always use the drawer.</dd></div>
+<div><dt>Enable sorting</dt><dd>Adds a "Sort by" menu with the sort options your collection offers.</dd></div>
+</dl>
+<p>Filters are ordinary links and forms, so results can be shared and opened in a new tab, and the page updates without a full reload when JavaScript is available.</p>
+<h3 id="collection-grid">Product grid and pagination</h3>
+<dl class="settings">
+<div><dt>Columns on desktop</dt><dd>3 or 4.</dd></div>
+<div><dt>Column offset</dt><dd>0 to 160 pixels. Moves every second column down for a staggered layout. Set it to 0 for an even grid.</dd></div>
+<div><dt>Products per page</dt><dd>12 to 48, in steps of 4.</dd></div>
+<div><dt>Pagination</dt><dd><strong>Page numbers</strong> or <strong>Load more button</strong>. The load more button shows a count such as "Showing 24 of 60".</dd></div>
+<div><dt>Show campaign tiles</dt><dd><strong>First page only</strong> or <strong>Every page</strong>.</dd></div>
+</dl>
+<p class="block-title">Campaign tile block</p>
+<p>A tile is an image or a colored panel with a heading, text and link that sits inside the product grid.</p>
+<dl class="settings">
+<div><dt>Show after product</dt><dd>1 to 48. The tile follows this product in the grid.</dd></div>
+<div><dt>Width</dt><dd>One column or Two columns.</dd></div>
+<div><dt>Image</dt><dd>1600 by 1200 pixels is recommended.</dd></div>
+<div><dt>Video</dt><dd>Its cover image is shown when no image is set. The tile does not play the video.</dd></div>
+<div><dt>Heading, Body text, Link, Link label</dt><dd>The tile's words. Keep body text to about 30 words.</dd></div>
+<div><dt>Color scheme</dt><dd>Used when no image is set. Default is Scheme 5.</dd></div>
+</dl>
+<h3 id="collection-list-page">Collection list page</h3>
+<p>The page at <code>/collections</code> lists all your collections as tiles in a repeating pattern of five sizes. Images are cropped to fit, so any image ratio works.</p>
+<dl class="settings">
+<div><dt>Heading, Subheading</dt><dd>The text at the top.</dd></div>
+<div><dt>Show product count</dt><dd>Shows how many products each collection holds.</dd></div>
+<div><dt>Collections per page</dt><dd>5 to 50, in steps of 5.</dd></div>
+</dl>
+</section>
+
+<section data-group="Shopping pages" aria-labelledby="search">
+<h2 id="search">Search and predictive search</h2>
+<p>The search icon in the header opens a search panel. If you turned on <strong>Enable predictive search</strong> in theme settings, results appear as a visitor types: matching search terms, products, collections, pages and articles, up to four of each. Visitors can move through results with the arrow keys and press Escape to close the panel. Pressing Enter opens the full results page.</p>
+<p>The results page can be narrowed to <strong>Everything</strong>, <strong>Products</strong>, <strong>Journal</strong> (blog articles) or <strong>Pages</strong>, shows 16 results per page, and can be filtered and sorted. When nothing matches, visitors see a message and your suggested searches.</p>
+<dl class="settings">
+<div><dt>Enable filtering</dt><dd>Shows filters on the results page. Customize them with the Search and Discovery app.</dd></div>
+<div><dt>Enable sorting</dt><dd>Adds a "Sort by" menu.</dd></div>
+</dl>
+<p>Suggested searches are set in theme settings under <strong>Search</strong>.</p>
+</section>
+
+<section data-group="Shopping pages" aria-labelledby="cart">
+<h2 id="cart">Cart drawer and cart page</h2>
+<p>Footlight calls the cart the bag. Choose between a drawer and a full page in theme settings under <strong>Cart</strong>. Both show the same information: each line with its image, options, price, line discounts and quantity controls, the order note, the totals and a checkout button.</p>
+<h3 id="cart-drawer">Cart drawer</h3>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Default is Scheme 1.</dd></div>
+<div><dt>Free shipping threshold</dt><dd>An order total in your store currency, in whole units. Set it to 0 to hide the progress bar. When it is above 0, the drawer shows how far the bag is from the threshold and a progress bar. Only use this if you really offer free shipping above that amount. The bar is hidden if the shopper's cart currency differs from your store currency.</dd></div>
+<div><dt>Show product recommendations</dt><dd>Based on the first product in the bag. Hidden when there are no recommendations.</dd></div>
+</dl>
+<p>The drawer opens when a shopper adds a product or selects the bag. It also opens after "Add selected to bag" in <strong>Complete the look</strong>.</p>
+<h3 id="cart-page">Cart page</h3>
+<dl class="settings">
+<div><dt>Show accelerated checkout buttons</dt><dd>Lets customers pay with Shop Pay, Apple Pay, PayPal and other wallets you have turned on in your payment settings.</dd></div>
+<div><dt>Show product recommendations</dt><dd>Based on the first product in the cart. Hidden when there are no recommendations.</dd></div>
+<div><dt>Collections shown when the cart is empty</dt><dd>Choose collections to suggest when the bag is empty.</dd></div>
+</dl>
+<p>The order note and the cart message are set in theme settings under <strong>Cart</strong>. Order-level discounts that apply automatically are shown by name in the totals. The checkout itself is Shopify's, and its look is edited in <strong>Settings</strong>, then <strong>Checkout</strong>.</p>
+</section>
+
+<section data-group="Customers and content" aria-labelledby="gift-cards">
+<h2 id="gift-cards">Gift cards</h2>
+<p>Shopify creates and emails gift cards. Footlight styles the page a customer opens from that email. It shows the gift card's value, its balance and how long it is valid, the code in large type with a <strong>Copy code</strong> button, a QR code, a message from the sender when there is one, an <strong>Add to Apple Wallet</strong> button when Shopify provides a wallet pass, a link to your store ("Use this gift card") and a print button.</p>
+<ul>
+<li>An expired or deactivated card shows a notice instead of the code.</li>
+<li>The QR code is generated by a script that Shopify hosts for gift cards.</li>
+<li>This page is a code template. It does not appear in the editor. Its text can be changed with <strong>Edit default theme content</strong>.</li>
+</ul>
+<p>To sell gift cards, see <a href="#product-gift">Gift card products</a>.</p>
+</section>
+
+<section data-group="Customers and content" aria-labelledby="accounts">
+<h2 id="accounts">Customer accounts</h2>
+<p>Turn on customer accounts in Shopify admin under <strong>Settings</strong>, then <strong>Customer accounts</strong>. The account icon in the header appears only when accounts are on. The Index also shows an <strong>Account</strong> link.</p>
+<p>Footlight includes templates for the classic customer account pages:</p>
+<ul>
+<li>Sign in, with a link to reset a forgotten password and a button to create an account. A "Continue as a guest" button appears when your checkout settings allow it.</li>
+<li>Create account.</li>
+<li>Reset password and activate account.</li>
+<li>Your account, with order history and the default address.</li>
+<li>Order details, with items, totals, addresses and tracking links.</li>
+<li>Addresses, where customers add, edit, delete and set a default address.</li>
+</ul>
+<p>If your store uses Shopify's newer customer accounts, Shopify hosts the sign-in and account pages itself. In that case the account icon opens Shopify's pages, and the templates above are not used. The <strong>Customer account menu</strong> in the header settings sets the links shown in the account sheet.</p>
+</section>
+
+<section data-group="Customers and content" aria-labelledby="blog">
+<h2 id="blog">Blog and articles</h2>
+<h3 id="blog-page">Blog page</h3>
+<dl class="settings">
+<div><dt>Posts per page</dt><dd>4 to 24.</dd></div>
+<div><dt>Feature the latest post</dt><dd>Shows the newest post large on the first page when it has a featured image.</dd></div>
+<div><dt>Image ratio</dt><dd>Adapt to image, Portrait, Landscape or Square.</dd></div>
+<div><dt>Show tag filter</dt><dd>Lets visitors filter stories by topic, using your article tags.</dd></div>
+<div><dt>Show excerpt, Show date, Show author</dt><dd>Turn each on or off.</dd></div>
+<div><dt>Show comment count</dt><dd>Shown when comments are enabled for the blog.</dd></div>
+</dl>
+<h3 id="blog-article">Blog post</h3>
+<dl class="settings">
+<div><dt>Show featured image</dt><dd>Shows the article image at the top.</dd></div>
+<div><dt>Image framing</dt><dd><strong>Automatic</strong> uses a cinema frame for wide images and keeps tall images uncropped. You can also choose <strong>Cinema</strong>, <strong>Landscape</strong> or <strong>Adapt to image</strong>.</dd></div>
+<div><dt>Show image alt text as caption</dt><dd>Uses the image's alt text as a caption under the image.</dd></div>
+<div><dt>Show author, Show tags</dt><dd>Turn each on or off.</dd></div>
+<div><dt>Show share options</dt><dd>Shows "Copy link", a native share button where the device supports it, and an email link.</dd></div>
+<div><dt>Show newer and older post links</dt><dd>Links to neighboring posts.</dd></div>
+<div><dt>Show comments</dt><dd>Comments appear when they are enabled for the blog in your admin. They can be held for review before they show.</dd></div>
+<div><dt>Show more posts from the blog</dt><dd>Shows other posts at the end of the article.</dd></div>
+</dl>
+</section>
+
+<section data-group="Customers and content" aria-labelledby="pages">
+<h2 id="pages">Pages and the contact form</h2>
+<h3 id="pages-page">Page</h3>
+<p>Create pages under <strong>Content</strong>, then <strong>Pages</strong>. The <strong>Page</strong> section controls how they look.</p>
+<dl class="settings">
+<div><dt>Content width</dt><dd>Narrow, Medium or Wide.</dd></div>
+<div><dt>Heading alignment</dt><dd>Left or Center.</dd></div>
+</dl>
+<h3 id="pages-contact">Contact form</h3>
+<p>To make a contact page, create a page, and in its <strong>Theme template</strong> menu choose the contact template. The page shows a form with name, email, an optional phone number and a message. Messages arrive in your store's customer email, and the shopper sees a thank-you message after sending.</p>
+<dl class="settings">
+<div><dt>Heading</dt><dd>"Write to us" by default. Leave it blank to use the page title.</dd></div>
+<div><dt>Form heading</dt><dd>"Send a message" by default.</dd></div>
+<div><dt>Email, Phone, Address, Opening hours</dt><dd>Optional store details shown beside the form. The block is hidden when all four are empty.</dd></div>
+</dl>
+</section>
+
+<section data-group="Customers and content" aria-labelledby="not-found">
+<h2 id="not-found">404 page</h2>
+<p>Shoppers who open an address that does not exist see a "Page not found" message, a search field and links to the home page, all products and all collections. The section has two settings: <strong>Color scheme</strong> (Scheme 3 by default) and the section padding. Its wording can be changed with <strong>Edit default theme content</strong>.</p>
+</section>
+
+<section data-group="Customers and content" aria-labelledby="password">
+<h2 id="password">Password page</h2>
+<p>When you turn on password protection in <strong>Online Store</strong>, then <strong>Preferences</strong>, visitors see the password page. Your message from that setting is shown on the page.</p>
+<dl class="settings">
+<div><dt>Color scheme</dt><dd>Default is Scheme 3.</dd></div>
+<div><dt>Logo, Logo width</dt><dd>The store name is shown when no logo is selected. Width from 60 to 400 pixels.</dd></div>
+<div><dt>Background image, Image overlay opacity</dt><dd>2048 by 1365 pixels is recommended. The overlay is 0 to 90 percent.</dd></div>
+<div><dt>Show email signup</dt><dd>Collects email addresses. People who sign up are added to your customer list with the tags <code>prospect</code> and <code>password page</code>.</dd></div>
+<div><dt>Heading, Text</dt><dd>The words above the signup form.</dd></div>
+</dl>
+<p>You can enter the store with the password through the "Enter using password" link at the bottom of the page.</p>
+</section>
+
+<section data-group="Reference" aria-labelledby="videos">
+<h2 id="videos">Videos</h2>
+<p>Footlight supports video in these places:</p>
+<ul>
+<li><strong>Hero slideshow.</strong> An uploaded video per slide. It plays muted, on a loop, without controls. Phones see the image unless you turn on <strong>Play video on mobile</strong>.</li>
+<li><strong>Campaign film.</strong> An uploaded video, or a YouTube or Vimeo link. The visitor presses play, and then the player loads.</li>
+<li><strong>Product media.</strong> Videos you upload to a product, YouTube and Vimeo videos, and 3D models.</li>
+<li><strong>Collection campaign tiles.</strong> A video's cover image can be used for a tile. The tile does not play the video.</li>
+</ul>
+<h3 id="videos-tips">Tips</h3>
+<ul>
+<li>Keep hero videos short and compressed. A large file slows the first visit.</li>
+<li>Add captions or subtitles with your video host or upload them with the video, and say so in the <strong>Accessibility note</strong> setting of the campaign film.</li>
+<li>No video starts with sound on its own.</li>
+<li>The hero slideshow does not start rotating by itself for visitors whose device is set to reduce motion.</li>
+</ul>
+</section>
+
+<section data-group="Reference" aria-labelledby="localization">
+<h2 id="localization">Localization: languages and countries</h2>
+<h3 id="loc-markets">Markets and countries</h3>
+<p>Set up the countries and currencies you sell in under <strong>Settings</strong>, then <strong>Markets</strong>. The country and currency selector appears when your store sells in more than one market, and when <strong>Show country and currency selector</strong> is on in theme settings.</p>
+<h3 id="loc-languages">Languages</h3>
+<p>Add languages under <strong>Settings</strong>, then <strong>Languages</strong>. The language selector appears when your store has more than one language, and when <strong>Show language selector</strong> is on. The selectors are available in these places:</p>
+<ul>
+<li>The Index (header setting <strong>Show country and language selectors</strong>).</li>
+<li>The footer (footer setting <strong>Show country and language selectors</strong>).</li>
+<li>The top bar, on large screens (top bar setting <strong>Show country and language selectors</strong>, off by default).</li>
+</ul>
+<p>Each selector works without JavaScript through a plain form and an Update button, and becomes a keyboard-friendly list when scripts are available.</p>
+<h3 id="loc-translate">Translating text</h3>
+<p>Footlight ships with English text. To translate theme text such as button labels and cart messages, and the text you typed into sections, use Shopify's translation tools, for example the free Translate and Adapt app. The page's language code is set from the language the visitor is viewing.</p>
+</section>
+
+<section data-group="Reference" aria-labelledby="seo">
+<h2 id="seo">SEO tips</h2>
+<p>Footlight outputs a page title, a meta description, Open Graph and Twitter card tags, a canonical link and structured product data. Search rankings depend on your content, so these steps help most:</p>
+<ul>
+<li>Fill in the <strong>Search engine listing</strong> on products, collections, pages and articles. Write a clear page title and a one or two sentence description.</li>
+<li>Give each product a unique title and description. Avoid copying manufacturer text.</li>
+<li>Add alt text to your images. Describe what the image shows in a short sentence. Mark purely decorative images by leaving the alt text empty.</li>
+<li>Each page has one main heading. In your own page content, use headings in order and keep them meaningful.</li>
+<li>Set a social sharing image on pages you share often. The theme uses the page's image when there is one.</li>
+<li>Use descriptive link text such as "Read our size guide" rather than "Click here".</li>
+<li>Keep your navigation menu names short and plain, since they appear in the Index.</li>
+</ul>
+</section>
+
+<section data-group="Reference" aria-labelledby="accessibility">
+<h2 id="accessibility">Accessibility notes</h2>
+<p>Footlight is built with accessibility in mind. We make no claim of full conformance to any standard, because your content, colors and apps affect the result. What the theme does:</p>
+<ul>
+<li>A skip link at the top of every page, and landmarks for the header, main content, navigation and footer.</li>
+<li>One main heading per page.</li>
+<li>Visible keyboard focus on links, buttons and form fields.</li>
+<li>The Index, the search panel, the cart drawer, the quick view, the size guide and the image zoom behave as dialogs. Focus moves into them, stays inside while they are open, closes with Escape and returns to the control that opened them.</li>
+<li>Slideshows and rotating top bar messages have pause controls, and they stop while hovered or focused. The hero slideshow does not start rotating by itself for visitors who prefer reduced motion.</li>
+<li>Form fields have labels. Errors are written out in text.</li>
+<li>The cart and search announce changes to screen readers through live regions.</li>
+<li>Sold out and unavailable variant options carry a text status, not only a strikethrough.</li>
+<li>Touch targets are sized for fingers.</li>
+</ul>
+<p>What stays with you:</p>
+<ul>
+<li>Write alt text for images, and captions or transcripts for videos.</li>
+<li>Choose color schemes with enough contrast between text and background. A ratio of at least 4.5 to 1 is a common target for body text.</li>
+<li>Do not put important text inside images.</li>
+<li>Check apps that you add. Their output is not part of the theme.</li>
+</ul>
+</section>
+
+<section data-group="Reference" aria-labelledby="performance">
+<h2 id="performance">Performance tips</h2>
+<p>Footlight loads styles and scripts per section where it can, serves images at sizes that fit the screen, loads the first image on a page right away and the rest as visitors scroll, and loads campaign film and product video players only after a visitor asks for them. Your content has the larger effect, so:</p>
+<ul>
+<li>Upload images close to the sizes suggested in the editor. A 4000 pixel photo costs more than it gains. Compress large images before uploading.</li>
+<li>Keep the home page focused. Each section you add is more to load. Hide or remove sections you do not use.</li>
+<li>Keep hero videos short, and use the mobile image setting so phones do not download video.</li>
+<li>Choose fonts with few styles. Each style is a download.</li>
+<li>Add apps carefully. Apps often add scripts that slow every page. Remove apps you no longer use, and check for leftover code.</li>
+<li>Use a reasonable number of products per page in collections.</li>
+</ul>
+<p>Speed results vary with your content, apps and visitors' devices and connections. Shopify's online store speed report shows how your store performs.</p>
+</section>
+
+<section data-group="Reference" data-toc="children" aria-labelledby="troubleshooting">
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="ts-header">Header and navigation</h3>
+<dl class="settings">
+<div><dt>The header is not transparent on the home page</dt><dd>Check that <strong>Show header over the home page hero</strong> is on, and that the first section of the home page is a <strong>Hero slideshow</strong>. The effect applies only to the home page.</dd></div>
+<div><dt>Pictures do not show in the Index</dt><dd>See the note under <a href="#index-images">Adding an image to a menu item</a>. The title must match exactly, and pictures show only on screens 990 pixels wide and up.</dd></div>
+<div><dt>Some menu links are missing beside the Index button</dt><dd>Only links that fit, up to five, are shown there. All links stay in the Index.</dd></div>
+<div><dt>The account icon is missing</dt><dd>Customer accounts are off. Turn them on under <strong>Settings</strong>, then <strong>Customer accounts</strong>.</dd></div>
+</dl>
+<h3 id="ts-products">Products and cart</h3>
+<dl class="settings">
+<div><dt>The cart drawer does not open</dt><dd>Check that <strong>Cart type</strong> is <strong>Drawer</strong>. If it is, an app or custom code may be stopping scripts on the page. Test with the app turned off.</dd></div>
+<div><dt>Color swatches show as text</dt><dd>The option must be named <strong>Color</strong> or <strong>Colour</strong>, the swatch shape must not be <strong>None</strong>, and the values need swatch colors or images in Shopify.</dd></div>
+<div><dt>The size guide link is missing</dt><dd>The block needs a page, an image, or both.</dd></div>
+<div><dt>Trust badges do not show</dt><dd>A badge needs a heading or text. Also check <strong>Show on desktop</strong> and <strong>Show on mobile</strong>.</dd></div>
+<div><dt>"Complete the look" does not show on a product</dt><dd>Choose products in the block, or turn on the recommendations setting. Recommendations need complementary or related products to exist for that product.</dd></div>
+<div><dt>"Pairs well with" is empty</dt><dd>No complementary products are set up for the product. Set them in the Search and Discovery app.</dd></div>
+<div><dt>"Recently viewed" is empty</dt><dd>It shows only products the visitor has opened on that device. It stays hidden on a first visit.</dd></div>
+<div><dt>The sticky add to bag bar is missing</dt><dd>It needs a <strong>Buy buttons</strong> block and <strong>Show sticky add to bag bar</strong> turned on. It appears after the main button scrolls out of view.</dd></div>
+<div><dt>The free shipping bar is missing</dt><dd>Set a <strong>Free shipping threshold</strong> above 0 in the cart drawer. It shows only in the drawer, only when the bag has items, and only when the cart currency matches your store currency.</dd></div>
+<div><dt>The quick add control is missing on a card</dt><dd>The product is sold out, or <strong>Show quick add</strong> is off in theme settings.</dd></div>
+</dl>
+<h3 id="ts-collections">Collections and search</h3>
+<dl class="settings">
+<div><dt>There are no filters on a collection</dt><dd>Turn on <strong>Enable filtering</strong> and set up filters in the Search and Discovery app.</dd></div>
+<div><dt>Search does not suggest anything while typing</dt><dd>Turn on <strong>Enable predictive search</strong> in theme settings.</dd></div>
+<div><dt>The ranked list shows the wrong products</dt><dd>It follows the collection's own order. Change the collection's sort order.</dd></div>
+</dl>
+<h3 id="ts-general">Anything else</h3>
+<dl class="settings">
+<div><dt>My changes do not appear on the store</dt><dd>Check that you saved in the editor, that the theme you edited is the published one, and reload with the browser cache cleared.</dd></div>
+<div><dt>The country or language selector is missing</dt><dd>Your store sells in only one market, or has one language, or the selector is turned off.</dd></div>
+<div><dt>Newsletter signups do not arrive</dt><dd>Signups are added to your Shopify customer list with the tag <code>newsletter</code>. Look under <strong>Customers</strong>. Sending email is done by Shopify Email or your email app.</dd></div>
+<div><dt>The contact form is missing</dt><dd>The page must use the contact template. Check its <strong>Theme template</strong> setting.</dd></div>
+<div><dt>Something looks wrong after installing an app</dt><dd>Test with the app turned off. If the problem goes away, contact the app's developer.</dd></div>
+</dl>
+</section>
+
+<section data-group="Reference" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<div class="faq">
+<details><summary>Can I change the fonts?</summary><div class="ans"><p>Yes. Pick any font from Shopify's library under <strong>Typography</strong> in theme settings. Uploading a custom font file is not available.</p></div></details>
+<details><summary>Does Footlight use countdown timers or fake stock numbers?</summary><div class="ans"><p>No. There are no countdown timers, no invented stock counts and no automatic sale badges. The "Only 3 left" style text on a product appears only when you track inventory in Shopify and the real quantity is at or below the threshold you set. A sale badge appears only when a product's compare-at price is higher than its price.</p></div></details>
+<details><summary>Does "Complete the look" give a discount?</summary><div class="ans"><p>No. It adds the selected products to the cart at their own prices using Shopify's standard add-to-cart request. If you want a bundle discount, create an automatic discount in Shopify.</p></div></details>
+<details><summary>Are the trust badges verified?</summary><div class="ans"><p>No. They are text you write. Keep them accurate and in line with your policies.</p></div></details>
+<details><summary>Why is there no dropdown menu?</summary><div class="ans"><p>Footlight uses the Index, a full screen navigation, so that menus with many links work the same way on phones and desktops. It supports three levels of links.</p></div></details>
+<details><summary>Can I show an Instagram feed?</summary><div class="ans"><p>The <strong>Editorial gallery</strong> shows images that you upload. It does not connect to Instagram or other social media accounts, and the theme has no social media feed feature.</p></div></details>
+<details><summary>Can I add a wishlist or customer reviews?</summary><div class="ans"><p>The theme does not include them. They can be added with apps. Apps are not covered by theme support.</p></div></details>
+<details><summary>How do I change "Add to bag" to another word?</summary><div class="ans"><p>Use <strong>Edit default theme content</strong> from the actions menu on Footlight in your theme library, and change the text for the button.</p></div></details>
+<details><summary>How do I make the logo show over the hero image?</summary><div class="ans"><p>Upload a light version in <strong>Logo over images</strong> in the header, and keep <strong>Show header over the home page hero</strong> on.</p></div></details>
+<details><summary>Can I use the theme on more than one store?</summary><div class="ans"><p>A Theme Store purchase is for one store. Check the license terms on the Footlight page in the Shopify Theme Store.</p></div></details>
+<details><summary>Where do I find the theme version?</summary><div class="ans"><p>In the theme editor, open <strong>Theme settings</strong>. The theme name and version are listed there. Please include the version when you write to support.</p></div></details>
+</div>
+</section>
+
+<section data-group="Reference" aria-labelledby="support">
+<h2 id="support">Support</h2>
+<p>We answer by email and through the support form on our site. Every message gets a reply within 2 business days. Business days are Monday to Friday, except public holidays in the United States.</p>
+<h3 id="support-covers">What support covers</h3>
+<ul>
+<li>Installing the theme and setting it up.</li>
+<li>Questions about how Footlight works and what its settings do.</li>
+<li>Bugs in the theme, such as broken layouts, dead links and logic errors.</li>
+</ul>
+<h3 id="support-not">What is not included</h3>
+<p>These are not part of the theme price. We offer them separately as paid services:</p>
+<ul>
+<li>Custom code changes, custom design work, and editing the theme's files.</li>
+<li>Installing, configuring or fixing third-party apps. If a problem comes from an app, contact the app's developer.</li>
+<li>Adding your products and content, or moving a store from another theme or platform.</li>
+</ul>
+<p>Ask us for a quote if you need any of them.</p>
+<h3 id="support-send">How to ask for help</h3>
+<p>Use the <a href="https://www.ecomswiftllc.com/footlight-support" target="_top">Footlight support page</a>, or write to <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a>. Please include:</p>
+<ul>
+<li>Your store address, such as <code>your-store.myshopify.com</code>.</li>
+<li>The address of an example page where the problem happens.</li>
+<li>The Footlight version, shown in <strong>Theme settings</strong>.</li>
+<li>Your browser and device.</li>
+<li>What you expected, what happened, and a screenshot or short recording.</li>
+</ul>
+<p>Do not send passwords or customer data. If we need access to your store, we will ask for a staff account request, which you can remove afterward. Read the full <a href="footlight-support-policy.html">support policy</a>.</p>
+</section>
+
+  </main>
+</div>
+<footer class="end dark">
+  <div class="end__in">
+    <h2>Questions about Footlight?</h2>
+    <p>Write to us at <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> or use the <a href="https://www.ecomswiftllc.com/footlight-support" target="_top">support page</a>. We reply within 2 business days.</p>
+    <p><a href="footlight-support-policy.html">Read the support policy</a></p>
+    <span class="end__fine">Footlight is a Shopify theme by Ecom Swift LLC. Shopify is a trademark of Shopify Inc. Ecom Swift LLC is an independent theme developer and is not affiliated with, endorsed by or sponsored by Shopify Inc.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var wrap=document.getElementById('toc-wrap');
+  if(!wrap||!window.matchMedia)return;
+  var wide=window.matchMedia('(min-width: 62rem)');
+  function sync(){if(wide.matches){wrap.open=true;}}
+  sync();
+  if(wide.addEventListener){wide.addEventListener('change',function(e){wrap.open=e.matches;});}
+  wrap.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a');
+    if(a&&!wide.matches){wrap.open=false;}
+  });
+  var links=[].slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var map={};
+  links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+  var heads=[].slice.call(document.querySelectorAll('.doc h2[id], .doc h3[id]')).filter(function(h){return map[h.id];});
+  if(!heads.length)return;
+  var current=null,ticking=false;
+  function set(id){
+    if(current===id)return;
+    current=id;
+    links.forEach(function(a){a.removeAttribute('aria-current');});
+    var a=map[id];
+    if(a){a.setAttribute('aria-current','location');
+      var box=a.closest('.toc-side');
+      if(box&&box.scrollHeight>box.clientHeight&&wide.matches){
+        var r=a.getBoundingClientRect(),b=box.getBoundingClientRect();
+        if(r.top<b.top+60||r.bottom>b.bottom-60){box.scrollTop+=r.top-b.top-b.height/3;}
+      }
+    }
+  }
+  function update(){
+    ticking=false;
+    var line=window.innerHeight*0.28,found=heads[0];
+    for(var k=0;k<heads.length;k++){if(heads[k].getBoundingClientRect().top<=line){found=heads[k];}else{break;}}
+    set(found.id);
+  }
+  function onScroll(){if(!ticking){ticking=true;window.requestAnimationFrame(update);}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  update();
+})();
+</script>
+</body>
+</html>
