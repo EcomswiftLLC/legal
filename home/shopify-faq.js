@@ -41,19 +41,22 @@
     var head = document.getElementById("comp-mwjb4q1o"), sub = document.getElementById("comp-mwjb1bab");
     if (!head || !sub || !/frequently asked/i.test(txt(head))) return false;
     var grid = head.parentElement, kids = [].slice.call(grid.children), items = [];
+    function rowOf(c) { return parseInt(getComputedStyle(c).gridRowStart, 10) || 0; }
+    function xOf(c) { return Math.round(c.getBoundingClientRect().x); }
+    var subRow = rowOf(sub);
     kids.forEach(function (c) {
-      if (c === head || c === sub || c.id === "") return;
-      var r = c.getBoundingClientRect();
+      if (c === head || c === sub || c.id === "" || c.classList.contains("es-sfaq")) return;
+      var row = rowOf(c);
+      if (row <= subRow) return;
       var h = c.querySelector("h3,h4,h2"), p = c.querySelector("p");
-      if (r.y <= sub.getBoundingClientRect().y) return;
-      if (h && txt(h) && txt(h).slice(-1) === "?") items.push({ el: c, q: txt(h), x: Math.round(r.x), y: r.y });
-      else if (p && txt(p)) items.push({ el: c, a: p, x: Math.round(r.x), y: r.y });
+      if (h && txt(h) && txt(h).slice(-1) === "?") items.push({ el: c, q: txt(h), x: xOf(c), row: row });
+      else if (p && txt(p)) items.push({ el: c, a: p, x: xOf(c), row: row });
     });
-    var qs = items.filter(function (i) { return i.q; }).sort(function (a, b) { return Math.abs(a.y - b.y) < 6 ? a.x - b.x : a.y - b.y; });
+    var qs = items.filter(function (i) { return i.q; }).sort(function (a, b) { return a.row === b.row ? a.x - b.x : a.row - b.row; });
     var pairs = [];
     qs.forEach(function (q) {
       var best = null;
-      items.forEach(function (a) { if (a.a && Math.abs(a.x - q.x) < 8 && a.y > q.y && (!best || a.y < best.y)) best = a; });
+      items.forEach(function (a) { if (a.a && Math.abs(a.x - q.x) < 8 && a.row > q.row && (!best || a.row < best.row)) best = a; });
       if (best) pairs.push({ q: q, a: best });
     });
     if (pairs.length < 2) return false;
