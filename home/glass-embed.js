@@ -44,11 +44,11 @@
       var cs = getComputedStyle(el);
       var bg = parse(cs.backgroundColor);
       var r = el.getBoundingClientRect();
-      var isBtn = el.tagName === "A" || el.tagName === "BUTTON" || /\b(btn|bt|chip|pill|tag|badge|cta-btn)\b/.test(el.className + "");
+      var isBtn = (el.tagName === "A" || el.tagName === "BUTTON" || /\b(btn|bt|chip|pill|tag|badge|cta-btn)\b/.test(el.className + "")) && r.height < 80;
       if (bg && bg.a > 0.5) {
         var l = lum(bg);
         el.setAttribute("data-esg", "1");
-        if (isBtn || r.width < 150 || r.height < 52) {
+        if (isBtn || ((r.width < 150 || r.height < 52) && el.tagName !== "A")) {
           // small control: keep brand colours, lift near-black fills to white so they read on navy
           imp(el, "border-radius", "999px");
           if (l < 0.06) { imp(el, "background", "#fff"); imp(el, "color", NAVY); imp(el, "border-color", "#fff"); el.setAttribute("data-esb", "1"); }
