@@ -31,7 +31,7 @@ html.es-light #ecs-fi a{color:#fff!important}
 html.es-light #ecs-fi a:focus-visible{outline-color:#B8923A!important}
 /* Slim highlighted call-to-action panels (desktop): "ready-made store design" and "free store audit" */
 @media (min-width:1000px){
-html.es-light .comp-mwj6vrlm div:has(> #comp-mwjap266){grid-template-rows:150px 78px auto 44px 34px 50px 46px 28px 0 0 auto 0 0 0 0 0 0 96px!important}
+html.es-light .comp-mwj6vrlm div:has(> #comp-mwjap266){grid-template-rows:150px 78px auto 56px 34px 50px 46px 52px 0 0 auto 0 0 0 0 0 0 96px!important}
 html.es-light #comp-mwjatg81,html.es-light #comp-mwjb6rvc,html.es-light #comp-mwjb2xgf{margin-left:calc(var(--ml) + 28px)!important;width:calc((var(--w) - 20px)/2 - 56px)!important}
 html.es-light #comp-mwjazz10,html.es-light #comp-mwjawvxw,html.es-light #comp-mwjaxv7m{margin-left:var(--ml)!important;left:calc((var(--w) + 20px)/2 + 28px)!important;width:calc((var(--w) - 20px)/2 - 56px)!important}
 html.es-light #comp-mwjap266 *{font-size:44px!important;line-height:1.1!important;letter-spacing:-.02em!important;text-align:left!important}
@@ -44,5 +44,5 @@ html.es-light #comp-mwjb6rvc *,html.es-light #comp-mwjawvxw *{font-size:15px!imp
 html.es-light #comp-mwjb2xgf,html.es-light #comp-mwjaxv7m{width:auto!important;min-width:0!important;height:40px!important}
 html.es-light #comp-mwjb2xgf a,html.es-light #comp-mwjb2xgf button,html.es-light #comp-mwjaxv7m a,html.es-light #comp-mwjaxv7m button{height:40px!important;min-height:0!important;padding:0 22px!important}
 html.es-light #comp-mwjb2xgf *,html.es-light #comp-mwjaxv7m *{font-size:14px!important}
-html.es-light #comp-mwjatg81::before,html.es-light #comp-mwjazz10::before{content:"";position:absolute;z-index:-1;left:-28px;top:-22px;width:calc((var(--w) - 20px)/2);height:176px;box-sizing:border-box;border-radius:16px;background:linear-gradient(135deg,#F8F1DE,#FCF8EC);border:1px solid #E6D6A8;border-left:4px solid #B8923A;box-shadow:0 1px 2px rgba(22,19,15,.04),0 12px 28px rgba(125,95,23,.10)}
+html.es-light #comp-mwjatg81::before,html.es-light #comp-mwjazz10::before{content:"";position:absolute;z-index:-1;left:-28px;top:-22px;width:calc((var(--w) - 20px)/2);height:158px;box-sizing:border-box;border-radius:16px;background:linear-gradient(135deg,#F8F1DE,#FCF8EC);border:1px solid #E6D6A8;border-left:4px solid #B8923A;box-shadow:0 1px 2px rgba(22,19,15,.04),0 12px 28px rgba(125,95,23,.10)}
 }
