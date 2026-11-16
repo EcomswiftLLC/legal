@@ -121,3 +121,12 @@ html.es-light #comp-mwjqcatt{grid-row:22!important}html.es-light #comp-mwjqcatw5
 @media (max-width:560px){
 html.es-light #comp-mwjqcasq4{grid-template-columns:minmax(0,1fr)!important}
 }
+
+/* ---------- phone: call-to-action emphasis, touch targets ---------- */
+@media (max-width:999px){
+html.es-light #comp-mwjqcat53,html.es-light #comp-mwjqcat93,html.es-light #comp-mwjqcat65,html.es-light #comp-mwjqcatb{border-left:4px solid #B8923A!important;padding-left:14px!important;box-sizing:border-box!important}
+html.es-light #comp-mwjqcat8,html.es-light #comp-mwjqcatc{height:46px!important;min-width:200px!important}
+html.es-light #comp-mwjqcat8 a,html.es-light #comp-mwjqcatc a,html.es-light #comp-mwjqcat8 button,html.es-light #comp-mwjqcatc button{height:46px!important}
+html.es-light .wixui-repeater__item .wixui-button,html.es-light .wixui-repeater__item .wixui-button a,html.es-light .wixui-repeater__item .wixui-button button{height:46px!important;min-height:46px!important}
+html.es-light .es-sfaq summary{min-height:56px}
+}
