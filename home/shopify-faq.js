@@ -86,5 +86,13 @@
     [head, sub].concat(items.map(function (i) { return i.el; })).forEach(function (e) { e.classList.add("es-sfaq-hide"); });
     return true;
   }
-  var n = 0, iv = setInterval(function () { if (build() || ++n > 40) clearInterval(iv); }, 400);
+  var done = false, timer;
+  function attempt() {
+    if (done) return;
+    try { if (build()) { done = true; if (mo) mo.disconnect(); } } catch (e) { /* retry on next change */ }
+  }
+  var mo = null;
+  try { mo = new MutationObserver(function () { clearTimeout(timer); timer = setTimeout(attempt, 150); }); mo.observe(document.documentElement, { childList: true, subtree: true }); } catch (e) {}
+  attempt();
+  var n = 0, iv = setInterval(function () { attempt(); if (done || ++n > 150) { clearInterval(iv); if (mo) mo.disconnect(); } }, 1000);
 })();
