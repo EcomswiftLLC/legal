@@ -3,7 +3,6 @@
    keeps text readable. Runs in the page, no shadow DOM. */
 (function () {
   "use strict";
-  var SKY = "https://ecomswiftllc.github.io/legal/home/assets/glass-sky.svg";
   var GLASS = "linear-gradient(180deg,rgba(6,9,22,.62),rgba(6,9,22,.48))";
   var VEIL = "rgba(6,9,22,.38)";
   var SKIP = /^\/($|shopify\/?$|cart|checkout|thank-you|my-account|account|member|search|store|product-page|category|donation-thank-you-page)/i;
@@ -23,7 +22,7 @@
     return 0.2126 * f(c.r) + 0.7152 * f(c.g) + 0.0722 * f(c.b);
   }
   function css() {
-    return "body{background:#0D1226 url(" + SKY + ") center bottom/cover no-repeat fixed!important;color:#fff}" +
+    return "body{background:#0D1226 linear-gradient(180deg,#151c3d 0,#0D1226 640px)!important;color:#fff}" +
       "html,#SITE_CONTAINER,#masterPage,#PAGES_CONTAINER,#SITE_PAGES,#site-root,#main_MF,[id^=pageBackground_],[id^=pageBackground_] *,#BACKGROUND_GROUP_TRANSITION_GROUP,#BACKGROUND_GROUP_TRANSITION_GROUP *{background:transparent!important}";
   }
   function setImp(el, k, v) { el.style.setProperty(k, v, "important"); }

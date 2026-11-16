@@ -86,10 +86,39 @@
     [head, sub].concat(items.map(function (i) { return i.el; })).forEach(function (e) { e.classList.add("es-sfaq-hide"); });
     return true;
   }
+  /* Accessibility + SEO polish for the service cards: real alt text instead of file names,
+     unique link names instead of twelve identical "Read more" links, visible keyboard focus. */
+  function polish() {
+    var cards = document.querySelectorAll("#comp-mwj9nd3a .wixui-repeater__item");
+    if (!cards.length) return false;
+    if (!document.getElementById("es-sfaq-a11y")) {
+      var st = document.createElement("style"); st.id = "es-sfaq-a11y";
+      st.textContent = "#comp-mwj9nd3a a:focus-visible,#comp-mwjb2xgf a:focus-visible,#comp-mwjaxv7m a:focus-visible,#comp-mwjb2xgf:focus-visible,#comp-mwjaxv7m:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important;border-radius:999px}";
+      document.head.appendChild(st);
+    }
+    var n = 0;
+    [].forEach.call(cards, function (c) {
+      var h = c.querySelector("h1,h2,h3,h4");
+      var title = h ? txt(h) : "";
+      if (!title) return;
+      var img = c.querySelector("img");
+      if (img) {
+        var alt = img.getAttribute("alt") || "";
+        if (!alt || /\.(webp|png|jpe?g|avif)$/i.test(alt) || /^bw-/i.test(alt)) img.setAttribute("alt", title + " service at Ecom Swift LLC");
+        img.setAttribute("decoding", "async");
+      }
+      var a = c.querySelector("a");
+      if (a) { a.setAttribute("aria-label", "Read more about " + title); n++; }
+    });
+    return n >= cards.length;
+  }
   var done = false, timer;
   function attempt() {
     if (done) return;
-    try { if (build()) { done = true; if (mo) mo.disconnect(); } } catch (e) { /* retry on next change */ }
+    var p = false, b = false;
+    try { p = polish(); } catch (e) { /* retry */ }
+    try { b = build(); } catch (e) { /* retry on next change */ }
+    if (p && b) { done = true; if (mo) mo.disconnect(); }
   }
   var mo = null;
   try { mo = new MutationObserver(function () { clearTimeout(timer); timer = setTimeout(attempt, 150); }); mo.observe(document.documentElement, { childList: true, subtree: true }); } catch (e) {}

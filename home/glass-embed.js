@@ -5,7 +5,6 @@
   "use strict";
   if (window.__esEmbed) return;
   window.__esEmbed = 1;
-  var SKY = "https://ecomswiftllc.github.io/legal/home/assets/glass-sky.svg";
   var GLASS = "linear-gradient(180deg,rgba(6,9,22,.62),rgba(6,9,22,.48))";
   var NAVY = "#0D1226";
 
@@ -28,7 +27,7 @@
 
   var st = document.createElement("style");
   st.textContent = "html,body{background:transparent!important}" +
-    (window.top === window ? "html{background:" + NAVY + " url(" + SKY + ") center bottom/cover no-repeat fixed!important}" : "") +
+    (window.top === window ? "html{background:" + NAVY + " linear-gradient(180deg,#151c3d 0,#0D1226 640px)!important}" : "") +
     "body{color:rgba(255,255,255,.82)}" +
     "::selection{background:rgba(255,255,255,.28)}" +
     "a:focus-visible,button:focus-visible{outline:2px solid #fff!important;outline-offset:3px}";
