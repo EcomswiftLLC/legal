@@ -74,7 +74,7 @@ function build(d){
  h+='<ul class="grid" id="grid">'+d.svc.map(function(s,n){
   var m=META[s.t]||{k:'build',c:'build',h:'/contact',a:['#E6DFFF','#D5E2FF'],alt:s.t},tag=TAGS[m.c];
   return '<li class="card" id="'+slug(s.t)+'" data-c="'+m.c+'" data-s="'+esc((s.t+' '+s.d+' '+tag).toLowerCase())+'">'+
-   '<div class="thumb" style="--t1:'+m.a[0]+';--t2:'+m.a[1]+'"><img src="'+BASE+'svc-'+m.k+'.jpg" width="800" height="500" alt="'+esc(m.alt)+'" loading="'+(n<4?'eager':'lazy')+'" decoding="async"><span class="tag">'+tag+'</span><span class="ico">'+I[m.k]+'</span></div>'+
+   '<div class="thumb" style="--t1:'+m.a[0]+';--t2:'+m.a[1]+'"><img src="'+BASE+'svc-'+m.k+'.webp" width="720" height="450" alt="'+esc(m.alt)+'" loading="'+(n<4?'eager':'lazy')+'"'+(n<2?' fetchpriority="high"':'')+' decoding="async"><span class="tag">'+tag+'</span><span class="ico">'+I[m.k]+'</span></div>'+
    '<div class="body"><h2>'+esc(s.t)+'</h2><p>'+esc(s.d)+'</p><a class="more" href="'+m.h+'" aria-label="Read more about '+esc(s.t)+'">Read more <i aria-hidden="true">&rarr;</i></a></div></li>'}).join('')+'</ul>';
  h+='<div class="empty" id="empty"><b>No service matches that search</b>Try a shorter word, or <a href="/contact">send us what you need</a> and we will point you to the right one.</div>';
  h+='<section class="strip" id="audit" aria-labelledby="sh"><div><h2 id="sh">Not sure which service you need?</h2><p>Send us your store link. We review it and tell you what to fix first, free of charge.</p></div><a class="btn" href="/contact">Get a free store audit</a></section>';
@@ -86,7 +86,7 @@ function build(d){
 
 function mount(d){
  var de=document.documentElement;de.classList.add('es-shop');
- if(!document.getElementById('es-font')){var l=document.createElement('link');l.id='es-font';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap';document.head.appendChild(l)}
+ if(!document.getElementById('es-font')){var l=document.createElement('link');l.id='es-font';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap';document.head.appendChild(l)}
  var ns=document.createElement('style');ns.id='es-shop-native-css';ns.textContent=NCSS;document.head.appendChild(ns);
  d.root.classList.add('es-native-src');var cw=d.root.closest('[id^="comp-"]');if(cw)cw.classList.add('es-native-src');
  var sc=document.getElementById('SITE_CONTAINER');
