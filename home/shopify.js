@@ -78,7 +78,7 @@ function build(d){
    '<div class="body"><h2>'+esc(s.t)+'</h2><p>'+esc(s.d)+'</p><a class="more" href="'+m.h+'" aria-label="Read more about '+esc(s.t)+'">Read more <i aria-hidden="true">&rarr;</i></a></div></li>'}).join('')+'</ul>';
  h+='<div class="empty" id="empty"><b>No service matches that search</b>Try a shorter word, or <a href="/contact">send us what you need</a> and we will point you to the right one.</div>';
  h+='<section class="strip" id="audit" aria-labelledby="sh"><div><h2 id="sh">Not sure which service you need?</h2><p>Send us your store link. We review it and tell you what to fix first, free of charge.</p></div><a class="btn" href="/contact">Get a free store audit</a></section>';
- var cut=Math.min(2,d.faq.length-2);
+ var cut=0;
  function qa(f){return '<details class="qa"><summary><h3>'+esc(f.q)+'</h3><span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>'+esc(f.a)+'</p></div></details>'}
  h+='<section class="faq" aria-labelledby="fh"><div class="faq-col"><div class="faq-l"><h2 id="fh">'+esc(d.faqH)+'</h2>'+(d.faqIntro?'<p>'+esc(d.faqIntro)+'</p>':'')+'<p class="faq-more">Still have a question? <a href="/contact">Talk to us</a> or <a href="/contact">request a free store audit</a>.</p></div>'+d.faq.slice(0,cut).map(qa).join('')+'</div><div class="faq-col">'+d.faq.slice(cut).map(qa).join('')+'</div></section>';
  h+='</main></div>';
