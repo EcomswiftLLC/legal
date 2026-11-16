@@ -127,6 +127,6 @@ html.es-light #comp-mwjqlc1u5{grid-template-columns:minmax(0,1fr)!important}
 html.es-light #comp-mwjqlc243,html.es-light #comp-mwjqlc283,html.es-light #comp-mwjqlc26,html.es-light #comp-mwjqlc294{border-left:4px solid #B8923A!important;padding-left:14px!important;box-sizing:border-box!important}
 html.es-light #comp-mwjqlc27,html.es-light #comp-mwjqlc2a5{height:46px!important;min-width:200px!important}
 html.es-light #comp-mwjqlc27 a,html.es-light #comp-mwjqlc2a5 a,html.es-light #comp-mwjqlc27 button,html.es-light #comp-mwjqlc2a5 button{height:46px!important}
-html.es-light .wixui-repeater__item .wixui-button,html.es-light .wixui-repeater__item .wixui-button a,html.es-light .wixui-repeater__item .wixui-button button{height:46px!important;min-height:46px!important}
+html.es-light #comp-mwjqlc1r .wixui-repeater__item div:has(> a[class*="StylableButton"]),html.es-light #comp-mwjqlc1r .wixui-repeater__item a[class*="StylableButton"]{height:46px!important;min-height:46px!important}
 html.es-light .es-sfaq summary{min-height:56px}
 }

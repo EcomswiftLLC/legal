@@ -127,6 +127,6 @@ html.es-light #comp-mwjqfu756{grid-template-columns:minmax(0,1fr)!important}
 html.es-light #comp-mwjqfu7m2,html.es-light #comp-mwjqfu7q4,html.es-light #comp-mwjqfu7o,html.es-light #comp-mwjqfu7r5{border-left:4px solid #B8923A!important;padding-left:14px!important;box-sizing:border-box!important}
 html.es-light #comp-mwjqfu7p1,html.es-light #comp-mwjqfu7s5{height:46px!important;min-width:200px!important}
 html.es-light #comp-mwjqfu7p1 a,html.es-light #comp-mwjqfu7s5 a,html.es-light #comp-mwjqfu7p1 button,html.es-light #comp-mwjqfu7s5 button{height:46px!important}
-html.es-light .wixui-repeater__item .wixui-button,html.es-light .wixui-repeater__item .wixui-button a,html.es-light .wixui-repeater__item .wixui-button button{height:46px!important;min-height:46px!important}
+html.es-light #comp-mwjqfu711 .wixui-repeater__item div:has(> a[class*="StylableButton"]),html.es-light #comp-mwjqfu711 .wixui-repeater__item a[class*="StylableButton"]{height:46px!important;min-height:46px!important}
 html.es-light .es-sfaq summary{min-height:56px}
 }
