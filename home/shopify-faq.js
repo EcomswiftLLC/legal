@@ -116,8 +116,10 @@
   function attempt() {
     if (done) return;
     var p = false, b = false;
-    try { p = polish(); } catch (e) { /* retry */ }
-    try { b = build(); } catch (e) { /* retry on next change */ }
+    var d = window.__esDbg = window.__esDbg || [];
+    try { p = polish(); } catch (e) { d.push("polish " + e.message); }
+    try { b = build(); } catch (e) { d.push("build " + e.message); }
+    if (d.length < 40) d.push((p ? "P" : "p") + (b ? "B" : "b") + Math.round(performance.now() / 100));
     if (p && b) { done = true; if (mo) mo.disconnect(); }
   }
   var mo = null;
