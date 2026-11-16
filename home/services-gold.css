@@ -1,0 +1,39 @@
+/* Ecom Swift LLC - services pages: soft white, black and gold. Flat page, no background image. */
+:root{--es-bg:#FBFAF7;--es-ink:#16130F;--es-body:#4A443A;--es-gold:#B8923A;--es-gold-text:#7D5F17;--es-gold-soft:#F6EFDC;--es-line:#EADFC4}
+html,body{background:var(--es-bg)!important;color:var(--es-ink)!important}
+body{-webkit-font-smoothing:antialiased}
+h1,h2,h3{color:var(--es-ink)!important}
+p,li{color:var(--es-body)}
+li{border-top-color:#EFE6CF!important}
+li:before{background:var(--es-gold)!important}
+a{color:var(--es-gold-text)}
+a:hover{color:var(--es-ink)}
+.kick,.kicker,[style*="#8c4f3d"]{color:var(--es-gold-text)!important}
+.sub{color:#5A5347!important}
+.price small{color:#6B6354!important}
+.card{background:#fff!important;border:1px solid var(--es-line)!important;border-top:3px solid var(--es-gold)!important;border-radius:16px!important;box-shadow:0 1px 2px rgba(22,19,15,.04),0 14px 32px rgba(125,95,23,.09);transition:box-shadow .3s,transform .3s}
+.card:hover{box-shadow:0 1px 2px rgba(22,19,15,.05),0 18px 40px rgba(125,95,23,.15)}
+.glance{background:#fff!important;border:1px solid var(--es-line)!important;border-radius:16px;box-shadow:0 1px 2px rgba(22,19,15,.04),0 14px 32px rgba(125,95,23,.07)}
+.chip{border-radius:999px!important;border:1px solid #E2D6B6!important;background:#fff!important;color:#3D372D!important}
+.chip:hover{border-color:var(--es-gold)!important}
+.chip.on{background:var(--es-ink)!important;color:#fff!important;border-color:var(--es-ink)!important}
+.btn,.btn-r,.btn-o,.btn-dark,.btn-line{border-radius:999px!important}
+.btn-r,.btn-dark{background:var(--es-ink)!important;color:#fff!important;border:1px solid var(--es-ink)!important;transition:background .25s,color .25s,border-color .25s}
+.btn-r:hover,.btn-dark:hover{background:var(--es-gold)!important;border-color:var(--es-gold)!important;color:var(--es-ink)!important}
+.btn-o,.btn-line{background:transparent!important;border:1px solid var(--es-ink)!important;color:var(--es-ink)!important;transition:background .25s,border-color .25s}
+.btn-o:hover,.btn-line:hover{background:var(--es-gold-soft)!important;border-color:var(--es-gold)!important}
+.band{background:var(--es-gold-soft)!important}
+.band li{border-top-color:#E6D9B5!important;color:var(--es-body)!important}
+.band h2{color:var(--es-ink)!important}
+.cta{background:var(--es-ink)!important;border-radius:0}
+.cta h2,.cta strong{color:#fff!important}
+.cta p,.cta li{color:rgba(255,255,255,.8)!important}
+.cta a:not(.btn){color:#E7CC85}
+.cta .btn,.cta .btn-dark{background:var(--es-gold)!important;border-color:var(--es-gold)!important;color:var(--es-ink)!important}
+.cta .btn:hover,.cta .btn-dark:hover{background:#fff!important;border-color:#fff!important}
+[style*="border-top:2px solid #1c1a17"]{border-top-color:var(--es-gold)!important}
+[style*="border-top:1px solid #d9d2c6"]{border-top-color:var(--es-line)!important}
+[style*="border-bottom:1px solid #d9d2c6"]{border-bottom-color:var(--es-line)!important}
+a:focus-visible,.btn:focus-visible,.btn-r:focus-visible,.btn-o:focus-visible{outline:3px solid var(--es-gold)!important;outline-offset:3px}
+::selection{background:#EBD9A6;color:var(--es-ink)}
+@media(prefers-reduced-motion:reduce){.card,.btn-r,.btn-o,.btn-dark{transition:none}}

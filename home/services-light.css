@@ -1,0 +1,31 @@
+/* Ecom Swift LLC - native /shopify page: soft white, black and gold. Flat page, no background image.
+   Loaded after the page's own glass CSS; every rule is scoped to html.es-light so it wins. */
+html.es-light body{background:#FBFAF7!important;color:#16130F!important}
+html.es-light .comp-mwjap266 *,html.es-light .comp-mwjatg81 *,html.es-light .comp-mwjazz10 *,html.es-light .comp-mwjb4q1o *,html.es-light .comp-mwj9nd47 *,html.es-light .comp-mwjb7xkb *,html.es-light .comp-mwjbbm95 *,html.es-light .comp-mwjbc2t5 *,html.es-light .comp-mwjbc77u *,html.es-light .comp-mwjbclpp *,html.es-light .comp-mwjbcq33 *{color:#16130F!important}
+html.es-light .comp-mwjarnt7 *,html.es-light .comp-mwjb6rvc *,html.es-light .comp-mwjawvxw *,html.es-light .comp-mwjb1bab *,html.es-light .comp-mwj9nd4j *,html.es-light .comp-mwjbajkv *,html.es-light .comp-mwjbbm9n *,html.es-light .comp-mwjbc2u1 *,html.es-light .comp-mwjbc78f *,html.es-light .comp-mwjbclqb *,html.es-light .comp-mwjbcq3r *{color:#4A443A!important}
+html.es-light .comp-mwj9nd41{background:#fff!important;border:1px solid #EADFC4!important;border-top:3px solid #B8923A!important;border-radius:16px!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:0 1px 2px rgba(22,19,15,.04),0 14px 32px rgba(125,95,23,.09)!important;transition:box-shadow .3s,border-color .3s}
+html.es-light .comp-mwj9nd41:hover{border-color:#E2D2A2!important;border-top-color:#B8923A!important;box-shadow:0 1px 2px rgba(22,19,15,.05),0 18px 40px rgba(125,95,23,.16)!important}
+html.es-light .comp-mwj9nd4l3 a,html.es-light .comp-mwj9nd4l3 button,html.es-light .comp-mwjb2xgf a,html.es-light .comp-mwjb2xgf button,html.es-light .comp-mwjaxv7m a,html.es-light .comp-mwjaxv7m button{background:#16130F!important;transition:background .25s}
+html.es-light .comp-mwj9nd4l3 a *,html.es-light .comp-mwj9nd4l3 button *,html.es-light .comp-mwjb2xgf *,html.es-light .comp-mwjaxv7m *{color:#fff!important}
+html.es-light .comp-mwj9nd4l3 a:hover,html.es-light .comp-mwj9nd4l3 button:hover,html.es-light .comp-mwjb2xgf a:hover,html.es-light .comp-mwjb2xgf button:hover,html.es-light .comp-mwjaxv7m a:hover,html.es-light .comp-mwjaxv7m button:hover{background:#B8923A!important}
+html.es-light .comp-mwj9nd4l3 a:hover *,html.es-light .comp-mwj9nd4l3 button:hover *,html.es-light .comp-mwjb2xgf a:hover *,html.es-light .comp-mwjb2xgf button:hover *,html.es-light .comp-mwjaxv7m a:hover *,html.es-light .comp-mwjaxv7m button:hover *{color:#16130F!important}
+html.es-light #comp-mwj9nd3a a:focus-visible,html.es-light #comp-mwjb2xgf a:focus-visible,html.es-light #comp-mwjaxv7m a:focus-visible,html.es-light #comp-mwjb2xgf:focus-visible,html.es-light #comp-mwjaxv7m:focus-visible{outline:2px solid #B8923A!important}
+/* FAQ built by shopify-faq.js */
+html.es-light .es-sfaq,html.es-light .es-sfaq h2,html.es-light .es-sfaq h3{color:#16130F}
+html.es-light .es-sfaq .intro{background:#F6EFDC;border:1px solid #EADFC4;-webkit-backdrop-filter:none;backdrop-filter:none}
+html.es-light .es-sfaq .intro p{color:#4A443A}
+html.es-light .es-sfaq .intro p.help{border-top-color:#E2D2A2;color:#5A5347}
+html.es-light .es-sfaq .intro a{color:#7D5F17;text-decoration-color:#B8923A}
+html.es-light .es-sfaq details{background:#fff;border:1px solid #EADFC4;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(22,19,15,.04),0 10px 24px rgba(125,95,23,.07)}
+html.es-light .es-sfaq details:hover{border-color:#D9C48C}
+html.es-light .es-sfaq details[open]{background:#FFFDF7;border-color:#B8923A}
+html.es-light .es-sfaq .pm{border-color:#CDB87A}
+html.es-light .es-sfaq .pm::before,html.es-light .es-sfaq .pm::after{background:#16130F}
+html.es-light .es-sfaq details[open] .pm{background:#F6EFDC}
+html.es-light .es-sfaq .ans p{color:#4A443A}
+html.es-light .es-sfaq summary:focus-visible{outline-color:#B8923A}
+/* shared site chrome on light pages: menu pill and the narrow bottom bar */
+html.es-light #es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}
+html.es-light #ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}
+html.es-light #ecs-fi a{color:#fff!important}
+html.es-light #ecs-fi a:focus-visible{outline-color:#B8923A!important}

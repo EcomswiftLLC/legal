@@ -11,6 +11,14 @@
     if (p === "/") return false;
     return !SKIP.test(p);
   }
+  /* Services pages use the soft white, black and gold look instead of the navy glass. */
+  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign)$/i;
+  var CHROME = "#es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}" +
+    "#ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}#ecs-fi a{color:#fff!important}#ecs-fi a:focus-visible{outline-color:#B8923A!important}";
+  function isLight() {
+    var p = location.pathname.replace(/\/+$/, "") || "/";
+    return LIGHT.test(p) || !!document.querySelector('iframe[src*="/legal/services/"]');
+  }
   function parse(c) {
     var m = /rgba?\(([^)]+)\)/.exec(c || "");
     if (!m) return null;
@@ -22,6 +30,7 @@
     return 0.2126 * f(c.r) + 0.7152 * f(c.g) + 0.0722 * f(c.b);
   }
   function css() {
+    if (isLight()) return "html,#SITE_CONTAINER,#masterPage,#PAGES_CONTAINER,#SITE_PAGES,#site-root,#main_MF,[id^=pageBackground_],[id^=pageBackground_] *,#BACKGROUND_GROUP_TRANSITION_GROUP,#BACKGROUND_GROUP_TRANSITION_GROUP *{background:transparent!important}body{background:#FBFAF7!important;color:#16130F}" + CHROME;
     return "body{background:#0D1226 linear-gradient(180deg,#151c3d 0,#0D1226 640px)!important;color:#fff}" +
       "html,#SITE_CONTAINER,#masterPage,#PAGES_CONTAINER,#SITE_PAGES,#site-root,#main_MF,[id^=pageBackground_],[id^=pageBackground_] *,#BACKGROUND_GROUP_TRANSITION_GROUP,#BACKGROUND_GROUP_TRANSITION_GROUP *{background:transparent!important}";
   }
@@ -88,7 +97,10 @@
   function run() {
     var st = document.getElementById("es-skin");
     if (!active()) { if (st) st.remove(); return; }
-    if (!st) { st = document.createElement("style"); st.id = "es-skin"; st.textContent = css(); document.head.appendChild(st); }
+    var light = isLight();
+    if (st && st.getAttribute("data-light") !== (light ? "1" : "0")) { st.remove(); st = null; }
+    if (!st) { st = document.createElement("style"); st.id = "es-skin"; st.setAttribute("data-light", light ? "1" : "0"); st.textContent = css(); document.head.appendChild(st); }
+    if (light) { document.documentElement.classList.add("es-light"); return; }
     try { glassify(); recolor(); } catch (e) { /* keep page usable */ }
   }
   function later() { clearTimeout(t); t = setTimeout(run, 160); }
