@@ -38,8 +38,16 @@
   function txt(e) { return (e.textContent || "").replace(/\s+/g, " ").trim(); }
   function build() {
     if (document.querySelector(".es-sfaq")) return true;
-    var head = document.getElementById("comp-mwjlx14t"), sub = document.getElementById("comp-mwjlx14u5");
-    if (!head || !sub || !/frequently asked/i.test(txt(head))) return false;
+    var head = null, sub = null;
+    [].slice.call(document.querySelectorAll('[id^="comp-"]')).some(function (e) {
+      if (e.children.length < 1 || e.querySelector('[id^="comp-"]')) return false;
+      if (!/^frequently asked/i.test(txt(e))) return false;
+      head = e; return true;
+    });
+    if (!head) return false;
+    sub = head.nextElementSibling;
+    while (sub && (sub.id === "" || !txt(sub))) sub = sub.nextElementSibling;
+    if (!sub) return false;
     var grid = head.parentElement, kids = [].slice.call(grid.children), items = [];
     function rowOf(c) { return parseInt(getComputedStyle(c).gridRowStart, 10) || 0; }
     function xOf(c) { return Math.round(c.getBoundingClientRect().x); }
@@ -89,7 +97,7 @@
   /* Accessibility + SEO polish for the service cards: real alt text instead of file names,
      unique link names instead of twelve identical "Read more" links, visible keyboard focus. */
   function polish() {
-    var cards = document.querySelectorAll("#comp-mwjlx12j .wixui-repeater__item");
+    var cards = document.querySelectorAll(".wixui-repeater__item");
     if (!cards.length) return false;
     if (!document.getElementById("es-pfaq-a11y")) {
       var st = document.createElement("style"); st.id = "es-pfaq-a11y";

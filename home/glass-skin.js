@@ -12,7 +12,7 @@
     return !SKIP.test(p);
   }
   /* Services pages use the soft white, black and gold look instead of the navy glass. */
-  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+)$/i;
+  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+|wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development)$/i;
   var CHROME = "#es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}" +
     "#ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}#ecs-fi a{color:#fff!important}#ecs-fi a:focus-visible{outline-color:#B8923A!important}";
   function isLight() {
@@ -94,15 +94,20 @@
     }
   }
   /* CMS platform pages (/platforms/<slug>): load their layout CSS and the FAQ accordion script. */
+  var PSLUG = /^\/(wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development)$/i;
   function platformAssets() {
-    if (!/^\/platforms\//i.test(location.pathname)) return;
+    var p = location.pathname.replace(/\/+$/, "");
+    var m = PSLUG.exec(p), old = /^\/platforms\//i.test(p);
+    if (!m && !old) return;
     var base = "https://ecomswiftllc.github.io/legal/home/";
     if (!document.getElementById("es-plat-css")) {
-      var l = document.createElement("link"); l.id = "es-plat-css"; l.rel = "stylesheet"; l.href = base + "platform-page.css?v=7"; document.head.appendChild(l);
+      var l = document.createElement("link"); l.id = "es-plat-css"; l.rel = "stylesheet";
+      l.href = m ? base + "plat/" + m[1].toLowerCase() + ".css?v=1" : base + "platform-page.css?v=7";
+      document.head.appendChild(l);
     }
     if (!window.__esPFaqL) {
       window.__esPFaqL = 1;
-      var sc = document.createElement("script"); sc.src = base + "platform-faq.js?v=1"; sc.defer = true; document.head.appendChild(sc);
+      var sc = document.createElement("script"); sc.src = base + "platform-faq.js?v=2"; sc.defer = true; document.head.appendChild(sc);
     }
   }
   var t;
