@@ -50,6 +50,7 @@
         el.setAttribute("data-esg", "1");
         if (isBtn || r.width < 150 || r.height < 52) {
           // small control: keep brand colours, lift near-black fills to white so they read on navy
+          imp(el, "border-radius", "999px");
           if (l < 0.06) { imp(el, "background", "#fff"); imp(el, "color", NAVY); imp(el, "border-color", "#fff"); el.setAttribute("data-esb", "1"); }
           else if (l > 0.8) { imp(el, "background", "rgba(255,255,255,.08)"); imp(el, "border-color", "rgba(255,255,255,.22)"); el.setAttribute("data-esc2", "1"); }
           continue;
@@ -57,6 +58,9 @@
         imp(el, "background", GLASS);
         imp(el, "backdrop-filter", "blur(14px)");
         imp(el, "-webkit-backdrop-filter", "blur(14px)");
+        imp(el, "border-radius", "16px");
+        imp(el, "overflow", "hidden");
+        if (parseFloat(cs.borderTopWidth) === 0) imp(el, "box-shadow", "inset 0 0 0 1px rgba(255,255,255,.09)");
         el.setAttribute("data-esp", "1");
       }
       var bd = parse(cs.borderTopColor);
