@@ -12,7 +12,7 @@
     return !SKIP.test(p);
   }
   /* Services pages use the soft white, black and gold look instead of the navy glass. */
-  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign)$/i;
+  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+)$/i;
   var CHROME = "#es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}" +
     "#ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}#ecs-fi a{color:#fff!important}#ecs-fi a:focus-visible{outline-color:#B8923A!important}";
   function isLight() {
@@ -93,6 +93,18 @@
       setImp(el, "color", big ? "#fff" : "rgba(255,255,255,.8)");
     }
   }
+  /* CMS platform pages (/platforms/<slug>): load their layout CSS and the FAQ accordion script. */
+  function platformAssets() {
+    if (!/^\/platforms\//i.test(location.pathname)) return;
+    var base = "https://ecomswiftllc.github.io/legal/home/";
+    if (!document.getElementById("es-plat-css")) {
+      var l = document.createElement("link"); l.id = "es-plat-css"; l.rel = "stylesheet"; l.href = base + "platform-page.css?v=1"; document.head.appendChild(l);
+    }
+    if (!window.__esPFaqL) {
+      window.__esPFaqL = 1;
+      var sc = document.createElement("script"); sc.src = base + "platform-faq.js?v=1"; sc.defer = true; document.head.appendChild(sc);
+    }
+  }
   var t;
   function run() {
     var st = document.getElementById("es-skin");
@@ -100,7 +112,7 @@
     var light = isLight();
     if (st && st.getAttribute("data-light") !== (light ? "1" : "0")) { st.remove(); st = null; }
     if (!st) { st = document.createElement("style"); st.id = "es-skin"; st.setAttribute("data-light", light ? "1" : "0"); st.textContent = css(); document.head.appendChild(st); }
-    if (light) { document.documentElement.classList.add("es-light"); return; }
+    if (light) { document.documentElement.classList.add("es-light"); platformAssets(); return; }
     try { glassify(); recolor(); } catch (e) { /* keep page usable */ }
   }
   function later() { clearTimeout(t); t = setTimeout(run, 160); }

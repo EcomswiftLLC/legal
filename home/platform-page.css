@@ -1,0 +1,114 @@
+/* Ecom Swift LLC - native CMS platform pages (/platforms/<slug>): soft white, black and gold.
+   One dynamic page, 11 platforms. Same look as /shopify. Component ids are the ones of the
+   "Platforms (Item)" page; every rule is scoped to html.es-light. Rows come from the Wix grid,
+   only the columns, sizes and looks are set here. */
+html.es-light body{background:#FBFAF7!important;color:#16130F!important}
+html.es-light #comp-mwjlx11w,html.es-light #comp-mwjlx11w [data-testid=colorUnderlay]{background:transparent!important}
+
+/* ---------- layout: three tracks (gutter, left, right, gutter) ---------- */
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122){display:grid!important;grid-template-columns:minmax(16px,1fr) repeat(2,minmax(0,calc((min(1220px,100vw - 64px) - 20px)/2))) minmax(16px,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;column-gap:20px!important;row-gap:0!important;padding-top:56px}
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122) > [id^="comp-mwjlx1"]{margin:0!important;width:auto!important;max-width:none!important;min-width:0!important;justify-self:stretch!important;left:auto!important;position:relative}
+html.es-light #comp-mwjlx122,html.es-light #comp-mwjlx12h,html.es-light #comp-mwjlx12j,html.es-light #comp-mwjlx14t,html.es-light #comp-mwjlx14u5{grid-column:2 / 4!important}
+html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14h6{grid-column:2!important}
+html.es-light #comp-mwjlx14o1,html.es-light #comp-mwjlx14p2,html.es-light #comp-mwjlx14q{grid-column:3!important}
+/* original FAQ boxes (hidden by platform-faq.js once the accordion is built; this keeps them tidy without scripts) */
+html.es-light #comp-mwjlx14w,html.es-light #comp-mwjlx150,html.es-light #comp-mwjlx1522,html.es-light #comp-mwjlx153,html.es-light #comp-mwjlx1566,html.es-light #comp-mwjlx1581{grid-column:2!important}
+html.es-light #comp-mwjlx14x1,html.es-light #comp-mwjlx1514,html.es-light #comp-mwjlx154,html.es-light #comp-mwjlx156,html.es-light #comp-mwjlx1575,html.es-light #comp-mwjlx1587{grid-column:3!important}
+
+/* ---------- type ---------- */
+html.es-light #comp-mwjlx122 *{color:#16130F!important;font-size:44px!important;line-height:1.1!important;letter-spacing:-.02em!important;text-align:left!important}
+html.es-light #comp-mwjlx122{margin-bottom:6px!important}
+html.es-light #comp-mwjlx122::before{content:"";position:absolute;left:0;top:-18px;width:48px;height:3px;border-radius:2px;background:#B8923A}
+html.es-light #comp-mwjlx12h{width:min(720px,100%)!important;justify-self:start!important;margin-bottom:34px!important}
+html.es-light #comp-mwjlx12h *{color:#4A443A!important;font-size:17px!important;line-height:1.5!important;text-align:left!important}
+
+/* ---------- service cards: 4 x 3, equal height ---------- */
+html.es-light #comp-mwjlx12j{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;height:auto!important}
+html.es-light #comp-mwjlx12j > div,html.es-light #comp-mwjlx12j > div > div{display:contents!important}
+html.es-light #comp-mwjlx12j div:has(> [id^="comp-mwjlx12r1__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
+html.es-light #comp-mwjlx12j > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwjlx12j > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwjlx12j > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwjlx12j > div > div:nth-child(4) > :nth-child(1){order:3}
+html.es-light #comp-mwjlx12j > div > div:nth-child(1) > :nth-child(2){order:4}html.es-light #comp-mwjlx12j > div > div:nth-child(2) > :nth-child(2){order:5}html.es-light #comp-mwjlx12j > div > div:nth-child(3) > :nth-child(2){order:6}html.es-light #comp-mwjlx12j > div > div:nth-child(4) > :nth-child(2){order:7}
+html.es-light #comp-mwjlx12j > div > div:nth-child(1) > :nth-child(3){order:8}html.es-light #comp-mwjlx12j > div > div:nth-child(2) > :nth-child(3){order:9}html.es-light #comp-mwjlx12j > div > div:nth-child(3) > :nth-child(3){order:10}html.es-light #comp-mwjlx12j > div > div:nth-child(4) > :nth-child(3){order:11}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx12r1__"]{height:100%!important;width:100%!important;margin:0!important;min-width:0!important;background:#fff!important;border:1px solid #EADFC4!important;border-top:3px solid #B8923A!important;border-radius:16px!important;overflow:hidden!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:0 1px 2px rgba(22,19,15,.04),0 14px 32px rgba(125,95,23,.09)!important;transition:box-shadow .3s,border-color .3s}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx12r1__"]:hover{border-color:#E2D2A2!important;border-top-color:#B8923A!important;box-shadow:0 1px 2px rgba(22,19,15,.05),0 18px 40px rgba(125,95,23,.16)!important}
+html.es-light #comp-mwjlx12j [id^="bgLayers_comp-mwjlx12r1__"],html.es-light #comp-mwjlx12j [id^="bgLayers_comp-mwjlx12r1__"] *{background:transparent!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx12r1__"] > div:not([id^="bgLayers"]){height:100%!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx12r1__"] > div:not([id^="bgLayers"]) > div{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:150px auto 1fr 52px!important;height:100%!important;padding-bottom:6px}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx12r1__"] > div:not([id^="bgLayers"]) > div > *{grid-column:1!important;margin-left:0!important;margin-right:0!important;width:auto!important;max-width:none!important;min-width:0!important;justify-self:stretch!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx1301__"]{height:150px!important;margin:0!important;width:100%!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx1301__"] img{width:100%!important;height:150px!important;object-fit:cover!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13l__"],html.es-light #comp-mwjlx12j [id^="comp-mwjlx13v__"],html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"]{margin-left:18px!important;margin-right:18px!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13l__"]{margin-top:16px!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13l__"] *{color:#16130F!important;text-align:left!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13v__"] *{color:#4A443A!important;text-align:left!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"]{align-self:end!important;height:40px!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] a,html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] button{background:#16130F!important;height:40px!important;min-height:0!important;border-radius:999px!important;transition:background .25s}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] *{color:#fff!important;font-size:14px!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] a:hover,html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] button:hover{background:#B8923A!important}
+html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] a:hover *,html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] button:hover *{color:#16130F!important}
+
+/* ---------- slim highlighted call-to-action panels ---------- */
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::before,html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::after{content:"";z-index:0;grid-row:4 / 7;border-radius:16px;background:linear-gradient(135deg,#F8F1DE,#FCF8EC);border:1px solid #E6D6A8;border-left:4px solid #B8923A;box-shadow:0 1px 2px rgba(22,19,15,.04),0 12px 28px rgba(125,95,23,.10)}
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::before{grid-column:2}
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::after{grid-column:3}
+html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14h6,html.es-light #comp-mwjlx14o1,html.es-light #comp-mwjlx14p2,html.es-light #comp-mwjlx14q{z-index:1;margin-left:28px!important;margin-right:24px!important}
+html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14o1{margin-top:22px!important}
+html.es-light #comp-mwjlx14h6,html.es-light #comp-mwjlx14q{justify-self:start!important;margin-bottom:22px!important;height:40px!important}
+html.es-light #comp-mwjlx14f2 *,html.es-light #comp-mwjlx14o1 *{color:#16130F!important;font-size:22px!important;line-height:1.2!important;text-align:left!important}
+html.es-light #comp-mwjlx14h *,html.es-light #comp-mwjlx14p2 *{color:#4A443A!important;font-size:15px!important;line-height:1.45!important;text-align:left!important}
+html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14p2{margin-top:6px!important;margin-bottom:14px!important}
+html.es-light #comp-mwjlx14h6 a,html.es-light #comp-mwjlx14h6 button,html.es-light #comp-mwjlx14q a,html.es-light #comp-mwjlx14q button{background:#16130F!important;height:40px!important;min-height:0!important;padding:0 22px!important;border-radius:999px!important;transition:background .25s}
+html.es-light #comp-mwjlx14h6 *,html.es-light #comp-mwjlx14q *{color:#fff!important;font-size:14px!important}
+html.es-light #comp-mwjlx14h6 a:hover,html.es-light #comp-mwjlx14h6 button:hover,html.es-light #comp-mwjlx14q a:hover,html.es-light #comp-mwjlx14q button:hover{background:#B8923A!important}
+html.es-light #comp-mwjlx14h6 a:hover *,html.es-light #comp-mwjlx14h6 button:hover *,html.es-light #comp-mwjlx14q a:hover *,html.es-light #comp-mwjlx14q button:hover *{color:#16130F!important}
+
+/* ---------- FAQ (heading and intro, then the accordion built by platform-faq.js) ---------- */
+html.es-light #comp-mwjlx14t{margin-top:72px!important}
+html.es-light #comp-mwjlx14t *{color:#16130F!important}
+html.es-light #comp-mwjlx14u5 *{color:#4A443A!important}
+html.es-light .es-sfaq{margin:0!important;width:auto!important;max-width:none!important;grid-column:2 / 4!important;padding:8px 0 72px!important;color:#16130F}
+html.es-light .es-sfaq,html.es-light .es-sfaq h2,html.es-light .es-sfaq h3{color:#16130F}
+html.es-light .es-sfaq .intro{background:#F6EFDC;border:1px solid #EADFC4;-webkit-backdrop-filter:none;backdrop-filter:none}
+html.es-light .es-sfaq .intro p{color:#4A443A}
+html.es-light .es-sfaq .intro p.help{border-top-color:#E2D2A2;color:#5A5347}
+html.es-light .es-sfaq .intro a{color:#7D5F17;text-decoration-color:#B8923A}
+html.es-light .es-sfaq details{background:#fff;border:1px solid #EADFC4;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 2px rgba(22,19,15,.04),0 10px 24px rgba(125,95,23,.07)}
+html.es-light .es-sfaq details:hover{border-color:#D9C48C}
+html.es-light .es-sfaq details[open]{background:#FFFDF7;border-color:#B8923A}
+html.es-light .es-sfaq .pm{border-color:#CDB87A}
+html.es-light .es-sfaq .pm::before,html.es-light .es-sfaq .pm::after{background:#16130F}
+html.es-light .es-sfaq details[open] .pm{background:#F6EFDC}
+html.es-light .es-sfaq .ans p{color:#4A443A}
+html.es-light .es-sfaq summary:focus-visible{outline-color:#B8923A}
+
+/* ---------- keyboard focus ---------- */
+html.es-light #comp-mwjlx12j a:focus-visible,html.es-light #comp-mwjlx14h6 a:focus-visible,html.es-light #comp-mwjlx14q a:focus-visible{outline:2px solid #B8923A!important;outline-offset:3px!important;border-radius:999px}
+
+/* ---------- shared site chrome on light pages ---------- */
+html.es-light #es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}
+html.es-light #ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}
+html.es-light #ecs-fi a{color:#fff!important}
+
+/* ---------- tablet and phone ---------- */
+@media (max-width:999px){
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122){grid-template-columns:16px minmax(0,1fr) 16px!important;column-gap:0!important;padding-top:40px}
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::before,html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::after{display:none}
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122) > [id^="comp-mwjlx1"]{grid-column:2!important}
+html.es-light #comp-mwjlx122 *{font-size:34px!important}
+html.es-light #comp-mwjlx12j{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14h6,html.es-light #comp-mwjlx14o1,html.es-light #comp-mwjlx14p2,html.es-light #comp-mwjlx14q{margin-left:0!important;margin-right:0!important}
+html.es-light #comp-mwjlx14f2{margin-top:16px!important}
+html.es-light #comp-mwjlx14o1{margin-top:32px!important}
+/* single column: the second call-to-action goes under the first, the FAQ boxes stack in reading order */
+html.es-light #comp-mwjlx14o1{grid-row:7!important}html.es-light #comp-mwjlx14p2{grid-row:8!important}html.es-light #comp-mwjlx14q{grid-row:9!important}
+html.es-light #comp-mwjlx14t{grid-row:10!important}html.es-light #comp-mwjlx14u5{grid-row:11!important}
+html.es-light #comp-mwjlx14w{grid-row:12!important}html.es-light #comp-mwjlx150{grid-row:13!important}
+html.es-light #comp-mwjlx14x1{grid-row:14!important}html.es-light #comp-mwjlx1514{grid-row:15!important}
+html.es-light #comp-mwjlx1522{grid-row:16!important}html.es-light #comp-mwjlx153{grid-row:17!important}
+html.es-light #comp-mwjlx154{grid-row:18!important}html.es-light #comp-mwjlx156{grid-row:19!important}
+html.es-light #comp-mwjlx1566{grid-row:20!important}html.es-light #comp-mwjlx1581{grid-row:21!important}
+html.es-light #comp-mwjlx1575{grid-row:22!important}html.es-light #comp-mwjlx1587{grid-row:23!important}
+}
+@media (max-width:560px){
+html.es-light #comp-mwjlx12j{grid-template-columns:minmax(0,1fr)!important}
+}
