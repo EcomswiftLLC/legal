@@ -7,7 +7,7 @@ html.es-light #comp-mwjlx11w,html.es-light #comp-mwjlx11w [data-testid=colorUnde
 
 /* ---------- layout: three tracks (gutter, left, right, gutter) ---------- */
 html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122){display:grid!important;grid-template-columns:minmax(16px,1fr) repeat(2,minmax(0,calc((min(1220px,100vw - 64px) - 20px)/2))) minmax(16px,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;column-gap:20px!important;row-gap:0!important;padding-top:56px}
-html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122) > [id^="comp-mwjlx1"]{margin:0!important;width:auto!important;max-width:none!important;min-width:0!important;justify-self:stretch!important;left:auto!important;position:relative}
+html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122) > [id^="comp-mwjlx1"]{margin-left:0!important;margin-right:0!important;width:auto!important;max-width:none!important;min-width:0!important;justify-self:stretch!important;left:auto!important;position:relative}
 html.es-light #comp-mwjlx122,html.es-light #comp-mwjlx12h,html.es-light #comp-mwjlx12j,html.es-light #comp-mwjlx14t,html.es-light #comp-mwjlx14u5{grid-column:2 / 4!important}
 html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14h6{grid-column:2!important}
 html.es-light #comp-mwjlx14o1,html.es-light #comp-mwjlx14p2,html.es-light #comp-mwjlx14q{grid-column:3!important}
@@ -17,13 +17,13 @@ html.es-light #comp-mwjlx14x1,html.es-light #comp-mwjlx1514,html.es-light #comp-
 
 /* ---------- type ---------- */
 html.es-light #comp-mwjlx122 *{color:#16130F!important;font-size:44px!important;line-height:1.1!important;letter-spacing:-.02em!important;text-align:left!important}
-html.es-light #comp-mwjlx122{margin-bottom:6px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx122{margin-bottom:6px!important}
 html.es-light #comp-mwjlx122::before{content:"";position:absolute;left:0;top:-18px;width:48px;height:3px;border-radius:2px;background:#B8923A}
-html.es-light #comp-mwjlx12h{width:min(720px,100%)!important;justify-self:start!important;margin-bottom:34px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx12h{width:min(720px,100%)!important;justify-self:start!important;margin-bottom:34px!important}
 html.es-light #comp-mwjlx12h *{color:#4A443A!important;font-size:17px!important;line-height:1.5!important;text-align:left!important}
 
 /* ---------- service cards: 4 x 3, equal height ---------- */
-html.es-light #comp-mwjlx12j{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;height:auto!important}
+html.es-light #comp-mwjlx12j{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;height:auto!important;margin-bottom:36px!important}
 html.es-light #comp-mwjlx12j > div,html.es-light #comp-mwjlx12j > div > div{display:contents!important}
 html.es-light #comp-mwjlx12j div:has(> [id^="comp-mwjlx12r1__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
 html.es-light #comp-mwjlx12j > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwjlx12j > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwjlx12j > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwjlx12j > div > div:nth-child(4) > :nth-child(1){order:3}
@@ -52,22 +52,21 @@ html.es-light #comp-mwjlx12j [id^="comp-mwjlx13y1__"] a:hover *,html.es-light #c
 html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::before,html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::after{content:"";z-index:0;grid-row:4 / 7;border-radius:16px;background:linear-gradient(135deg,#F8F1DE,#FCF8EC);border:1px solid #E6D6A8;border-left:4px solid #B8923A;box-shadow:0 1px 2px rgba(22,19,15,.04),0 12px 28px rgba(125,95,23,.10)}
 html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::before{grid-column:2}
 html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::after{grid-column:3}
-html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14h6,html.es-light #comp-mwjlx14o1,html.es-light #comp-mwjlx14p2,html.es-light #comp-mwjlx14q{z-index:1;margin-left:28px!important;margin-right:24px!important}
-html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14o1{margin-top:22px!important}
-html.es-light #comp-mwjlx14h6,html.es-light #comp-mwjlx14q{justify-self:start!important;margin-bottom:22px!important;height:40px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14f2,html.es-light #comp-mwjlx11w #comp-mwjlx14h,html.es-light #comp-mwjlx11w #comp-mwjlx14h6,html.es-light #comp-mwjlx11w #comp-mwjlx14o1,html.es-light #comp-mwjlx11w #comp-mwjlx14p2,html.es-light #comp-mwjlx11w #comp-mwjlx14q{z-index:1;margin-left:28px!important;margin-right:24px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14f2,html.es-light #comp-mwjlx11w #comp-mwjlx14o1{margin-top:22px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14h,html.es-light #comp-mwjlx11w #comp-mwjlx14p2{margin-top:6px!important;margin-bottom:14px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14h6,html.es-light #comp-mwjlx11w #comp-mwjlx14q{justify-self:start!important;margin-bottom:22px!important;height:40px!important}
 html.es-light #comp-mwjlx14f2 *,html.es-light #comp-mwjlx14o1 *{color:#16130F!important;font-size:22px!important;line-height:1.2!important;text-align:left!important}
 html.es-light #comp-mwjlx14h *,html.es-light #comp-mwjlx14p2 *{color:#4A443A!important;font-size:15px!important;line-height:1.45!important;text-align:left!important}
-html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14p2{margin-top:6px!important;margin-bottom:14px!important}
 html.es-light #comp-mwjlx14h6 a,html.es-light #comp-mwjlx14h6 button,html.es-light #comp-mwjlx14q a,html.es-light #comp-mwjlx14q button{background:#16130F!important;height:40px!important;min-height:0!important;padding:0 22px!important;border-radius:999px!important;transition:background .25s}
 html.es-light #comp-mwjlx14h6 *,html.es-light #comp-mwjlx14q *{color:#fff!important;font-size:14px!important}
 html.es-light #comp-mwjlx14h6 a:hover,html.es-light #comp-mwjlx14h6 button:hover,html.es-light #comp-mwjlx14q a:hover,html.es-light #comp-mwjlx14q button:hover{background:#B8923A!important}
 html.es-light #comp-mwjlx14h6 a:hover *,html.es-light #comp-mwjlx14h6 button:hover *,html.es-light #comp-mwjlx14q a:hover *,html.es-light #comp-mwjlx14q button:hover *{color:#16130F!important}
 
 /* ---------- FAQ (heading and intro, then the accordion built by platform-faq.js) ---------- */
-html.es-light #comp-mwjlx14t{margin-top:72px!important}
 html.es-light #comp-mwjlx14t *{color:#16130F!important}
 html.es-light #comp-mwjlx14u5 *{color:#4A443A!important}
-html.es-light .es-sfaq{margin:0!important;width:auto!important;max-width:none!important;grid-column:2 / 4!important;padding:8px 0 72px!important;color:#16130F}
+html.es-light .es-sfaq{margin:64px 0 0!important;width:auto!important;max-width:none!important;grid-column:2 / 4!important;padding:8px 0 72px!important;color:#16130F}
 html.es-light .es-sfaq,html.es-light .es-sfaq h2,html.es-light .es-sfaq h3{color:#16130F}
 html.es-light .es-sfaq .intro{background:#F6EFDC;border:1px solid #EADFC4;-webkit-backdrop-filter:none;backdrop-filter:none}
 html.es-light .es-sfaq .intro p{color:#4A443A}
@@ -97,9 +96,9 @@ html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122)::before,html.es-light #co
 html.es-light #comp-mwjlx11w div:has(> #comp-mwjlx122) > [id^="comp-mwjlx1"]{grid-column:2!important}
 html.es-light #comp-mwjlx122 *{font-size:34px!important}
 html.es-light #comp-mwjlx12j{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
-html.es-light #comp-mwjlx14f2,html.es-light #comp-mwjlx14h,html.es-light #comp-mwjlx14h6,html.es-light #comp-mwjlx14o1,html.es-light #comp-mwjlx14p2,html.es-light #comp-mwjlx14q{margin-left:0!important;margin-right:0!important}
-html.es-light #comp-mwjlx14f2{margin-top:16px!important}
-html.es-light #comp-mwjlx14o1{margin-top:32px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14f2,html.es-light #comp-mwjlx11w #comp-mwjlx14h,html.es-light #comp-mwjlx11w #comp-mwjlx14h6,html.es-light #comp-mwjlx11w #comp-mwjlx14o1,html.es-light #comp-mwjlx11w #comp-mwjlx14p2,html.es-light #comp-mwjlx11w #comp-mwjlx14q{margin-left:0!important;margin-right:0!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14f2{margin-top:16px!important}
+html.es-light #comp-mwjlx11w #comp-mwjlx14o1{margin-top:32px!important}
 /* single column: the second call-to-action goes under the first, the FAQ boxes stack in reading order */
 html.es-light #comp-mwjlx14o1{grid-row:7!important}html.es-light #comp-mwjlx14p2{grid-row:8!important}html.es-light #comp-mwjlx14q{grid-row:9!important}
 html.es-light #comp-mwjlx14t{grid-row:10!important}html.es-light #comp-mwjlx14u5{grid-row:11!important}
