@@ -69,6 +69,14 @@ html.es-light #comp-mwjlx14t *{color:#16130F!important}
 html.es-light #comp-mwjlx14u5 *{color:#4A443A!important}
 html.es-light .es-sfaq{margin:64px 0 0!important;width:auto!important;max-width:none!important;grid-column:2 / 4!important;padding:8px 0 72px!important;color:#16130F}
 html.es-light .es-sfaq,html.es-light .es-sfaq h2,html.es-light .es-sfaq h3{color:#16130F}
+/* same FAQ height on every platform page: fixed minimum, steady heading size, accordion rows stretch to fill it */
+@media (min-width:900px){
+html.es-light .es-sfaq{min-height:500px}
+html.es-light .es-sfaq h2{font-size:2.3rem!important}
+html.es-light .es-sfaq .col:last-child{justify-content:space-between}
+html.es-light .es-sfaq .col:last-child details{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
+html.es-light .es-sfaq .col:last-child details:not([open]) .ans{display:none}
+}
 html.es-light .es-sfaq .intro{background:#F6EFDC;border:1px solid #EADFC4;-webkit-backdrop-filter:none;backdrop-filter:none}
 html.es-light .es-sfaq .intro p{color:#4A443A}
 html.es-light .es-sfaq .intro p.help{border-top-color:#E2D2A2;color:#5A5347}
