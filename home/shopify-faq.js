@@ -112,18 +112,17 @@
     });
     return n >= cards.length;
   }
-  var done = false, timer;
+  /* Wix renders the page on the server and then re-renders it in the browser, which wipes
+     earlier DOM edits. So wait for the page to finish loading and re-apply whenever the
+     FAQ or the card labels disappear. */
+  var timer;
   function attempt() {
-    if (done) return;
-    var p = false, b = false;
-    var d = window.__esDbg = window.__esDbg || [];
-    try { p = polish(); } catch (e) { d.push("polish " + e.message); }
-    try { b = build(); } catch (e) { d.push("build " + e.message); }
-    if (d.length < 40) d.push((p ? "P" : "p") + (b ? "B" : "b") + Math.round(performance.now() / 100));
-    if (p && b) { done = true; if (mo) mo.disconnect(); }
+    if (document.readyState !== "complete") return;
+    try { polish(); } catch (e) { /* next change retries */ }
+    try { build(); } catch (e) { /* next change retries */ }
   }
-  var mo = null;
-  try { mo = new MutationObserver(function () { clearTimeout(timer); timer = setTimeout(attempt, 150); }); mo.observe(document.documentElement, { childList: true, subtree: true }); } catch (e) {}
+  function later(ms) { clearTimeout(timer); timer = setTimeout(attempt, ms || 250); }
+  try { new MutationObserver(function () { later(250); }).observe(document.documentElement, { childList: true, subtree: true }); } catch (e) {}
+  addEventListener("load", function () { later(300); setTimeout(attempt, 1500); setTimeout(attempt, 4000); });
   attempt();
-  var n = 0, iv = setInterval(function () { attempt(); if (done || ++n > 150) { clearInterval(iv); if (mo) mo.disconnect(); } }, 1000);
 })();
