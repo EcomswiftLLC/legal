@@ -157,7 +157,7 @@ function takeover() {
   if (!host.isConnected) sp.appendChild(host);
   return true;
 }
-var HIDE = "html.es-proc-page #SITE_PAGES>*:not(#es-doc-host),html.es-proc-page #PAGES_CONTAINER>*:not(#es-doc-host){position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;opacity:0!important;pointer-events:none!important}";
+var HIDE = "html.es-proc-page #SITE_PAGES>*:not(#es-doc-host){position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;opacity:0!important;pointer-events:none!important}";
 function ensureAssets() {
   if (!document.getElementById("es-doc-hide")) { var hs = document.createElement("style"); hs.id = "es-doc-hide"; hs.textContent = HIDE; document.head.appendChild(hs); }
   if (!document.getElementById("es-font")) { var l = document.createElement("link"); l.id = "es-font"; l.rel = "stylesheet"; l.href = "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap"; document.head.appendChild(l); }
