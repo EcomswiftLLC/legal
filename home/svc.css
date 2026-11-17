@@ -105,7 +105,8 @@
 .es-svc .opt small{display:block;color:var(--muted);font-size:12.5px;line-height:1.35}
 .es-svc .opt .p{font-weight:600;font-variant-numeric:tabular-nums}
 .es-svc .cta{display:grid;gap:8px}
-.es-svc .safe{display:grid;gap:5px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:11px}
+.es-svc .safe{display:grid;gap:4px;font-size:12.5px;line-height:1.4;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.es-svc .safe .fine{margin:4px 0 0;padding:0;text-align:left;font-size:12.5px}
 .es-svc .safe span{display:flex;gap:8px;align-items:center}
 .es-svc .safe svg{color:var(--gold);flex:none}
 .es-svc .fine{font-size:13px;color:var(--muted);margin:0;text-align:center}
