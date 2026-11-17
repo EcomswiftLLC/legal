@@ -6,7 +6,7 @@ html.es-light body{background:#FBFAF7!important;color:#16130F!important}
 html.es-light #comp-mwkfp9q7,html.es-light #comp-mwkfp9q7 [data-testid=colorUnderlay]{background:transparent!important}
 
 /* ---------- layout: three tracks (gutter, left, right, gutter) ---------- */
-html.es-light #comp-mwkfp9q7 div:has(> #comp-mwkfp9qa){display:grid!important;grid-template-columns:minmax(16px,1fr) repeat(2,minmax(0,calc((min(1220px,100vw - 64px) - 20px)/2))) minmax(16px,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;column-gap:20px!important;row-gap:0!important;padding-top:56px}
+html.es-light #comp-mwkfp9q7 div:has(> #comp-mwkfp9qa){display:grid!important;grid-template-columns:minmax(16px,1fr) repeat(2,minmax(0,calc((min(1220px,100vw - 64px) - 20px)/2))) minmax(16px,1fr)!important;grid-template-rows:none!important;grid-auto-rows:auto!important;column-gap:20px!important;row-gap:0!important;padding-top:1px}
 html.es-light #comp-mwkfp9q7 div:has(> #comp-mwkfp9qa) > [id^="comp-mwkfp9"]{margin-left:0!important;margin-right:0!important;width:auto!important;max-width:none!important;min-width:0!important;justify-self:stretch!important;left:auto!important;position:relative}
 html.es-light #comp-mwkfp9qa,html.es-light #comp-mwkfp9qc,html.es-light #comp-mwkfp9qe,html.es-light #comp-mwkfp9r8,html.es-light #comp-mwkfp9r86{grid-column:2 / 4!important}
 html.es-light #comp-mwkfp9r12,html.es-light #comp-mwkfp9r3,html.es-light #comp-mwkfp9r4{grid-column:2!important}
@@ -19,11 +19,11 @@ html.es-light #comp-mwkfp9r910,html.es-light #comp-mwkfp9rb3,html.es-light #comp
 html.es-light #comp-mwkfp9qa *{color:#16130F!important;font-size:44px!important;line-height:1.1!important;letter-spacing:-.02em!important;text-align:left!important}
 html.es-light #comp-mwkfp9q7 div:has(> #comp-mwkfp9qa) > #comp-mwkfp9qa{margin-bottom:6px!important}
 html.es-light #comp-mwkfp9qa::before{content:"";position:absolute;left:0;top:-18px;width:48px;height:3px;border-radius:2px;background:#B8923A}
-html.es-light #comp-mwkfp9q7 div:has(> #comp-mwkfp9qa) > #comp-mwkfp9qc{width:min(720px,100%)!important;justify-self:start!important;margin-bottom:34px!important}
+html.es-light #comp-mwkfp9q7 div:has(> #comp-mwkfp9qa) > #comp-mwkfp9qc{width:min(720px,100%)!important;justify-self:start!important;margin-bottom:29px!important}
 html.es-light #comp-mwkfp9qc *{color:#4A443A!important;font-size:17px!important;line-height:1.5!important;text-align:left!important}
 
 /* ---------- service cards: 4 x 3, equal height ---------- */
-html.es-light #comp-mwkfp9qe{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;height:auto!important;margin-bottom:36px!important}
+html.es-light #comp-mwkfp9qe{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:minmax(351px,auto)!important;height:auto!important;margin-bottom:36px!important}
 html.es-light #comp-mwkfp9qe > div,html.es-light #comp-mwkfp9qe > div > div{display:contents!important}
 html.es-light #comp-mwkfp9qe div:has(> [id^="comp-mwkfp9qg4__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
 html.es-light #comp-mwkfp9qe > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwkfp9qe > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwkfp9qe > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwkfp9qe > div > div:nth-child(4) > :nth-child(1){order:3}
