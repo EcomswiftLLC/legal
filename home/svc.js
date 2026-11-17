@@ -5,7 +5,7 @@
   if (window.__esSvc) return;
   window.__esSvc = {};
   var BASE = window.__ES_SVC_BASE || "https://ecomswiftllc.github.io/legal/home/";
-  var VER = "5";
+  var VER = "6";
   var MEDIA = "https://static.wixstatic.com/media/";
   var CAT = ["b2970c_b39d8eeda7d44d74a9b3df1972529b96~mv2.webp", "b2970c_3f1b4de685a44fc1b4f591b83cc58dcc~mv2.webp", "b2970c_472efb37848341a282994ac5f3ed5984~mv2.webp", "b2970c_af682593689f4db7a1257efefc1fd529~mv2.webp", "b2970c_be4aa33273ae42628091dda77265b61f~mv2.webp", "b2970c_a0af11a457c142e9b65a8c646f9d96f1~mv2.webp", "b2970c_c8c44784d1bb4d08be5153ec34739872~mv2.webp", "b2970c_a78b1bf7074542cebda4698a46949cce~mv2.webp", "b2970c_5916c892023e4839ac399d36c9b612b5~mv2.webp", "b2970c_08543b0ada414be6842af4111c1890ab~mv2.webp", "b2970c_0b167f6c84e44ebfa84b88e78dcb5b8d~mv2.webp", "b2970c_3a7d8f117b944a90a72d6c050d8bb182~mv2.webp"];
   var ALT = ["Laptop beside a shopping cart", "Code on a computer screen", "Shipping box marked fragile", "Website wireframes sketched beside a phone", "Hands sorting clothes on a rack", "Team meeting around a table", "Analytics chart on a tablet", "Phone showing app icons", "Parcel being packed beside a laptop", "Letter tiles spelling SEO", "Hands holding a gift-wrapped package", "Clipboard with a calculator and notes"];
@@ -109,7 +109,7 @@
   function view() {
     var p = P(), tt = total();
     var h = '<div class="wrap"><div class="page"><div class="left">' +
-      '<div class="topline"><div class="crumbs"><a href="/">Home</a> / <a href="/services">Services</a> / <a href="/' + esc(D.platform) + '">' + esc(D.pname) + "</a> / <span>" + esc(D.title) + '</span></div><button type="button" class="cartbtn" data-opencart aria-label="Open cart">' + ic.cart + '<em data-cartn hidden>0</em></button></div>' +
+      '<div class="topline"><div class="crumbs"><a href="/">Home</a> / <a href="/' + esc(D.platform) + '">' + esc(D.pname) + "</a> / <span>" + esc(D.title) + '</span></div><button type="button" class="cartbtn" data-opencart aria-label="Open cart">' + ic.cart + '<em data-cartn hidden>0</em></button></div>' +
       "<h1>" + esc(D.h1) + "</h1>" +
       '<div class="seller"><i>E</i><b>Ecom Swift LLC</b><span class="chip">' + esc(D.chip) + "</span></div>" +
       gallery() +
@@ -265,7 +265,7 @@
       { "@type": "Service", name: D.h1, serviceType: D.title, description: D.meta, url: location.origin + "/service/" + D.slug, areaServed: "Worldwide", provider: { "@type": "Organization", name: "Ecom Swift LLC", url: "https://www.ecomswiftllc.com" },
         offers: { "@type": "AggregateOffer", priceCurrency: "USD", lowPrice: P3[0].price, highPrice: P3[2].price, offerCount: 3, offers: P3.map(function (p) { return { "@type": "Offer", name: D.title + ": " + p.name + " package, delivered in " + p.days + " days", price: p.price, priceCurrency: "USD", availability: "https://schema.org/InStock", url: location.origin + "/service/" + D.slug }; }) } },
       { "@type": "FAQPage", mainEntity: faqs().map(function (f) { return { "@type": "Question", name: f[0], acceptedAnswer: { "@type": "Answer", text: f[1] } }; }) },
-      { "@type": "BreadcrumbList", itemListElement: [["Home", "/"], ["Services", "/services"], [D.pname, "/" + D.platform], [D.title, "/service/" + D.slug]].map(function (b, i) { return { "@type": "ListItem", position: i + 1, name: b[0], item: location.origin + b[1] }; }) }
+      { "@type": "BreadcrumbList", itemListElement: [["Home", "/"], [D.pname, "/" + D.platform], [D.title, "/service/" + D.slug]].map(function (b, i) { return { "@type": "ListItem", position: i + 1, name: b[0], item: location.origin + b[1] }; }) }
     ];
     var s = document.getElementById("es-svc-ld");
     if (!s) { s = document.createElement("script"); s.type = "application/ld+json"; s.id = "es-svc-ld"; document.head.appendChild(s); }
