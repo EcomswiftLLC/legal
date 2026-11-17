@@ -71,7 +71,7 @@ html.es-light .es-sfaq{margin:64px 0 0!important;width:auto!important;max-width:
 html.es-light .es-sfaq,html.es-light .es-sfaq h2,html.es-light .es-sfaq h3{color:#16130F}
 /* same FAQ height on every platform page: fixed minimum, steady heading size, accordion rows stretch to fill it */
 @media (min-width:900px){
-html.es-light .es-sfaq{min-height:500px}
+html.es-light .es-sfaq{min-height:525px}
 html.es-light .es-sfaq h2{font-size:2.3rem!important}
 html.es-light .es-sfaq .col:last-child{justify-content:space-between}
 html.es-light .es-sfaq .col:last-child details{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center}
