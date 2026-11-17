@@ -5,7 +5,7 @@
   if (window.__esSvc) return;
   window.__esSvc = {};
   var BASE = window.__ES_SVC_BASE || "https://ecomswiftllc.github.io/legal/home/";
-  var VER = "9";
+  var VER = "10";
   var MEDIA = "https://static.wixstatic.com/media/";
   var CAT = ["b2970c_b39d8eeda7d44d74a9b3df1972529b96~mv2.webp", "b2970c_3f1b4de685a44fc1b4f591b83cc58dcc~mv2.webp", "b2970c_472efb37848341a282994ac5f3ed5984~mv2.webp", "b2970c_af682593689f4db7a1257efefc1fd529~mv2.webp", "b2970c_be4aa33273ae42628091dda77265b61f~mv2.webp", "b2970c_a0af11a457c142e9b65a8c646f9d96f1~mv2.webp", "b2970c_c8c44784d1bb4d08be5153ec34739872~mv2.webp", "b2970c_a78b1bf7074542cebda4698a46949cce~mv2.webp", "b2970c_5916c892023e4839ac399d36c9b612b5~mv2.webp", "b2970c_08543b0ada414be6842af4111c1890ab~mv2.webp", "b2970c_0b167f6c84e44ebfa84b88e78dcb5b8d~mv2.webp", "b2970c_3a7d8f117b944a90a72d6c050d8bb182~mv2.webp"];
   var ALT = ["Laptop beside a shopping cart", "Code on a computer screen", "Shipping box marked fragile", "Website wireframes sketched beside a phone", "Hands sorting clothes on a rack", "Team meeting around a table", "Analytics chart on a tablet", "Phone showing app icons", "Parcel being packed beside a laptop", "Letter tiles spelling SEO", "Hands holding a gift-wrapped package", "Clipboard with a calculator and notes"];
@@ -27,8 +27,8 @@
   function collabCopy() {
     var w = { store: "store", site: "website", account: "account", app: "store", project: "store or website" }[D.req] || "store";
     return isShop()
-      ? { lbl: "Collaborator code", ph: "4-digit code", sm: "Optional. Lets us request access to your " + w + " without a password. Find it in Settings, then Users and permissions, then Security." }
-      : { lbl: "Collaborator code", ph: "Code, if your platform gives you one", sm: "Optional. If your platform gives you a collaborator or access code for your " + w + ", enter it here. Never share your password." };
+      ? { lbl: "Collaborator code", ph: "4-digit code", sm: "Optional. Gives us access to your " + w + " without a password. Find it under Settings, Users and permissions, Security." }
+      : { lbl: "Collaborator code", ph: "Code, if your platform gives you one", sm: "Optional. If your platform gives you an access code for your " + w + ", add it here. Never share a password." };
   }
   var ic = {
     check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
@@ -105,7 +105,7 @@
       '<details class="extras"' + (Object.keys(st.add).length ? " open" : "") + "><summary>Add extras</summary><div class=\"lst\">" + al.map(function (a) { return '<label class="opt"><input type="checkbox" name="ad" value="' + a.id + '"' + (st.add[a.id] ? " checked" : "") + "><span><b>" + esc(a.name) + "</b><small>" + esc(a.desc) + '</small></span><span class="p">+' + usd(a.price) + "</span></label>"; }).join("") + "</div></details>" +
       '<div class="cta"><button type="button" class="btn block" data-buy>Buy now (' + usd(tt) + ')</button><button type="button" class="btn ghost block" data-atc>' + ic.cart + "Add to cart</button></div>" +
       reqForm() +
-      '<div class="safe"><span>' + ic.lock + "Secure checkout</span><span>" + ic.key + "No passwords shared</span><span>" + ic.clock + "Team replies in 1-3 hours</span>" +
+      '<div class="safe"><span>' + ic.lock + "Secure checkout</span><span>" + ic.key + "No passwords shared</span>" +
       '<p class="fine">Need something bigger? <a href="/contact">Request a quote</a></p></div>' +
       "</div></div></aside>";
   }
