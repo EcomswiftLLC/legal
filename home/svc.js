@@ -298,7 +298,7 @@
     ensureCss();
     if (!takeover()) { mountedSlug = ""; return; }
     render(); ld();
-    document.documentElement.classList.add("es-svc-page");
+    document.documentElement.classList.add("es-svc-page"); var pe = document.getElementById("es-pre"); if (pe) pe.remove();
   }
   function mount() {
     var slug = slugNow(); if (!slug) return;
