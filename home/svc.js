@@ -5,7 +5,7 @@
   if (window.__esSvc) return;
   window.__esSvc = {};
   var BASE = window.__ES_SVC_BASE || "https://ecomswiftllc.github.io/legal/home/";
-  var VER = "6";
+  var VER = "7";
   var MEDIA = "https://static.wixstatic.com/media/";
   var CAT = ["b2970c_b39d8eeda7d44d74a9b3df1972529b96~mv2.webp", "b2970c_3f1b4de685a44fc1b4f591b83cc58dcc~mv2.webp", "b2970c_472efb37848341a282994ac5f3ed5984~mv2.webp", "b2970c_af682593689f4db7a1257efefc1fd529~mv2.webp", "b2970c_be4aa33273ae42628091dda77265b61f~mv2.webp", "b2970c_a0af11a457c142e9b65a8c646f9d96f1~mv2.webp", "b2970c_c8c44784d1bb4d08be5153ec34739872~mv2.webp", "b2970c_a78b1bf7074542cebda4698a46949cce~mv2.webp", "b2970c_5916c892023e4839ac399d36c9b612b5~mv2.webp", "b2970c_08543b0ada414be6842af4111c1890ab~mv2.webp", "b2970c_0b167f6c84e44ebfa84b88e78dcb5b8d~mv2.webp", "b2970c_3a7d8f117b944a90a72d6c050d8bb182~mv2.webp"];
   var ALT = ["Laptop beside a shopping cart", "Code on a computer screen", "Shipping box marked fragile", "Website wireframes sketched beside a phone", "Hands sorting clothes on a rack", "Team meeting around a table", "Analytics chart on a tablet", "Phone showing app icons", "Parcel being packed beside a laptop", "Letter tiles spelling SEO", "Hands holding a gift-wrapped package", "Clipboard with a calculator and notes"];
@@ -19,6 +19,17 @@
     account: { head: "Tell us about your account", url: "Link to your store or seller page", ph: "https://", none: "I do not have an account yet. Set one up for me.", name: "Store or brand name", nph: "For example, Oak and Linen", nsmall: "You can change it later.", sell: "What will you sell?", sph: "For example, kitchen tools or handmade candles", kind: ["Your products", "I have my own products", "I resell other brands"], mkt: "Main marketplace or country", mph: "For example, Amazon US", msmall: "Where you sell or plan to sell.", eurl: "Enter a link to your store or seller page, or tick the box if you do not have an account yet.", ename: "Enter a store or brand name. You can change it later.", esell: "Tell us what you plan to sell.", ekind: "Choose whether you have your own products or resell other brands.", emkt: "Enter the marketplace or country you sell in.", thing: "account" },
     project: { head: "Tell us about your project", url: "Your website or store link", ph: "https://yourbusiness.com", none: "I do not have a website yet.", name: "Business name", nph: "For example, Oak and Linen", nsmall: "You can change it later.", sell: "What does your business do?", sph: "For example, we sell skincare online", goal: "What should we do for you?", gph: "For example, set up a chatbot for my store", mkt: "Primary market", mph: "For example, United States", msmall: "The country or region you mainly sell to.", eurl: "Enter your website or store link, or tick the box if you do not have a website yet.", ename: "Enter your business name.", esell: "Tell us what your business does.", egoal: "Tell us what you want us to do.", emkt: "Enter the country or region you mainly sell to.", thing: "project" }
   };
+  var HEAD = "Provide the requirements", CONTACT_NOTE = "Our team will contact you within 1-3 hours after you place an order.";
+  var MKT_P = { "ecommerce-seo": 1, "email-and-sms-marketing": 1, "paid-ads-management": 1, "social-media-marketing": 1, "ai-marketing": 1, "lead-generation-funnels": 1, "conversion-optimization": 1, "marketplace-listings": 1, "amazon-management": 1, "ebay-management": 1, "etsy-management": 1 };
+  function needMkt() { return !!MKT_P[D.platform] || /(^|-)(seo|ads|advertising|marketing)(-|$)/.test(D.slug); }
+  function needAccess() { return D.req !== "app" || /^(shopify|wix|woocommerce)-apps$/.test(D.platform); }
+  function isShop() { return /^shopify/.test(D.platform); }
+  function collabCopy() {
+    var w = { store: "store", site: "website", account: "account", app: "store", project: "store or website" }[D.req] || "store";
+    return isShop()
+      ? { lbl: "Collaborator code", ph: "4-digit code", sm: "Optional. Lets us request access to your " + w + " without a password. Find it in Settings, then Users and permissions, then Security." }
+      : { lbl: "Collaborator code", ph: "Code, if your platform gives you one", sm: "Optional. If your platform gives you a collaborator or access code for your " + w + ", enter it here. Never share your password." };
+  }
   var ic = {
     check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
     clock: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
@@ -63,8 +74,8 @@
   }
   function reqForm() {
     var f = FORMS[D.req], r = st.req, sc = D.scratch, ns = sc && r.nostore;
-    var h = '<details class="reqd" id="reqd"' + (st.reqOpen ? " open" : "") + "><summary>" + esc(f.head) + "</summary>" +
-      '<form class="req" id="req" novalidate aria-label="' + esc(f.head) + '" onsubmit="return false">' +
+    var h = '<details class="reqd" id="reqd"' + (st.reqOpen ? " open" : "") + "><summary>" + HEAD + "</summary>" +
+      '<form class="req" id="req" novalidate aria-label="' + HEAD + '" onsubmit="return false">' +
       '<label class="fld"><span>' + esc(f.url) + '</span><input type="url" id="f-url" inputmode="url" autocomplete="url" placeholder="' + esc(f.ph) + '" value="' + esc(r.url) + '"' + (ns ? " disabled" : "") + "></label>";
     if (sc) h += '<label class="chk"><input type="checkbox" id="f-no"' + (r.nostore ? " checked" : "") + "><span>" + esc(f.none) + "</span></label>";
     if (sc) {
@@ -75,7 +86,11 @@
       h += "</div>";
     }
     if (f.goal) h += '<label class="fld"><span>' + esc(f.goal) + '</span><textarea id="f-goal" rows="3" placeholder="' + esc(f.gph) + '">' + esc(r.goal) + "</textarea></label>";
-    h += '<label class="fld"><span>' + esc(f.mkt) + '</span><input type="text" id="f-market" autocomplete="country-name" placeholder="' + esc(f.mph) + '" value="' + esc(r.market) + '"><small>' + esc(f.msmall) + "</small></label>" +
+    if (needMkt()) h += '<label class="fld"><span>' + esc(f.mkt) + '</span><input type="text" id="f-market" autocomplete="country-name" placeholder="' + esc(f.mph) + '" value="' + esc(r.market) + '"><small>' + esc(f.msmall) + "</small></label>";
+    if (needAccess()) { var cc = collabCopy(); h += '<label class="fld" id="collabf"' + (ns ? " hidden" : "") + "><span>" + cc.lbl + '</span><input type="text" id="f-collab" autocomplete="off" inputmode="' + (isShop() ? "numeric" : "text") + '" maxlength="' + (isShop() ? 4 : 40) + '" placeholder="' + esc(cc.ph) + '" value="' + esc(r.collab) + '" aria-describedby="collab-h"><small id="collab-h">' + esc(cc.sm) + "</small></label>"; }
+    h += '<div class="two"><label class="fld"><span>Email</span><input type="email" id="f-email" inputmode="email" autocomplete="email" placeholder="you@company.com" value="' + esc(r.email) + '" required aria-required="true"></label>' +
+      '<label class="fld"><span>Phone <em>(optional)</em></span><input type="tel" id="f-phone" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" value="' + esc(r.phone) + '"></label></div>' +
+      '<p class="note">' + ic.clock + "<span>" + CONTACT_NOTE + "</span></p>" +
       '<p class="err" id="req-err" role="alert" hidden></p></form></details>';
     return h;
   }
@@ -90,7 +105,7 @@
       '<details class="extras"' + (Object.keys(st.add).length ? " open" : "") + "><summary>Add extras</summary><div class=\"lst\">" + al.map(function (a) { return '<label class="opt"><input type="checkbox" name="ad" value="' + a.id + '"' + (st.add[a.id] ? " checked" : "") + "><span><b>" + esc(a.name) + "</b><small>" + esc(a.desc) + '</small></span><span class="p">+' + usd(a.price) + "</span></label>"; }).join("") + "</div></details>" +
       '<div class="cta"><button type="button" class="btn block" data-buy>Buy now (' + usd(tt) + ')</button><button type="button" class="btn ghost block" data-atc>' + ic.cart + "Add to cart</button></div>" +
       reqForm() +
-      '<div class="safe"><span>' + ic.lock + "Secure checkout</span><span>" + ic.tag + "Fixed price, delivered in 7 days or less</span><span>" + ic.key + "Done in your own accounts, no passwords shared</span></div>" +
+      '<div class="safe"><span>' + ic.lock + "Secure checkout</span><span>" + ic.tag + "Fixed price, delivered in 7 days or less</span><span>" + ic.key + "Done in your own accounts, no passwords shared</span><span>" + ic.clock + "Our team contacts you within 1-3 hours of your order</span></div>" +
       '<p class="fine">Need something bigger? <a href="/contact">Request a quote</a></p>' +
       "</div></div></aside>";
   }
@@ -141,7 +156,15 @@
     else if (!r.sell.trim()) { msg = f.esell; id = "f-sell"; }
     else if (f.kind && !r.kind) { msg = f.ekind; id = "kind"; }
     if (!msg && f.goal && !r.goal.trim()) { msg = f.egoal; id = "f-goal"; }
-    if (!msg && !r.market.trim()) { msg = f.emkt; id = "f-market"; }
+    if (!msg && needMkt() && !r.market.trim()) { msg = f.emkt; id = "f-market"; }
+    var cd = (r.collab || "").trim();
+    if (!msg && needAccess() && !ns && cd) {
+      if (isShop() && !/^[0-9]{4}$/.test(cd)) { msg = "The collaborator code is 4 digits. Check it in Settings, Users and permissions, Security."; id = "f-collab"; }
+      else if (cd.length > 40) { msg = "That collaborator code looks too long. Check it and try again."; id = "f-collab"; }
+    }
+    if (!msg && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((r.email || "").trim())) { msg = "Enter an email address we can reach you on, for example name@company.com."; id = "f-email"; }
+    var ph = (r.phone || "").trim();
+    if (!msg && ph && (!/^[0-9+()\s.-]+$/.test(ph) || ph.replace(/[^0-9]/g, "").length < 7 || ph.replace(/[^0-9]/g, "").length > 15)) { msg = "Enter a valid phone number, or leave the field empty."; id = "f-phone"; }
     var e = $("#req-err", root); if (e) { e.textContent = msg; e.hidden = !msg; }
     [].forEach.call(root.querySelectorAll("#req input,#req textarea"), function (i) { i.removeAttribute("aria-invalid"); });
     if (msg) {
@@ -154,17 +177,19 @@
   }
   function reqSummary() {
     var f = FORMS[D.req], r = st.req, ns = D.scratch && r.nostore, o = [];
+    o.push("Contact: " + r.email.trim() + (r.phone.trim() ? ", phone " + r.phone.trim() : ""));
+    if (needAccess() && !ns && r.collab.trim()) o.push("Collaborator code: " + r.collab.trim());
     if (ns) {
       o.push("Starting from scratch. " + f.name + ": " + r.name.trim() + ". " + f.sell + " " + r.sell.trim());
       if (f.kind && r.kind) o.push(f.kind[0] + ": " + (r.kind === "own" ? f.kind[1] : f.kind[2]));
     } else o.push(f.url + ": " + r.url.trim());
     if (f.goal) o.push("Goal: " + r.goal.trim());
-    o.push(f.mkt + ": " + r.market.trim());
+    if (needMkt()) o.push(f.mkt + ": " + r.market.trim());
     return o.join(". ").slice(0, 900);
   }
   function lineFromState() {
     var p = P(), ad = picked();
-    return { slug: D.slug, title: D.title, pkg: p.id, pname: p.name, adds: ad.map(function (a) { return a.id; }), addNames: ad.map(function (a) { return a.name; }), days: days(), price: total(), img: D.imgs[0], summary: reqSummary(), req: { nostore: !!(D.scratch && st.req.nostore), url: st.req.url, name: st.req.name, sell: st.req.sell, kind: st.req.kind, goal: st.req.goal, market: st.req.market } };
+    return { slug: D.slug, title: D.title, pkg: p.id, pname: p.name, adds: ad.map(function (a) { return a.id; }), addNames: ad.map(function (a) { return a.name; }), days: days(), price: total(), img: D.imgs[0], summary: reqSummary(), req: { nostore: !!(D.scratch && st.req.nostore), url: st.req.url, name: st.req.name, sell: st.req.sell, kind: st.req.kind, goal: st.req.goal, market: st.req.market, email: st.req.email, phone: st.req.phone, collab: st.req.collab } };
   }
 
   /* ---- cart ---- */
@@ -182,7 +207,7 @@
   function openCart() { lastFocus = document.activeElement; paintCart(); $(".ov", ui).hidden = false; $(".drawer", ui).hidden = false; var e = $("[data-coerr]", ui); e.hidden = true; $(".x", ui).focus(); }
   function closeCart() { $(".ov", ui).hidden = true; $(".drawer", ui).hidden = true; if (lastFocus && document.contains(lastFocus)) lastFocus.focus(); }
   function addToCart() { var c = cart(); c.push(lineFromState()); saveCart(c); openCart(); }
-  function persistReq() { jset(RK, { url: st.req.url, name: st.req.name, sell: st.req.sell, kind: st.req.kind, goal: st.req.goal, market: st.req.market }); }
+  function persistReq() { jset(RK, { url: st.req.url, name: st.req.name, sell: st.req.sell, kind: st.req.kind, goal: st.req.goal, market: st.req.market, email: st.req.email, phone: st.req.phone }); }
 
   function checkout(lines, btn) {
     if (busy) return; busy = true;
@@ -234,11 +259,11 @@
     });
     root.addEventListener("toggle", function (e) { if (e.target.id === "reqd") st.reqOpen = e.target.open; }, true);
     root.addEventListener("input", function (e) {
-      var k = { "f-url": "url", "f-name": "name", "f-sell": "sell", "f-market": "market", "f-goal": "goal" }[e.target.id];
+      var k = { "f-url": "url", "f-name": "name", "f-sell": "sell", "f-market": "market", "f-goal": "goal", "f-collab": "collab", "f-email": "email", "f-phone": "phone" }[e.target.id];
       if (k) { st.req[k] = e.target.value; var er = $("#req-err", root); if (er) er.hidden = true; e.target.removeAttribute("aria-invalid"); }
     });
     root.addEventListener("change", function (e) {
-      if (e.target.id === "f-no") { st.req.nostore = e.target.checked; var u = $("#f-url", root); if (u) u.disabled = st.req.nostore; var n = $("#newf", root); if (n) n.hidden = !st.req.nostore; var er = $("#req-err", root); if (er) er.hidden = true; return; }
+      if (e.target.id === "f-no") { st.req.nostore = e.target.checked; var u = $("#f-url", root); if (u) u.disabled = st.req.nostore; var n = $("#newf", root); if (n) n.hidden = !st.req.nostore; var cf = $("#collabf", root); if (cf) cf.hidden = st.req.nostore; var er = $("#req-err", root); if (er) er.hidden = true; return; }
       if (e.target.name === "kind") { st.req.kind = e.target.value; return; }
       if (e.target.name === "ad") { if (e.target.checked) st.add[e.target.value] = 1; else delete st.add[e.target.value]; render(); }
     });
@@ -294,7 +319,7 @@
   function boot(d, slug) {
     D = d; D.slug = slug; mountedSlug = slug;
     var saved = jget(RK, {});
-    st = { pkg: "standard", img: 0, add: {}, reqOpen: false, req: { nostore: false, url: saved.url || "", name: saved.name || "", sell: saved.sell || "", kind: saved.kind || "", goal: saved.goal || "", market: saved.market || "" } };
+    st = { pkg: "standard", img: 0, add: {}, reqOpen: false, req: { nostore: false, url: saved.url || "", name: saved.name || "", sell: saved.sell || "", kind: saved.kind || "", goal: saved.goal || "", market: saved.market || "", email: saved.email || "", phone: saved.phone || "", collab: "" } };
     ensureCss();
     if (!takeover()) { mountedSlug = ""; return; }
     render(); ld();
