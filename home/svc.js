@@ -5,7 +5,7 @@
   if (window.__esSvc) return;
   window.__esSvc = {};
   var BASE = window.__ES_SVC_BASE || "https://ecomswiftllc.github.io/legal/home/";
-  var VER = "4";
+  var VER = "5";
   var MEDIA = "https://static.wixstatic.com/media/";
   var CAT = ["b2970c_b39d8eeda7d44d74a9b3df1972529b96~mv2.webp", "b2970c_3f1b4de685a44fc1b4f591b83cc58dcc~mv2.webp", "b2970c_472efb37848341a282994ac5f3ed5984~mv2.webp", "b2970c_af682593689f4db7a1257efefc1fd529~mv2.webp", "b2970c_be4aa33273ae42628091dda77265b61f~mv2.webp", "b2970c_a0af11a457c142e9b65a8c646f9d96f1~mv2.webp", "b2970c_c8c44784d1bb4d08be5153ec34739872~mv2.webp", "b2970c_a78b1bf7074542cebda4698a46949cce~mv2.webp", "b2970c_5916c892023e4839ac399d36c9b612b5~mv2.webp", "b2970c_08543b0ada414be6842af4111c1890ab~mv2.webp", "b2970c_0b167f6c84e44ebfa84b88e78dcb5b8d~mv2.webp", "b2970c_3a7d8f117b944a90a72d6c050d8bb182~mv2.webp"];
   var ALT = ["Laptop beside a shopping cart", "Code on a computer screen", "Shipping box marked fragile", "Website wireframes sketched beside a phone", "Hands sorting clothes on a rack", "Team meeting around a table", "Analytics chart on a tablet", "Phone showing app icons", "Parcel being packed beside a laptop", "Letter tiles spelling SEO", "Hands holding a gift-wrapped package", "Clipboard with a calculator and notes"];
@@ -128,7 +128,7 @@
       '<header><h2 id="es-dh">Your cart</h2><button type="button" class="x" data-closecart aria-label="Close cart">&times;</button></header>' +
       '<div class="lines" data-lines></div>' +
       '<footer><div class="tot"><span>Subtotal</span><span data-sub>$0</span></div>' +
-      '<p class="fine" style="margin:0">Tax is added at checkout. Work starts after you send your brief.</p>' +
+      '<p class="fine" style="margin:0">Any taxes are calculated at checkout. Work starts after you send your brief.</p>' +
       '<p class="err" data-coerr role="alert" hidden></p>' +
       '<button type="button" class="btn block" data-checkout>Go to checkout</button><button type="button" class="btn ghost block" data-closecart>Keep browsing</button></footer></aside>';
   }
