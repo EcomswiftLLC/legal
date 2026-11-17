@@ -118,11 +118,11 @@
     var base = "https://ecomswiftllc.github.io/legal/home/";
     if (!document.getElementById("es-legal-css")) {
       var l = document.createElement("link"); l.id = "es-legal-css"; l.rel = "stylesheet";
-      l.href = base + "legal-page.css?v=4"; document.head.appendChild(l);
+      l.href = base + "legal-page.css?v=5"; document.head.appendChild(l);
     }
     if (!window.__esLegalL) {
       window.__esLegalL = 1;
-      var sc = document.createElement("script"); sc.src = base + "legal-page.js?v=2"; sc.defer = true; document.head.appendChild(sc);
+      var sc = document.createElement("script"); sc.src = base + "legal-page.js?v=3"; sc.defer = true; document.head.appendChild(sc);
     }
   }
   var t;

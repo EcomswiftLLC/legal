@@ -28,6 +28,7 @@
     var n;
     while ((n = w.nextNode())) {
       if (KEYCAP.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(KEYCAP, "$1. ");
+      n.nodeValue = n.nodeValue.replace(/^[\s✅✔☑️]+(?=\S)/, "");
     }
   }
   function isHeadingLike(k) {
@@ -49,6 +50,29 @@
       for (var e = root.parentElement; e && e.tagName !== "MAIN" && e.tagName !== "BODY"; e = e.parentElement) {
         e.classList.add("es-legal-wrap");
         if (e.tagName === "SECTION") break;
+      }
+    }
+    /* some pages keep the title in its own text box above the policy text: bring a copy in and hide the original */
+    if (!root.getAttribute("data-es-title")) {
+      root.setAttribute("data-es-title", "1");
+      var first = null;
+      for (var q = 0; q < root.children.length; q++) { if (txt(root.children[q])) { first = root.children[q]; break; } }
+      if (first && !/^H[1-3]$/.test(first.tagName)) {
+        var cands = document.querySelectorAll('[data-testid="richTextElement"]'), ext = null, extH = null;
+        for (var c = 0; c < cands.length; c++) {
+          var ce = cands[c];
+          if (ce === root || ce.closest("#SITE_HEADER,#SITE_FOOTER,#es-nav-host")) continue;
+          if (!(ce.compareDocumentPosition(root) & 4)) continue;
+          var hh = [].filter.call(ce.querySelectorAll("h1,h2,h3"), function (x) { return txt(x); });
+          if (hh.length === 1 && ce.textContent.trim().length < 90) { ext = ce; extH = hh[0]; }
+        }
+        if (ext) {
+          var cl = extH.cloneNode(true);
+          cl.removeAttribute("id");
+          root.insertBefore(cl, root.firstChild);
+          ext.classList.add("es-lg-hide");
+          ext.setAttribute("aria-hidden", "true");
+        }
       }
     }
     var kids = root.children, title = null, heads = [], badge = null, i, k;
