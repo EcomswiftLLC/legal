@@ -12,7 +12,7 @@
     return !SKIP.test(p);
   }
   /* Services pages use the soft white, black and gold look instead of the navy glass. */
-  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+|wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development|ios-apps|android-apps|flutter-apps|react-native-apps|shopify-apps|wix-apps|woocommerce-plugins|browser-extensions|product-listings|order-management|store-maintenance|ecommerce-seo|conversion-optimization|marketplace-listings|analytics-and-tracking|store-migrations|saas-mvp-development|saas-user-accounts|subscription-billing|saas-dashboards|api-integrations|cloud-hosting|web-app-development|saas-ongoing-development|ai-integration|business-automation|ai-workflows|ai-chatbots|ai-agents|data-and-documents|ai-for-ecommerce|ai-audit-and-training|ai-customer-support|ai-sales-assistant|ai-product-recommendations|ai-marketing|paid-ads-management|email-and-sms-marketing|social-media-marketing|lead-generation-funnels|crm-and-sales-pipelines|amazon-management|ebay-management|etsy-management|shopify-management)$/i;
+  var LIGHT = /^\/(sleek-bundles-upsell|services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+|wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development|ios-apps|android-apps|flutter-apps|react-native-apps|shopify-apps|wix-apps|woocommerce-plugins|browser-extensions|product-listings|order-management|store-maintenance|ecommerce-seo|conversion-optimization|marketplace-listings|analytics-and-tracking|store-migrations|saas-mvp-development|saas-user-accounts|subscription-billing|saas-dashboards|api-integrations|cloud-hosting|web-app-development|saas-ongoing-development|ai-integration|business-automation|ai-workflows|ai-chatbots|ai-agents|data-and-documents|ai-for-ecommerce|ai-audit-and-training|ai-customer-support|ai-sales-assistant|ai-product-recommendations|ai-marketing|paid-ads-management|email-and-sms-marketing|social-media-marketing|lead-generation-funnels|crm-and-sales-pipelines|amazon-management|ebay-management|etsy-management|shopify-management)$/i;
   var CHROME = "#es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}" +
     "#ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}#ecs-fi a{color:#fff!important}#ecs-fi a:focus-visible{outline-color:#B8923A!important}";
   function isLight() {
@@ -110,6 +110,21 @@
       var sc = document.createElement("script"); sc.src = base + "platform-faq.js?v=2"; sc.defer = true; document.head.appendChild(sc);
     }
   }
+  /* Long legal text pages: reading layout and an "On this page" index. */
+  var LEGAL = /^\/(sleek-bundles-upsell)$/i;
+  function legalAssets() {
+    var p = location.pathname.replace(/\/+$/, "");
+    if (!LEGAL.test(p)) return;
+    var base = "https://ecomswiftllc.github.io/legal/home/";
+    if (!document.getElementById("es-legal-css")) {
+      var l = document.createElement("link"); l.id = "es-legal-css"; l.rel = "stylesheet";
+      l.href = base + "legal-page.css?v=1"; document.head.appendChild(l);
+    }
+    if (!window.__esLegalL) {
+      window.__esLegalL = 1;
+      var sc = document.createElement("script"); sc.src = base + "legal-page.js?v=1"; sc.defer = true; document.head.appendChild(sc);
+    }
+  }
   var t;
   function run() {
     var st = document.getElementById("es-skin");
@@ -117,7 +132,7 @@
     var light = isLight();
     if (st && st.getAttribute("data-light") !== (light ? "1" : "0")) { st.remove(); st = null; }
     if (!st) { st = document.createElement("style"); st.id = "es-skin"; st.setAttribute("data-light", light ? "1" : "0"); st.textContent = css(); document.head.appendChild(st); }
-    if (light) { document.documentElement.classList.add("es-light"); platformAssets(); return; }
+    if (light) { document.documentElement.classList.add("es-light"); platformAssets(); legalAssets(); return; }
     try { glassify(); recolor(); } catch (e) { /* keep page usable */ }
   }
   function later() { clearTimeout(t); t = setTimeout(run, 160); }
