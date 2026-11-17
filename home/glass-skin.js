@@ -12,7 +12,7 @@
     return !SKIP.test(p);
   }
   /* Services pages use the soft white, black and gold look instead of the navy glass. */
-  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+|wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development|ios-apps|android-apps|flutter-apps|react-native-apps|shopify-apps|wix-apps|woocommerce-plugins|browser-extensions)$/i;
+  var LIGHT = /^\/(services|shopify-store-build-and-redesign|shopify-conversion-rate-optimization|shopify-seo-and-speed-optimization|wix-seo-services|wix-website-development|wix-website-redesign|platforms\/[a-z0-9-]+|wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development|ios-apps|android-apps|flutter-apps|react-native-apps|shopify-apps|wix-apps|woocommerce-plugins|browser-extensions|product-listings|order-management|store-maintenance|ecommerce-seo|conversion-optimization|marketplace-listings|analytics-and-tracking|store-migrations|saas-mvp-development|saas-user-accounts|subscription-billing|saas-dashboards|api-integrations|cloud-hosting|web-app-development|saas-ongoing-development|ai-integration|business-automation|ai-workflows|ai-chatbots|ai-agents|data-and-documents|ai-for-ecommerce|ai-audit-and-training|ai-customer-support|ai-sales-assistant|ai-product-recommendations|ai-marketing)$/i;
   var CHROME = "#es-nav-host{filter:drop-shadow(0 8px 22px rgba(22,19,15,.14)) drop-shadow(0 0 .6px rgba(22,19,15,.35))}" +
     "#ecs-fi{background:#16130F!important;border-top:1px solid #B8923A!important;color:rgba(255,255,255,.8)!important}#ecs-fi a{color:#fff!important}#ecs-fi a:focus-visible{outline-color:#B8923A!important}";
   function isLight() {
@@ -94,7 +94,7 @@
     }
   }
   /* CMS platform pages (/platforms/<slug>): load their layout CSS and the FAQ accordion script. */
-  var PSLUG = /^\/(wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development|ios-apps|android-apps|flutter-apps|react-native-apps|shopify-apps|wix-apps|woocommerce-plugins|browser-extensions)$/i;
+  var PSLUG = /^\/(wordpress|woocommerce|framer|webflow|wix|squarespace|magento|bigcommerce|drupal|prestashop|custom-development|ios-apps|android-apps|flutter-apps|react-native-apps|shopify-apps|wix-apps|woocommerce-plugins|browser-extensions|product-listings|order-management|store-maintenance|ecommerce-seo|conversion-optimization|marketplace-listings|analytics-and-tracking|store-migrations|saas-mvp-development|saas-user-accounts|subscription-billing|saas-dashboards|api-integrations|cloud-hosting|web-app-development|saas-ongoing-development|ai-integration|business-automation|ai-workflows|ai-chatbots|ai-agents|data-and-documents|ai-for-ecommerce|ai-audit-and-training|ai-customer-support|ai-sales-assistant|ai-product-recommendations|ai-marketing)$/i;
   function platformAssets() {
     var p = location.pathname.replace(/\/+$/, "");
     var m = PSLUG.exec(p), old = /^\/platforms\//i.test(p);
