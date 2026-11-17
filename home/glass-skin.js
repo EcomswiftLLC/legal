@@ -122,7 +122,7 @@
     }
     if (!window.__esLegalL) {
       window.__esLegalL = 1;
-      var sc = document.createElement("script"); sc.src = base + "legal-page.js?v=3"; sc.defer = true; document.head.appendChild(sc);
+      var sc = document.createElement("script"); sc.src = base + "legal-page.js?v=4"; sc.defer = true; document.head.appendChild(sc);
     }
   }
   var t;

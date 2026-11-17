@@ -6,7 +6,8 @@
   if (window.__esLegal) return;
   window.__esLegal = 1;
   var ZW = /[\s​‌‍ ﻿]/g;
-  var KEYCAP = /([0-9])️?⃣\s*/;
+  var KEYCAP = /((?:[0-9]️?⃣)+|🔟)\s*/;
+  function keycapNum(m) { return m.indexOf("🔟") === 0 ? "10" : m.replace(/[^0-9]/g, ""); }
   function txt(el) { return (el.textContent || "").replace(ZW, ""); }
   function slug(t, i) {
     var s = t.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -27,7 +28,7 @@
     var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
     var n;
     while ((n = w.nextNode())) {
-      if (KEYCAP.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(KEYCAP, "$1. ");
+      if (KEYCAP.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(KEYCAP, function (m, g) { return keycapNum(g) + ". "; });
       n.nodeValue = n.nodeValue.replace(/^[\s✅✔☑️]+(?=\S)/, "");
     }
   }
