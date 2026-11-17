@@ -86,7 +86,7 @@
 .es-svc .buy{background:var(--bg);border:1px solid var(--line2);border-top:2px solid var(--gold);border-radius:var(--r);box-shadow:0 18px 40px -22px rgba(125,95,23,.30)}
 .es-svc .buy .in{padding:18px 20px;display:grid;gap:13px}
 .es-svc .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px}
-.es-svc .seg button{background:none;border:0;border-radius:999px;padding:8px 4px;font-weight:500;color:var(--muted);font-size:14px;min-height:36px}
+.es-svc .seg button{background:none;border:0;border-radius:999px;padding:8px 4px;font-weight:500;color:var(--muted);font-size:14px;min-height:44px}
 .es-svc .seg button[aria-pressed=true]{background:var(--ink);color:#fff;font-weight:600}
 .es-svc .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .es-svc .top b{font-size:15px;font-weight:600}
