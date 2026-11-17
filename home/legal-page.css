@@ -8,8 +8,8 @@ html.es-light :is(#comp-mr9dycry,.es-legal-text),
 html.es-light :is(#comp-mr9dycry,.es-legal-text) *{font-family:Helvetica,Arial,sans-serif;text-align:left!important}
 
 /* title */
-html.es-light :is(#comp-mr9dycry,.es-legal-text) h1{position:relative;margin:0 0 18px!important;padding-top:22px;font-size:clamp(32px,5vw,46px)!important;line-height:1.1!important;letter-spacing:-.025em!important;color:#16130F!important;text-wrap:balance}
-html.es-light :is(#comp-mr9dycry,.es-legal-text) h1 *{font-size:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;color:#16130F!important}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) h1{position:relative;margin:0 0 18px!important;padding-top:22px;font-size:clamp(32px,5vw,46px)!important;line-height:1.1!important;letter-spacing:-.025em!important;font-weight:700!important;color:#16130F!important;text-wrap:balance}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) h1 *{font-weight:inherit!important;font-size:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;color:#16130F!important}
 html.es-light :is(#comp-mr9dycry,.es-legal-text) h1::before{content:"";position:absolute;left:0;top:0;width:48px;height:3px;border-radius:2px;background:#B8923A}
 html.es-light :is(#comp-mr9dycry,.es-legal-text) h1[aria-hidden="true"]{display:none!important}
 
@@ -28,8 +28,8 @@ html.es-light :is(#comp-mr9dycry,.es-legal-text) strong,
 html.es-light :is(#comp-mr9dycry,.es-legal-text) b{font-weight:700;color:#16130F!important}
 
 /* section headings */
-html.es-light :is(#comp-mr9dycry,.es-legal-text) h2{margin:52px 0 16px!important;padding-top:28px;border-top:1px solid #EADFC4;font-size:26px!important;line-height:1.25!important;letter-spacing:-.01em!important;color:#16130F!important;scroll-margin-top:104px;text-wrap:balance}
-html.es-light :is(#comp-mr9dycry,.es-legal-text) h2 *{font-size:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;color:#16130F!important}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) h2{margin:52px 0 16px!important;padding-top:28px;border-top:1px solid #EADFC4;font-size:26px!important;line-height:1.25!important;letter-spacing:-.01em!important;font-weight:700!important;color:#16130F!important;scroll-margin-top:104px;text-wrap:balance}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) h2 *{font-weight:inherit!important;font-size:inherit!important;line-height:inherit!important;letter-spacing:inherit!important;color:#16130F!important}
 html.es-light :is(#comp-mr9dycry,.es-legal-text) h3{margin:28px 0 10px!important;font-size:19px!important;line-height:1.3!important;color:#16130F!important}
 
 /* lists: gold dot markers */
@@ -53,6 +53,13 @@ html.es-light .es-toc li{margin:0!important;padding:0!important}
 html.es-light .es-toc li::before{display:none}
 html.es-light .es-toc a{display:block;padding:7px 0;font-size:15px!important;line-height:1.35!important;color:#16130F!important;text-decoration:none!important}
 html.es-light .es-toc a:hover{color:#7D5F17!important;text-decoration:underline!important;text-decoration-color:#B8923A!important}
+/* index inside the text: beat the reading-text rules above */
+html.es-light :is(#comp-mr9dycry,.es-legal-text) .es-toc li{margin:0!important;padding:0!important}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) .es-toc li::before{display:none!important}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) .es-toc a{color:#16130F!important;text-decoration:none!important}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) .es-toc a:hover{color:#7D5F17!important;text-decoration:underline!important;text-decoration-color:#B8923A!important}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) .es-toc a:focus-visible{outline:2px solid #B8923A;outline-offset:2px;border-radius:4px}
+html.es-light :is(#comp-mr9dycry,.es-legal-text) .es-toc ol{margin:0!important;padding:0!important}
 @media (max-width:640px){
  html.es-light #comp-mr9dycry{padding-top:56px;padding-bottom:72px}
  html.es-light :is(#comp-mr9dycry,.es-legal-text) p,html.es-light :is(#comp-mr9dycry,.es-legal-text) li,

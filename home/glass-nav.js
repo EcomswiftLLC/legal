@@ -9,7 +9,7 @@ if(!window.__esNav){window.__esNav=1;
  try{new MutationObserver(function(){clearTimeout(window.__esNavT);window.__esNavT=setTimeout(sync,120)}).observe(document.documentElement,{childList:true,subtree:true})}catch(e){}
  addEventListener('popstate',sync)}
 function mount(){
- if(!window.__esSkinL){window.__esSkinL=1;var sk=document.createElement('script');sk.src='https://ecomswiftllc.github.io/legal/home/glass-skin.js?v=8';sk.defer=true;document.head.appendChild(sk)}
+ if(!window.__esSkinL){window.__esSkinL=1;var sk=document.createElement('script');sk.src='https://ecomswiftllc.github.io/legal/home/glass-skin.js?v=9';sk.defer=true;document.head.appendChild(sk)}
  if(!document.getElementById('es-font')){var l=document.createElement('link');l.id='es-font';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..700&display=swap';document.head.appendChild(l)}
  var st=document.createElement('style');st.id='es-nav-style';st.textContent='#SITE_HEADER{visibility:hidden!important}#PAGES_CONTAINER{padding-top:56px}@media(max-width:700px){#PAGES_CONTAINER{padding-top:76px}}#es-nav-host{position:fixed;top:0;left:0;right:0;z-index:2147483000;pointer-events:none}';document.head.appendChild(st);
  var host=document.createElement('div');host.id='es-nav-host';document.body.insertBefore(host,document.body.firstChild);
