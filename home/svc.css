@@ -157,10 +157,15 @@
   .es-svc .mbar b{font-family:var(--serif);font-size:28px;line-height:1;font-weight:400}
   .es-svc .mbar span{display:block;font-size:12.5px;color:var(--muted)}
   .es-svc .mbar .btn{white-space:nowrap;padding-left:16px;padding-right:16px}
+  #BACK_TO_TOP_BUTTON{display:none!important}
   #ecomswift-whatsapp-btn{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
 }
 @media (max-width:560px){
   .es-svc .content h2{font-size:26px}
   .es-svc .gal .th{gap:6px}
+  .es-svc table{min-width:430px;font-size:13.5px}
+  .es-svc th,.es-svc td{padding:9px 10px}
+  .es-svc th:first-child,.es-svc td:first-child{position:sticky;left:0;z-index:1;background:var(--bg);width:96px;min-width:96px;box-shadow:1px 0 0 var(--line)}
+  .es-svc thead th:first-child{background:var(--soft)}
 }
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
