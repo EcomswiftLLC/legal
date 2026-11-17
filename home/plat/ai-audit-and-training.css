@@ -23,7 +23,7 @@ html.es-light #comp-mwkgcsdp div:has(> #comp-mwkgcsdr3) > #comp-mwkgcsds5{width:
 html.es-light #comp-mwkgcsds5 *{color:#4A443A!important;font-size:17px!important;line-height:1.5!important;text-align:left!important}
 
 /* ---------- service cards: 4 x 3, equal height ---------- */
-html.es-light #comp-mwkgcsdu{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:minmax(351px,auto)!important;height:auto!important;margin-bottom:36px!important}
+html.es-light #comp-mwkgcsdu{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:375px!important;height:auto!important;margin-bottom:36px!important}
 html.es-light #comp-mwkgcsdu > div,html.es-light #comp-mwkgcsdu > div > div{display:contents!important}
 html.es-light #comp-mwkgcsdu div:has(> [id^="comp-mwkgcsdv5__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
 html.es-light #comp-mwkgcsdu > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwkgcsdu > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwkgcsdu > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwkgcsdu > div > div:nth-child(4) > :nth-child(1){order:3}
@@ -129,3 +129,5 @@ html.es-light #comp-mwkgcsef3,html.es-light #comp-mwkgcsej{height:46px!important
 html.es-light #comp-mwkgcsef3 a,html.es-light #comp-mwkgcsej a,html.es-light #comp-mwkgcsef3 button,html.es-light #comp-mwkgcsej button{height:46px!important}
 html.es-light .es-sfaq summary{min-height:56px}
 }
+
+@media (min-width:1000px){html.es-light #comp-mwkgcsee,html.es-light #comp-mwkgcseh5{min-height:44px!important}}

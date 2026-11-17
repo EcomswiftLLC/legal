@@ -23,7 +23,7 @@ html.es-light #comp-mwkab4kc div:has(> #comp-mwkab4ke5) > #comp-mwkab4kg{width:m
 html.es-light #comp-mwkab4kg *{color:#4A443A!important;font-size:17px!important;line-height:1.5!important;text-align:left!important}
 
 /* ---------- service cards: 4 x 3, equal height ---------- */
-html.es-light #comp-mwkab4ki{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:minmax(351px,auto)!important;height:auto!important;margin-bottom:36px!important}
+html.es-light #comp-mwkab4ki{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:375px!important;height:auto!important;margin-bottom:36px!important}
 html.es-light #comp-mwkab4ki > div,html.es-light #comp-mwkab4ki > div > div{display:contents!important}
 html.es-light #comp-mwkab4ki div:has(> [id^="comp-mwkab4kj5__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
 html.es-light #comp-mwkab4ki > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwkab4ki > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwkab4ki > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwkab4ki > div > div:nth-child(4) > :nth-child(1){order:3}
@@ -129,6 +129,11 @@ html.es-light #comp-mwkab4kz5,html.es-light #comp-mwkab4l35{height:46px!importan
 html.es-light #comp-mwkab4kz5 a,html.es-light #comp-mwkab4l35 a,html.es-light #comp-mwkab4kz5 button,html.es-light #comp-mwkab4l35 button{height:46px!important}
 html.es-light .es-sfaq summary{min-height:56px}
 }
+
+@media (min-width:1000px){html.es-light #comp-mwkab4ky4,html.es-light #comp-mwkab4l25{min-height:44px!important}}
+
+/* section height was fixed to the old layout in the editor: let it follow the content */
+html.es-light [data-mesh-id=comp-mwkab4kcinlineContent-gridContainer],html.es-light [data-mesh-id=comp-mwkab4kcinlineContent],html.es-light #comp-mwkab4kc{min-height:0!important;grid-template-rows:auto!important;height:auto!important}
 
 /* content wrapper created in the editor: let it span the full section width like on the other pages */
 #comp-mwkad52j,[data-mesh-id=comp-mwkad52jinlineContent],[data-mesh-id=comp-mwkad52jinlineContent-gridContainer]{width:100%!important;margin-left:0!important}

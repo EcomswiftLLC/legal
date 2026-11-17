@@ -23,7 +23,7 @@ html.es-light #comp-mwkg8o5f1 div:has(> #comp-mwkg8o5i) > #comp-mwkg8o5j3{width:
 html.es-light #comp-mwkg8o5j3 *{color:#4A443A!important;font-size:17px!important;line-height:1.5!important;text-align:left!important}
 
 /* ---------- service cards: 4 x 3, equal height ---------- */
-html.es-light #comp-mwkg8o5k5{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:minmax(351px,auto)!important;height:auto!important;margin-bottom:36px!important}
+html.es-light #comp-mwkg8o5k5{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:375px!important;height:auto!important;margin-bottom:36px!important}
 html.es-light #comp-mwkg8o5k5 > div,html.es-light #comp-mwkg8o5k5 > div > div{display:contents!important}
 html.es-light #comp-mwkg8o5k5 div:has(> [id^="comp-mwkg8o5m4__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
 html.es-light #comp-mwkg8o5k5 > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwkg8o5k5 > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwkg8o5k5 > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwkg8o5k5 > div > div:nth-child(4) > :nth-child(1){order:3}
@@ -129,3 +129,5 @@ html.es-light #comp-mwkg8o635,html.es-light #comp-mwkg8o67{height:46px!important
 html.es-light #comp-mwkg8o635 a,html.es-light #comp-mwkg8o67 a,html.es-light #comp-mwkg8o635 button,html.es-light #comp-mwkg8o67 button{height:46px!important}
 html.es-light .es-sfaq summary{min-height:56px}
 }
+
+@media (min-width:1000px){html.es-light #comp-mwkg8o624,html.es-light #comp-mwkg8o66{min-height:44px!important}}
