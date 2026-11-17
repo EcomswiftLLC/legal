@@ -3,7 +3,7 @@
 html.es-light #comp-mr9dwanw,
 html.es-light [data-mesh-id=comp-mr9dwanwinlineContent],
 html.es-light [data-mesh-id=comp-mr9dwanwinlineContent-gridContainer]{min-height:0!important;height:auto!important;grid-template-rows:auto!important}
-html.es-light #comp-mr9dycry{height:auto!important;min-height:0!important;width:min(720px,calc(100% - 40px))!important;max-width:100%!important;margin:0 auto!important;justify-self:center!important;box-sizing:border-box;padding:76px 0 96px}
+html.es-light #comp-mr9dycry{height:auto!important;min-height:0!important;width:min(720px,calc(100% - 40px))!important;max-width:100%!important;margin:0 auto!important;left:0!important;right:auto!important;justify-self:center!important;box-sizing:border-box;padding:76px 0 96px}
 html.es-light :is(#comp-mr9dycry,.es-legal-text),
 html.es-light :is(#comp-mr9dycry,.es-legal-text) *{font-family:Helvetica,Arial,sans-serif;text-align:left!important}
 

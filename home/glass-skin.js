@@ -118,7 +118,7 @@
     var base = "https://ecomswiftllc.github.io/legal/home/";
     if (!document.getElementById("es-legal-css")) {
       var l = document.createElement("link"); l.id = "es-legal-css"; l.rel = "stylesheet";
-      l.href = base + "legal-page.css?v=2"; document.head.appendChild(l);
+      l.href = base + "legal-page.css?v=3"; document.head.appendChild(l);
     }
     if (!window.__esLegalL) {
       window.__esLegalL = 1;
