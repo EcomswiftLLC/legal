@@ -16,7 +16,7 @@ function fixHub(){
  var m=HUBMAP[location.pathname.replace(/\/+$/,'')];if(!m)return;
  var as=document.querySelectorAll('a[href]');
  for(var i=0;i<as.length;i++){var a=as[i];if(!/^\s*read more\s*$/i.test(a.textContent||''))continue;
-  var e=a,t='';for(var k=0;k<8&&e;k++){e=e.parentElement;if(!e)break;var ln=((e.innerText||'').split('\n')[0]||'').trim();if(m[ln]){t=ln;break}}
+  var e=a,t='';for(var k=0;k<8&&e;k++){e=e.parentElement;if(!e)break;if(((e.innerText||'').match(/Read more/gi)||[]).length!==1)continue;var ln=((e.innerText||'').split('\n')[0]||'').trim();if(m[ln])t=ln;break}
   if(t){var u=location.origin+m[t];if(a.getAttribute('href')!==u){a.setAttribute('href',u);a.removeAttribute('target')}}}}
 function isHome(){var p=location.pathname.replace(/\/+$/,'');return p===''||p==='/'}
 function sync(){
