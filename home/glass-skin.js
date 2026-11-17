@@ -102,7 +102,7 @@
     var base = "https://ecomswiftllc.github.io/legal/home/";
     if (!document.getElementById("es-plat-css")) {
       var l = document.createElement("link"); l.id = "es-plat-css"; l.rel = "stylesheet";
-      l.href = m ? base + "plat/" + m[1].toLowerCase() + ".css?v=2" : base + "platform-page.css?v=7";
+      l.href = m ? base + "plat/" + m[1].toLowerCase() + ".css?v=3" : base + "platform-page.css?v=7";
       document.head.appendChild(l);
     }
     if (!window.__esPFaqL) {

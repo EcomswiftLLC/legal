@@ -25,7 +25,7 @@ html.es-light #comp-mwkg6g4g6 *{color:#4A443A!important;font-size:17px!important
 /* ---------- service cards: 4 x 3, equal height ---------- */
 html.es-light #comp-mwkg6g4h5{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;align-items:stretch!important;grid-auto-rows:auto!important;height:auto!important;margin-bottom:36px!important}
 html.es-light #comp-mwkg6g4h5 > div,html.es-light #comp-mwkg6g4h5 > div > div{display:contents!important}
-html.es-light #comp-mwkg6g4h5 div:has(> [id^="comp-mwkg6g4i5__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important}
+html.es-light #comp-mwkg6g4h5 div:has(> [id^="comp-mwkg6g4i5__"]){display:block!important;height:100%!important;width:auto!important;min-width:0!important;margin:0!important}
 html.es-light #comp-mwkg6g4h5 > div > div:nth-child(1) > :nth-child(1){order:0}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(2) > :nth-child(1){order:1}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(3) > :nth-child(1){order:2}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(4) > :nth-child(1){order:3}
 html.es-light #comp-mwkg6g4h5 > div > div:nth-child(1) > :nth-child(2){order:4}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(2) > :nth-child(2){order:5}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(3) > :nth-child(2){order:6}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(4) > :nth-child(2){order:7}
 html.es-light #comp-mwkg6g4h5 > div > div:nth-child(1) > :nth-child(3){order:8}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(2) > :nth-child(3){order:9}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(3) > :nth-child(3){order:10}html.es-light #comp-mwkg6g4h5 > div > div:nth-child(4) > :nth-child(3){order:11}
