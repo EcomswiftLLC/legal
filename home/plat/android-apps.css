@@ -129,3 +129,6 @@ html.es-light #comp-mwk9z4eq2,html.es-light #comp-mwk9z4es4{height:46px!importan
 html.es-light #comp-mwk9z4eq2 a,html.es-light #comp-mwk9z4es4 a,html.es-light #comp-mwk9z4eq2 button,html.es-light #comp-mwk9z4es4 button{height:46px!important}
 html.es-light .es-sfaq summary{min-height:56px}
 }
+
+/* content wrapper created in the editor: let it span the full section width like on the other pages */
+#comp-mwka1cxh,[data-mesh-id=comp-mwka1cxhinlineContent],[data-mesh-id=comp-mwka1cxhinlineContent-gridContainer]{width:100%!important;margin-left:0!important}
