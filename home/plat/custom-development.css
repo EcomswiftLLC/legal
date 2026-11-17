@@ -54,7 +54,7 @@ html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4)::before,html.es-light #co
 html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4)::before{grid-column:2}
 html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4)::after{grid-column:3}
 html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukan2,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukap,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukaq2,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukar6,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukas5,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukat{z-index:1;margin-left:28px!important;margin-right:24px!important}
-html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukan2,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukar6{margin-top:22px!important}
+html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukan2,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukar6{margin-top:22px!important;margin-bottom:0!important}
 html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukap,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukas5{margin-top:6px!important;margin-bottom:14px!important}
 html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukaq2,html.es-light #comp-mwjquka0 div:has(> #comp-mwjquka4) > #comp-mwjqukat{justify-self:start!important;margin-bottom:22px!important;height:40px!important;min-width:190px!important}
 html.es-light #comp-mwjqukan2 *,html.es-light #comp-mwjqukar6 *{color:#16130F!important;font-size:22px!important;line-height:1.2!important;text-align:left!important}

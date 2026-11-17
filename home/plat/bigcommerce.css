@@ -54,7 +54,7 @@ html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6)::before,html.es-light #c
 html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6)::before{grid-column:2}
 html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6)::after{grid-column:3}
 html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc243,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc26,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc27,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc283,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc294,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc2a5{z-index:1;margin-left:28px!important;margin-right:24px!important}
-html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc243,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc283{margin-top:22px!important}
+html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc243,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc283{margin-top:22px!important;margin-bottom:0!important}
 html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc26,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc294{margin-top:6px!important;margin-bottom:14px!important}
 html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc27,html.es-light #comp-mwjqlc1r div:has(> #comp-mwjqlc1s6) > #comp-mwjqlc2a5{justify-self:start!important;margin-bottom:22px!important;height:40px!important;min-width:190px!important}
 html.es-light #comp-mwjqlc243 *,html.es-light #comp-mwjqlc283 *{color:#16130F!important;font-size:22px!important;line-height:1.2!important;text-align:left!important}
