@@ -9,18 +9,18 @@ var NCSS="html.es-shop{background:#FFFFFF}\nhtml.es-shop body{background:#FFFFFF
 var BASE='https://ecomswiftllc.github.io/legal/home/assets/';
 var TAGS={build:'Build and design',grow:'Grow sales',apps:'Apps and tools',run:'Run your store'};
 var META={
- 'Shopify Store Build':{k:'build',c:'build',h:'/contact',a:['#D9D2FF','#FFE2D4'],alt:'Laptop open on an online store'},
- 'Shopify Store Redesign':{k:'redesign',c:'build',h:'/contact',a:['#D6E6FF','#E6DDFF'],alt:'Website wireframe sketched on a desk'},
- 'Shopify CRO':{k:'cro',c:'grow',h:'/conversion-optimization',a:['#E4DDFF','#CDEFE3'],alt:'Analytics dashboard on a laptop'},
- 'Shopify SEO and Speed':{k:'seo',c:'grow',h:'/ecommerce-seo',a:['#D3E7FF','#D2F0E6'],alt:'Search growth chart on a laptop'},
- 'Shopify Theme Edits':{k:'edits',c:'build',h:'/contact',a:['#FFE0EA','#E4DCFF'],alt:'Developer editing theme code'},
+ 'Shopify Store Build':{k:'build',c:'build',h:'/service/shopify-store-development',a:['#D9D2FF','#FFE2D4'],alt:'Laptop open on an online store'},
+ 'Shopify Store Redesign':{k:'redesign',c:'build',h:'/service/shopify-store-redesign',a:['#D6E6FF','#E6DDFF'],alt:'Website wireframe sketched on a desk'},
+ 'Shopify CRO':{k:'cro',c:'grow',h:'/service/shopify-cro',a:['#E4DDFF','#CDEFE3'],alt:'Analytics dashboard on a laptop'},
+ 'Shopify SEO and Speed':{k:'seo',c:'grow',h:'/service/shopify-seo-and-speed',a:['#D3E7FF','#D2F0E6'],alt:'Search growth chart on a laptop'},
+ 'Shopify Theme Edits':{k:'edits',c:'build',h:'/service/shopify-theme-edits',a:['#FFE0EA','#E4DCFF'],alt:'Developer editing theme code'},
  'Shopify Themes':{k:'themes',c:'build',h:'/shopify-themes',a:['#FBD9EC','#DCD6FF'],alt:'Fashion store theme on a tablet'},
- 'Shopify Apps':{k:'apps',c:'apps',h:'/contact',a:['#CFE4FF','#E2DAFF'],alt:'App on a smartphone'},
- 'Shopify Bundles':{k:'bundles',c:'apps',h:'/sleek-bundles-upsell',a:['#CFF0E4','#D8E0FF'],alt:'Gift boxes bundled together'},
- 'Shopify Migration':{k:'migration',c:'build',h:'/contact',a:['#E1D9FF','#D0EFE5'],alt:'Boxes stacked ready to move'},
- 'Shopify Plus':{k:'plus',c:'apps',h:'/contact',a:['#FFDDEB','#D3E6FF'],alt:'Team meeting in a modern office'},
- 'Shopify Management':{k:'manage',c:'run',h:'/contact',a:['#FFF0C9','#E6DEFF'],alt:'Parcels packed for shipping'},
- 'Shopify Audit':{k:'audit',c:'run',h:'/contact',a:['#E6DFFF','#D5E2FF'],alt:'Checklist and magnifying glass on a desk'}
+ 'Shopify Apps':{k:'apps',c:'apps',h:'/service/shopify-app-build',a:['#CFE4FF','#E2DAFF'],alt:'App on a smartphone'},
+ 'Shopify Bundles':{k:'bundles',c:'apps',h:'/service/shopify-bundles',a:['#CFF0E4','#D8E0FF'],alt:'Gift boxes bundled together'},
+ 'Shopify Migration':{k:'migration',c:'build',h:'/service/shopify-migration',a:['#E1D9FF','#D0EFE5'],alt:'Boxes stacked ready to move'},
+ 'Shopify Plus':{k:'plus',c:'apps',h:'/service/shopify-plus',a:['#FFDDEB','#D3E6FF'],alt:'Team meeting in a modern office'},
+ 'Shopify Management':{k:'manage',c:'run',h:'/service/shopify-store-management',a:['#FFF0C9','#E6DEFF'],alt:'Parcels packed for shipping'},
+ 'Shopify Audit':{k:'audit',c:'run',h:'/service/shopify-audit',a:['#E6DFFF','#D5E2FF'],alt:'Checklist and magnifying glass on a desk'}
 };
 var NAV=[['Services','/services'],['Themes','/shopify-themes'],['Work','/portfolio'],['About','/about'],['Contact','/contact']];
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
