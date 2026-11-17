@@ -157,6 +157,7 @@
   .es-svc .mbar b{font-family:var(--serif);font-size:28px;line-height:1;font-weight:400}
   .es-svc .mbar span{display:block;font-size:12.5px;color:var(--muted)}
   .es-svc .mbar .btn{white-space:nowrap;padding-left:16px;padding-right:16px}
+  #ecomswift-whatsapp-btn{bottom:calc(92px + env(safe-area-inset-bottom,0px))!important}
 }
 @media (max-width:560px){
   .es-svc .content h2{font-size:26px}
