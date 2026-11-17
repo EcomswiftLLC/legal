@@ -9,10 +9,10 @@ var NCSS="html.es-shop{background:#FFFFFF}\nhtml.es-shop body{background:#FFFFFF
 var BASE='https://ecomswiftllc.github.io/legal/home/assets/';
 var TAGS={build:'Build and design',grow:'Grow sales',apps:'Apps and tools',run:'Run your store'};
 var META={
- 'Shopify Store Build':{k:'build',c:'build',h:'/shopify-store-build-and-redesign',a:['#D9D2FF','#FFE2D4'],alt:'Laptop open on an online store'},
- 'Shopify Store Redesign':{k:'redesign',c:'build',h:'/shopify-store-build-and-redesign',a:['#D6E6FF','#E6DDFF'],alt:'Website wireframe sketched on a desk'},
- 'Shopify CRO':{k:'cro',c:'grow',h:'/shopify-conversion-rate-optimization',a:['#E4DDFF','#CDEFE3'],alt:'Analytics dashboard on a laptop'},
- 'Shopify SEO and Speed':{k:'seo',c:'grow',h:'/shopify-seo-and-speed-optimization',a:['#D3E7FF','#D2F0E6'],alt:'Search growth chart on a laptop'},
+ 'Shopify Store Build':{k:'build',c:'build',h:'/contact',a:['#D9D2FF','#FFE2D4'],alt:'Laptop open on an online store'},
+ 'Shopify Store Redesign':{k:'redesign',c:'build',h:'/contact',a:['#D6E6FF','#E6DDFF'],alt:'Website wireframe sketched on a desk'},
+ 'Shopify CRO':{k:'cro',c:'grow',h:'/conversion-optimization',a:['#E4DDFF','#CDEFE3'],alt:'Analytics dashboard on a laptop'},
+ 'Shopify SEO and Speed':{k:'seo',c:'grow',h:'/ecommerce-seo',a:['#D3E7FF','#D2F0E6'],alt:'Search growth chart on a laptop'},
  'Shopify Theme Edits':{k:'edits',c:'build',h:'/contact',a:['#FFE0EA','#E4DCFF'],alt:'Developer editing theme code'},
  'Shopify Themes':{k:'themes',c:'build',h:'/shopify-themes',a:['#FBD9EC','#DCD6FF'],alt:'Fashion store theme on a tablet'},
  'Shopify Apps':{k:'apps',c:'apps',h:'/contact',a:['#CFE4FF','#E2DAFF'],alt:'App on a smartphone'},
