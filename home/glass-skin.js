@@ -5,7 +5,7 @@
   "use strict";
   var GLASS = "linear-gradient(180deg,rgba(6,9,22,.62),rgba(6,9,22,.48))";
   var VEIL = "rgba(6,9,22,.38)";
-  var SKIP = /^\/($|shopify\/?$|cart|checkout|thank-you|my-account|account|member|search|store|product-page|category|donation-thank-you-page)/i;
+  var SKIP = /^\/($|shopify\/?$|cart|checkout|thank-you|my-account|account|member|search|store(\/|$)|product-page|category|donation-thank-you-page)/i;
   function active() {
     var p = location.pathname.replace(/\/+$/, "") || "/";
     if (p === "/") return false;
