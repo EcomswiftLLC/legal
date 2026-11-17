@@ -1,24 +1,82 @@
-/* Ecom Swift LLC - long legal text pages: builds an "On this page" index from the numbered section
-   headings and hides the empty heading left in the Wix text. No wording is changed. */
+/* Ecom Swift LLC - long legal text pages: finds the policy text, marks the title, date, section headings
+   and spacer lines, turns keycap-emoji numbers into plain "1." and builds an "On this page" index.
+   No wording is changed. */
 (function () {
   "use strict";
   if (window.__esLegal) return;
   window.__esLegal = 1;
+  var ZW = /[\s​‌‍ ﻿]/g;
+  var KEYCAP = /([0-9])️?⃣\s*/;
+  function txt(el) { return (el.textContent || "").replace(ZW, ""); }
   function slug(t, i) {
     var s = t.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
     return "sec-" + (i + 1) + (s ? "-" + s.slice(0, 40) : "");
   }
-  function run() {
-    var first = document.querySelector("main h2");
-    var root = first && first.parentElement;
-    if (!root) return;
-    root.classList.add("es-legal-text");
-    var hs = root.querySelectorAll("h1,h2,h3");
-    for (var i = 0; i < hs.length; i++) {
-      if (!hs[i].textContent.replace(/[\s​ ]/g, "")) hs[i].setAttribute("aria-hidden", "true");
+  function findRoot() {
+    var best = null, len = 0;
+    var all = document.querySelectorAll('[data-testid="richTextElement"]');
+    for (var i = 0; i < all.length; i++) {
+      var e = all[i];
+      if (e.closest("#SITE_HEADER,#SITE_FOOTER,#es-nav-host")) continue;
+      var l = (e.innerText || "").length;
+      if (l > 300 && l > len) { best = e; len = l; }
     }
-    var h2 = root.querySelectorAll("h2");
-    if (h2.length < 3 || root.querySelector(".es-toc")) return;
+    return best;
+  }
+  function plainNumbers(el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = w.nextNode())) {
+      if (KEYCAP.test(n.nodeValue)) n.nodeValue = n.nodeValue.replace(KEYCAP, "$1. ");
+    }
+  }
+  function isHeadingLike(k) {
+    var t = k.textContent.trim();
+    if (!txt(k) || t.length > 110) return false;
+    if (/^H[2-6]$/.test(k.tagName)) return true;
+    if (k.tagName === "P") {
+      var fs = parseFloat(k.style.fontSize || (k.querySelector("[style*=font-size]") || {style: {}}).style.fontSize) || 0;
+      if (fs >= 20) return true;
+      if (/^(\d+[.)]|\d️?⃣)\s*\S/.test(t) && k.querySelector("strong,b") && t.length < 90) return true;
+    }
+    return false;
+  }
+  function run() {
+    var root = findRoot();
+    if (!root) return;
+    if (!root.classList.contains("es-legal-text")) {
+      root.classList.add("es-legal-text");
+      for (var e = root.parentElement; e && e.tagName !== "MAIN" && e.tagName !== "BODY"; e = e.parentElement) {
+        e.classList.add("es-legal-wrap");
+        if (e.tagName === "SECTION") break;
+      }
+    }
+    var kids = root.children, title = null, heads = [], badge = null, i, k;
+    for (i = 0; i < kids.length; i++) {
+      k = kids[i];
+      if (k.classList.contains("es-toc")) continue;
+      if (!txt(k)) { k.classList.add("es-lg-empty"); k.setAttribute("aria-hidden", "true"); continue; }
+      if (!title && /^H[1-3]$/.test(k.tagName)) { title = k; k.classList.add("es-lg-title"); continue; }
+      if (isHeadingLike(k)) {
+        k.classList.add("es-lg-h");
+        k.setAttribute("role", "heading");
+        k.setAttribute("aria-level", "2");
+        heads.push(k);
+      } else if (!badge && !heads.length && k.tagName === "P" && k.textContent.length < 90 && /(effective|last updated|updated)/i.test(k.textContent)) {
+        badge = k; k.classList.add("es-lg-badge");
+      }
+    }
+    if (title) {
+      var tt = title.textContent.trim();
+      if (tt.length > 3 && tt === tt.toUpperCase() && /[A-Z]/.test(tt)) {
+        var w = document.createTreeWalker(title, NodeFilter.SHOW_TEXT, null), n;
+        while ((n = w.nextNode())) {
+          n.nodeValue = n.nodeValue.toLowerCase().replace(/(^|\s)([a-z])/g, function (m, a, b) { return a + b.toUpperCase(); }).replace(/\b(Of|And|The|For|To|In)\b/g, function (m) { return m.toLowerCase(); }).replace(/^./, function (c) { return c.toUpperCase(); });
+        }
+      }
+    }
+    for (i = 0; i < heads.length; i++) plainNumbers(heads[i]);
+    if (heads.length < 3 || root.querySelector(".es-toc")) return;
     var nav = document.createElement("nav");
     nav.className = "es-toc";
     nav.setAttribute("aria-label", "On this page");
@@ -26,20 +84,18 @@
     t.className = "es-toc-t";
     t.textContent = "On this page";
     var ol = document.createElement("ol");
-    for (var j = 0; j < h2.length; j++) {
-      var txt = h2[j].textContent.trim();
-      if (!txt) continue;
-      if (!h2[j].id) h2[j].id = slug(txt, j);
-      var li = document.createElement("li");
-      var a = document.createElement("a");
-      a.href = "#" + h2[j].id;
-      a.textContent = txt;
+    for (var j = 0; j < heads.length; j++) {
+      var h = heads[j];
+      if (!h.id) h.id = slug(h.textContent.trim(), j);
+      var li = document.createElement("li"), a = document.createElement("a");
+      a.href = "#" + h.id;
+      a.textContent = h.textContent.trim();
       li.appendChild(a);
       ol.appendChild(li);
     }
     nav.appendChild(t);
     nav.appendChild(ol);
-    h2[0].parentNode.insertBefore(nav, h2[0]);
+    heads[0].parentNode.insertBefore(nav, heads[0]);
   }
   var tm;
   function later() { clearTimeout(tm); tm = setTimeout(run, 200); }
