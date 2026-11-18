@@ -38,7 +38,7 @@ try{if(/^\/shopify-themes\/?$/i.test(location.pathname)){
   var __ts=document.getElementById('es-pre')||document.createElement('style');__ts.id='es-pre';
   __ts.textContent='html:not(.es-proc-page) #SITE_PAGES,html:not(.es-proc-page) #PAGES_CONTAINER>*{visibility:hidden!important}html,body{background:#FBFAF7!important}';
   if(!__ts.isConnected){document.head.appendChild(__ts);setTimeout(function(){var e=document.getElementById('es-pre');if(e)e.remove()},5000)}
-  if(!window.__esThemL){window.__esThemL=1;var __tj=document.createElement('script');__tj.src='https://ecomswiftllc.github.io/legal/home/themes.js?v=1';__tj.async=true;document.head.appendChild(__tj)}
+  if(!window.__esThemL){window.__esThemL=1;var __tj=document.createElement('script');__tj.src='https://ecomswiftllc.github.io/legal/home/themes.js?v=2';__tj.async=true;document.head.appendChild(__tj)}
 }}catch(e){}
 /* /donate and its thank-you page: restyle around the Wix Donations widget (nothing is hidden). */
 try{if(/^\/(donate|donation-thank-you-page)\/?$/i.test(location.pathname)&&!window.__esDonL){window.__esDonL=1;var __dp=document.createElement('style');__dp.id='es-donate-pre';__dp.textContent='html:not(.es-donate-ready) #SITE_PAGES{visibility:hidden!important}html,body{background:#0D1226!important}';(document.head||document.documentElement).appendChild(__dp);setTimeout(function(){document.documentElement.classList.add('es-donate-ready')},4500);var __dn=document.createElement('script');__dn.src='https://ecomswiftllc.github.io/legal/home/donate.js?v=5';__dn.async=true;document.head.appendChild(__dn)}}catch(e){}

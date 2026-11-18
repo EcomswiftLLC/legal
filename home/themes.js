@@ -178,6 +178,7 @@ var CSS = ":host{display:block;--bg:#FBFAF7;--paper:#FFFFFF;--soft:#F8F7F4;--ink
 ".end{background:var(--band);color:var(--band-fg);display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;padding-block:clamp(26px,4.4cqi,44px)}" +
 ".end h2{font:700 clamp(22px,3.2cqi,30px)/1.15 var(--head);letter-spacing:-.02em;color:var(--band-fg);margin:0 0 6px}.end p{margin:0;color:var(--band-muted);max-width:56ch}" +
 ".foot{margin:0;padding-block:18px 24px;color:var(--muted);font-size:13px;line-height:1.5;border-top:1px solid var(--line)}" +
+"@media (max-width:560px){.buyrow .btn{width:100%}}" +
 "@media (prefers-reduced-motion:no-preference){.btn,.pick a{transition:background .2s,border-color .2s}}" +
 "@media (prefers-reduced-motion:reduce){*{transition:none!important}}";
 var host = null, R = null;
@@ -207,7 +208,7 @@ function theme(t, i) {
 function build() {
   var h = '<div class="es"><div class="wrap"><div class="frame"><main>';
   h += '<nav class="crumbs in" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">Shopify themes</span></li></ol></nav>';
-  h += '<section class="hero in"><p class="kick">' + esc(DATA.kicker) + "</p><h1>" + esc(DATA.h1) + '</h1><p class="sub">' + esc(DATA.sub) + "</p>";
+  h += '<section class="hero in"><h1>' + esc(DATA.h1) + '</h1><p class="sub">' + esc(DATA.sub) + "</p>";
   h += '<ul class="quick">' + DATA.quick.map(tick).join("") + "</ul>";
   h += '<ul class="pick" aria-label="Jump to a theme">' + DATA.themes.map(function (t) { return '<li><a href="#' + t.id + '"><b>' + esc(t.name) + "</b><span>" + esc(t.tagline.split(",")[0].replace(/\.$/, "")) + ", $" + esc(t.price) + "</span></a></li>"; }).join("") + "</ul></section>";
   h += DATA.themes.map(theme).join("");
