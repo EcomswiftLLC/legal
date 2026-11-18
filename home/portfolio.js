@@ -40,7 +40,7 @@ var CSS = ":host{display:block;--bg:#FBFAF7;--paper:#FFFFFF;--soft:#F5F3EC;--ink
 /* review card */
 + ".rv{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;break-inside:avoid}"
 + ".rv-top{display:flex;align-items:center;justify-content:space-between;gap:10px}"
-+ ".stars{color:var(--gold);letter-spacing:2px;font-size:15px}"
++ ".stars{color:#8F6B1B;letter-spacing:2px;font-size:15px}"
 + ".vb{font:600 12px/1 var(--body);color:#2F6B4F;background:#E8F2EC;border-radius:999px;padding:6px 10px;white-space:nowrap}"
 + ".rv-t{font-size:16px;line-height:1.6;color:var(--ink)}"
 + ".rv-f{display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--muted)}.rv-f b{font:700 15px/1.3 var(--head);color:var(--ink);letter-spacing:-.01em}"
@@ -104,7 +104,7 @@ var CSS = ":host{display:block;--bg:#FBFAF7;--paper:#FFFFFF;--soft:#F5F3EC;--ink
 + ".chip small{font:500 12.5px/1 var(--body);opacity:.7;margin-left:6px}"
 + ".cols{column-count:3;column-gap:16px}.cols .rv{margin:0 0 16px;display:flex}"
 + ".rmore{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}"
-+ ".note{color:var(--muted);font-size:14px}"
++ ".note{color:var(--muted);font-size:14px}a.note{display:inline-flex;align-items:center;min-height:44px}"
 /* end */
 + ".end{background:var(--band);color:var(--band-fg)}"
 + ".egrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center}"

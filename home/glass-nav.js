@@ -31,7 +31,7 @@ try{if(/^\/portfolio\/?$/i.test(location.pathname)){
   var __ps=document.getElementById('es-pre')||document.createElement('style');__ps.id='es-pre';
   __ps.textContent='html:not(.es-proc-page) #SITE_PAGES,html:not(.es-proc-page) #PAGES_CONTAINER>*{visibility:hidden!important}html,body{background:#FBFAF7!important}';
   if(!__ps.isConnected){document.head.appendChild(__ps);setTimeout(function(){var e=document.getElementById('es-pre');if(e)e.remove()},5000)}
-  if(!window.__esPortL){window.__esPortL=1;var __pj=document.createElement('script');__pj.src='https://ecomswiftllc.github.io/legal/home/portfolio.js?v=1';__pj.async=true;document.head.appendChild(__pj)}
+  if(!window.__esPortL){window.__esPortL=1;var __pj=document.createElement('script');__pj.src='https://ecomswiftllc.github.io/legal/home/portfolio.js?v=2';__pj.async=true;document.head.appendChild(__pj)}
 }}catch(e){}
 /* /shopify-themes: hide the native text until the shop renderer has drawn. */
 try{if(/^\/shopify-themes\/?$/i.test(location.pathname)){
