@@ -4,11 +4,9 @@
 (function () {
   'use strict';
   if (window.__esDonate) return; window.__esDonate = 1;
-  var BASE = 'https://ecomswiftllc.github.io/legal/home/donate/';
   var path = location.pathname.replace(/\/+$/, '').toLowerCase();
   var isThanks = path === '/donation-thank-you-page';
 
-  var APPS = [['lullora'], ['abaqo'], ['nestbox'], ['tinylog'], ['homefit'], ['soundmeter'], ['steptrail'], ['squeezo'], ['pagewise'], ['slimpath'], ['tunebeat'], ['cyclebloom']];
 
   /* fonts */
   if (!document.getElementById('es-donate-font')) {
@@ -26,6 +24,10 @@
     '#comp-mttgfay64{position:relative}' +
     '#comp-mttgfayi,#comp-mttgfay64{background:radial-gradient(120% 80% at 80% 0%,#1A2147 0%,' + NAVY + ' 60%)!important}' +
     '@media(max-width:750px){#comp-mttgfaxd,#comp-mttgfaxz,#comp-mttgfay64{height:auto!important;min-height:0!important}#es-donate-left{position:relative!important;inset:auto!important}#comp-mttgfay64{display:block!important}#comp-mttgfay64>*:not(#es-donate-left){position:absolute!important;inset:0!important;height:100%!important}}' +
+    '@media(min-width:751px){#comp-mttgfaxd,#comp-mttgfaxz,#comp-mttgfay64,#comp-mttgfayi{min-height:840px!important}}' +
+    '#comp-mttgfayk{position:relative;isolation:isolate}' +
+    '#comp-mttgfayk::before{content:"";position:absolute;inset:-34px -38px -66px;z-index:-1;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.02));border:1px solid rgba(232,194,122,.3);box-shadow:0 32px 90px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.09)}' +
+    '@media(max-width:750px){#comp-mttgfayk::before{inset:-18px -14px;border-radius:22px}}' +
     '#comp-mttgfayk [class*="SelectableContainercomponent"][class*="__wrapper"]{border-radius:12px!important;overflow:hidden}' +
     '#comp-mttgfayk [class*="__wrapper"] .wixui-multi-state-box,#comp-mttgfayk [class*="__wrapper"] .wixui-box,#comp-mttgfayk [class*="__wrapper"] .inner-box{border:0!important;background:transparent!important;box-shadow:none!important;border-radius:12px!important}' +
     '#comp-mttgfayk .wixui-selectable-container{border:1px solid rgba(255,255,255,.18)!important;border-radius:12px!important;background:rgba(255,255,255,.05)!important;transition:border-color .15s,background .15s}' +
@@ -75,25 +77,27 @@
     ':focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:6px}' +
     '@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}';
 
+  var ART = '<svg class="art" viewBox="-40 -30 180 160" aria-hidden="true" focusable="false"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6DDA6"/><stop offset="1" stop-color="#B98E45"/></linearGradient><radialGradient id="gl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E8C27A" stop-opacity=".28"/><stop offset="1" stop-color="#E8C27A" stop-opacity="0"/></radialGradient></defs><circle cx="50" cy="46" r="86" fill="url(#gl)"/><g fill="none" stroke="url(#gg)" stroke-width="1.1"><path transform="translate(50 46) scale(0.18) translate(-50 -46)" stroke-opacity="1" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(0.36) translate(-50 -46)" stroke-opacity="0.9" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(0.56) translate(-50 -46)" stroke-opacity="0.75" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(0.78) translate(-50 -46)" stroke-opacity="0.58" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(1.02) translate(-50 -46)" stroke-opacity="0.42" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(1.28) translate(-50 -46)" stroke-opacity="0.28" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(1.58) translate(-50 -46)" stroke-opacity="0.16" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/><path transform="translate(50 46) scale(1.92) translate(-50 -46)" stroke-opacity="0.08" d="M50 84C20 60 6 44 6 28C6 16 15 8 27 8C37 8 45 13 50 21C55 13 63 8 73 8C85 8 94 16 94 28C94 44 80 60 50 84Z"/></g></svg>';
+
   function leftPanel() {
-    var tiles = APPS.map(function (a) {
-      return '<div class="t"><img src="' + BASE + a[0] + '.png" width="96" height="96" alt="" loading="eager" decoding="async"></div>';
-    }).join('');
     return '<style>' + BASECSS +
-      '.w{display:flex;flex-direction:column;justify-content:center;gap:28px;padding:clamp(88px,9vw,120px) clamp(24px,5vw,72px) 56px;min-height:100%}' +
-      '.k{color:' + G + ';font-weight:500;font-size:15px}' +
-      'h2{font-size:clamp(32px,3.2vw,46px)}' +
-      '.lead{color:#D9D6CE;font-size:clamp(16px,1.25vw,18px);max-width:34em}' +
-      '.g{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px);max-width:440px}' +
-      '.t{display:block;aspect-ratio:1;border-radius:22%;overflow:hidden;box-shadow:0 0 0 1px rgba(232,194,122,.35),0 12px 28px rgba(0,0,0,.35);}' +
-            '.t img{display:block;width:100%;height:100%;object-fit:cover}' +
-      '.cap{color:#B9BED0;font-size:14px}' +
-      '@media(max-width:750px){.w{min-height:0;justify-content:flex-start;padding:36px 24px 44px;gap:22px}.g{gap:10px;max-width:none}h2{font-size:31px}.lead{padding-right:8px}}' +
-      '</style><div class="w">' +
+      ':host{position:relative;display:block;height:100%}' +
+      '.art{overflow:visible;position:absolute;right:6%;top:96px;width:min(380px,62%);height:auto;pointer-events:none;z-index:0}' +
+      '.art path{vector-effect:non-scaling-stroke}' +
+      '.w{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;padding:clamp(110px,10vw,140px) clamp(24px,5vw,72px) 72px;min-height:100%}' +
+      '.k{display:inline-flex;align-items:center;gap:10px;color:' + G + ';font-weight:500;font-size:14px;border:1px solid rgba(232,194,122,.35);background:rgba(232,194,122,.08);border-radius:999px;padding:7px 14px 7px 12px}' +
+      '.k:before{content:"";width:7px;height:7px;border-radius:50%;background:' + G + ';box-shadow:0 0 0 4px rgba(232,194,122,.18)}' +
+      'h2{font-size:clamp(34px,3.6vw,54px);max-width:12em}' +
+      '.lead{color:#D9D6CE;font-size:clamp(16px,1.25vw,18px);max-width:31em}' +
+      '.f{list-style:none;margin:6px 0 0;padding:20px 0 0;border-top:1px solid rgba(232,194,122,.25);display:flex;flex-direction:column;gap:14px;max-width:31em;width:100%}' +
+      '.f li{position:relative;padding-left:34px;color:#F3EFE6;font-size:17px}' +
+      '.f li:before{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;background:rgba(232,194,122,.16) url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3E%3Cpath d=%27M5.5 10.5l3 3 6-7%27 fill=%27none%27 stroke=%27%23E8C27A%27 stroke-width=%271.8%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") center/contain no-repeat}' +
+      '@media(max-width:750px){:host{height:auto}.art{right:-70px;top:-10px;bottom:auto;width:300px;opacity:.4}.w{min-height:0;justify-content:flex-start;padding:36px 24px 44px;gap:20px}.f li{font-size:16px}h2{font-size:32px}.lead{padding-right:8px}}' +
+      '</style>' + ART + '<div class="w">' +
       '<p class="k">100+ apps across platforms</p>' +
       '<h2 class="serif">Free for everyone, backed by people like you.</h2>' +
       '<p class="lead">All of our apps are fully free for everyone. They’re backed by donations, which help us fix bugs, keep them up to date and build the next ones.</p>' +
-      '<div class="g" aria-hidden="true">' + tiles + '</div></div>';
+      '<ul class="f"><li>100+ apps, fully free for everyone</li><li>Backed by donations, not paywalls</li><li>Every gift goes into fixes, updates and new apps</li></ul></div>';
   }
 
   function belowSections() {
@@ -103,10 +107,18 @@
       '.w{max-width:1120px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(48px,6vw,80px)}' +
       'h2{font-size:clamp(28px,3vw,40px);margin-bottom:28px}' +
       '.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}' +
-      '.i{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px;min-width:0}' +
+      '.i{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}' +
+      '.i:before{content:"";position:absolute;left:28px;right:28px;top:0;height:2px;background:linear-gradient(90deg,' + G + ',rgba(232,194,122,0))}' +
       '.ic{width:44px;height:44px;border-radius:12px;background:rgba(232,194,122,.14);color:' + G + ';display:grid;place-items:center}' +
       'h3{font-size:21px}.i p{color:#CFCCC4;font-size:16px}' +
       '.i a{color:' + G + ';text-underline-offset:3px}' +
+      '.faq{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.12)}' +
+      'details{border-bottom:1px solid rgba(255,255,255,.12)}' +
+      'summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-size:18px;font-weight:500;color:#F3EFE6}' +
+      'summary::-webkit-details-marker{display:none}' +
+      'summary:after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;border:1px solid rgba(232,194,122,.4);color:' + G + ';display:grid;place-items:center;font-size:20px;line-height:1}' +
+      'details[open] summary:after{content:"\\2212"}' +
+      'details p{color:#CFCCC4;padding:0 48px 22px 4px;max-width:44em}' +
       '.note{border-top:1px solid rgba(255,255,255,.12);padding-top:28px;color:#B9BED0;font-size:15px;max-width:46em}' +
       '.note a{color:' + G + '}' +
       '@media(max-width:820px){.row{grid-template-columns:1fr}}' +
@@ -121,14 +133,17 @@
       item('share', 'Share an app', 'Send one to a friend or family member who’d get something out of it.') +
       item('chat', 'Tell us what to fix', 'Found a bug or have an idea? <a href="/contact">Send us a message</a>.') +
       '</div></section>' +
-      '<p class="note">Ecom Swift LLC is a for-profit company, not a charity. Donations are voluntary and are not tax-deductible. Questions about a donation? <a href="/contact">Contact us</a>.</p>' +
+      '<section aria-labelledby="g3"><h2 id="g3" class="serif">Good to know</h2><div class="faq">' +
+      '<details><summary>Do I need to donate to use the apps?</summary><p>No. All of our apps are fully free for everyone. Donations are optional and help us keep them that way.</p></details>' +
+      '<details><summary>Can I give every month?</summary><p>Yes. Choose Monthly (or Weekly) in the form above before you press Donate.</p></details>' +
+      '<details><summary>Is my donation tax-deductible?</summary><p>No. Ecom Swift LLC is a for-profit company, not a charity, so donations are not tax-deductible.</p></details>' +
+      '<details><summary>Will I get a confirmation?</summary><p>Yes. After you donate you will see a thank-you page and receive a confirmation email.</p></details>' +
+      '</div></section>' +
+      '<p class="note">Ecom Swift LLC is a for-profit company, not a charity. Donations are voluntary. Questions about a donation? <a href="/contact">Contact us</a>.</p>' +
       '</div>';
   }
 
   function thanksPanel() {
-    var tiles = APPS.slice(0, 8).map(function (a) {
-      return '<div class="t"><img src="' + BASE + a[0] + '.png" width="72" height="72" alt="" decoding="async"></div>';
-    }).join('');
     function item(ic, h, p) { return '<div class="i"><span class="ic">' + icon(ic) + '</span><h3 class="serif">' + h + '</h3><p>' + p + '</p></div>'; }
     return '<style>' + BASECSS +
       ':host{background:' + NAVY + '}' +
@@ -138,15 +153,13 @@
       '.i{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px;min-width:0}' +
       '.ic{width:44px;height:44px;border-radius:12px;background:rgba(232,194,122,.14);color:' + G + ';display:grid;place-items:center}' +
       'h3{font-size:20px}.i p{color:#CFCCC4}.i a{color:' + G + '}' +
-      '.g{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}' +
-      '.t{display:block;width:64px;height:64px;border-radius:22%;overflow:hidden;box-shadow:0 0 0 1px rgba(232,194,122,.35)}.t img{display:block;width:100%;height:100%}' +
       '.btn{align-self:center;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:12px;background:linear-gradient(180deg,#F1D08D,' + G2 + ');color:' + NAVY + ';font-weight:600;text-decoration:none}' +
       '@media(max-width:760px){.row{grid-template-columns:1fr}}' +
       '</style><div class="w"><h2 class="serif">Want to help a little more?</h2><div class="row">' +
       item('star', 'Leave a review', 'An honest rating, wherever you found us, helps other people find an app they’ll use.') +
       item('share', 'Share an app', 'Send one to someone who’d get something out of it.') +
       item('chat', 'Say hello', 'Tell us what you like or what to fix. <a href="/contact">Send us a message</a>.') +
-      '</div><div class="g">' + tiles + '</div><a class="btn" href="/">Back to Ecom Swift LLC</a></div>';
+      '</div><a class="btn" href="/">Back to Ecom Swift LLC</a></div>';
   }
 
   function mount(el, html, how, ref) {
