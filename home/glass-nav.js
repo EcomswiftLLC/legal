@@ -1,4 +1,6 @@
 (function(){"use strict";
+/* Old Wix header, its logo and the checkout/cart header: hide at once, on every page except home (which has its own header). */
+try{if(location.pathname.replace(/\/+$/,'')!==''&&!document.getElementById('es-old-hide')){var __oh=document.createElement('style');__oh.id='es-old-hide';__oh.textContent='#SITE_HEADER,#SITE_HEADER *,[id^="TPAMultiSection_"][id$=":header"],[id^="TPAMultiSection_"][id$=":header"] *,[data-hook="CheckoutAppDataHook.header"],[data-hook="CheckoutAppDataHook.header"] *,[data-hook^="StoreNameAndLogoDataHooks"],[data-hook^="StoreNameAndLogoDataHooks"] *{visibility:hidden!important}';(document.head||document.documentElement).appendChild(__oh)}}catch(e){}
 /* Service pages: hide the placeholder page until the renderer has drawn, and start loading it right away. */
 try{var __sm=/^\/service\/([a-z0-9-]+)\/?$/i.exec(location.pathname);
  if(__sm){
