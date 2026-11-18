@@ -18,11 +18,13 @@
   /* page-level CSS: restyles the Wix widget through its stable class names */
   var G = '#E8C27A', G2 = '#C9A55C', NAVY = '#0D1226';
   var css =
-    '#SITE_PAGES{background:' + NAVY + '}' +
     'section[id^="comp-"].wixui-column-strip,#SITE_PAGES [class*="wixui-column-strip"]{--es-gold:' + G + '}' +
     '#img_comp-mttgfay64,#bgMedia_comp-mttgfay64{display:none!important}' +
     '#comp-mttgfay64{position:relative}' +
-    '#comp-mttgfayi,#comp-mttgfay64{background:radial-gradient(120% 80% at 80% 0%,#1A2147 0%,' + NAVY + ' 60%)!important}' +
+    /* one continuous background: a single gradient on <html>, everything above it transparent */
+    'html,html body{background:' + NAVY + '!important;background-image:none!important}' +
+    '#SITE_CONTAINER{background:radial-gradient(1100px 760px at 78% 0,#1A2147 0%,' + NAVY + ' 100%) ' + NAVY + ' no-repeat!important}' +
+    '#masterPage,#PAGES_CONTAINER,#SITE_PAGES,html body #SITE_HEADER,html body #SITE_HEADER [id^="bgLayers"],html body #SITE_FOOTER,html body #SITE_FOOTER [id^="bgLayers"],html body #SITE_FOOTER [id^="bgMedia"],#comp-mttgfaxd,#comp-mttgfaxd [id^="bgLayers_"],#comp-mttgfaxd [id^="bgMedia_"],#comp-mttgfaxz,#comp-mttgfayi,#comp-mttgfay64{background:transparent!important}' +
     '@media(max-width:750px){#comp-mttgfaxd,#comp-mttgfaxz,#comp-mttgfay64{height:auto!important;min-height:0!important}#es-donate-left{position:relative!important;inset:auto!important}#comp-mttgfay64{display:block!important}#comp-mttgfay64>*:not(#es-donate-left){position:absolute!important;inset:0!important;height:100%!important}}' +
     '@media(min-width:751px){#comp-mttgfaxd,#comp-mttgfaxz,#comp-mttgfay64,#comp-mttgfayi{min-height:840px!important}}' +
     '#comp-mttgfayk{position:relative;isolation:isolate}' +
@@ -87,7 +89,7 @@
       '.w{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;padding:clamp(110px,10vw,140px) clamp(24px,5vw,72px) 72px;min-height:100%}' +
       '.k{display:inline-flex;align-items:center;gap:10px;color:' + G + ';font-weight:500;font-size:14px;border:1px solid rgba(232,194,122,.35);background:rgba(232,194,122,.08);border-radius:999px;padding:7px 14px 7px 12px}' +
       '.k:before{content:"";width:7px;height:7px;border-radius:50%;background:' + G + ';box-shadow:0 0 0 4px rgba(232,194,122,.18)}' +
-      'h2{font-size:clamp(34px,3.6vw,54px);max-width:12em}' +
+      'h2{font-size:clamp(34px,3.6vw,54px);max-width:12em;text-wrap:balance}' +
       '.lead{color:#D9D6CE;font-size:clamp(16px,1.25vw,18px);max-width:31em}' +
       '.f{list-style:none;margin:6px 0 0;padding:20px 0 0;border-top:1px solid rgba(232,194,122,.25);display:flex;flex-direction:column;gap:14px;max-width:31em;width:100%}' +
       '.f li{position:relative;padding-left:34px;color:#F3EFE6;font-size:17px}' +
@@ -97,49 +99,7 @@
       '<p class="k">100+ apps across platforms</p>' +
       '<h2 class="serif">Free for everyone, backed by people like you.</h2>' +
       '<p class="lead">All of our apps are fully free for everyone. They’re backed by donations, which help us fix bugs, keep them up to date and build the next ones.</p>' +
-      '<ul class="f"><li>100+ apps, fully free for everyone</li><li>Backed by donations, not paywalls</li><li>Every gift goes into fixes, updates and new apps</li></ul></div>';
-  }
-
-  function belowSections() {
-    function item(ic, h, p) { return '<div class="i"><span class="ic">' + icon(ic) + '</span><h3 class="serif">' + h + '</h3><p>' + p + '</p></div>'; }
-    return '<style>' + BASECSS +
-      ':host{background:#0A0F20}' +
-      '.w{max-width:1120px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:clamp(48px,6vw,80px)}' +
-      'h2{font-size:clamp(28px,3vw,40px);margin-bottom:28px}' +
-      '.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}' +
-      '.i{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:10px;min-width:0}' +
-      '.i:before{content:"";position:absolute;left:28px;right:28px;top:0;height:2px;background:linear-gradient(90deg,' + G + ',rgba(232,194,122,0))}' +
-      '.ic{width:44px;height:44px;border-radius:12px;background:rgba(232,194,122,.14);color:' + G + ';display:grid;place-items:center}' +
-      'h3{font-size:21px}.i p{color:#CFCCC4;font-size:16px}' +
-      '.i a{color:' + G + ';text-underline-offset:3px}' +
-      '.faq{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.12)}' +
-      'details{border-bottom:1px solid rgba(255,255,255,.12)}' +
-      'summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 4px;font-size:18px;font-weight:500;color:#F3EFE6}' +
-      'summary::-webkit-details-marker{display:none}' +
-      'summary:after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;border:1px solid rgba(232,194,122,.4);color:' + G + ';display:grid;place-items:center;font-size:20px;line-height:1}' +
-      'details[open] summary:after{content:"\\2212"}' +
-      'details p{color:#CFCCC4;padding:0 48px 22px 4px;max-width:44em}' +
-      '.note{border-top:1px solid rgba(255,255,255,.12);padding-top:28px;color:#B9BED0;font-size:15px;max-width:46em}' +
-      '.note a{color:' + G + '}' +
-      '@media(max-width:820px){.row{grid-template-columns:1fr}}' +
-      '</style><div class="w">' +
-      '<section aria-labelledby="g1"><h2 id="g1" class="serif">Where your donation goes</h2><div class="row">' +
-      item('wrench', 'Keeping apps working', 'Bug fixes, updates for new devices and system versions, and replies to your support emails.') +
-      item('spark', 'Building new ones', 'New free apps, plus the features people ask for most.') +
-      item('shield', 'Staying independent', 'Developer accounts, testing devices and the tools it takes to publish.') +
-      '</div></section>' +
-      '<section aria-labelledby="g2"><h2 id="g2" class="serif">Can’t give right now? You can still help.</h2><div class="row">' +
-      item('star', 'Leave a review', 'An honest rating, wherever you found us, helps other people find an app they’ll use.') +
-      item('share', 'Share an app', 'Send one to a friend or family member who’d get something out of it.') +
-      item('chat', 'Tell us what to fix', 'Found a bug or have an idea? <a href="/contact">Send us a message</a>.') +
-      '</div></section>' +
-      '<section aria-labelledby="g3"><h2 id="g3" class="serif">Good to know</h2><div class="faq">' +
-      '<details><summary>Do I need to donate to use the apps?</summary><p>No. All of our apps are fully free for everyone. Donations are optional and help us keep them that way.</p></details>' +
-      '<details><summary>Can I give every month?</summary><p>Yes. Choose Monthly (or Weekly) in the form above before you press Donate.</p></details>' +
-      '<details><summary>Is my donation tax-deductible?</summary><p>No. Ecom Swift LLC is a for-profit company, not a charity, so donations are not tax-deductible.</p></details>' +
-      '<details><summary>Will I get a confirmation?</summary><p>Yes. After you donate you will see a thank-you page and receive a confirmation email.</p></details>' +
-      '</div></section>' +
-      '<p class="note">Ecom Swift LLC is a for-profit company, not a charity. Donations are voluntary. Questions about a donation? <a href="/contact">Contact us</a>.</p>' +
+      '<ul class="f"><li>100+ apps, fully free for everyone</li><li>Backed by donations, not paywalls</li><li>Every gift goes into fixes, updates and new apps</li></ul>' +
       '</div>';
   }
 
@@ -183,12 +143,17 @@
       l.style.cssText = 'position:absolute;inset:0;z-index:2;overflow:hidden';
       col.appendChild(l);
     }
-    if (!document.getElementById('es-donate-below')) {
-      var b = mount(null, belowSections(), 'below');
-      strip.insertAdjacentElement('afterend', b);
-    }
+    var old = document.getElementById('es-donate-below'); if (old) old.remove();
   }
   /* Wix can re-render the page after we mount, so keep the panels attached */
-  build();
-  setInterval(build, 700);
+  var readyDone = false;
+  function ready() {
+    if (readyDone) return;
+    if (document.getElementById('es-donate-left') || document.getElementById('es-donate-thanks')) {
+      readyDone = true;
+      setTimeout(function () { document.documentElement.classList.add('es-donate-ready'); }, 450);
+    }
+  }
+  build(); ready();
+  setInterval(function () { build(); ready(); }, 300);
 })();
