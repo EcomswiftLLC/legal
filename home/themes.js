@@ -13,7 +13,7 @@ var DATA = {
   kicker: "Shopify themes",
   h1: "Shopify themes for fashion and apparel stores",
   sub: "Three original Online Store 2.0 themes from Ecom Swift LLC. Each costs $49.99 once. You get the theme file straight after checkout and upload it to your own Shopify store.",
-  quick: ["$49.99 per theme, paid once", "Download straight after checkout", "One licence covers one store"],
+  quick: ["$49.99 per theme, paid once", "Download straight after checkout", "One license covers one store"],
   themes: [
     {
       id: "footlight", name: "Footlight", font: "footlight", price: "49.99",
@@ -87,7 +87,7 @@ var DATA = {
   stepsH2: "How buying works",
   steps: [
     ["Pay at checkout", "Click Buy, then pay securely at checkout. Prices are in US dollars."],
-    ["Download the zip", "A download link appears on the confirmation page and arrives by email. The zip holds the theme file, an install guide and the licence."],
+    ["Download the zip", "A download link appears on the confirmation page and arrives by email. The zip holds the theme file, an install guide and the license."],
     ["Upload it to Shopify", "In your Shopify admin open Online Store, Themes, Add theme, then Upload zip file and choose the theme file from the zip."],
     ["Customize and publish", "Add your products and photos in the theme editor. Work on it unpublished first, so your live store stays untouched until you publish."]
   ],
@@ -95,7 +95,7 @@ var DATA = {
   faq: [
     ["Which Shopify plans can use these themes?", "Any plan that lets you upload a theme. All three use Online Store 2.0, the current Shopify theme architecture."],
     ["Are the photos and products in the screenshots included?", "No. The screenshots come from demo stores with sample photography and products. You get the theme itself, with starter layouts that you fill with your own content."],
-    ["Can I use one theme on more than one store?", "One licence covers one Shopify store. If you build for clients, buy one licence for each client store."],
+    ["Can I use one theme on more than one store?", "One license covers one Shopify store. If you build for clients, buy one license for each client store."],
     ["Does support come with the price?", "Yes. We answer within 2 business days and help with installing the theme, its settings and bugs in the theme. Custom design, code changes and adding your products are paid services."],
     ["Can I see more before I buy?", "Each theme has full documentation that lists every section and setting. If you have a question, write to support@ecomswiftllc.com."],
     ["What if the theme is not right for me?", "Refunds follow our refund policy at www.ecomswiftllc.com/refund-policy."],
