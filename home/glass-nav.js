@@ -88,3 +88,37 @@ function mount(){
 }
 if(document.body)sync();else document.addEventListener('DOMContentLoaded',sync);
 })();
+
+/* Ecom Swift LLC favicon: use the target logo mark as the tab icon on every page. */
+;(function () {
+  try {
+    var B = "https://ecomswiftllc.github.io/legal/home/assets/";
+    var WANT = [
+      { rel: "icon", href: B + "es-favicon-256.png?v=1", type: "image/png", sizes: "256x256" },
+      { rel: "shortcut icon", href: B + "es-favicon.ico?v=1", type: "image/x-icon", sizes: "" },
+      { rel: "apple-touch-icon", href: B + "es-favicon-256.png?v=1", type: "", sizes: "180x180" }
+    ];
+    function apply() {
+      var head = document.head || document.getElementsByTagName("head")[0];
+      if (!head) return;
+      var have = head.querySelectorAll("link[data-es-icon]").length;
+      var olds = head.querySelectorAll("link[rel~='icon'],link[rel='shortcut icon'],link[rel='apple-touch-icon']");
+      for (var i = 0; i < olds.length; i++) {
+        if (!olds[i].hasAttribute("data-es-icon")) olds[i].parentNode.removeChild(olds[i]);
+      }
+      if (have >= WANT.length) return;
+      for (var j = 0; j < WANT.length; j++) {
+        var l = document.createElement("link");
+        l.rel = WANT[j].rel;
+        l.href = WANT[j].href;
+        if (WANT[j].type) l.type = WANT[j].type;
+        if (WANT[j].sizes) l.setAttribute("sizes", WANT[j].sizes);
+        l.setAttribute("data-es-icon", "1");
+        head.appendChild(l);
+      }
+    }
+    apply();
+    document.addEventListener("DOMContentLoaded", apply);
+    window.addEventListener("load", function () { apply(); setTimeout(apply, 1500); });
+  } catch (e) {}
+})();
