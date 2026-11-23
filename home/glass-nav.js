@@ -8,8 +8,8 @@ try{var __sm=/^\/service\/([a-z0-9-]+)\/?$/i.exec(location.pathname);
   __ps.textContent='html:not(.es-svc-page) #SITE_PAGES,html:not(.es-svc-page) #PAGES_CONTAINER>*{visibility:hidden!important}html,body{background:#FBFAF7!important}';
   if(!__ps.isConnected){document.head.appendChild(__ps);setTimeout(function(){var e=document.getElementById('es-pre');if(e)e.remove()},5000)}
   var __pl=document.createElement('link');__pl.rel='preload';__pl.as='fetch';__pl.crossOrigin='anonymous';__pl.href='https://ecomswiftllc.github.io/legal/home/svc/'+__sm[1].toLowerCase()+'.json?v=11';document.head.appendChild(__pl);
-  if(!document.getElementById('es-svc-css')){var __cl=document.createElement('link');__cl.id='es-svc-css';__cl.rel='stylesheet';__cl.href='https://ecomswiftllc.github.io/legal/home/svc.css?v=12';document.head.appendChild(__cl)}
-  if(!window.__esSvcL){window.__esSvcL=1;var __ss=document.createElement('script');__ss.src='https://ecomswiftllc.github.io/legal/home/svc.js?v=12';__ss.async=true;document.head.appendChild(__ss)}
+  if(!document.getElementById('es-svc-css')){var __cl=document.createElement('link');__cl.id='es-svc-css';__cl.rel='stylesheet';__cl.href='https://ecomswiftllc.github.io/legal/home/svc.css?v=13';document.head.appendChild(__cl)}
+  if(!window.__esSvcL){window.__esSvcL=1;var __ss=document.createElement('script');__ss.src='https://ecomswiftllc.github.io/legal/home/svc.js?v=13';__ss.async=true;document.head.appendChild(__ss)}
  }}catch(e){}
 /* /process: hide the native text until the renderer has drawn, and start loading it right away. */
 try{if(/^\/process\/?$/i.test(location.pathname)){
