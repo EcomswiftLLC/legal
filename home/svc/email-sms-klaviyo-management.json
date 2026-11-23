@@ -1,0 +1,153 @@
+{
+ "v": 1,
+ "slug": "email-sms-klaviyo-management",
+ "platform": "email-and-sms-marketing",
+ "pname": "email and SMS marketing",
+ "title": "Klaviyo Management",
+ "chip": "Email and SMS marketer",
+ "seo": "Klaviyo management for online stores",
+ "meta": "Klaviyo account audits, fixes and campaign builds for online stores, done inside your own account. From $50, delivered in 7 days or less.",
+ "h1": "Klaviyo management that keeps your account earning",
+ "overview": "We work inside your Klaviyo account to find what is leaking revenue and fix it. That starts with a check of your lists, segments, flows, signup forms and sender setup, then a ranked list of what to change first. Depending on the package we also make the fixes, build and schedule campaigns from your copy and images, and hand you a plain-English summary of what changed. You stay the owner of the account, and we never ask for your password.",
+ "pkgs": [
+  {
+   "price": 50,
+   "days": 3,
+   "blurb": "A health check of your Klaviyo account with the quick fixes done.",
+   "list": [
+    "Review of lists, flows, forms and sender setup",
+    "Ranked list of fixes, most valuable first",
+    "Up to 2 quick fixes made for you",
+    "One page summary of what we found"
+   ]
+  },
+  {
+   "price": 100,
+   "days": 5,
+   "blurb": "A full tune-up with fixes and one campaign scheduled.",
+   "list": [
+    "Everything in Basic",
+    "Up to 4 fixes to flows, segments or forms",
+    "1 campaign built and scheduled from your copy",
+    "Sender domain and authentication check",
+    "Short results snapshot"
+   ]
+  },
+  {
+   "price": 150,
+   "days": 7,
+   "blurb": "Hands-on management with campaigns, fixes and a 30-day plan.",
+   "list": [
+    "Everything in Standard",
+    "Up to 6 fixes to flows, segments or forms",
+    "2 campaigns built and scheduled",
+    "List clean-up of bounced and inactive profiles",
+    "30-day action plan and 30 days of questions"
+   ]
+  }
+ ],
+ "cmp": [
+  [
+   "Account review",
+   [
+    "Health check",
+    "Full audit",
+    "Full audit and plan"
+   ]
+  ],
+  [
+   "Fixes made",
+   [
+    "Up to 2",
+    "Up to 4",
+    "Up to 6"
+   ]
+  ],
+  [
+   "Campaigns scheduled",
+   [
+    "None",
+    "1",
+    "2"
+   ]
+  ],
+  [
+   "Support",
+   [
+    "Summary",
+    "Snapshot",
+    "30 days of questions"
+   ]
+  ]
+ ],
+ "faq": [
+  [
+   "Do I need to give you my Klaviyo password?",
+   "No. You invite us as a user in your Klaviyo account with the access needed for the job. We never ask for your password, and you can remove us whenever you like."
+  ],
+  [
+   "Is this a monthly service?",
+   "Each package is a one-time job with a fixed price and delivery time. If you want us to look after your account every month, send a brief and we reply with a written quote in US dollars."
+  ],
+  [
+   "Do you write the emails and design the campaigns?",
+   "The Standard and Premium packages build and schedule campaigns from the copy and images you send. If you want the writing or the layout design done for you, add the Campaign writing extra or order Newsletter Design."
+  ],
+  [
+   "Do you send to people who did not agree to hear from you?",
+   "No. We send only to profiles with a clear opt-in, and we never import bought, scraped or rented lists. That protects your sender reputation and keeps you inside the rules."
+  ]
+ ],
+ "add": [
+  [
+   "Extra campaign",
+   "Build and schedule one more campaign",
+   50
+  ],
+  [
+   "Flow review",
+   "Check one more flow and fix what we find",
+   50
+  ],
+  [
+   "Campaign writing",
+   "We write the copy for one campaign",
+   75
+  ]
+ ],
+ "imgs": [
+  6,
+  5,
+  11,
+  9
+ ],
+ "req": "project",
+ "scratch": false,
+ "rel": [
+  {
+   "s": "email-sms-campaigns",
+   "t": "SMS Campaigns",
+   "p": 100,
+   "i": 7
+  },
+  {
+   "s": "email-sms-segmentation",
+   "t": "Segmentation",
+   "p": 100,
+   "i": 6
+  },
+  {
+   "s": "email-sms-deliverability-check",
+   "t": "Deliverability Check",
+   "p": 100,
+   "i": 1
+  },
+  {
+   "s": "email-sms-performance-reports",
+   "t": "Performance Reports",
+   "p": 50,
+   "i": 6
+  }
+ ],
+ "from": 50
+}
