@@ -130,7 +130,7 @@
     if (!/^\/service\/[a-z0-9-]+\/?$/i.test(location.pathname)) return;
     if (window.__esSvcL) return;
     window.__esSvcL = 1;
-    var sc = document.createElement("script"); sc.src = "https://ecomswiftllc.github.io/legal/home/svc.js?v=1"; sc.defer = true; document.head.appendChild(sc);
+    var sc = document.createElement("script"); sc.src = "https://ecomswiftllc.github.io/legal/home/svc.js?v=12"; sc.defer = true; document.head.appendChild(sc);
   }
   var t;
   function run() {

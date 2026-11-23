@@ -5,7 +5,7 @@
   if (window.__esSvc) return;
   window.__esSvc = {};
   var BASE = window.__ES_SVC_BASE || "https://ecomswiftllc.github.io/legal/home/";
-  var VER = "11";
+  var VER = "12";
   var MEDIA = "https://static.wixstatic.com/media/";
   var CAT = ["b2970c_b39d8eeda7d44d74a9b3df1972529b96~mv2.webp", "b2970c_3f1b4de685a44fc1b4f591b83cc58dcc~mv2.webp", "b2970c_472efb37848341a282994ac5f3ed5984~mv2.webp", "b2970c_af682593689f4db7a1257efefc1fd529~mv2.webp", "b2970c_be4aa33273ae42628091dda77265b61f~mv2.webp", "b2970c_a0af11a457c142e9b65a8c646f9d96f1~mv2.webp", "b2970c_c8c44784d1bb4d08be5153ec34739872~mv2.webp", "b2970c_a78b1bf7074542cebda4698a46949cce~mv2.webp", "b2970c_5916c892023e4839ac399d36c9b612b5~mv2.webp", "b2970c_08543b0ada414be6842af4111c1890ab~mv2.webp", "b2970c_0b167f6c84e44ebfa84b88e78dcb5b8d~mv2.webp", "b2970c_3a7d8f117b944a90a72d6c050d8bb182~mv2.webp"];
   var ALT = ["Laptop beside a shopping cart", "Code on a computer screen", "Shipping box marked fragile", "Website wireframes sketched beside a phone", "Hands sorting clothes on a rack", "Team meeting around a table", "Analytics chart on a tablet", "Phone showing app icons", "Parcel being packed beside a laptop", "Letter tiles spelling SEO", "Hands holding a gift-wrapped package", "Clipboard with a calculator and notes"];
@@ -24,6 +24,8 @@
   function needMkt() { return !!MKT_P[D.platform] || /(^|-)(seo|ads|advertising|marketing)(-|$)/.test(D.slug); }
   function needAccess() { return D.req !== "app" || /^(shopify|wix|woocommerce)-apps$/.test(D.platform); }
   function isShop() { return /^shopify/.test(D.platform); }
+  /* the collaborator code is a Shopify feature: other platforms get no such field */
+  function needCollab() { return needAccess() && isShop(); }
   function collabCopy() {
     var w = { store: "store", site: "website", account: "account", app: "store", project: "store or website" }[D.req] || "store";
     return isShop()
@@ -87,7 +89,7 @@
     }
     if (f.goal) h += '<label class="fld"><span>' + esc(f.goal) + '</span><textarea id="f-goal" rows="3" placeholder="' + esc(f.gph) + '">' + esc(r.goal) + "</textarea></label>";
     if (needMkt()) h += '<label class="fld"><span>' + esc(f.mkt) + '</span><input type="text" id="f-market" autocomplete="country-name" placeholder="' + esc(f.mph) + '" value="' + esc(r.market) + '"><small>' + esc(f.msmall) + "</small></label>";
-    if (needAccess()) { var cc = collabCopy(); h += '<label class="fld" id="collabf"' + (ns ? " hidden" : "") + "><span>" + cc.lbl + '</span><input type="text" id="f-collab" autocomplete="off" inputmode="' + (isShop() ? "numeric" : "text") + '" maxlength="' + (isShop() ? 4 : 40) + '" placeholder="' + esc(cc.ph) + '" value="' + esc(r.collab) + '" aria-describedby="collab-h"><small id="collab-h">' + esc(cc.sm) + "</small></label>"; }
+    if (needCollab()) { var cc = collabCopy(); h += '<label class="fld" id="collabf"' + (ns ? " hidden" : "") + "><span>" + cc.lbl + '</span><input type="text" id="f-collab" autocomplete="off" inputmode="' + (isShop() ? "numeric" : "text") + '" maxlength="' + (isShop() ? 4 : 40) + '" placeholder="' + esc(cc.ph) + '" value="' + esc(r.collab) + '" aria-describedby="collab-h"><small id="collab-h">' + esc(cc.sm) + "</small></label>"; }
     h += '<div class="two"><label class="fld"><span>Email</span><input type="email" id="f-email" inputmode="email" autocomplete="email" placeholder="you@company.com" value="' + esc(r.email) + '" required aria-required="true"></label>' +
       '<label class="fld"><span>Phone <em>(optional)</em></span><input type="tel" id="f-phone" inputmode="tel" autocomplete="tel" placeholder="+1 555 123 4567" value="' + esc(r.phone) + '"></label></div>' +
       '<p class="note">' + ic.clock + "<span>" + CONTACT_NOTE + "</span></p>" +
@@ -157,7 +159,7 @@
     if (!msg && f.goal && !r.goal.trim()) { msg = f.egoal; id = "f-goal"; }
     if (!msg && needMkt() && !r.market.trim()) { msg = f.emkt; id = "f-market"; }
     var cd = (r.collab || "").trim();
-    if (!msg && needAccess() && !ns && cd) {
+    if (!msg && needCollab() && !ns && cd) {
       if (isShop() && !/^[0-9]{4}$/.test(cd)) { msg = "The collaborator code is 4 digits. Check it in Settings, Users and permissions, Security."; id = "f-collab"; }
       else if (cd.length > 40) { msg = "That collaborator code looks too long. Check it and try again."; id = "f-collab"; }
     }
@@ -177,7 +179,7 @@
   function reqSummary() {
     var f = FORMS[D.req], r = st.req, ns = D.scratch && r.nostore, o = [];
     o.push("Contact: " + r.email.trim() + (r.phone.trim() ? ", phone " + r.phone.trim() : ""));
-    if (needAccess() && !ns && r.collab.trim()) o.push("Collaborator code: " + r.collab.trim());
+    if (needCollab() && !ns && r.collab.trim()) o.push("Collaborator code: " + r.collab.trim());
     if (ns) {
       o.push("Starting from scratch. " + f.name + ": " + r.name.trim() + ". " + f.sell + " " + r.sell.trim());
       if (f.kind && r.kind) o.push(f.kind[0] + ": " + (r.kind === "own" ? f.kind[1] : f.kind[2]));
