@@ -14,9 +14,9 @@
     ".es-faq-l p:nth-of-type(2){margin-top:auto!important;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);max-width:none;font-size:15px!important;color:rgba(255,255,255,.7)!important}",
     ".es-faq-l a{color:#fff!important;text-decoration:underline!important;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}",
     ".es-faq-l a:hover{text-decoration-color:#fff!important}",
-    ".es-qa{border-radius:16px;background:linear-gradient(180deg,rgba(6,9,22,.62),rgba(6,9,22,.48));border:1px solid rgba(255,255,255,.09);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:border-color .3s,background .3s}",
-    ".es-qa:hover{border-color:rgba(255,255,255,.22)}",
-    ".es-qa[open]{border-color:rgba(255,255,255,.3);background:linear-gradient(180deg,rgba(14,19,40,.72),rgba(10,14,30,.6))}",
+    ".es-qa{border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:border-color .3s,background .3s}",
+    ".es-qa:hover{border-color:rgba(255,255,255,.28)}",
+    ".es-qa[open]{border-color:rgba(255,255,255,.32);background:linear-gradient(180deg,rgba(255,255,255,.13),rgba(255,255,255,.08))}",
     ".es-qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;padding:12px 22px;border-radius:16px}",
     ".es-qa summary::-webkit-details-marker{display:none}",
     ".es-qa summary:focus-visible{outline:2px solid #fff;outline-offset:-3px}",
@@ -35,11 +35,20 @@
     "@media (prefers-reduced-motion:reduce){.es-qa[open] .es-ans{animation:none}.es-pm,.es-pm::before,.es-pm::after{transition:none}}"
   ].join("\n");
 
-  // Wix places this text box at its editor X on desktop; line it up with the tool hub above it.
-  function align(root) {
-    var h = document.querySelector('pdf-toolkit-app'); if (!h || innerWidth < 900) return;
-    var d = h.getBoundingClientRect().left - root.getBoundingClientRect().left;
-    if (Math.abs(d) > 1) root.style.setProperty('left', ((parseFloat(getComputedStyle(root).left) || 0) + d) + 'px', 'important');
+  var HUB = /^\/pdf-tools\/?$/.test(location.pathname);
+  // Wix puts these boxes at their editor X/width; widen the tool hub and the FAQ together and centre them (desktop only, the phone layout is left alone).
+  function place(el, w) {
+    if (!el) return;
+    var cs = getComputedStyle(el), cur = parseFloat(cs.left) || 0;
+    if (Math.abs(parseFloat(cs.width) - w) > 1) el.style.setProperty('width', w + 'px', 'important');
+    var d = (innerWidth - w) / 2 - el.getBoundingClientRect().left;
+    if (Math.abs(d) > 1) el.style.setProperty('left', (cur + d) + 'px', 'important');
+  }
+  function layout() {
+    if (!HUB || innerWidth < 1000) return;
+    var w = Math.min(1060, innerWidth - 80), h = document.querySelector('pdf-toolkit-app');
+    if (h) { place(h.closest('[id^="comp-"]'), w); h.style.setProperty('width', '100%', 'important'); }
+    var r = document.querySelector('.es-faq-root'); if (r) place(r, w);
   }
   function build() {
     var all = document.querySelectorAll('[data-testid="richTextElement"]'), root = null;
@@ -48,7 +57,6 @@
       if (t.indexOf('Frequently asked questions') > -1 && t.indexOf('Does it work on my phone?') > -1) { root = all[i]; break; }
     }
     if (!root) return false;
-    align(root);
     if (root.querySelector('.es-faq')) return true;
     var k = [].filter.call(root.children, function (c) { return /^(H[1-6]|P)$/.test(c.tagName) && (c.textContent || '').trim(); });
     var intro = k.slice(0, 3), rest = k.slice(3);
@@ -57,19 +65,21 @@
     var wrap = document.createElement('div'); wrap.className = 'es-faq';
     var c1 = document.createElement('div'), c2 = document.createElement('div'); c1.className = c2.className = 'es-faq-col';
     var l = document.createElement('div'); l.className = 'es-faq-l'; intro.forEach(function (n) { l.appendChild(n); }); c1.appendChild(l);
-    var firstCol = Math.floor(rest.length / 4); // items that sit under the heading card
+    var firstCol = Math.max(1, Math.round(rest.length / 8)); // items that sit under the heading card (keeps both columns about equally tall)
     for (var j = 0; j < rest.length; j += 2) {
       var d = document.createElement('details'), sm = document.createElement('summary'), h = document.createElement('h3'), pm = document.createElement('span'), an = document.createElement('div');
       d.className = 'es-qa'; h.textContent = rest[j].textContent.trim(); pm.className = 'es-pm'; pm.setAttribute('aria-hidden', 'true');
       sm.appendChild(h); sm.appendChild(pm); an.className = 'es-ans'; an.appendChild(rest[j + 1]); d.appendChild(sm); d.appendChild(an);
-      (j / 2 < Math.max(2, firstCol) ? c1 : c2).appendChild(d); if (rest[j].parentNode) rest[j].parentNode.removeChild(rest[j]);
+      (j / 2 < firstCol ? c1 : c2).appendChild(d); if (rest[j].parentNode) rest[j].parentNode.removeChild(rest[j]);
     }
-    wrap.appendChild(c1); wrap.appendChild(c2); root.appendChild(wrap);
+    wrap.appendChild(c1); wrap.appendChild(c2); root.appendChild(wrap); layout();
     return true;
   }
-  var st = document.createElement('style'); st.id = 'es-pdf-faq-css'; st.textContent = CSS; document.head.appendChild(st);
-  if (!document.getElementById('es-font')) { var f = document.createElement('link'); f.id = 'es-font'; f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap'; document.head.appendChild(f); }
-  var n = 0, iv = setInterval(function () { build(); if (++n > 240) clearInterval(iv); }, 500);  // keeps checking: Wix can re-draw the text box after load
-  build();
-  addEventListener('resize', function () { build(); });
+  var BG = "html body{background:radial-gradient(1200px 620px at 50% -120px,rgba(150,170,255,.26),rgba(150,170,255,0) 70%),linear-gradient(180deg,#34407a 0,#2b3665 720px,#262f5c 100%),#262f5c!important;background-repeat:no-repeat!important;background-size:100% 760px,100% 100%,auto!important}" +
+    "main [id^=bgLayers_comp-] *,#PAGES_CONTAINER [id^=bgLayers_comp-] *,#SITE_PAGES [id^=bgLayers_comp-] *{background-color:transparent!important}" +
+    "#ecs-fi{background:linear-gradient(rgba(24,31,68,.55),rgba(24,31,68,.88))!important}";
+  var st = document.createElement('style'); st.id = 'es-pdf-faq-css'; st.textContent = BG + (HUB ? CSS : ''); document.head.appendChild(st);
+  if (HUB && !document.getElementById('es-font')) { var f = document.createElement('link'); f.id = 'es-font'; f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap'; document.head.appendChild(f); }
+  var n = 0, iv = setInterval(function () { if (HUB) { layout(); build(); } if (++n > 240) clearInterval(iv); }, 500);  // keeps checking: Wix can re-draw the text box after load
+  if (HUB) { layout(); build(); addEventListener('resize', function () { layout(); build(); }); }
 })();
