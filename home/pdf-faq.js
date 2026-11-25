@@ -35,17 +35,25 @@
     "@media (prefers-reduced-motion:reduce){.es-qa[open] .es-ans{animation:none}.es-pm,.es-pm::before,.es-pm::after{transition:none}}"
   ].join("\n");
 
+  // Wix places this text box at its editor X on desktop; line it up with the tool hub above it.
+  function align(root) {
+    var h = document.querySelector('pdf-toolkit-app'); if (!h || innerWidth < 900) return;
+    var d = h.getBoundingClientRect().left - root.getBoundingClientRect().left;
+    if (Math.abs(d) > 1) root.style.setProperty('left', ((parseFloat(getComputedStyle(root).left) || 0) + d) + 'px', 'important');
+  }
   function build() {
     var all = document.querySelectorAll('[data-testid="richTextElement"]'), root = null;
     for (var i = 0; i < all.length; i++) {
       var t = all[i].textContent || '';
       if (t.indexOf('Frequently asked questions') > -1 && t.indexOf('Does it work on my phone?') > -1) { root = all[i]; break; }
     }
-    if (!root || root.__es) return false;
+    if (!root) return false;
+    align(root);
+    if (root.querySelector('.es-faq')) return true;
     var k = [].filter.call(root.children, function (c) { return /^(H[1-6]|P)$/.test(c.tagName) && (c.textContent || '').trim(); });
     var intro = k.slice(0, 3), rest = k.slice(3);
     if (intro.length < 3 || rest.length < 2 || rest.length % 2) return false;
-    root.__es = 1; root.classList.add('es-faq-root');
+    root.classList.add('es-faq-root');
     var wrap = document.createElement('div'); wrap.className = 'es-faq';
     var c1 = document.createElement('div'), c2 = document.createElement('div'); c1.className = c2.className = 'es-faq-col';
     var l = document.createElement('div'); l.className = 'es-faq-l'; intro.forEach(function (n) { l.appendChild(n); }); c1.appendChild(l);
@@ -61,5 +69,7 @@
   }
   var st = document.createElement('style'); st.id = 'es-pdf-faq-css'; st.textContent = CSS; document.head.appendChild(st);
   if (!document.getElementById('es-font')) { var f = document.createElement('link'); f.id = 'es-font'; f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap'; document.head.appendChild(f); }
-  if (!build()) { var n = 0, iv = setInterval(function () { if (build() || ++n > 60) clearInterval(iv); }, 500); }
+  var n = 0, iv = setInterval(function () { build(); if (++n > 240) clearInterval(iv); }, 500);  // keeps checking: Wix can re-draw the text box after load
+  build();
+  addEventListener('resize', function () { build(); });
 })();
