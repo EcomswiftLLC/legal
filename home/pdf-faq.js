@@ -80,6 +80,15 @@
     "#ecs-fi{background:linear-gradient(rgba(24,31,68,.55),rgba(24,31,68,.88))!important}";
   var st = document.createElement('style'); st.id = 'es-pdf-faq-css'; st.textContent = BG + (HUB ? CSS : ''); document.head.appendChild(st);
   if (HUB && !document.getElementById('es-font')) { var f = document.createElement('link'); f.id = 'es-font'; f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap'; document.head.appendChild(f); }
-  var n = 0, iv = setInterval(function () { if (HUB) { layout(); build(); } if (++n > 240) clearInterval(iv); }, 500);  // keeps checking: Wix can re-draw the text box after load
+  // Wix draws a dark tint over each page section; clear it so the soft background shows (matched by colour, since Wix re-creates these layers after load).
+  function clearTint() {
+    var els = document.querySelectorAll('main div, #PAGES_CONTAINER div');
+    for (var i = 0; i < els.length; i++) {
+      var c = els[i].style && getComputedStyle(els[i]).backgroundColor;
+      if (c === 'rgba(6, 9, 22, 0.38)') els[i].style.setProperty('background-color', 'transparent', 'important');
+    }
+  }
+  var n = 0, iv = setInterval(function () { clearTint(); if (HUB) { layout(); build(); } if (++n > 240) clearInterval(iv); }, 500);  // keeps checking: Wix can re-draw the text box after load
+  clearTint();
   if (HUB) { layout(); build(); addEventListener('resize', function () { layout(); build(); }); }
 })();
