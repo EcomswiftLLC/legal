@@ -2,7 +2,7 @@
 (function () {
   if (window.__esPdfFaq) return; window.__esPdfFaq = 1;
   var CSS = [
-    ".es-faq-root{position:relative!important;margin:0!important;width:100%!important;height:auto!important;min-width:0!important;max-width:none!important;padding:0!important;--es-sans:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif;font-family:var(--es-sans)!important;color:#fff;-webkit-font-smoothing:antialiased}",
+    ".es-faq-root{position:relative!important;margin:0!important;height:auto!important;padding:0!important;--es-sans:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif;font-family:var(--es-sans)!important;color:#fff;-webkit-font-smoothing:antialiased}",
     ".es-faq-root *{font-family:var(--es-sans)!important;letter-spacing:normal;box-sizing:border-box}",
     ".es-faq-root span{color:inherit!important;font-size:inherit!important;font-weight:inherit!important}",
     ".es-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch;padding:0}",
