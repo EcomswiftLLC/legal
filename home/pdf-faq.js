@@ -1,56 +1,57 @@
-/* /pdf-tools and /pdf-tools/<tool>: soft page background, and the Wix text blocks (FAQ, steps, related tools) drawn as frosted-glass cards (details/summary, no libraries). */
+/* /pdf-tools and /pdf-tools/<tool>: soft light page background, and the Wix text blocks (FAQ, steps, related tools) drawn as soft white cards (details/summary, no libraries). */
 (function () {
   if (window.__esPdfFaq) return; window.__esPdfFaq = 1;
   var P = location.pathname;
   var HUB = /^\/pdf-tools\/?$/.test(P), TOOL = /^\/pdf-tools\/[a-z0-9-]+\/?$/.test(P);
-  var GLASS = "background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)";
+  var INK = "#1B2342", SLATE = "#4F5B7C", LINE = "#E4E9F7", BLUE = "#3748CF";
+  var GLASS = "background:#fff;border:1px solid #E4E9F7;box-shadow:0 1px 2px rgba(27,35,66,.04),0 14px 30px -24px rgba(27,35,66,.2)";
   var CSS = [
-    ".es-faq-root{position:relative!important;height:auto!important;padding:0!important;--es-sans:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif;font-family:var(--es-sans)!important;color:#fff;-webkit-font-smoothing:antialiased}",
+    ".es-faq-root{position:relative!important;height:auto!important;padding:0!important;--es-sans:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif;font-family:var(--es-sans)!important;color:#1B2342;-webkit-font-smoothing:antialiased}",
     ".es-faq-root.es-hubroot{margin:0!important}",
     ".es-faq-root *{font-family:var(--es-sans)!important;letter-spacing:normal;box-sizing:border-box}",
     ".es-faq-root span{color:inherit!important;font-size:inherit!important;font-weight:inherit!important}",
     /* accordion (shared) */
     ".es-qa{border-radius:16px;" + GLASS + ";transition:border-color .3s,background .3s}",
-    ".es-qa:hover{border-color:rgba(255,255,255,.3)}",
-    ".es-qa[open]{border-color:rgba(255,255,255,.34);background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.08))}",
+    ".es-qa:hover{border-color:#BCC8F5}",
+    ".es-qa[open]{border-color:#BCC8F5;background:#FBFCFF}",
     ".es-qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;padding:12px 22px;border-radius:16px}",
     ".es-qa summary::-webkit-details-marker{display:none}",
-    ".es-qa summary:focus-visible,.es-rg a:focus-visible,.es-back:focus-visible{outline:2px solid #fff;outline-offset:-3px}",
-    ".es-qa h3{margin:0!important;font:600 clamp(1rem,1.3vw,1.1rem)/1.35 var(--es-sans)!important;letter-spacing:-.01em!important;color:#fff!important;text-align:left!important;text-wrap:balance}",
-    ".es-pm{position:relative;flex:none;width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.3);transition:background .3s}",
-    ".es-pm::before,.es-pm::after{content:\"\";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:#fff;transform:translate(-50%,-50%);transition:transform .4s cubic-bezier(.22,.7,.2,1)}",
+    ".es-qa summary:focus-visible,.es-rg a:focus-visible,.es-back:focus-visible{outline:3px solid #4558E8;outline-offset:-3px}",
+    ".es-qa h3{margin:0!important;font:600 clamp(1rem,1.3vw,1.1rem)/1.35 var(--es-sans)!important;letter-spacing:-.01em!important;color:#1B2342!important;text-align:left!important;text-wrap:balance}",
+    ".es-pm{position:relative;flex:none;width:28px;height:28px;border-radius:50%;border:1px solid #C9D2F0;background:#fff;transition:background .3s}",
+    ".es-pm::before,.es-pm::after{content:\"\";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:#3748CF;transform:translate(-50%,-50%);transition:transform .4s cubic-bezier(.22,.7,.2,1)}",
     ".es-pm::after{transform:translate(-50%,-50%) rotate(90deg)}",
-    ".es-qa[open] .es-pm{background:rgba(255,255,255,.14)}",
+    ".es-qa[open] .es-pm{background:#E9EDFF}",
     ".es-qa[open] .es-pm::after{transform:translate(-50%,-50%) rotate(0)}",
     ".es-ans{padding:0 22px 22px}",
-    ".es-ans p{margin:0!important;max-width:66ch;font-size:16px!important;line-height:1.7!important;color:rgba(255,255,255,.84)!important;text-align:left!important}",
-    ".es-ans a{color:#fff!important;text-decoration:underline!important;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.45)}",
+    ".es-ans p{margin:0!important;max-width:66ch;font-size:16px!important;line-height:1.7!important;color:#4F5B7C!important;text-align:left!important}",
+    ".es-ans a{color:#3748CF!important;text-decoration:underline!important;text-underline-offset:3px;text-decoration-color:rgba(55,72,207,.4)}",
     ".es-qa[open] .es-ans{animation:esAnsIn .45s cubic-bezier(.22,.7,.2,1)}",
     "@keyframes esAnsIn{from{opacity:0;transform:translateY(-6px)}}",
     /* hub FAQ: heading card + two columns */
     ".es-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch;padding:0}",
     ".es-faq-col{display:flex;flex-direction:column;gap:12px;min-width:0}",
     ".es-faq-l{flex:1 1 auto;display:flex;flex-direction:column;padding:clamp(22px,2.4vw,32px);border-radius:18px;" + GLASS + "}",
-    ".es-faq-l h2{margin:0!important;font:600 clamp(1.7rem,3vw,2.4rem)/1.08 var(--es-sans)!important;letter-spacing:-.025em!important;color:#fff!important;text-align:left!important;text-wrap:balance}",
-    ".es-faq-l p{margin:14px 0 0!important;max-width:34ch;font-size:16px!important;line-height:1.55!important;color:rgba(255,255,255,.76)!important;text-align:left!important}",
+    ".es-faq-l h2{margin:0!important;font:600 clamp(1.7rem,3vw,2.4rem)/1.08 var(--es-sans)!important;letter-spacing:-.025em!important;color:#1B2342!important;text-align:left!important;text-wrap:balance}",
+    ".es-faq-l p{margin:14px 0 0!important;max-width:34ch;font-size:16px!important;line-height:1.55!important;color:#4F5B7C!important;text-align:left!important}",
     ".es-faq-l p:nth-of-type(1){margin-bottom:24px!important}",
-    ".es-faq-l p:nth-of-type(2){margin-top:auto!important;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);max-width:none;font-size:15px!important;color:rgba(255,255,255,.72)!important}",
-    ".es-faq-l a{color:#fff!important;text-decoration:underline!important;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,.4)}",
+    ".es-faq-l p:nth-of-type(2){margin-top:auto!important;padding-top:18px;border-top:1px solid #E4E9F7;max-width:none;font-size:15px!important;color:#4F5B7C!important}",
+    ".es-faq-l a{color:#3748CF!important;text-decoration:underline!important;text-underline-offset:3px;text-decoration-color:rgba(55,72,207,.4)}",
     /* tool page: steps, FAQ list, related tools */
     ".es-tp{display:grid;gap:52px;padding:14px 0 40px}",
-    ".es-tp h2{margin:0 0 18px!important;font:600 clamp(1.55rem,2.8vw,2rem)/1.15 var(--es-sans)!important;letter-spacing:-.025em!important;color:#fff!important;text-align:left!important;text-wrap:balance}",
+    ".es-tp h2{margin:0 0 18px!important;font:600 clamp(1.55rem,2.8vw,2rem)/1.15 var(--es-sans)!important;letter-spacing:-.025em!important;color:#1B2342!important;text-align:left!important;text-wrap:balance}",
     ".es-st{list-style:none!important;margin:0!important;padding:0!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}",
     ".es-st li{display:flex;gap:14px;align-items:flex-start;margin:0!important;padding:20px;border-radius:18px;" + GLASS + "}",
-    ".es-st .n{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.32);font:600 15px/1 var(--es-sans)!important}",
-    ".es-st p{margin:3px 0 0!important;font-size:16px!important;line-height:1.55!important;color:rgba(255,255,255,.9)!important;text-align:left!important}",
+    ".es-st .n{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#E9EDFF;border:1px solid #CBD5F7;color:#3748CF;font:600 15px/1 var(--es-sans)!important}",
+    ".es-st p{margin:3px 0 0!important;font-size:16px!important;line-height:1.55!important;color:#2B365F!important;text-align:left!important}",
     ".es-ql{display:grid;gap:12px}",
     ".es-rg{list-style:none!important;margin:0!important;padding:0!important;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}",
     ".es-rg li{margin:0!important}",
-    ".es-rg a{display:flex;flex-direction:column;gap:6px;height:100%;padding:18px;border-radius:18px;text-decoration:none!important;color:#fff!important;" + GLASS + ";transition:border-color .25s,transform .25s,background .25s}",
-    ".es-rg a:hover{border-color:rgba(255,255,255,.4);transform:translateY(-3px);background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.07))}",
-    ".es-rg strong{display:block;font:600 16.5px/1.3 var(--es-sans)!important;color:#fff!important}",
-    ".es-rg em{display:block;font:400 14.5px/1.45 var(--es-sans)!important;font-style:normal;color:rgba(255,255,255,.76)!important}",
-    ".es-all{margin-top:14px;display:inline-flex;align-items:center;gap:6px;color:#fff!important;font:600 15px var(--es-sans)!important;text-decoration:none!important}",
+    ".es-rg a{display:flex;flex-direction:column;gap:6px;height:100%;padding:18px;border-radius:18px;text-decoration:none!important;color:#1B2342!important;" + GLASS + ";transition:border-color .25s,transform .25s,background .25s}",
+    ".es-rg a:hover{border-color:#BCC8F5;transform:translateY(-2px);box-shadow:0 18px 34px -24px rgba(69,88,232,.35)}",
+    ".es-rg strong{display:block;font:600 16.5px/1.3 var(--es-sans)!important;color:#1B2342!important}",
+    ".es-rg em{display:block;font:400 14.5px/1.45 var(--es-sans)!important;font-style:normal;color:#4F5B7C!important}",
+    ".es-all{margin-top:14px;display:inline-flex;align-items:center;gap:6px;color:#3748CF!important;font:600 15px var(--es-sans)!important;text-decoration:none!important}",
     ".es-all:hover{text-decoration:underline!important;text-underline-offset:4px}",
     "@media (max-width:860px){.es-faq{display:flex;flex-direction:column}.es-faq-col{display:contents}.es-faq-l p{max-width:46ch}.es-st{grid-template-columns:1fr}.es-rg{grid-template-columns:repeat(2,minmax(0,1fr))}.es-tp{gap:40px}}",
     "@media (max-width:440px){.es-rg{grid-template-columns:1fr}}",
@@ -60,10 +61,10 @@
   // tool pages: heading, intro and the breadcrumb button
   var TCSS = [
     "main [data-testid=\"richTextElement\"] h1,main [data-testid=\"richTextElement\"] h1 span{font-family:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif!important;font-weight:600!important;letter-spacing:-.03em!important;line-height:1.08!important;font-size:clamp(34px,4.6vw,50px)!important}",
-    ".es-lede,.es-lede *{font-family:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif!important;font-size:clamp(17px,1.6vw,19.5px)!important;line-height:1.6!important;color:rgba(255,255,255,.84)!important;font-weight:400!important}",
-    ".es-backc [data-testid=\"linkElement\"]{width:100%!important;height:100%!important;display:flex!important;align-items:center;justify-content:center;border-radius:999px!important;background:rgba(255,255,255,.1)!important;border:1px solid rgba(255,255,255,.26)!important;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:background .25s,border-color .25s}",
-    ".es-backc:hover [data-testid=\"linkElement\"]{background:rgba(255,255,255,.18)!important;border-color:rgba(255,255,255,.5)!important}",
-    ".es-backc [data-testid=\"linkElement\"] span{font:500 15px/1 'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif!important;color:#fff!important;letter-spacing:0!important}"
+    ".es-lede,.es-lede *{font-family:'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif!important;font-size:clamp(17px,1.6vw,19.5px)!important;line-height:1.6!important;color:#4F5B7C!important;font-weight:400!important}",
+    ".es-backc [data-testid=\"linkElement\"]{width:100%!important;height:100%!important;display:flex!important;align-items:center;justify-content:center;border-radius:999px!important;background:#fff!important;border:1px solid #D2D9EE!important;transition:background .25s,border-color .25s}",
+    ".es-backc:hover [data-testid=\"linkElement\"]{background:#EEF1FF!important;border-color:#BCC8F5!important}",
+    ".es-backc [data-testid=\"linkElement\"] span{font:500 15px/1 'Schibsted Grotesk','Helvetica Neue',Arial,system-ui,sans-serif!important;color:#1B2342!important;letter-spacing:0!important}"
   ].join("\n");
 
   var BLURB = {
@@ -184,9 +185,12 @@
     if (n && !n.classList.contains('es-lede') && !/How to use it/.test(n.textContent || '')) n.classList.add('es-lede');
   }
 
-  var BG = "html body{background:radial-gradient(1200px 620px at 50% -120px,rgba(150,170,255,.26),rgba(150,170,255,0) 70%),linear-gradient(180deg,#34407a 0,#2b3665 720px,#262f5c 100%),#262f5c!important;background-repeat:no-repeat!important;background-size:100% 760px,100% 100%,auto!important}" +
+  var BG = "html body{background:radial-gradient(900px 520px at 12% -80px,rgba(196,206,255,.55),rgba(196,206,255,0) 70%),radial-gradient(800px 480px at 92% -40px,rgba(190,236,224,.42),rgba(190,236,224,0) 70%),linear-gradient(180deg,#F5F7FF 0,#F7F8FD 520px,#F5F9F9 100%),#F6F8FD!important;background-repeat:no-repeat!important;background-size:100% 640px,100% 640px,100% 100%,auto!important;color:#1B2342}" +
     "main [id^=bgLayers_comp-] *,#PAGES_CONTAINER [id^=bgLayers_comp-] *,#SITE_PAGES [id^=bgLayers_comp-] *{background-color:transparent!important}" +
-    "#ecs-fi{background:linear-gradient(rgba(24,31,68,.55),rgba(24,31,68,.88))!important}";
+    "main [data-testid=\"richTextElement\"] h1,main [data-testid=\"richTextElement\"] h1 span,main [data-testid=\"richTextElement\"] h2,main [data-testid=\"richTextElement\"] h2 span{color:#1B2342!important}" +
+    "main [data-testid=\"richTextElement\"] p,main [data-testid=\"richTextElement\"] p span{color:#4F5B7C}" +
+    "html #ecs-fi{background:#EEF1FA!important;border-top:1px solid #DCE3F5!important;color:#566280!important}html #ecs-fi a{color:#2F3FBF!important}html #ecs-fi a:focus-visible{outline-color:#4558E8!important}" +
+    "html #es-nav-host{filter:drop-shadow(0 10px 24px rgba(40,56,120,.14)) drop-shadow(0 0 .6px rgba(40,56,120,.3))}";
   var st = document.createElement('style'); st.id = 'es-pdf-faq-css'; st.textContent = BG + ((HUB || TOOL) ? CSS : '') + (TOOL ? TCSS : ''); document.head.appendChild(st);
   if ((HUB || TOOL) && !document.getElementById('es-font')) { var f = document.createElement('link'); f.id = 'es-font'; f.rel = 'stylesheet'; f.href = 'https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap'; document.head.appendChild(f); }
   // Wix draws a dark tint over each page section; clear it so the soft background shows (matched by colour, since Wix re-creates these layers after load).
