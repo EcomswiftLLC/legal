@@ -177,3 +177,25 @@ html.es-svc-page #SITE_PAGES>*:not(#es-svc){display:none!important}
 .es-svc .btn.quote{border-color:var(--line2);font-size:14.5px;margin-top:14px}
 .es-svc .btn.quote:hover{border-color:var(--gold)}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* Description: two-line preview, expands to the full article; stays in the DOM when collapsed so search engines read all of it */
+.es-svc .desc .dtext{position:relative}
+.es-svc .content .desc .dlead{font-size:16px;line-height:1.7;max-width:66ch;margin:0}
+.es-svc .desc .dtext:not(.open) .dlead{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+.es-svc .desc .drest{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .32s ease,visibility 0s linear .32s}
+.es-svc .desc .dtext.open .drest{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .32s ease,visibility 0s}
+.es-svc .desc .dinner{min-height:0;overflow:hidden}
+.es-svc .desc .dinner h3{font-size:25px;margin:30px 0 10px}
+.es-svc .desc .dinner h3:first-child{margin-top:18px}
+.es-svc .desc .dinner h4{font-family:var(--sans);font-size:16px;font-weight:700;letter-spacing:0;margin:20px 0 6px}
+.es-svc .content .desc .dinner p{font-size:16px;line-height:1.72;max-width:66ch;margin:0 0 14px}
+.es-svc .desc .dinner ul{margin:0 0 16px;padding:0;list-style:none;display:grid;gap:8px;max-width:66ch}
+.es-svc .desc .dinner li{position:relative;padding-left:22px;font-size:16px;line-height:1.65;color:#443D31}
+.es-svc .desc .dinner li::before{content:"";position:absolute;left:3px;top:.72em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.es-svc .desc .dinner strong{color:var(--ink);font-weight:700}
+.es-svc .desc .dtoggle{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:9px 16px;min-height:44px;border:1px solid var(--line2);border-radius:999px;background:var(--bg);color:var(--ink);font-weight:600;font-size:14px}
+.es-svc .desc .dtoggle:hover{border-color:var(--gold);background:var(--gold-soft)}
+.es-svc .desc .dtoggle svg{transition:transform .25s ease}
+.es-svc .desc .dtoggle[aria-expanded=true] svg{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.es-svc .desc .drest,.es-svc .desc .dtoggle svg{transition:none}}
+@media (max-width:720px){.es-svc .desc .dinner h3{font-size:22px}.es-svc .desc .dtoggle{width:100%;justify-content:center}}

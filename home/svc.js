@@ -5,7 +5,7 @@
   if (window.__esSvc) return;
   window.__esSvc = {};
   var BASE = window.__ES_SVC_BASE || "https://ecomswiftllc.github.io/legal/home/";
-  var VER = "13";
+  var VER = "14";
   var MEDIA = "https://static.wixstatic.com/media/";
   var CAT = ["b2970c_b39d8eeda7d44d74a9b3df1972529b96~mv2.webp", "b2970c_3f1b4de685a44fc1b4f591b83cc58dcc~mv2.webp", "b2970c_472efb37848341a282994ac5f3ed5984~mv2.webp", "b2970c_af682593689f4db7a1257efefc1fd529~mv2.webp", "b2970c_be4aa33273ae42628091dda77265b61f~mv2.webp", "b2970c_a0af11a457c142e9b65a8c646f9d96f1~mv2.webp", "b2970c_c8c44784d1bb4d08be5153ec34739872~mv2.webp", "b2970c_a78b1bf7074542cebda4698a46949cce~mv2.webp", "b2970c_5916c892023e4839ac399d36c9b612b5~mv2.webp", "b2970c_08543b0ada414be6842af4111c1890ab~mv2.webp", "b2970c_0b167f6c84e44ebfa84b88e78dcb5b8d~mv2.webp", "b2970c_3a7d8f117b944a90a72d6c050d8bb182~mv2.webp"];
   var ALT = ["Laptop beside a shopping cart", "Code on a computer screen", "Shipping box marked fragile", "Website wireframes sketched beside a phone", "Hands sorting clothes on a rack", "Team meeting around a table", "Analytics chart on a tablet", "Phone showing app icons", "Parcel being packed beside a laptop", "Letter tiles spelling SEO", "Hands holding a gift-wrapped package", "Clipboard with a calculator and notes"];
@@ -122,6 +122,31 @@
     a.push(["Is the price fixed?", "Each package is a fixed price for the scope listed. If you need more than Premium covers, send a brief and we reply with a written quote in US dollars."]);
     return a;
   }
+  /* ---- long description: markdown-lite (## h3, ### h4, "- " list, **bold**), first paragraph = preview ---- */
+  function inl(t) { return esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>"); }
+  function descParts(src) {
+    var L = String(src || "").replace(/\r/g, "").split("\n"), out = [], para = [], ul = null, lead = "", got = false;
+    function fp() { if (!para.length) return; var t = inl(para.join(" ")); para = []; if (!got) { lead = t; got = true; } else out.push("<p>" + t + "</p>"); }
+    function fu() { if (!ul) return; out.push("<ul>" + ul.map(function (x) { return "<li>" + inl(x) + "</li>"; }).join("") + "</ul>"); ul = null; }
+    L.forEach(function (raw) {
+      var t = raw.trim();
+      if (!t) { fp(); fu(); return; }
+      if (/^###\s/.test(t)) { fp(); fu(); out.push("<h4>" + inl(t.slice(4)) + "</h4>"); }
+      else if (/^##\s/.test(t)) { fp(); fu(); out.push("<h3>" + inl(t.slice(3)) + "</h3>"); }
+      else if (/^-\s/.test(t)) { fp(); (ul = ul || []).push(t.slice(2)); }
+      else { fu(); para.push(t); }
+    });
+    fp(); fu();
+    return { lead: lead, rest: out.join("") };
+  }
+  function descSection() {
+    if (!D.desc) return "";
+    var p = descParts(D.desc), o = !!st.descOpen;
+    return '<section class="desc" id="description"><h2>Description</h2>' +
+      '<div class="dtext' + (o ? " open" : "") + '"><p class="dlead">' + p.lead + "</p>" +
+      '<div class="drest" id="es-dr"' + (o ? "" : ' inert aria-hidden="true"') + '><div class="dinner">' + p.rest + "</div></div></div>" +
+      '<button type="button" class="dtoggle" data-desc aria-expanded="' + o + '" aria-controls="es-dr"><span>' + (o ? "Show less" : "Read more") + '</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></section>';
+  }
   function view() {
     var p = P(), tt = total();
     var h = '<div class="wrap"><div class="page"><div class="left">' +
@@ -130,6 +155,7 @@
       '<div class="seller"><i>E</i><b>Ecom Swift LLC</b><span class="chip">' + esc(D.chip) + "</span></div>" +
       gallery() +
       '<div class="content">' +
+      descSection() +
       '<section><h2 id="included">What you get</h2><p class="body">' + esc(D.overview) + "</p></section>" +
       '<section><h2 id="packages">Compare packages</h2><p class="lead">Every package is delivered in 7 days or less.</p>' + compare() + "</section>" +
       '<section><h2 id="process">How it works</h2><ol class="steps">' + steps().map(function (s) { return "<li><div><b>" + esc(s[0]) + "</b><span>" + esc(s[1]) + "</span></div></li>"; }).join("") + "</ol></section>" +
@@ -252,6 +278,13 @@
       var t = e.target.closest("button,a"); if (!t) return;
       if (t.hasAttribute("data-hard") && !(e.metaKey || e.ctrlKey || e.shiftKey || e.button)) { e.preventDefault(); location.assign(t.getAttribute("href")); return; }
       if ("jump" in t.dataset) { var s = $(".stick", root); if (s) s.scrollIntoView({ block: "start" }); return; }
+      if ("desc" in t.dataset) {
+        var sec = t.closest(".desc"), box = $(".dtext", sec), rest = $(".drest", sec); st.descOpen = !st.descOpen;
+        box.classList.toggle("open", st.descOpen); t.setAttribute("aria-expanded", String(st.descOpen)); $("span", t).textContent = st.descOpen ? "Show less" : "Read more";
+        if (st.descOpen) { rest.removeAttribute("inert"); rest.removeAttribute("aria-hidden"); }
+        else { rest.setAttribute("inert", ""); rest.setAttribute("aria-hidden", "true"); if (sec.getBoundingClientRect().top < 0) sec.scrollIntoView({ block: "start" }); }
+        return;
+      }
       if ("opencart" in t.dataset) { openCart(); return; }
       if (t.dataset.img) { st.img = +t.dataset.img; render(); return; }
       if (t.dataset.pk) { st.pkg = t.dataset.pk; render(); return; }
@@ -320,7 +353,7 @@
   function boot(d, slug) {
     D = d; D.slug = slug; mountedSlug = slug;
     var saved = jget(RK, {});
-    st = { pkg: "standard", img: 0, add: {}, reqOpen: false, req: { nostore: false, url: saved.url || "", name: saved.name || "", sell: saved.sell || "", kind: saved.kind || "", goal: saved.goal || "", market: saved.market || "", email: saved.email || "", phone: saved.phone || "", collab: "" } };
+    st = { pkg: "standard", img: 0, add: {}, reqOpen: false, descOpen: false, req: { nostore: false, url: saved.url || "", name: saved.name || "", sell: saved.sell || "", kind: saved.kind || "", goal: saved.goal || "", market: saved.market || "", email: saved.email || "", phone: saved.phone || "", collab: "" } };
     ensureCss();
     if (!takeover()) { mountedSlug = ""; return; }
     render(); ld();
