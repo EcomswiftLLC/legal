@@ -1,10 +1,8 @@
-/* /pdf-tools, /online-tools and their tool pages: soft light page background, and the Wix text blocks (FAQ, steps, related tools) drawn as soft white cards (details/summary, no libraries). */
+/* /pdf-tools and /pdf-tools/<tool>: soft light page background, and the Wix text blocks (FAQ, steps, related tools) drawn as soft white cards (details/summary, no libraries). */
 (function () {
   if (window.__esPdfFaq) return; window.__esPdfFaq = 1;
   var P = location.pathname;
-  var M = /^\/(pdf-tools|online-tools)(\/[a-z0-9-]+)?\/?$/.exec(P), BASE = M ? '/' + M[1] : '/pdf-tools', ONL = BASE === '/online-tools';
-  var HUB = !!M && !M[2], TOOL = !!M && !!M[2];
-  var ALLN = ONL ? 'All tools' : 'All PDF tools', ALLS = ONL ? 'See all tools' : 'See all PDF tools', MORE = ONL ? 'More free tools' : 'More PDF tools';
+  var HUB = /^\/pdf-tools\/?$/.test(P), TOOL = /^\/pdf-tools\/[a-z0-9-]+\/?$/.test(P);
   var INK = "#1B2342", SLATE = "#4F5B7C", LINE = "#E4E9F7", BLUE = "#3748CF";
   var GLASS = "background:#fff;border:1px solid #E4E9F7;box-shadow:0 1px 2px rgba(27,35,66,.04),0 14px 30px -24px rgba(27,35,66,.2)";
   var CSS = [
@@ -74,27 +72,7 @@
     'extract-pdf-pages': 'Keep only the pages you need', 'delete-pdf-pages': 'Remove unwanted pages',
     'reorder-pdf-pages': 'Drag pages into a new order', 'rotate-pdf': 'Fix sideways pages',
     'jpg-to-pdf': 'Turn images into one PDF', 'pdf-to-jpg': 'Save pages as JPG or PNG images',
-    'compress-pdf': 'Make PDF files smaller', 'add-page-numbers-to-pdf': 'Number every page', 'watermark-pdf': 'Stamp text across your pages',
-    'compress-image': 'Make JPG, PNG and WebP smaller', 'resize-image': 'Change size by pixels, percent or preset',
-    'convert-image': 'Switch between JPG, PNG and WebP', 'png-to-jpg': 'Turn PNG into a smaller JPG',
-    'jpg-to-png': 'Turn JPG into a lossless PNG', 'webp-to-jpg': 'Open WebP images anywhere',
-    'jpg-to-webp': 'Smaller files for your website', 'crop-image': 'Trim to a size or ratio',
-    'rotate-flip-image': 'Turn or mirror a picture', 'image-to-base64': 'Embed an image as text',
-    'remove-image-metadata': 'Strip location and camera details',
-    'qr-code-generator': 'Make a QR code for any link or text', 'wifi-qr-code-generator': 'Let guests join your Wi-Fi with a scan',
-    'vcard-qr-code-generator': 'Share your contact details', 'email-qr-code-generator': 'Start a pre-filled email with a scan',
-    'qr-code-scanner': 'Read a QR code from a photo or camera',
-    'word-counter': 'Count words, characters and reading time', 'character-counter': 'Count characters with and without spaces',
-    'case-converter': 'Change text to any letter case', 'remove-duplicate-lines': 'Keep each line once',
-    'text-cleaner': 'Tidy spaces, breaks and symbols', 'sort-lines': 'Sort and shuffle lines of text',
-    'find-and-replace': 'Replace text, with regex if you like', 'text-compare': 'See what changed between two texts',
-    'lorem-ipsum-generator': 'Placeholder text on demand', 'grammar-style-checker': 'Spot common slips and wordy phrases',
-    'text-to-slug': 'Turn a title into a clean URL slug', 'reverse-text': 'Flip text, words or lines',
-    'age-calculator': 'Exact age in years, months and days', 'percentage-calculator': 'Percent of, change and more',
-    'bmi-calculator': 'Body mass index in metric or imperial', 'date-calculator': 'Days between dates, add or subtract time',
-    'loan-calculator': 'Monthly payment and full schedule', 'discount-calculator': 'Sale price and savings',
-    'tip-calculator': 'Tip and split the bill', 'compound-interest-calculator': 'See how savings grow over time',
-    'mortgage-calculator': 'Monthly home loan payment'
+    'compress-pdf': 'Make PDF files smaller', 'add-page-numbers-to-pdf': 'Number every page', 'watermark-pdf': 'Stamp text across your pages'
   };
 
   // Wix puts these boxes at their editor X/width; widen the tool hub and the FAQ together and centre them (desktop only, the phone layout is left alone).
@@ -152,7 +130,7 @@
     var steps = [], faq = [], rel = [], mode = '';
     [].forEach.call(root.children, function (k) {
       var tx = (k.textContent || '').trim();
-      if (k.tagName === 'H2') { mode = /how to use/i.test(tx) ? 's' : /frequently/i.test(tx) ? 'f' : /more (pdf|free)/i.test(tx) ? 'r' : ''; return; }
+      if (k.tagName === 'H2') { mode = /how to use/i.test(tx) ? 's' : /frequently/i.test(tx) ? 'f' : /more pdf/i.test(tx) ? 'r' : ''; return; }
       if (mode === 's' && k.tagName === 'OL') [].forEach.call(k.querySelectorAll('li'), function (li) { steps.push((li.textContent || '').trim()); });
       else if (mode === 'f') { if (k.tagName === 'H3') faq.push({ q: tx, a: null }); else if (k.tagName === 'P' && faq.length && !faq[faq.length - 1].a) faq[faq.length - 1].a = tx; }
       else if (mode === 'r' && k.tagName === 'P') [].forEach.call(k.querySelectorAll('a'), function (a) { rel.push({ h: a.getAttribute('href') || '', t: (a.textContent || '').trim() }); });
@@ -166,13 +144,13 @@
     faq.forEach(function (f) { if (!f.a) return; ql.appendChild(qa(f.q, el('p', null, f.a))); });
     s2.appendChild(h2); s2.appendChild(ql); tp.appendChild(s2);
     if (rel.length) {
-      var s3 = el('section'), h3 = el('h2', null, MORE), ul = el('ul', 'es-rg');
+      var s3 = el('section'), h3 = el('h2', null, 'More PDF tools'), ul = el('ul', 'es-rg');
       rel.forEach(function (r) {
-        var slug = r.h.replace(/^.*\/(pdf|online)-tools\//, '').replace(/\/$/, ''), li = el('li'), a = el('a'); a.href = r.h;
+        var slug = r.h.replace(/^.*\/pdf-tools\//, '').replace(/\/$/, ''), li = el('li'), a = el('a'); a.href = r.h;
         a.appendChild(el('strong', null, r.t)); a.appendChild(el('em', null, BLURB[slug] || 'Free and private, in your browser')); li.appendChild(a); ul.appendChild(li);
       });
       s3.appendChild(h3); s3.appendChild(ul);
-      var all2 = el('a', 'es-all', ALLS); all2.href = BASE; s3.appendChild(all2);
+      var all2 = el('a', 'es-all', 'See all PDF tools'); all2.href = '/pdf-tools'; s3.appendChild(all2);
       tp.appendChild(s3);
     }
     root.classList.add('es-faq-root');
@@ -188,9 +166,9 @@
     var comp = sp && sp.closest('[id^="comp-"]');
     if (!comp) return;
     if (!comp.classList.contains('es-backc')) {
-      comp.classList.add('es-backc'); sp.textContent = ALLN; comp.setAttribute('aria-label', ALLN);
-      comp.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); location.href = BASE; }, true);
-      comp.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); location.href = BASE; } }, true);
+      comp.classList.add('es-backc'); sp.textContent = 'All PDF tools'; comp.setAttribute('aria-label', 'All PDF tools');
+      comp.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); location.href = '/pdf-tools'; }, true);
+      comp.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); location.href = '/pdf-tools'; } }, true);
     }
     var h1 = document.querySelector('main h1'), hc = h1 && h1.closest('[id^="comp-"]');
     if (hc) {
