@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support - InvoiceOak</title>
+<meta name="description" content="Get help with InvoiceOak: setup, Google permissions, sending, reminders and billing.">
+<style>:root {
+  --bg: #f6f7f5; --surface: #ffffff; --ink: #14201d; --muted: #4f5f5a; --line: #dfe4e1;
+  --accent: #0e6b5c; --accent-soft: #e3f1ee;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1614; --surface: #16201d; --ink: #eaf1ee; --muted: #a9b8b2; --line: #2a3733;
+    --accent: #5fc4ae; --accent-soft: #1b2e29;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.65 "Source Serif 4", Georgia, "Times New Roman", serif; }
+.bar { background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar-in { max-width: 920px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 15px; }
+.brand { font-weight: 650; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; margin-right: auto; }
+.mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); display: inline-grid; place-items: center; }
+.mark svg { width: 16px; height: 16px; }
+.bar a.nav { color: var(--muted); text-decoration: none; padding: 10px 6px; min-height: 44px; display: inline-flex; align-items: center; }
+.bar a.nav[aria-current="page"] { color: var(--accent); font-weight: 600; }
+.bar a:hover { text-decoration: underline; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 72px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+.toc { position: sticky; top: 20px; align-self: start; font-family: "Inter", system-ui, sans-serif; font-size: 14px; }
+.toc p { margin: 0 0 10px; color: var(--muted); font-weight: 600; }
+.toc ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+.toc a { color: var(--muted); text-decoration: none; display: block; padding: 7px 0; }
+.toc a:hover { color: var(--accent); }
+article { max-width: 68ch; }
+h1 { font-family: "Inter", system-ui, sans-serif; font-size: 2.1rem; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 10px; }
+.meta { color: var(--muted); font-family: "Inter", system-ui, sans-serif; font-size: 14px; margin: 0 0 28px; }
+.lead { font-size: 1.12rem; background: var(--accent-soft); border-radius: 10px; padding: 16px 18px; margin: 0 0 32px; }
+h2 { font-family: "Inter", system-ui, sans-serif; font-size: 1.25rem; margin: 40px 0 8px; letter-spacing: -0.01em; scroll-margin-top: 16px; }
+h3 { font-family: "Inter", system-ui, sans-serif; font-size: 1rem; margin: 22px 0 4px; }
+p, li { margin: 0 0 12px; }
+ul { padding-left: 1.2em; margin: 0 0 12px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; font-family: "Inter", system-ui, sans-serif; font-size: 14.5px; margin: 8px 0 18px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; background: var(--surface); }
+.scroll { overflow-x: auto; }
+footer { border-top: 1px solid var(--line); font-family: "Inter", system-ui, sans-serif; font-size: 14px; color: var(--muted); }
+footer div { max-width: 920px; margin: 0 auto; padding: 22px 20px 40px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+@media (max-width: 780px) {
+  .wrap { grid-template-columns: 1fr; gap: 20px; padding-top: 28px; }
+  .toc { position: static; }
+  .toc ol { grid-template-columns: 1fr 1fr; column-gap: 16px; }
+  h1 { font-size: 1.7rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+  <a class="brand" href="https://ecomswiftllc.com/invoiceoak/"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></span>InvoiceOak</a>
+  <a class="nav" href="https://ecomswiftllc.com/invoiceoak/privacy">Privacy</a>
+  <a class="nav" href="https://ecomswiftllc.com/invoiceoak/terms">Terms</a>
+  <a class="nav" href="https://ecomswiftllc.com/invoiceoak/support" aria-current="page">Support</a>
+</div></header>
+<div class="wrap">
+<nav class="toc" aria-label="On this page"><p>On this page</p><ol>
+  <li><a href="#contact">Contact us</a></li>
+  <li><a href="#start">Getting started</a></li>
+  <li><a href="#faq">Common questions</a></li>
+</ol></nav>
+<article>
+<h1>Support</h1>
+<p class="meta">We reply to every message, usually within one business day.</p>
+<p class="lead" id="contact">Email <a href="mailto:support@ecomswiftllc.com">support@ecomswiftllc.com</a> from the address you use with the app. Tell us what you were trying to do and what you saw.</p>
+
+<h2 id="start">Getting started</h2>
+<ul>
+<li>Open Gmail, Drive or Sheets, then choose the InvoiceOak icon in the side panel.</li>
+<li>Press New invoice, or Create from text to paste an email or notes.</li>
+<li>Add your business details once under Settings. Invoices use them every time.</li>
+<li>Google asks for permission the first time. Each permission is explained in the <a href="https://ecomswiftllc.com/invoiceoak/privacy#google">privacy policy</a>.</li>
+</ul>
+
+<h2 id="faq">Common questions</h2>
+<h3>Where are my invoices stored?</h3>
+<p>In a file in your own Google Drive, plus PDF copies in a folder called "Invoices (PDF)". We do not keep a copy on our servers.</p>
+<h3>Google says the app is not verified.</h3>
+<p>During early access, Google may show a warning screen. Choose Advanced, then continue. We are completing Google's verification, after which the warning goes away.</p>
+<h3>An email did not arrive.</h3>
+<p>Ask your client to check spam. Emails are sent from your own Gmail account, so they also appear in your Sent folder. Google limits how many emails an account can send each day.</p>
+<h3>How do I stop automatic messages?</h3>
+<p>Open Settings and switch off the rule, or press Pause all. Everything automatic is off until you switch it on, and every action is listed in Activity.</p>
+<h3>How do I cancel Pro?</h3>
+<p>Use the link in your payment receipt, or email us. You keep Pro until the end of the period you paid for.</p>
+<h3>How do I remove the app and my data?</h3>
+<p>Remove access in your <a href="https://myaccount.google.com/permissions">Google Account permissions</a>, then delete the data file and "Invoices (PDF)" folder from your Drive if you want them gone. To close your subscription record, email us.</p>
+</article>
+</div>
+<footer><div>&copy; 2026 Ecom Swift LLC. InvoiceOak is not affiliated with Google.</div></footer>
+</body>
+</html>
