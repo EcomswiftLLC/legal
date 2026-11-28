@@ -331,6 +331,26 @@
     s.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": g });
   }
 
+  /* ---- head meta (description, og, twitter) set from the page JSON; Wix drops these for dynamic pages ---- */
+  function seoMeta() {
+    var url = location.origin + "/service/" + D.slug, im = img((D.imgs && D.imgs[0]) || 0), ttl = document.title;
+    function put(attr, key, val) {
+      if (!val) return;
+      var m = document.head.querySelector("meta[" + attr + '="' + key + '"]');
+      if (!m) { m = document.createElement("meta"); m.setAttribute(attr, key); document.head.appendChild(m); }
+      m.setAttribute("content", val);
+    }
+    put("name", "description", D.meta);
+    put("property", "og:description", D.meta);
+    put("property", "og:image", im);
+    put("property", "og:image:alt", ALT[((D.imgs && D.imgs[0]) || 0) % ALT.length]);
+    put("name", "twitter:description", D.meta);
+    put("name", "twitter:image", im);
+    put("property", "og:title", ttl);
+    put("name", "twitter:title", ttl);
+    put("property", "og:url", url);
+  }
+
   /* ---- mount ---- */
   function takeover() {
     var sp = document.querySelector("#SITE_PAGES") || document.querySelector("#PAGES_CONTAINER") || document.querySelector("main");
@@ -356,7 +376,7 @@
     st = { pkg: "standard", img: 0, add: {}, reqOpen: false, descOpen: false, req: { nostore: false, url: saved.url || "", name: saved.name || "", sell: saved.sell || "", kind: saved.kind || "", goal: saved.goal || "", market: saved.market || "", email: saved.email || "", phone: saved.phone || "", collab: "" } };
     ensureCss();
     if (!takeover()) { mountedSlug = ""; return; }
-    render(); ld();
+    render(); ld(); seoMeta();
     document.documentElement.classList.add("es-svc-page"); var pe = document.getElementById("es-pre"); if (pe) pe.remove();
   }
   function mount() {
